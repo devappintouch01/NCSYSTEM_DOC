@@ -3,7 +3,7 @@
 
 ## Search Criteria
 
-### [กอง ต.] [08-03-2026] คำขอ คค.1-1 `ProsessionRequest` [Thiha]
+### [กอง ต.] [08-03-2026] คำขอ คค.1-1 `PossessionRequest` [Thiha]
 
 **คำขอครอบครอง**
 Narcotic 2
