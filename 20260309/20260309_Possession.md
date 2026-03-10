@@ -7,7 +7,7 @@
 
 ## Form name
 
-| Narcotic Type | | Narcotic Type | Form name |
+| Narcotic Type | Narcotic | Narcotic Type |
 |---|---|---|
 | Narcotic 2 | NC2 ยส.2 | คำขอรับใบอนุญาตมีไว้ในครอบครองยาเสพติดให้โทษในประเภท 2 |
 | Psychotropic 2 | PS2 วจ.2 | คำขอรับใบอนุญาตมีไว้ในครอบครองวัตถุออกฤทธิ์ในประเภท 2 |
