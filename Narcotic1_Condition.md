@@ -4,6 +4,8 @@
 ## (dbo.MasterRequisitionType Id = 19)
 ### [เงื่อนไข ยส.1]
 
+## วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ
+
 ## วัตถุประสงค์ในการขออนุญาต + การดำเนินการ
 
 ![Narcotic1_Condition_1](/Narcotic1_Condition_1.png)
