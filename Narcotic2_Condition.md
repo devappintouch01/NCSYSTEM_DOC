@@ -16,6 +16,8 @@
 | การป้องกัน |  | ✅ |  | ✅ |
 | การผลิต |  |  |  | ✅ |
 
+![Narcotic2_Condition_2](/Narcotic2_Condition_2.png)
+
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
