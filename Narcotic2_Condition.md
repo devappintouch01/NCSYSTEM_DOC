@@ -7,7 +7,7 @@
 ## วัตถุประสงค์ในการขออนุญาต + การดำเนินการ
 
 ![Narcotic2_Condition_1](/Narcotic2_Condition_1.png)
-<img src="Narcotic2_Condition_2.png" width="75%">
+<img src="Narcotic2_Condition_2.png" style="border: 1px solid black;" width="75%">
 
 | วัตถุประสงค์/การดำเนินการ | ผลิต | ผลิตเพื่อส่งออก | นำเข้า | ส่งออก |
 |---|---|---|---|---|
