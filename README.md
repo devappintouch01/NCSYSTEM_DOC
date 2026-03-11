@@ -15,4 +15,4 @@
 | 10 มี.ค. 2569 | กอง ต. | Log + Spec | ท็อป | [กอง ต. ยส.5]() |
 | 09 มี.ค. 2569 | กอง ต. | Log + Spec | ท็อป | [กอง ต. คค.1 Possession](20260309/20260309_Possession.md) |
 
-![psyduck](psyduck.jpg)
+<img src="psyduck.jpg" width="20%">
