@@ -6,6 +6,7 @@
 
 ## วัตถุประสงค์ในการขออนุญาต + การดำเนินการ
 
+![Narcotic2_Condition_2](/Narcotic2_Condition_2.png)
 ![Narcotic2_Condition_1](/Narcotic2_Condition_1.png)
 
 | วัตถุประสงค์ | ผลิต | ผลิตเพื่อส่งออก | นำเข้า | ส่งออก |
@@ -15,8 +16,6 @@
 | การบริหารยา | ✅ |  | ✅ |  |
 | การป้องกัน |  | ✅ |  | ✅ |
 | การผลิต |  |  |  | ✅ |
-
-![Narcotic2_Condition_2](/Narcotic2_Condition_2.png)
 
 ### Links
 
