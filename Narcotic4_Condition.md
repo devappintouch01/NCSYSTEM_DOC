@@ -52,4 +52,4 @@
 | 6. เพื่อประโยชน์ทางอุตสาหกรรม **ไม่อยู่ภายใต้ระบบปิด** | 4 | ยส.4 | IsNC4OpenSystemIndustryUnit |
 | 7. เพื่อใช้เป็นสารมาตรฐานในการตรวจวิเคราะห์ | 4 | ยส.4  **ที่เป็นสารมาตรฐาน** | IsNC4StandardUnit |
 
-<img src="Narcotic4_Condition_3.png" width="75%">
+<img src="Narcotic4_Condition_3.png" width="100%">
