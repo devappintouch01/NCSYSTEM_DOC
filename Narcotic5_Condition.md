@@ -20,12 +20,12 @@
 | เลขที่ | - Can type text |  |
 
 ## 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
-<img src="Narcotic5_Field_Condition_2-2_2" style="border: 1px solid black;" width="100%">
+<img src="Narcotic5_Field_Condition_2-2_2.png" style="border: 1px solid black;" width="100%">
 details is incoming
 
 ## 2.2.1 ข้อมูลสถานที่ปลูก (เฉพาะกรณีขออนุญาตผลิต โดยการปลูก)
 *Show on (เฉพาะกรณีขออนุญาตผลิต โดยการปลูก) only*
-<img src="Narcotic5_Field_Condition_2-2-2" style="border: 1px solid black;" width="100%">
+<img src="Narcotic5_Field_Condition_2-2-2.png" style="border: 1px solid black;" width="100%">
 
 | Lable | Condition | Remark |
 |---|---|
@@ -34,5 +34,5 @@ details is incoming
 | ลองจิจูด | - Decimal with 6 digits (100.654321) |  |
 
 ## 2.2.2 ข้อมูลของผู้ผลิตหรือผู้ส่งออกในต่างประเทศ (เฉพาะกรณีขออนุญาตนำเข้า)
-*(เฉพาะกรณีขออนุญาตนำเข้า)*
-<img src="Narcotic5_Field_Condition_2-2-2" style="border: 1px solid black;" width="100%">
+*Show on (เฉพาะกรณีขออนุญาตนำเข้า) only*
+<img src="Narcotic5_Field_Condition_2-2-2.png" style="border: 1px solid black;" width="100%">
