@@ -2,8 +2,6 @@
 ---
 
 ## (dbo.MasterRequisitionType Id = 19)
-### [เงื่อนไข ยส.4]
-
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
@@ -11,6 +9,7 @@
 
 - [Figma ยส.4](https://www.figma.com/board/eZAUMG4kub8P4xGJNtzuOF/%E0%B8%A2%E0%B8%AA.4)
 
+### [เงื่อนไข ยส.4]
 ## ประเภทการขอ
 
 | ประเภทการขอ |
