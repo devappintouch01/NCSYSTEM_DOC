@@ -20,7 +20,7 @@
 | เลขที่ | - Can type text |  |
 
 ## 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
-<img src="Narcotic5_Field_Condition_2-2_2.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic5_Field_Condition_2-2_1.png" style="border: 1px solid black;" width="100%">
 details is incoming
 
 ## 2.2.1 ข้อมูลสถานที่ปลูก (เฉพาะกรณีขออนุญาตผลิต โดยการปลูก)
