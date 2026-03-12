@@ -10,10 +10,16 @@
 - [Figma ผนส. ยส.2/วจ.2](https://www.figma.com/board/z40hQv1fTsb9ll44MkkUnx/%E0%B8%9C%E0%B8%99%E0%B8%AA.-%E0%B8%A2%E0%B8%AA2---%E0%B8%A7%E0%B8%882)
 
 ### [เงื่อนไข ผนส. ยส.2/วจ.2]
+## ผู้ขออนุญาต
+
+| ผู้ขออนุญาต | Remark |
+|---|---|
+| ผู้ขอรับอนุญาตเป็นหน่วยงานรัฐหรือสภากาชาดไทย | เอามาจากเอกสารแนบ |
+
 ## วัตถุประสงค์ในการขออนุญาต + การดำเนินการ
 
 ![Narcotic2_Condition_1](/Narcotic2_Condition_1.png)
-<img src="Narcotic2_Condition_2.png" style="border: 1px solid black;" width="75%">
+<img src="Narcotic2_Condition_2.png" style="border: 1px solid black;" width="100%">
 
 | วัตถุประสงค์ (Objective)/การดำเนินการ | ผลิต | ผลิตเพื่อส่งออก | นำเข้า | ส่งออก |
 |---|---|---|---|---|
@@ -25,7 +31,7 @@
 
 ## ใบอนุญาต + วัตถุประสงค์ในการขออนุญาต, การดำเนินการ for section 1.2 and 1.3
 
-<img src="Narcotic2_Condition_3.png" style="border: 1px solid black;" width="75%">
+<img src="Narcotic2_Condition_3.png" style="border: 1px solid black;" width="100">
 
 | วัตถุประสงค์, การดำเนินการ/ใบอนุญาต | ผย.1 | นย.1 | ผลิต <br> ผยส.2 / ผวจ.2 | ผลิตเพื่อส่งออก <br> ผส.ยส.2-2 / ผส.วจ. 2-2 | นยส.2-2 / นวจ.2-2 |
 |---|---|---|---|---|---|
