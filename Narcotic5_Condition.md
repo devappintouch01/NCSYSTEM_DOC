@@ -26,7 +26,7 @@ details is incoming
 
 ## 2.2.1 ข้อมูลสถานที่ปลูก (เฉพาะกรณีขออนุญาตผลิต โดยการปลูก)
 *Show on (เฉพาะกรณีขออนุญาตผลิต โดยการปลูก) only*
-<img src="Narcotic5_Field_Condition_2-2-2.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic5_Field_Condition_2-2-1.png" style="border: 1px solid black;" width="100%">
 
 | Lable | Condition | Remark |
 |---|---|
