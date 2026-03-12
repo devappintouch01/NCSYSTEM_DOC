@@ -75,6 +75,16 @@
 <img src="Narcotic4_Condition_3.png" width="100%">
 
 ## Field Condition
+
+## วันที่
+
+| ประเภทวันที่ | Filed | เงื่อนไข |
+|---|---|---|
+| 1. วันที่สร้าง | `CreateON` |  |
+| 2. วันที่เขียน | `WriteDate` |  |
+| 3. วันที่ยื่น | `aaa` |  |
+| 4. วันที่รับ | `aaa` |  |
+
 ## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
 <img src="Narcotic4_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 
