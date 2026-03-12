@@ -10,6 +10,11 @@
 - [Figma ยส.5](https://www.figma.com/board/EWDQbpKKq9Rh4AkENTVOQG/%E0%B8%A2%E0%B8%AA5---%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B9%81%E0%B8%9C%E0%B8%99?t=kvjSziK881AvYaUS-6)
 
 ### [เงื่อนไข ยส.5]
-## AA
+## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
+<img src="Narcotic5_Field Condition_4.png" width="75%">
 
-## BB
+| Lable | Conition | Remark |
+|---|---|
+| เลขประจำตัวประชาชน | - Cannot over 13 digits | Need sperator (0-0000-00000-00-0) |
+| เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | Need sperator (0000-000000-0) - move next after field เลขที่ |
+| เลขที่ | Can type text |  |
