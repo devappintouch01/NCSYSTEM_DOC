@@ -75,10 +75,10 @@
 <img src="Narcotic4_Condition_3.png" width="100%">
 
 ## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
-<img src="Narcotic4_Field Condition_4.png" width="100%">
+<img src="Narcotic4_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 
 | Lable | Condition | Remark |
 |---|---|
-| เลขประจำตัวประชาชน | - Cannot over 13 digits | Need sperator (0-0000-00000-00-0) |
-| เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | Need sperator (0000-000000-0) |
+| เลขประจำตัวประชาชน | - Cannot over 13 digits | - Need sperator (0-0000-00000-00-0) |
+| เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
 | เลขที่ | - Can type text |  |
