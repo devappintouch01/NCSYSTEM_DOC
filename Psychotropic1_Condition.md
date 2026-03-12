@@ -53,6 +53,6 @@
 <img src="Psychotropic1_Condition_2.png" style="border: 1px solid black;" width="50%">
 
 ## Field Condition
+## 1.2
 
-<img src="Psychotropic1_Condition_1.png" style="border: 1px solid black;" width="100%">
 <img src="Psychotropic1_Condition_3.png" style="border: 1px solid black;" width="100%">
