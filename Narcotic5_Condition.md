@@ -11,10 +11,10 @@
 
 ### [เงื่อนไข ยส.5]
 ## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
-<img src="Narcotic5_Field_Condition_4.png" width="75%">
+<img src="Narcotic5_Field_Condition_4.png" width="100%">
 
-| Lable | Conition | Remark |
+| Lable | Condition | Remark |
 |---|---|
 | เลขประจำตัวประชาชน | - Cannot over 13 digits | Need sperator (0-0000-00000-00-0) |
-| เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | Need sperator (0000-000000-0) - move next after field เลขที่ |
-| เลขที่ | Can type text |  |
+| เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | Need sperator (0000-000000-0) <br> - move next after field เลขที่ |
+| เลขที่ | - Can type text |  |
