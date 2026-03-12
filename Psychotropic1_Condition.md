@@ -50,9 +50,9 @@
 
 ## วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
 
-<img src="Psychotropic1_Condition_2.png" width="50%">
+<img src="Psychotropic1_Condition_2.png" style="border: 1px solid black;" width="50%">
 
 ## Field Condition
 
-<img src="Psychotropic1_Condition_1.png" width="100%">
-<img src="Psychotropic1_Condition_3.png" width="100%">
+<img src="Psychotropic1_Condition_1.png" style="border: 1px solid black;" width="100%">
+<img src="Psychotropic1_Condition_3.png" style="border: 1px solid black;" width="100%">
