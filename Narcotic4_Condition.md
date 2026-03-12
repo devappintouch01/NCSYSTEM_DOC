@@ -80,6 +80,5 @@
 | Lable | Conition | Remark |
 |---|---|
 | เลขประจำตัวประชาชน | - Cannot over 13 digits | Need sperator (0-0000-00000-00-0) |
-| เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | Need sperator (0000-000000-0) - move next after field เลขที่ |
+| เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | Need sperator (0000-000000-0) |
 | เลขที่ | Can type text |  |
-|   |   |   |

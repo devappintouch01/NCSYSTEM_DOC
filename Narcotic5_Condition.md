@@ -11,7 +11,7 @@
 
 ### [เงื่อนไข ยส.5]
 ## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
-<img src="Narcotic5_Field Condition_4.png" width="75%">
+<img src="Narcotic5_Field_Condition_4.png" width="75%">
 
 | Lable | Conition | Remark |
 |---|---|
