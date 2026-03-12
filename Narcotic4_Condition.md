@@ -80,10 +80,12 @@
 
 | ประเภทวันที่ | Filed | เงื่อนไข |
 |---|---|---|
-| 1. วันที่สร้าง | `CreateON` |  |
-| 2. วันที่เขียน | `WriteDate` |  |
-| 3. วันที่ยื่น | `aaa` |  |
-| 4. วันที่รับ | `aaa` |  |
+| 1. วันที่สร้าง | `Requisition`.`CreateON` |  |
+| 2. วันที่เขียน | `Requisition`.`WriteDate` |  |
+| 3. วันที่ยื่น | `Requisition`.`FillingDate` |  |
+| 4. วันที่รับ | (เพิ่ม) `Requisition`.`SubmitDate` |  |
+| 4. วันที่ | `License`.`IssueDate` |  |
+| 4. วันที่ | `License`.`ExpireDate` |  |
 
 ## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
 <img src="Narcotic4_Field Condition_4.png" style="border: 1px solid black;" width="100%">
