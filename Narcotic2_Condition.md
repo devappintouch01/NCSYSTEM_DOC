@@ -47,3 +47,14 @@ For objective
 *- การผลิตเพื่อส่งออก*
 
 <img src="Narcotic2_Condition_4.png" style="border: 1px solid black;" width="75%">
+
+## Field Condition
+## 1.2 and 1.3
+
+<img src="Narcotic2_Condition_3.png" style="border: 1px solid black;" width="40%">
+<img src="Narcotic2_Field_Condition_1.png" style="border: 1px solid black;" width="60%">
+
+| Lable | Condition | Remark |
+|---|---|
+| เป็นผู้รับอนุญาต... | Checkbox |  |
+| ใบอนุญาตเลขที่ | Dropdown | LicenseNo. save to  ??? |
