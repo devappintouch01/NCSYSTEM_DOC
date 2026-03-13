@@ -44,6 +44,7 @@
 | (วัตถุประสงค์ Objective) 1.2 การบริหารยาเสพติดให้โทษในประเภท 2 <br> หรือ วัตถุออกฤทธิ์ในประเภท 2 ที่ใช้ในทางการแพทย์ของประเทศ | - Show on Operation **1. 2. 3.** (1. ผลิต, 2. ผลิตเพื่อส่งออก, 3. นำเข้า) <br> - Show only **1. 5.** Objective |
 | (วัตถุประสงค์ Objective) 1.2 การผลิตเพื่อส่งออก | - Show on Operation **1. 2. 3.** (1. ผลิต, 2. ผลิตเพื่อส่งออก, 3. นำเข้า) <br> - Show only Objective **1. 5.** |
 | (การดำเนินการ Operation) 1.3 ขอส่งออก | - Show only Operation **4. ส่งออก (Export)** <br> - Show on **every** Objective |
+
 *1.2 แสดงที่ทุก Operation ไม่ได้ เพราะจะเลือกส่งออก จะขึ้นมาด้วย*
 *update 13-03-2026*
 
@@ -63,11 +64,11 @@
 | x. [วัตถุประสงค์ xxxx] | 2 | ยาเสพติดให้โทษในประเภท 2 ทุกชนิด | IsNCUnit |
  
 **2.1.1**
-<img src="Narcotic2_Condition_6.jpg" style="border: 1px solid black;" width="100%">
+<img src="Narcotic2_Condition_6.jpg" style="border: 1px solid black;" width="75%">
 
-| วัตถุประสงค์, การดำเนินการ/ใบอนุญาต | Operation, Objective |
+| วัตถุประสงค์, การดำเนินการ | Operation, Objective |
 |---|---|
-| (วัตถุประสงค์ Objective) 1.2 การผลิตเพื่อส่งออก | - Show on Operation **1. 2. 3.** (1. ผลิต, 2. ผลิตเพื่อส่งออก, 3. นำเข้า) <br> - [Ask Clay] Why this need depends on Objective ? |
+| วัตถุประสงค์ (Objective) / การดำเนินการ (Operation) | - Show only Operation **2. ผลิตเพื่อส่งออก (Manufacture for Export)** <br> - Show only Objective **5. การผลิตเพื่อส่งออก** |
 
 ## Field Condition
 ## 1.2 and 1.3
