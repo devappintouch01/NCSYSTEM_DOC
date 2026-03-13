@@ -12,6 +12,9 @@
 
 - [Figma ยส.3](https://www.figma.com/board/GMDCtXJTmTxrGqjrF2yJl4/%E0%B8%A2%E0%B8%AA.3)
 
+<img src="Narcotic3_Condition_1.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic3_Condition_2.png" style="border: 1px solid black;" width="100%">
+
 ## เงื่อนไขการแสดงข้อมูลใบอนุญาตในฟอร์ม
 
 | กรณี | ที่มาใบอนุญาต | Radio ที่ต้องเลือก (ด้านบนของฟอร์ม) | ตำแหน่งแสดงเลขใบอนุญาต |

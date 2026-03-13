@@ -73,7 +73,7 @@
 
 *update 13-03-2026*
 
-## for section 2.4
+## for section 2.4 ข้อมูลเภสัชกร
 
 <img src="Narcotic2_Condition_7.png" style="border: 1px solid black;" width="75%">
 
