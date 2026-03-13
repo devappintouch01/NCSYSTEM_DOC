@@ -53,7 +53,7 @@
 
 **ยาเสพติดให้โทษในประเภท 1 ทุกชนิด**
 
-<img src="Narcotic1_Condition_3.png" width="100%">
+<img src="Narcotic1_Condition_3.png" style="border: 1px solid black;" width="100%">
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
 |---|---|---|---|
@@ -61,4 +61,4 @@
 
 ## วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
 
-<img src="Narcotic1_Condition_2.png" width="100%">
+<img src="Narcotic1_Condition_2.png" style="border: 1px solid black;" width="100%">

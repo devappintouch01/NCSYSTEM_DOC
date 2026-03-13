@@ -54,7 +54,7 @@
 
 **ยาเสพติดให้โทษในประเภท 2 ทุกชนิด**
 
-<img src="Narcotic2_Condition_5.png" width="100%">
+<img src="Narcotic2_Condition_5.png" style="border: 1px solid black;" width="100%">
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
 |---|---|---|---|
