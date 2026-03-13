@@ -58,7 +58,7 @@
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
 |---|---|---|---|
-| x. [วัตถุประสงค์ xxxx] | 2 | ยาเสพติดให้โทษในประเภท 2 ทุกชนิด | **IsNC4StandardUnit ??** |
+| x. [วัตถุประสงค์ xxxx] | 2 | ยาเสพติดให้โทษในประเภท 2 ทุกชนิด | IsNCUnit |
  
 ## Field Condition
 ## 1.2 and 1.3
