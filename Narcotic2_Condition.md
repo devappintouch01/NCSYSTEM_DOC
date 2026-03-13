@@ -62,6 +62,13 @@
 |---|---|---|---|
 | x. [วัตถุประสงค์ xxxx] | 2 | ยาเสพติดให้โทษในประเภท 2 ทุกชนิด | IsNCUnit |
  
+**2.1.1**
+<img src="Narcotic2_Condition_6.jpg" style="border: 1px solid black;" width="100%">
+
+| วัตถุประสงค์, การดำเนินการ/ใบอนุญาต | Operation, Objective |
+|---|---|
+| (วัตถุประสงค์ Objective) 1.2 การผลิตเพื่อส่งออก | - Show on Operation **1. 2. 3.** (1. ผลิต, 2. ผลิตเพื่อส่งออก, 3. นำเข้า) <br> - [Ask Clay] Why this need depends on Objective ? |
+
 ## Field Condition
 ## 1.2 and 1.3
 
