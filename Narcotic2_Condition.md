@@ -49,7 +49,7 @@
 *1.2 แสดงที่ทุก Operation ไม่ได้ เพราะจะเลือกส่งออก จะขึ้นมาด้วย*
 
 ## วัตถุประสงค์ + เงื่อนไขสาร
-**ใช้ที่ 2.1 ข้อมูลยาเสพติดให้โทษในประเภท 2 ที่ขอรับอนุญาต**
+**for section 2.1 ข้อมูลยาเสพติดให้โทษในประเภท 2 ที่ขอรับอนุญาต**
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
 |---|---|---|---|
@@ -63,7 +63,7 @@
 |---|---|---|---|
 | x. [วัตถุประสงค์ xxxx] | 2 | ยาเสพติดให้โทษในประเภท 2 ทุกชนิด | IsNCUnit |
  
-**2.1.1**
+## for section 2.1.1
 
 <img src="Narcotic2_Condition_6.jpg" style="border: 1px solid black;" width="75%">
 
@@ -75,7 +75,7 @@
 
 ## for section 2.4
 
-<img src="Narcotic2_Condition_7.jpg" style="border: 1px solid black;" width="75%">
+<img src="Narcotic2_Condition_7.png" style="border: 1px solid black;" width="75%">
 
 *สรุปเงื่อนไขอีกที but same as 1.2*
 
