@@ -89,6 +89,7 @@
 | 2. วันที่เขียน | `Requisition`.`WriteDate` |  |
 | 3. วันที่ยื่น | `Requisition`.`FillingDate` |  |
 | 4. วันที่รับ | (เพิ่ม) `Requisition`.`SubmitDate` |  |
+| 4. วันที่อนุมัติ | `ApproveDate` |  |
 | 4. วันที่ | `License`.`IssueDate` |  |
 | 4. วันที่ | `License`.`ExpireDate` |  |
 
