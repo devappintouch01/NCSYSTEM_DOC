@@ -6,6 +6,7 @@
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
+
 | 12 มี.ค. 2569 | กอง ต. [4.12] | Condition | [ยส.4](Narcotic4_Condition.md) |
 | 12 มี.ค. 2569 | กอง ต. [4.13] | Condition | [ยส.5](Narcotic5_Condition.md) |
 | 12 มี.ค. 2569 | กอง ต. [4.8] | Condition | [ยส.1](Narcotic1_Condition.md) |
@@ -33,6 +34,7 @@
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
-| 13 มี.ค. 2569 | Table | Doc | [13-03-2569 Table](Table_13-03-2026.md) |
+| 13 มี.ค. 2569 | All | Doc | [13-03-2569 Table](Table_13-03-2026.md) |
+| 17 มี.ค. 2569 | All | Table Spec | [Table Spec](Table_Spec.md) |
 
 <img src="boomcat.jpg" width="20%">
