@@ -2,7 +2,7 @@
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
-| 12 มี.ค. 2569 | กองยา | Condition | [จยส.3 จวจ.3/4](Narcotic3_Psychotropic3_4_Sales_Wholesales_Condition.md) |
+| 12 มี.ค. 2569 | กองยา [4.11] | Condition | [จยส.3 จวจ.3/4](Narcotic3_Psychotropic3_4_Sales_Wholesales_Condition.md) |
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
