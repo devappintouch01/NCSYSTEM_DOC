@@ -17,7 +17,13 @@
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
-| 12 มี.ค. 2569 | กอง ต. | Condition | [เฉพาะคราว Temp](Narcotic_Temp_Condition.md) |
+| 16 มี.ค. 2569 | กอง ต. | Condition | [เฉพาะคราว Temp](Narcotic_Temp_Condition.md) |
+
+## Condition ทะเบียน (Registration)
+
+| วันที่อัปเดท | กอง | ประเภท | เอกสาร |
+|---|---|---|---|
+| 12 มี.ค. 2569 | กอง ต. | Condition | [ทะเบียน Registration]() |
 
 ## Table
 
