@@ -6,18 +6,18 @@
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
-| 12 มี.ค. 2569 | กอง ต. | Condition | [ยส.4](Narcotic4_Condition.md) |
-| 12 มี.ค. 2569 | กอง ต. | Condition | [ยส.5](Narcotic5_Condition.md) |
-| 12 มี.ค. 2569 | กอง ต. | Condition | [ยส.1](Narcotic1_Condition.md) |
-| 12 มี.ค. 2569 | กอง ต. | Condition | [วจ.1](Psychotropic1_Condition.md) |
-| 12 มี.ค. 2569 | กอง ต. | Condition | [ผนส. ยส.2/วจ.2](Narcotic2_Condition.md) |
-| 12 มี.ค. 2569 | กอง ต. | Condition | [คค.1-1](Narcotic_Possession_Condition.md) |
+| 12 มี.ค. 2569 | กอง ต. [4.12] | Condition | [ยส.4](Narcotic4_Condition.md) |
+| 12 มี.ค. 2569 | กอง ต. [4.13] | Condition | [ยส.5](Narcotic5_Condition.md) |
+| 12 มี.ค. 2569 | กอง ต. [4.8] | Condition | [ยส.1](Narcotic1_Condition.md) |
+| 12 มี.ค. 2569 | กอง ต. [4.9] | Condition | [วจ.1](Psychotropic1_Condition.md) |
+| 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [ผนส. ยส.2/วจ.2](Narcotic2_Condition.md) |
+| 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [คค.1-1](Narcotic_Possession_Condition.md) |
 
 ## Condition เฉพาะคราว Temporary
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
-| 16 มี.ค. 2569 | กอง ต. | Condition | [เฉพาะคราว Temporary](Narcotic_Temporary_Condition.md) |
+| 16 มี.ค. 2569 | กอง ต. [4.14] | Condition | [เฉพาะคราว Temporary](Narcotic_Temporary_Condition.md) |
 
 ## Condition ทะเบียนตำรับ Receipe, ตัวอย่าง Sample, คำรับรอง Certificate 
 
