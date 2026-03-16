@@ -19,11 +19,15 @@
 |---|---|---|---|
 | 16 มี.ค. 2569 | กอง ต. | Condition | [เฉพาะคราว Temp](Narcotic_Temp_Condition.md) |
 
-## Condition ทะเบียน (Registration)
+## Condition ทะเบียนตำรับ Receipe, ตัวอย่าง Sample, คำรับรอง Certificate 
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
-| 12 มี.ค. 2569 | กอง ต. | Condition | [ทะเบียน Registration]() |
+| 16 มี.ค. 2569 | กอง ต. 4.16 | Condition | [ทะเบียนตำรับ Recepie ท.บ.1](Narcotic_Receipe.md) |
+| 16 มี.ค. 2569 | กอง ต. 4.16 | Condition | [ทะเบียนตำรับ (แก้ไขทะเบียน) ท.บ.3](Narcotic_Edit_Receipe.md) |
+| 16 มี.ค. 2569 | กอง ต. 4.15 | Condition | [ตัวอย่าง Sample ต.ย.1](Narcotic_Sample.md) |
+| 16 มี.ค. 2569 | กอง ต. 4.15 | Condition | [หนังสือรับรอง ร.ส.1](Narcotic_Certificate.md) |
+| 16 มี.ค. 2569 | กอง ต. 4.15 | Condition | [หนังสือรับรอง (แก้ไข) ร.ส.2](Narcotic_Edit_Certificate.md) |
 
 ## Table
 
