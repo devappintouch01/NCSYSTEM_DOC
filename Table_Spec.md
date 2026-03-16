@@ -63,9 +63,9 @@ table {
 | 12 | IDA | int | IDA (รหัสจากระบบภายนอก) |
 
 ### ตัวอย่าง และ Script
-```
-๋- Join MasterNarcoticEster กับ MasterDrug และ MasterEster
+Join MasterNarcoticEster กับ MasterDrug และ MasterEster
 
+```
 SELECT 
     ne.Id,
     ne.Active,
