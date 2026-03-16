@@ -1,4 +1,4 @@
-## Condition
+## Condition สถานที่
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
@@ -12,6 +12,12 @@
 | 12 มี.ค. 2569 | กอง ต. | Condition | [วจ.1](Psychotropic1_Condition.md) |
 | 12 มี.ค. 2569 | กอง ต. | Condition | [ผนส. ยส.2/วจ.2](Narcotic2_Condition.md) |
 | 12 มี.ค. 2569 | กอง ต. | Condition | [คค.1-1](Narcotic_Possession_Condition.md) |
+
+## Condition เฉพาะคราว
+
+| วันที่อัปเดท | กอง | ประเภท | เอกสาร |
+|---|---|---|---|
+| 12 มี.ค. 2569 | กอง ต. | Condition | [เฉพาะคราว Temp](Narcotic_Temp_Condition.md) |
 
 ## Table
 
