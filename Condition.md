@@ -13,4 +13,10 @@
 | 12 มี.ค. 2569 | กอง ต. | Condition | [ผนส. ยส.2/วจ.2](Narcotic2_Condition.md) |
 | 12 มี.ค. 2569 | กอง ต. | Condition | [คค.1-1](Narcotic_Possession_Condition.md) |
 
+## Table
+
+| วันที่อัปเดท | กอง | ประเภท | เอกสาร |
+|---|---|---|---|
+| 13 มี.ค. 2569 | Table | Doc | [13-03-2569 Table](Table_13-03-2026.md) |
+
 <img src="boomcat.jpg" width="20%">
