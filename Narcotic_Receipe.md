@@ -11,3 +11,4 @@
 <img src="Narcotic_Receipe_Condition_1.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic_Receipe_Condition_2.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic_Receipe_Condition_3.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic_Receipe_Condition_4.png" style="border: 1px solid black;" width="100%">
