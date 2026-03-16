@@ -12,3 +12,9 @@
 <img src="Narcotic_Receipe_Condition_2.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic_Receipe_Condition_3.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic_Receipe_Condition_4.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic_Receipe_Condition_5.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic_Receipe_Condition_6.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic_Receipe_Condition_7.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic_Receipe_Condition_8.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic_Receipe_Condition_9.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic_Receipe_Condition_10.png" style="border: 1px solid black;" width="100%">
