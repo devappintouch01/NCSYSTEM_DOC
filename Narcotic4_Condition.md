@@ -104,6 +104,11 @@
 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
 | เลขที่ | - Can type text |  |
 
+## 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
+*** แสดงเมื่อเลือก OperationType เป็น จำหน่าย ***
+<img src="Narcotic4_Field Condition_5.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic4_Field Condition_6.png" style="border: 1px solid black;" width="75%">
+
 ## เอกสารหลักฐาน
 ### เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4
 - https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI
