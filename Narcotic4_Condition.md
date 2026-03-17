@@ -110,6 +110,7 @@
 
 <img src="Narcotic4_Condition_Attachment_1.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic4_Condition_Attachment_3.png" style="border: 1px solid black;" width="100%">
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ
 ### เอกสารแนบท้าย กรณีเลือกสารมากกว่า 2 ชนิด
