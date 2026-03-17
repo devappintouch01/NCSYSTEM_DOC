@@ -8,7 +8,7 @@
 - [Data Dic - Master Data real](https://docs.google.com/spreadsheets/d/1WpRC41tmqyOc8zVaxTVuwLxGgmi7inZATo8_LcCTXgE)
 
 - [Figma ยส.4](https://www.figma.com/board/eZAUMG4kub8P4xGJNtzuOF/%E0%B8%A2%E0%B8%AA.4)
-- [เอกสารแนบในแต่ละวัตถุประสงค์ของยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
+- [เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
 
 ### [เงื่อนไข ยส.4]
 ## ประเภทการขอ
@@ -105,7 +105,7 @@
 | เลขที่ | - Can type text |  |
 
 ## เอกสารหลักฐาน
-### เอกสารแนบในแต่ละวัตถุประสงค์ของยส. 4
+### เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4
 - https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI
 
 <img src="Narcotic4_Condition_Attachment_1.png" style="border: 1px solid black;" width="100%">
