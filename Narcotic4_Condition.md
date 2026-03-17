@@ -104,8 +104,12 @@
 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
 | เลขที่ | - Can type text |  |
 
-## เอกสารแนบในแต่ละวัตถุประสงค์ของยส. 4
+## เอกสารหลักฐาน
+### เอกสารแนบในแต่ละวัตถุประสงค์ของยส. 4
 - https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI
+
+<img src="Narcotic4_Condition_Attachment_1.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="100%">
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ
 ### เอกสารแนบท้าย กรณีเลือกสารมากกว่า 2 ชนิด
