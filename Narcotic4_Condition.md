@@ -94,7 +94,7 @@
 **ใช้ที่ 2.1 ข้อมูลยาเสพติดให้โทษในประเภท 4 ที่ขอรับอนุญาต**
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
-|---|---|---|---|
+|---|:---:|---|---|
 | 1. เพื่อประโยชน์ของทางราชการฯ  | 4 | ยส.4 | IsNCUnit |
 | 2. เพื่อการศึกษาวิจัย | 4 | ยส.4 | IsNCUnit |
 | 3. เพื่อประโยชน์ในทางการแพทย์ | 4 | ยส.4 | IsNCUnit |
@@ -106,7 +106,7 @@
 **ยาเสพติดให้โทษในประเภท 4 ทุกประเภท**
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
-|---|---|---|---|
+|---|:---:|---|---|
 | X. [วัตถุประสงค์ xxxx]  | 4 | ยาเสพติดให้โทษในประเภท 4 ทุกประเภท | IsNCUnit |
 
 ## วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
@@ -152,9 +152,9 @@
 ### เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4
 - https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI
 
-<img src="Narcotic4_Condition_Attachment_1.png" style="border: 1px solid black;" width="100%">
-<img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="100%">
-<img src="Narcotic4_Condition_Attachment_3.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic4_Condition_Attachment_1.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="800%">
+<img src="Narcotic4_Condition_Attachment_3.png" style="border: 1px solid black;" width="800%">
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ
 ### เอกสารแนบท้าย กรณีเลือกสารมากกว่า 2 ชนิด
