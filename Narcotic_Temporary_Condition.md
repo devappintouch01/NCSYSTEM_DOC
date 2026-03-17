@@ -39,7 +39,8 @@
 | 17 | 45 | พิเศษเฉพาะคราว | EXP.SP-1 พิเศษเฉพาะคราว ส่งออก วจ. |  | ✅ |
 
 ### ประเภท แต่ละครั้ง (ก็คือ เฉพาะคราว)
-<img src="Narcotic_Temporary_Condition_3.png" width="100%">
+<img src="Narcotic_Temporary_Condition_4.png" width="100%">
+<img src="Narcotic_Temporary_Condition_5.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
 |---|---|---|---|---|
@@ -47,6 +48,7 @@
 | 19 | 36 | แต่ละครั้ง | NAR.5(HEMP) นำเข้า ส่งออก ซึ่ง**กัญชง** แต่ละครั้ง | ✅ | ✅ |
 
 ### ประเภท นำผ่าน
+<img src="Narcotic_Temporary_Condition_3.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
 |---|---|---|---|---|
