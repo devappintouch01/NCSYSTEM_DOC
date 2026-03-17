@@ -13,6 +13,7 @@
 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [ผนส. ยส.2/วจ.2](Narcotic2_Condition.md) |
 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [คค.1-1](Narcotic_Possession_Condition.md) |
 | 17 มี.ค. 2569 | กอง ต. [4.xx] | Condition | [สืบค้น](Narcotic_Search.md) |
+| 18 มี.ค. 2569 | กอง ต. [4.xx] | Condition | [รร.1 (กาเฟอีน)](Narcotic_Caffeine_Condition.md) |
 
 ## Condition เฉพาะคราว Temporary
 
