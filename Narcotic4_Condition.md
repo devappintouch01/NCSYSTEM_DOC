@@ -105,7 +105,7 @@
 | เลขที่ | - Can type text |  |
 
 ## 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
-*** แสดงเมื่อเลือก OperationType เป็น จำหน่าย ***
+*** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
 <img src="Narcotic4_Field Condition_5.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic4_Field Condition_6.png" style="border: 1px solid black;" width="75%">
 
