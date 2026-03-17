@@ -7,10 +7,10 @@
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
 - [Data Dic - Master Data real](https://docs.google.com/spreadsheets/d/1WpRC41tmqyOc8zVaxTVuwLxGgmi7inZATo8_LcCTXgE)
 
-<img src="Narcotic_Temporary_Condition_1.png" width="100%">
 
 ## ประเภท
 ### ประเภท เฉพาะคราว
+<img src="Narcotic_Temporary_Condition_1.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
 |---|---|---|---|---|
@@ -32,12 +32,14 @@
 | 16 | 42/44 | เฉพาะคราว | EXP-P3/4-1 ส่งออก เฉพาะคราว วจ.3/4 |  | ✅ |
 
 ### ประเภท พิเศษ เฉพาะคราว
+<img src="Narcotic_Temporary_Condition_2.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
 |---|---|---|---|---|
 | 17 | 45 | พิเศษเฉพาะคราว | EXP.SP-1 พิเศษเฉพาะคราว ส่งออก วจ. |  | ✅ |
 
 ### ประเภท แต่ละครั้ง (ก็คือ เฉพาะคราว)
+<img src="Narcotic_Temporary_Condition_3.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
 |---|---|---|---|---|
