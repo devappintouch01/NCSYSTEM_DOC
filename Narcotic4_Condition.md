@@ -8,6 +8,7 @@
 - [Data Dic - Master Data real](https://docs.google.com/spreadsheets/d/1WpRC41tmqyOc8zVaxTVuwLxGgmi7inZATo8_LcCTXgE)
 
 - [Figma ยส.4](https://www.figma.com/board/eZAUMG4kub8P4xGJNtzuOF/%E0%B8%A2%E0%B8%AA.4)
+- [เอกสารแนบในแต่ละวัตถุประสงค์ของยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
 
 ### [เงื่อนไข ยส.4]
 ## ประเภทการขอ
@@ -102,6 +103,9 @@
 | เลขประจำตัวประชาชน | - Cannot over 13 digits | - Need sperator (0-0000-00000-00-0) |
 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
 | เลขที่ | - Can type text |  |
+
+## เอกสารแนบในแต่ละวัตถุประสงค์ของยส. 4
+- https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ
 ### เอกสารแนบท้าย กรณีเลือกสารมากกว่า 2 ชนิด
