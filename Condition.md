@@ -6,7 +6,6 @@
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
-
 | 12 มี.ค. 2569 | กอง ต. [4.12] | Condition | [ยส.4](Narcotic4_Condition.md) |
 | 12 มี.ค. 2569 | กอง ต. [4.13] | Condition | [ยส.5](Narcotic5_Condition.md) |
 | 12 มี.ค. 2569 | กอง ต. [4.8] | Condition | [ยส.1](Narcotic1_Condition.md) |
