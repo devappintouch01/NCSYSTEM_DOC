@@ -11,6 +11,12 @@
 - [Figma ยส.4](https://www.figma.com/board/eZAUMG4kub8P4xGJNtzuOF/%E0%B8%A2%E0%B8%AA.4)
 - [เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
 
+<style scoped>
+table {
+  font-size: 13px;
+}
+</style>
+
 ### [เงื่อนไข ยส.4]
 ## ประเภทการขอ
 
@@ -132,28 +138,29 @@
 
 | ลำดับ | Lable | Table.Field | Condition | Remark |
 |---|---|---|---|---|
-| 1 | คำนำหน้านาม | `Requisition`.`aa` |  |  |
-| 2 | ชื่อจริง | `Requisition`.`aa` |  |  |
-| 3 | นามสกุล | `Requisition`.`aa` |  |  |
-| 4 | อายุ | `Requisition`.`aa` |  |  |
-| 5 | วัน เดือน ปี เกิด | `Requisition`.`aa` |  |  |
-| 6 | สัญชาติ | `Requisition`.`aa` |  |  |
-| 7 | เลขประจำตัวประชาชน | `Requisition`.`CitizenId` | - Cannot over 13 digits | - Need separator (0-0000-00000-00-0) |
-| 8 | หนังสือเดินทางเลขที่ | `Requisition`.`aa` |  |  |
-| 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `Requisition`.`aa` |  |  |
-| 10 | เลขการมอบอำนาจ | `Requisition`.`aa` |  |  |
-| 11 | เลขที่ | `Requisition`.`HouseNo` | - Can type text |  |
-| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `Requisition`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
-| 13 | หมู่ที่ | `Requisition`.`aa` |  |  |
-| 14 | ตรอก/ซอย | `Requisition`.`aa` |  |  |
-| 15 | ถนน | `Requisition`.`aa` |  |  |
-| 16 | จังหวัด | `Requisition`.`aa` |  |  |
-| 17 | อำเภอ/เขต | `Requisition`.`aa` |  |  |
-| 18 | ตำบล/แขวง | `Requisition`.`aa` |  |  |
-| 19 | รหัสไปรษณีย์ | `Requisition`.`aa` |  |  |
-| 20 | โทรศัพท์มือถือ | `Requisition`.`aa` |  |  |
-| 21 | โทรสาร | `Requisition`.`aa` |  |  |
-| 22 | อีเมล | `Requisition`.`aa` |  |  |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 ผู้ดำเนิน |  |
+| 1 | คำนำหน้านาม | `RequisitionParticipant`.`PrefixId` |  |  |
+| 2 | ชื่อจริง | `RequisitionParticipant`.`aa` |  |  |
+| 3 | นามสกุล | `RequisitionParticipant`.`aa` |  |  |
+| 4 | อายุ | `RequisitionParticipant`.`aa` |  |  |
+| 5 | วัน เดือน ปี เกิด | `RequisitionParticipant`.`aa` |  |  |
+| 6 | สัญชาติ | `RequisitionParticipant`.`aa` |  |  |
+| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`CitizenId` | - Cannot over 13 digits | - Need separator (0-0000-00000-00-0) |
+| 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`aa` |  |  |
+| 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`aa` |  |  |
+| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`aa` |  |  |
+| 11 | เลขที่ | `RequisitionParticipant`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง |  |
+| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipant`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 13 | หมู่ที่ | `RequisitionParticipant`.`aa` |  |  |
+| 14 | ตรอก/ซอย | `RequisitionParticipant`.`Lane` |  |  |
+| 15 | ถนน | `RequisitionParticipant`.`Street` |  |  |
+| 16 | จังหวัด | `RequisitionParticipant`.`ProvinceId` |  |  |
+| 17 | อำเภอ/เขต | `RequisitionParticipant`.`AmphurId` |  |  |
+| 18 | ตำบล/แขวง | `RequisitionParticipant`.`TambonId` |  |  |
+| 19 | รหัสไปรษณีย์ | `RequisitionParticipant`.`Postcode` |  |  |
+| 20 | โทรศัพท์มือถือ | `RequisitionParticipant`.`Phone` |  |  |
+| 21 | โทรสาร | `RequisitionParticipant`.`Fax` |  |  |
+| 22 | อีเมล | `RequisitionParticipant`.`Email` |  |  |
 
 ## 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
