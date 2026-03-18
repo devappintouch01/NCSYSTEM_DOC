@@ -135,12 +135,12 @@
 | 1 | คำนำหน้านาม | `Requisition`.`aa` |  |  |
 | 2 | ชื่อจริง | `Requisition`.`aa` |  |  |
 | 3 | นามสกุล | `Requisition`.`aa` |  |  |
-| 4 | อายุ | `Requisition`.`Requisition` |  |  |
+| 4 | อายุ | `Requisition`.`aa` |  |  |
 | 5 | วัน เดือน ปี เกิด | `Requisition`.`aa` |  |  |
 | 6 | สัญชาติ | `Requisition`.`aa` |  |  |
-| 7 | เลขประจำตัวประชาชน | `Requisition`.`CitizenId` | - Cannot over 13 digits | - Need sperator (0-0000-00000-00-0) |
-| 11 | เลขที่ | `Requisition`.`HouseNo` | - Can type text |  |
-| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | `Requisition`.`HouseCode` | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
+| 7 | เลขประจำตัวประชาชน | `Requisition`.`aa` | - Cannot over 13 digits | - Need sperator (0-0000-00000-00-0) |
+| 11 | เลขที่ | `Requisition`.`aa` | - Can type text |  |
+| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | `Requisition`.`aa` | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
 
 ## 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
