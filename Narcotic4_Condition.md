@@ -138,9 +138,22 @@
 | 4 | อายุ | `Requisition`.`aa` |  |  |
 | 5 | วัน เดือน ปี เกิด | `Requisition`.`aa` |  |  |
 | 6 | สัญชาติ | `Requisition`.`aa` |  |  |
-| 7 | เลขประจำตัวประชาชน | `Requisition`.`aa` | - Cannot over 13 digits | - Need sperator (0-0000-00000-00-0) |
+| 7 | เลขประจำตัวประชาชน | `Requisition`.`aa` | - Cannot over 13 digits | - Need separator (0-0000-00000-00-0) |
+| 8 | หนังสือเดินทางเลขที่ | `Requisition`.`aa` |  |  |
+| 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `Requisition`.`aa` |  |  |
+| 10 | เลขการมอบอำนาจ | `Requisition`.`aa` |  |  |
 | 11 | เลขที่ | `Requisition`.`aa` | - Can type text |  |
-| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | `Requisition`.`aa` | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
+| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `Requisition`.`aa` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 13 | หมู่ที่ | `Requisition`.`aa` |  |  |
+| 14 | ตรอก/ซอย | `Requisition`.`aa` |  |  |
+| 15 | ถนน | `Requisition`.`aa` |  |  |
+| 16 | จังหวัด | `Requisition`.`aa` |  |  |
+| 17 | อำเภอ/เขต | `Requisition`.`aa` |  |  |
+| 18 | ตำบล/แขวง | `Requisition`.`aa` |  |  |
+| 19 | รหัสไปรษณีย์ | `Requisition`.`aa` |  |  |
+| 20 | โทรศัพท์มือถือ | `Requisition`.`aa` |  |  |
+| 21 | โทรสาร | `Requisition`.`aa` |  |  |
+| 22 | อีเมล | `Requisition`.`aa` |  |  |
 
 ## 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
