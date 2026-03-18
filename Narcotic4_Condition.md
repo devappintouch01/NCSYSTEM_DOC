@@ -164,7 +164,7 @@ table {
 | 4 | อายุ | `RequisitionParticipant`.`Age` |  |  |
 | 5 | วัน เดือน ปี เกิด | `RequisitionParticipant`.`BirthDate` |  |  |
 | 6 | สัญชาติ | `RequisitionParticipant`.`NationalityId` |  |  |
-| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`Identify` |  | - Cannot over 13 digits <br> - Need separator (0-0000-00000-00-0) |
+| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`IdentificationNo` |  | - Cannot over 13 digits <br> - Need separator (0-0000-00000-00-0) |
 | 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` |  |  |
 | 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` |  |  |
 | 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` |  |  |
