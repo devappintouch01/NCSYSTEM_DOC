@@ -130,11 +130,17 @@
 ## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
 <img src="Narcotic4_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 
-| Lable | Condition | Remark |
-|---|---|
-| เลขประจำตัวประชาชน | - Cannot over 13 digits | - Need sperator (0-0000-00000-00-0) |
-| เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
-| เลขที่ | - Can type text |  |
+| ลำดับ | Lable | Table.Field | Condition | Remark |
+|---|---|---|---|---|
+| 1 | คำนำหน้านาม | `Requisition`.`aa` |  |  |
+| 2 | ชื่อจริง | `Requisition`.`aa` |  |  |
+| 3 | นามสกุล | `Requisition`.`aa` |  |  |
+| 4 | อายุ | `Requisition`.`Requisition` |  |  |
+| 5 | วัน เดือน ปี เกิด | `Requisition`.`aa` |  |  |
+| 6 | สัญชาติ | `Requisition`.`aa` |  |  |
+| 7 | เลขประจำตัวประชาชน | `Requisition`.`CitizenId` | - Cannot over 13 digits | - Need sperator (0-0000-00000-00-0) |
+| 11 | เลขที่ | `Requisition`.`HouseNo` | - Can type text |  |
+| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | `Requisition`.`HouseCode` | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
 
 ## 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
