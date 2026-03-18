@@ -138,15 +138,15 @@ table {
 
 | ลำดับ | Lable | Table.Field | Condition | Remark |
 |---|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 ผู้ดำเนิน |  |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 - ผู้ดำเนิน |  |
 | 1 | คำนำหน้านาม | `RequisitionParticipant`.`PrefixId` |  |  |
-| 2 | ชื่อจริง | `RequisitionParticipant`.`aa` |  |  |
-| 3 | นามสกุล | `RequisitionParticipant`.`aa` |  |  |
-| 4 | อายุ | `RequisitionParticipant`.`aa` |  |  |
-| 5 | วัน เดือน ปี เกิด | `RequisitionParticipant`.`aa` |  |  |
-| 6 | สัญชาติ | `RequisitionParticipant`.`aa` |  |  |
-| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`CitizenId` | - Cannot over 13 digits | - Need separator (0-0000-00000-00-0) |
-| 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`aa` |  |  |
+| 2 | ชื่อจริง | `RequisitionParticipant`.`FirstName` |  |  |
+| 3 | นามสกุล | `RequisitionParticipant`.`LastName` |  |  |
+| 4 | อายุ | `RequisitionParticipant`.`Age` |  |  |
+| 5 | วัน เดือน ปี เกิด | `RequisitionParticipant`.`BirthDate` |  |  |
+| 6 | สัญชาติ | `RequisitionParticipant`.`NationalityId` |  |  |
+| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`` | - Cannot over 13 digits | - Need separator (0-0000-00000-00-0) |
+| 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`WorkPermit` |  |  |
 | 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`aa` |  |  |
 | 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`aa` |  |  |
 | 11 | เลขที่ | `RequisitionParticipant`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง |  |
