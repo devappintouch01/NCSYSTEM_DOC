@@ -65,7 +65,7 @@ table {
 ### ตัวอย่าง และ Script
 Join MasterNarcoticEster กับ MasterDrug และ MasterEster
 
-```
+```SQL
 SELECT 
     ne.Id,
     ne.Active,
