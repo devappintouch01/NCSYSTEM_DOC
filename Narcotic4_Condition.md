@@ -167,19 +167,19 @@ table {
 | 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`Identify` |  | - Cannot over 13 digits <br> - Need separator (0-0000-00000-00-0) |
 | 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` |  |  |
 | 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` |  |  |
-| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorney` |  |  |
-| 11 | เลขที่ | `RequisitionParticipant`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง |  |
-| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipant`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
-| 13 | หมู่ที่ | `RequisitionParticipant`.`VillageNo` |  |  |
-| 14 | ตรอก/ซอย | `RequisitionParticipant`.`Lane` |  |  |
-| 15 | ถนน | `RequisitionParticipant`.`Street` |  |  |
-| 16 | จังหวัด | `RequisitionParticipant`.`ProvinceId` |  |  |
-| 17 | อำเภอ/เขต | `RequisitionParticipant`.`AmphurId` |  |  |
-| 18 | ตำบล/แขวง | `RequisitionParticipant`.`TambonId` |  |  |
-| 19 | รหัสไปรษณีย์ | `RequisitionParticipant`.`Postcode` |  |  |
-| 20 | โทรศัพท์มือถือ | `RequisitionParticipant`.`Phone` |  |  |
-| 21 | โทรสาร | `RequisitionParticipant`.`Fax` |  |  |
-| 22 | อีเมล | `RequisitionParticipant`.`Email` |  |  |
+| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` |  |  |
+| 11 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง |  |
+| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` |  |  |
+| 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` |  |  |
+| 15 | ถนน | `RequisitionParticipantAddress`.`Street` |  |  |
+| 16 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` |  |  |
+| 17 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` |  |  |
+| 18 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` |  |  |
+| 19 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` |  |  |
+| 20 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` |  |  |
+| 21 | โทรสาร | `RequisitionParticipantAddress`.`Fax` |  |  |
+| 22 | อีเมล | `RequisitionParticipantAddress`.`Email` |  |  |
 
 ## 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
@@ -198,8 +198,8 @@ table {
 - https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI
 
 <img src="Narcotic4_Condition_Attachment_1.png" style="border: 1px solid black;" width="80%">
-<img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="800%">
-<img src="Narcotic4_Condition_Attachment_3.png" style="border: 1px solid black;" width="800%">
+<img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic4_Condition_Attachment_3.png" style="border: 1px solid black;" width="80%">
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ
 ### เอกสารแนบท้าย กรณีเลือกสารมากกว่า 2 ชนิด
