@@ -134,6 +134,25 @@ table {
 | 4. วันที่ | `License`.`ExpireDate` |  |
 
 ## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
+<img src="Narcotic4_Field Condition_3.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Lable | Table.Field | Condition | Remark |
+|---|---|---|---|---|
+| 1 | ชื่อผู้ขออนุญาต | `Requisition`.`aa` |  |  |
+| 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`aa` |  |  |
+| 3 | เลขที่ (ที่ตั้งสำนักงานใหญ่) | `Requisition`.`aa` |  |  |
+| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (สำนักงานใหญ่) | `Requisition`.`aa` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 5 | หมู่ที่ | `Requisition`.`aa` |  |  |
+| 6 | ตรอก/ซอย | `Requisition`.`aa` |  |  |
+| 7 | ถนน | `Requisition`.`aa` |  |  |
+| 8 | จังหวัด | `Requisition`.`aa` |  |  |
+| 9 | อำเภอ/เขต | `Requisition`.`aa` |  |  |
+| 10 | ตำบล/แขวง | `Requisition`.`aa` |  |  |
+| 11 | รหัสไปรษณีย์ | `Requisition`.`aa` |  |  |
+| 12 | โทรศัพท์มือถือ | `Requisition`.`aa` |  |  |
+| 13 | โทรสาร | `Requisition`.`aa` |  |  |
+| 14 | อีเมล | `Requisition`.`aa` |  |  |
+
 <img src="Narcotic4_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Lable | Table.Field | Condition | Remark |
@@ -145,13 +164,13 @@ table {
 | 4 | อายุ | `RequisitionParticipant`.`Age` |  |  |
 | 5 | วัน เดือน ปี เกิด | `RequisitionParticipant`.`BirthDate` |  |  |
 | 6 | สัญชาติ | `RequisitionParticipant`.`NationalityId` |  |  |
-| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`` | - Cannot over 13 digits | - Need separator (0-0000-00000-00-0) |
-| 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`WorkPermit` |  |  |
-| 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`aa` |  |  |
-| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`aa` |  |  |
+| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`Identify` |  | - Cannot over 13 digits <br> - Need separator (0-0000-00000-00-0) |
+| 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` |  |  |
+| 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` |  |  |
+| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorney` |  |  |
 | 11 | เลขที่ | `RequisitionParticipant`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง |  |
 | 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipant`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
-| 13 | หมู่ที่ | `RequisitionParticipant`.`aa` |  |  |
+| 13 | หมู่ที่ | `RequisitionParticipant`.`VillageNo` |  |  |
 | 14 | ตรอก/ซอย | `RequisitionParticipant`.`Lane` |  |  |
 | 15 | ถนน | `RequisitionParticipant`.`Street` |  |  |
 | 16 | จังหวัด | `RequisitionParticipant`.`ProvinceId` |  |  |
