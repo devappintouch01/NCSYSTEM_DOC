@@ -198,6 +198,7 @@ table {
 | 22 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
 ## 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
+<img src="Narcotic4_Field Condition_7.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:-------:|-------|-------------|-----------|--------|
@@ -215,6 +216,9 @@ table {
 | 11 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
 | 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+
+## 2.3 ข้อมูลสถานที่นำเข้า
+<img src="Narcotic4_Field Condition_8.png" style="border: 1px solid black;" width="100%">
 
 ## 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
 
@@ -248,7 +252,16 @@ table {
 - เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง
   ยาเสพติดให้โทษในประเภท 4 ในระบบ
 
-## เอกสารหลักฐาน
+
+## 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร
+<img src="Narcotic4_Field Condition_9.png" style="border: 1px solid black;" width="100%">
+
+### 3.1 ข้อมูลผู้ประสานงาน
+<img src="Narcotic4_Field Condition_10.png" style="border: 1px solid black;" width="100%">
+
+## 4 เอกสารหลักฐาน
+<img src="Narcotic4_Field Condition_11.png" style="border: 1px solid black;" width="100%">
+
 ### เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4
 - https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI
 
