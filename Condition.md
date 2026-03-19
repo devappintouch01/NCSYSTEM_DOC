@@ -51,7 +51,7 @@
 
 | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|
-| 18 มี.ค. 2569 | All | Doc | [FDA PAYMENT SPEC](FDA_WS/FDA_PAYMENT_SPEC.md) |
+| 18 มี.ค. 2569 | All | Doc | [FDA PAYMENT SPEC](FDA_PAYMENT_SPEC.md) |
 | 18 มี.ค. 2569 | All | Doc | [e-Signature](ESIGNATURE.md) |
 
 <img src="boomcat.jpg" width="20%">
