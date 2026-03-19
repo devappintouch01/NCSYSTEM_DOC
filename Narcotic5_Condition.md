@@ -10,31 +10,50 @@
 
 - [Figma ยส.5](https://www.figma.com/board/EWDQbpKKq9Rh4AkENTVOQG/%E0%B8%A2%E0%B8%AA5---%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B9%81%E0%B8%9C%E0%B8%99?t=kvjSziK881AvYaUS-6)
 
-### [เงื่อนไข ยส.5]
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
+## ❗ เงื่อนไข ยส.5    
+### ประเภทการขอ (ยส.5)
+
+| ลำดับ | ประเภทการขอ | LicenseGetById |
+|:---:|---|:---:|
+| 1 | ขอใหม่ |  |
+| 2 | ขอแก้ไข | ✅ |
+| 3 | ขอต่ออายุ | ✅ |
+| 4 | ขอยกเลิก | ✅ |
+| 5 | ขอใบแทน | ✅ |
+
 ## 🔷 Field Condition
-## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
+### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
 <img src="Narcotic5_Field_Condition_4.png" style="border: 1px solid black;" width="100%">
 
 | Lable | Condition | Remark |
-|---|---|
+|---|---|---|
 | เลขประจำตัวประชาชน | - Cannot over 13 digits | - Need sperator (0-0000-00000-00-0) |
 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) | - Cannot over 11 digits | - Need sperator (0000-000000-0) <br> - move next after field เลขที่ |
 | เลขที่ | - Can type text |  |
 
-## 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
+### 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
 details is incoming
 <img src="Narcotic5_Field_Condition_2-2_1.png" style="border: 1px solid black;" width="100%">
 
-## 2.2.1 ข้อมูลสถานที่ปลูก (เฉพาะกรณีขออนุญาตผลิต โดยการปลูก)
+#### 2.2.1 ข้อมูลสถานที่ปลูก (เฉพาะกรณีขออนุญาตผลิต โดยการปลูก)
 *Show on (เฉพาะกรณีขออนุญาตผลิต โดยการปลูก) only*
 <img src="Narcotic5_Field_Condition_2-2-1.png" style="border: 1px solid black;" width="100%">
 
 | Lable | Condition | Remark |
-|---|---|
+|---|---|---|
 | ขนาดพื้นที่ปลูก (หน่วย : ตารางเมตร) | - Decimal with 4 digits (100.5432) |  |
 | ละติจูด |- Decimal with 6 digits (100.654321) |  |
 | ลองจิจูด | - Decimal with 6 digits (100.654321) |  |
 
-## 2.2.2 ข้อมูลของผู้ผลิตหรือผู้ส่งออกในต่างประเทศ (เฉพาะกรณีขออนุญาตนำเข้า)
+##### 2.2.2 ข้อมูลของผู้ผลิตหรือผู้ส่งออกในต่างประเทศ (เฉพาะกรณีขออนุญาตนำเข้า)
 *Show on (เฉพาะกรณีขออนุญาตนำเข้า) only*
 <img src="Narcotic5_Field_Condition_2-2-2.png" style="border: 1px solid black;" width="100%">

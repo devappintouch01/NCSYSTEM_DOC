@@ -237,6 +237,10 @@ li {
 ### 2.3 ข้อมูลสถานที่นำเข้า
 <img src="Narcotic4_Field Condition_8.png" style="border: 1px solid black;" width="100%">
 
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+
 ### 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
 
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
@@ -245,7 +249,8 @@ li {
 <img src="Narcotic4_Field Condition_6.png" style="border: 1px solid black;" width="75%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
-|:-------:|-------|-------------|-----------|--------|
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
 | 1 | ชื่อผู้รับอนุญาตที่รับมอบ | `RequisitionParticipant`.`JuristicName` | - ตอนดึงให้ดึงจาก RequisitionParticipant | |
 | 2 | ใบอนุญาตเลขที่ | `RequisitionParticipant`.`RecipientLicenseNo` | | |
 | 3 | ชื่อผู้ประสงค์ทีจะรับมอบ | `RequisitionParticipant`.`JuristicName` | | |
@@ -266,7 +271,7 @@ li {
   <li>ค้นหาจาก
     <ul>
       <li>เลขที่ใบอนุญาต ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 4</li>
-      <li>หรือ</li>
+      หรือ
       <li>เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง
       ยาเสพติดให้โทษในประเภท 4 ในระบบ</li>
     </ul>
