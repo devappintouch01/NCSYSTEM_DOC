@@ -58,9 +58,10 @@
 
 ## Token
 
-| ลำดับ | Token type | ระยะเวลา | จุดที่ Set |
-|:---:|---|---|---|
-| 1 | Access Token | 15 นาที |  |
-| 2 | Refresh Token | 14 วัน |  |
+| ลำดับ | Token type | ความหมาย | ระยะเวลา | จุดที่ Set / ชื่อตัวแปร |
+|:---:|---|---|---|---|
+| 1 | Access Token | ใช้ในการเข้าถึง API | 30 นาที | JwtTokenManager.cs / DefaultAccessTokenExpiryMinutes |
+| 2 | Refresh Token | ใช้ในการขอ Access Token ใหม่ | 14 วัน |  |
+| 3 | Skynet Token | ใช้ในการเข้าถึง Skynet | 30 นาที (ระบบวัตถุเสพติด) |  |
 
 <img src="boomcat.jpg" width="20%">
