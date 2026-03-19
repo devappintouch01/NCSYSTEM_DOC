@@ -55,3 +55,9 @@
 | 18 มี.ค. 2569 | All | Doc | [e-Signature](ESIGNATURE.md) |
 
 <img src="boomcat.jpg" width="20%">
+
+## Token
+| ลำดับ | Token type | ระยะเวลา | จุดที่ Set |
+|:---:|:---:|:---:|:---:|
+| 1 | Access Token | 15 นาที |  |
+| 2 | Refresh Token | 14 วัน |  |
