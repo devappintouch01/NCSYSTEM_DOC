@@ -77,27 +77,91 @@ li {
 ## 1.1 ข้อมูลผู้ขออนุญาต
 <img src="Narcotic1_Field Condition_2.png" style="border: 1px solid black;" width="100%">
 
-| Lable | Condition | Remark |
-|---|---|---|
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `Requisition`.`ParticipantTypeId` | ส่ง 1 - ผู้ขออนุญาต | |
+| 1 | ชื่อผู้ขออนุญาต | `Requisition`.`FullName` <br>`Requisition`.`JuristicName` | | - ลงคู่กับ juristicName |
+| 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`TaxId` | | - กองยาลง TaxId |
+| 3 | เลขที่ (ที่ตั้งสำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseNo` | | |
+| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (สำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 5 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 6 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 7 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 8 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 9 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 10 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 11 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+| X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
+| Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | - เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
 
-### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
+### 1.3 ข้อมูลผู้ดำเนินการใบอนุญาต
+
 <img src="Narcotic1_Field Condition_3.png" style="border: 1px solid black;" width="100%">
 
-| Lable | Condition | Remark |
-|---|---|---|
-| เลขประจำตัวประชาชน | - Cannot over 13 digits | - Need sperator (0-0000-00000-00-0) <br> - ถ้าเป็นชาวต่างชาติ สามารถกรอกได้ไหม ? กรณีที่ชาวต่างชาติที่มีบัตรประชาชน |
-| หนังสือเดินทางเลขที่ |  | - ถ้าเลือกสัญชาติไทย ไม่ต้องกรอก |
-| ใบอนุญาตทำงานเลขที่ (Work Permit No.) กรณีชาวต่างชาติ |  | - ถ้าเลือกสัญชาติไทย ไม่ต้องกรอก |
-| เลขที่ | - Can type text | - กรอกตัวอัษรได้ เพื่อ อาคาร ชั้น ห้อง |
-| เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฏร์ กระทรวงมหาดไทย) <br> ยส.1 มีไหม ?? | - Cannot over 11 digits | - Need sperator (0000-000000-0) |
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 - ผู้ดำเนิน | |
+| 1 | คำนำหน้านาม | `RequisitionParticipant`.`PrefixId` | | |
+| 2 | ชื่อจริง | `RequisitionParticipant`.`FirstName` | | |
+| 3 | นามสกุล | `RequisitionParticipant`.`LastName` | | |
+| 4 | อายุ | `RequisitionParticipant`.`Age` | | |
+| 5 | วัน เดือน ปี เกิด | `RequisitionParticipant`.`BirthDate` | | |
+| 6 | สัญชาติ | `RequisitionParticipant`.`NationalityId` | | |
+| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`IdentificationNo` | เก็บเฉพาะเลขบัตรประชาชนเท่านั้น | - Cannot over 13 digits <br> - Need separator (0-0000-00000-00-0) |
+| 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป | |
+| ~~9~~ | ~~ใบอนุญาตทำงานเลขที่ (Work Permit No.) กรณีชาวต่างชาติ~~ | ~~`RequisitionParticipant`.`WorkPermit`~~ |  |  |
+| 10 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
+| 11 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 15 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 16 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 17 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 18 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 19 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 20 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 21 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 22 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
-### 2.1 ข้อมูลยาเสพติดให้โทษในประเภท 1 ที่ขอรับอนุญาต
+<!-- ### 2.1 ข้อมูลยาเสพติดให้โทษในประเภท 1 ที่ขอรับอนุญาต -->
 
-### 2.2 ข้อมูลสถานที่ผลิต นำเข้า จำหน่าย หรือมีไว้ในครอบครอง
+### 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
+
+<img src="Narcotic1_Field Condition_4.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic1_Field Condition_4_1.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
+| 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
+| 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 4 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 5 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 6 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 7 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 8 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 9 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 10 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 11 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
 ### ส่วนที่ 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร
 
+<img src="Narcotic1_Field Condition_5.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+
 #### 3.1 ข้อมูลผู้ประสานงาน
+
+<img src="Narcotic1_Field Condition_6.png" style="border: 1px solid black;" width="100%">
 
 ### 4 เอกสารหลักฐาน
 
