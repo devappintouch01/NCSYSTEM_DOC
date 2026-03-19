@@ -1,4 +1,6 @@
-## Condition สถานที่ Place
+## Condition
+
+### Condition สถานที่ Place
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|---|
@@ -18,13 +20,13 @@
 | 21 | 18 มี.ค. 2569 | กอง ต. [4.xx] | Condition | [รร.1 (กาเฟอีน)](Narcotic_Caffeine_Condition.md) |
 | xx | 17 มี.ค. 2569 | กอง ต. [4.xx] | Condition | [สืบค้น](Narcotic_Search.md) |
 
-## Condition เฉพาะคราว Temporary
+### Condition เฉพาะคราว Temporary
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|---|
 | 25-46 | 16 มี.ค. 2569 | กอง ต. [4.14] | Condition | [เฉพาะคราว Temporary](Narcotic_Temporary_Condition.md) |
 
-## Condition ทะเบียนตำรับ Receipe, ตัวอย่าง Sample, คำรับรอง Certificate 
+### Condition ทะเบียนตำรับ Receipe, ตัวอย่าง Sample, คำรับรอง Certificate 
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|---|
@@ -34,7 +36,7 @@
 | 50 | 16 มี.ค. 2569 | กอง ต. [4.16] | Condition | [ทะเบียนตำรับ (แก้ไขทะเบียน) ท.บ.3](Narcotic_Edit_Receipe.md) |
 | 51 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [ตัวอย่าง Sample ต.ย.1](Narcotic_Sample.md) |
 
-## Condition ยาติดตัว
+### Condition ยาติดตัว
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|---|
