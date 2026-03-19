@@ -52,21 +52,21 @@ li {
 
 *ต้องมีแยกแบบ ยส.4 (รัฐวิสาหกิจ, สถาบันอุดมศึกษาของรัฐ, สถาบันอุดมศึกษาเอกชน) หรือไม่*
 
-## วัตถุประสงค์ + เงื่อนไขสาร
+### วัตถุประสงค์ + เงื่อนไขสาร
 **ใช้ที่ 2.1 ข้อมูลยาเสพติดให้โทษในประเภท 1 ที่ขอรับอนุญาต**
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
-|---|---|---|---|
+|---|:---:|---|:---:|
 | 1. เพื่อประโยชน์ของทางราชการฯ | 1 | ยส.1 | IsNCUnit |
 | 2. เพื่อการศึกษาวิจัย หรือเพื่อประโยชน์ในทางการแพทย์ หรือวิทยาศาสตร์ | 1 | ยส.1 | IsNCUnit |
 | 3. เพื่อใช้เป็นสารมาตรฐานในการตรวจวิเคราะห์ในปริมาณเล็กน้อย | 1 | ยส.1 **ที่เป็นสารมาตรฐาน** | IsNC4StandardUnit |
 
 **ยาเสพติดให้โทษในประเภท 1 ทุกชนิด**
 
-<img src="Narcotic1_Condition_3.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic1_Condition_3.png" style="border: 1px solid black;" width="90%">
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
-|---|---|---|---|
+|---|:---:|:---:|:---:|
 | x. [วัตถุประสงค์ xxxx] | 1 | ยาเสพติดให้โทษในประเภท 1 ทุกชนิด (สารมาตรฐาน) | **IsNC4StandardUnit ??** |
 
 ## วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
@@ -74,7 +74,6 @@ li {
 <img src="Narcotic1_Condition_2.png" style="border: 1px solid black;" width="100%">
 
 ## 🔷 Field Condition
-
 ## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
 <img src="Narcotic1_Field Condition_3.png" style="border: 1px solid black;" width="100%">
 
