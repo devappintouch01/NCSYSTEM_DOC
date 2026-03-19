@@ -54,10 +54,4 @@
 | 18 มี.ค. 2569 | All | Doc | [FDA PAYMENT SPEC](FDA_WS/FDA_PAYMENT_SPEC.md) |
 | 18 มี.ค. 2569 | All | Doc | [e-Signature](ESIGNATURE.md) |
 
-https://docs.google.com/spreadsheets/d/1usv29VoUQ9OuRrq33UhQN9mNQLvYp2GOQKk6L3R349E/edit?gid=1303772298#gid=1303772298
-
-
-
-
-
 <img src="boomcat.jpg" width="20%">
