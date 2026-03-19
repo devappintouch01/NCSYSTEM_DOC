@@ -182,7 +182,7 @@ li {
 | 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 | X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
-| Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | -เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
+| Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | - เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
 
 ### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
 
