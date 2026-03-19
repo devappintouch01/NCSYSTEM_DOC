@@ -7,7 +7,7 @@
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
 - [Data Dic - Master Data real](https://docs.google.com/spreadsheets/d/1WpRC41tmqyOc8zVaxTVuwLxGgmi7inZATo8_LcCTXgE)
 
-## Field Condition
+## 🔷 Field Condition
 <img src="Narcotic_Receipe_Condition_1.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic_Receipe_Condition_2.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic_Receipe_Condition_3.png" style="border: 1px solid black;" width="100%">
