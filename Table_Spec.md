@@ -82,3 +82,4 @@ FROM MasterNarcoticEster ne
 LEFT JOIN MasterNarcoticDrug nd ON ne.NarcoticDrugId = nd.Id
 LEFT JOIN MasterEster e ON ne.EsterId = e.Id
 ```
+

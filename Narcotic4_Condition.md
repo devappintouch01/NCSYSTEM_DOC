@@ -1,7 +1,9 @@
 ## คำขอรับใบอนุญาต คำขอต่ออายุใบอนุญาต และคำขอรับใบแทนใบอนุญาตผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ไว้ในครอบครองยาเสพติดให้โทษในประเภท ๔ [ยส.4-1]
+
 ---
 
 ## (dbo.MasterRequisitionType Id = 19)
+
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
@@ -18,6 +20,7 @@ table {
 </style>
 
 ### [เงื่อนไข ยส.4]
+
 ## ประเภทการขอ
 
 | ประเภทการขอ |
@@ -45,6 +48,7 @@ table {
 | 7. เพื่อใช้เป็นสารมาตรฐานในการตรวจวิเคราะห์             | ✅ | ✅ | ✅ | ไม่มีขอต่อเนื่อง | ไม่มีขอต่อเนื่อง |
 
 ### ขอต่อเนื่อง
+
 - ได้เฉพาะการดำเนินการ ผลิต นำเข้า ส่งออก ครอบครอง
 - Ref. ใบอนุญาต ยส.4 ตามวัตถุประสงค์ 3. 4. 5. 6.
 
@@ -112,8 +116,8 @@ table {
 **ยาเสพติดให้โทษในประเภท 4 ทุกประเภท**
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
-|---|:---:|---|---|
-| X. [วัตถุประสงค์ xxxx]  | 4 | ยาเสพติดให้โทษในประเภท 4 ทุกประเภท | IsNCUnit |
+|-------------------------------------|:--------------------------:|------------------------------------------------|------------------------------------|
+| X. [วัตถุประสงค์ xxxx]              |             4              | ยาเสพติดให้โทษในประเภท 4 ทุกประเภท             | IsNCUnit                           |
 
 ## วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
 
@@ -123,75 +127,120 @@ table {
 
 ## วันที่
 
-| ประเภทวันที่ | Filed | เงื่อนไข |
-|---|---|---|
-| 1. วันที่สร้าง | `Requisition`.`CreateON` |  |
-| 2. วันที่เขียน | `Requisition`.`WriteDate` |  |
-| 3. วันที่ยื่น | `Requisition`.`FillingDate` |  |
-| 4. วันที่รับ | (เพิ่ม) `Requisition`.`SubmitDate` |  |
-| 4. วันที่อนุมัติ | `ApproveDate` |  |
-| 4. วันที่ | `License`.`IssueDate` |  |
-| 4. วันที่ | `License`.`ExpireDate` |  |
+| ประเภทวันที่ | Field | เงื่อนไข |
+|--------------|-------|----------|
+| 1. วันที่สร้าง | `Requisition`.`CreateON` | |
+| 2. วันที่เขียน | `Requisition`.`WriteDate` | |
+| 3. วันที่ยื่น | `Requisition`.`FillingDate` | |
+| 4. วันที่รับ | (เพิ่ม) `Requisition`.`SubmitDate` | |
+| 4. วันที่อนุมัติ | `ApproveDate` | |
+| 4. วันที่ | `License`.`IssueDate` | |
+| 4. วันที่ | `License`.`ExpireDate` | |
 
-## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
+## 1.1 ข้อมูลผู้ขออนุญาต
+
 <img src="Narcotic4_Field Condition_3.png" style="border: 1px solid black;" width="100%">
 
-| ลำดับ | Lable | Table.Field | Condition | Remark |
-|---|---|---|---|---|
-| 1 | ชื่อผู้ขออนุญาต | `Requisition`.`aa` |  |  |
-| 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`aa` |  |  |
-| 3 | เลขที่ (ที่ตั้งสำนักงานใหญ่) | `Requisition`.`aa` |  |  |
-| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (สำนักงานใหญ่) | `Requisition`.`aa` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
-| 5 | หมู่ที่ | `Requisition`.`aa` |  |  |
-| 6 | ตรอก/ซอย | `Requisition`.`aa` |  |  |
-| 7 | ถนน | `Requisition`.`aa` |  |  |
-| 8 | จังหวัด | `Requisition`.`aa` |  |  |
-| 9 | อำเภอ/เขต | `Requisition`.`aa` |  |  |
-| 10 | ตำบล/แขวง | `Requisition`.`aa` |  |  |
-| 11 | รหัสไปรษณีย์ | `Requisition`.`aa` |  |  |
-| 12 | โทรศัพท์มือถือ | `Requisition`.`aa` |  |  |
-| 13 | โทรสาร | `Requisition`.`aa` |  |  |
-| 14 | อีเมล | `Requisition`.`aa` |  |  |
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:-------:|-------|-------------|-----------|--------|
+| 0 | - | `Requisition`.`ParticipantTypeId` | ส่ง 1 - ผู้ขออนุญาต | |
+| 1 | ชื่อผู้ขออนุญาต | `Requisition`.`FullName` <br>`Requisition`.`JuristicName` | | - ลงคู่กับ juristicName |
+| 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`TaxId` | | - กองยาลง TaxId |
+| 3 | เลขที่ (ที่ตั้งสำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseNo` | | |
+| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (สำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 5 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 6 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 7 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 8 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 9 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 10 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 11 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+| X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
+| Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | -เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
+
+## 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
 
 <img src="Narcotic4_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 
-| ลำดับ | Lable | Table.Field | Condition | Remark |
-|---|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 - ผู้ดำเนิน |  |
-| 1 | คำนำหน้านาม | `RequisitionParticipant`.`PrefixId` |  |  |
-| 2 | ชื่อจริง | `RequisitionParticipant`.`FirstName` |  |  |
-| 3 | นามสกุล | `RequisitionParticipant`.`LastName` |  |  |
-| 4 | อายุ | `RequisitionParticipant`.`Age` |  |  |
-| 5 | วัน เดือน ปี เกิด | `RequisitionParticipant`.`BirthDate` |  |  |
-| 6 | สัญชาติ | `RequisitionParticipant`.`NationalityId` |  |  |
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:-------:|-------|-------------|-----------|--------|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 - ผู้ดำเนิน | |
+| 1 | คำนำหน้านาม | `RequisitionParticipant`.`PrefixId` | | |
+| 2 | ชื่อจริง | `RequisitionParticipant`.`FirstName` | | |
+| 3 | นามสกุล | `RequisitionParticipant`.`LastName` | | |
+| 4 | อายุ | `RequisitionParticipant`.`Age` | | |
+| 5 | วัน เดือน ปี เกิด | `RequisitionParticipant`.`BirthDate` | | |
+| 6 | สัญชาติ | `RequisitionParticipant`.`NationalityId` | | |
 | 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`IdentificationNo` | เก็บเฉพาะเลขบัตรประชาชนเท่านั้น | - Cannot over 13 digits <br> - Need separator (0-0000-00000-00-0) |
-| 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป |  |
-| 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` |  |  |
-| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` |  |  |
-| 11 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง |  |
+| 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป | |
+| 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` | | |
+| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 11 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
 | 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
-| 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` |  |  |
-| 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` |  |  |
-| 15 | ถนน | `RequisitionParticipantAddress`.`Street` |  |  |
-| 16 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` |  |  |
-| 17 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` |  |  |
-| 18 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` |  |  |
-| 19 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` |  |  |
-| 20 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` |  |  |
-| 21 | โทรสาร | `RequisitionParticipantAddress`.`Fax` |  |  |
-| 22 | อีเมล | `RequisitionParticipantAddress`.`Email` |  |  |
+| 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 15 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 16 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 17 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 18 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 19 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 20 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 21 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 22 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+
+## 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|-------|-------|-------------|-----------|--------|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
+| 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
+| 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 4 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 5 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 6 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 7 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 8 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 9 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 10 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 11 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
 ## 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
-*** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
+
+**\* แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** \***
 <img src="Narcotic4_Field Condition_5.png" style="border: 1px solid black;" width="100%">
 
 <img src="Narcotic4_Field Condition_6.png" style="border: 1px solid black;" width="75%">
 
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:-------:|-------|-------------|-----------|--------|
+| 1 | ชื่อผู้รับอนุญาตที่รับมอบ | `RequisitionParticipant`.`JuristicName` | - ตอนดึงให้ดึงจาก RequisitionParticipant | |
+| 2 | ใบอนุญาตเลขที่ | `RequisitionParticipant`.`RecipientLicenseNo` | | |
+| 3 | ชื่อผู้ประสงค์ทีจะรับมอบ | `RequisitionParticipant`.`JuristicName` | | |
+| 4 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
+| 5 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 6 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 7 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 8 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 9 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 10 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 11 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 12 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 13 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 14 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 15 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+
 ค้นหาจาก
+
 - เลขที่ใบอนุญาต ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 4
-หรือ
-- เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 4
-ในระบบ
+  หรือ
+- เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง
+  ยาเสพติดให้โทษในประเภท 4 ในระบบ
 
 ## เอกสารหลักฐาน
 ### เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4
@@ -215,7 +264,7 @@ table {
      ๑. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
         ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
      ๒. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
-        ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................   
+        ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
 ```
 
 ```
@@ -227,5 +276,6 @@ table {
      ๑. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
         ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
      ๒. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
-        ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................   
+        ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
+
 ```
