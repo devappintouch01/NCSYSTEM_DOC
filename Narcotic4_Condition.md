@@ -200,7 +200,7 @@ table {
 ## 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
-|-------|-------|-------------|-----------|--------|
+|:-------:|-------|-------------|-----------|--------|
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
 | 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
 | 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
