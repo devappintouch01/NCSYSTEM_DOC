@@ -42,3 +42,10 @@ D:\GIT\NCSystem
 4. ข้อมูลที่ต้องส่งในแต่ละ parameter
 5. อื่น ๆ
 ```
+
+```
+ให้คุณวิเคราะห์ข้อมูลในไฟล์ D:/GIT/NCSystem/brain_NCSYSTEM/Documents/NC4/กฎกระทรวงการอนุญาต_67.pdf
+และ D:/GIT/NCSystem/brain_NCSYSTEM/Documents/NC4/แนวทางการพิจารณาอนุญาต_ยส.4_2568_รูปแบบใหม่.pdf
+และ D:/GIT/NCSystem/brain_NCSYSTEM/Documents/NC4/แนวทางการพิจารณาอนุญาต_ยส.4_พ.ศ._2568 ฉบับผ่านคณะกรรมการ.pdf
+แล้วพิจารณาร่วมกับไฟล์ D:\GIT\NCSystem\brain_NCSYSTEM\Narcotic4_Condition_AI.md ว่าต้องมีปรับส่วนไหนเพิ่มหรือไม่
+```
