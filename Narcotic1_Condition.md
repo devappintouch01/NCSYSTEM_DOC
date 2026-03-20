@@ -85,7 +85,7 @@ li {
 | 1 | ชื่อผู้ขออนุญาต | `Requisition`.`FullName` <br>`Requisition`.`JuristicName` | | - ลงคู่กับ juristicName |
 | 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`TaxId` | | - กองยาลง TaxId |
 | 3 | เลขที่ (ที่ตั้งสำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseNo` | | |
-| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (สำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (สำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 5 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 6 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
 | 7 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
@@ -141,7 +141,7 @@ li {
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 3 - สถานที่ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
 | 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
-| 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 4 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 5 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
 | 6 | ถนน | `RequisitionParticipantAddress`.`Street` | | |

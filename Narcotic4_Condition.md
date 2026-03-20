@@ -283,7 +283,21 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 7 - สถานที่จัดส่งเอกสาร ตาม `MasterParticipantType`.`Id` | |
+| 0. | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 7 - สถานที่จัดส่งเอกสาร ตาม `MasterParticipantType`.`Id` | |
+| 1 | การจัดส่งเอกสาร | `Requisition`.`DocumentDeliveryAddress` | การจัดส่งเอกสาร (1=ตามที่อยู่ผู้ขอรับใบอนุญาต, 2=ตามที่อยู่สถานที่ขอรับใบอนุญาต) | 1.1 ตามที่อยู่ผู้ขอรับใบอนุญาต, 2.2 ตามที่อยู่สถานที่ขอรับใบอนุญาต |
+| 2 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
+| 3 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
+| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
+| 5 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 6 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 7 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 8 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 9 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 10 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 11 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
 #### 3.1 ข้อมูลผู้ประสานงาน
 <img src="Narcotic4_Field Condition_10.png" style="border: 1px solid black;" width="100%">
