@@ -1,7 +1,8 @@
 ## คำขอรับใบอนุญาต คำขอต่ออายุใบอนุญาต และคำขอรับใบแทนใบอนุญาตผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ไว้ในครอบครองยาเสพติดให้โทษในประเภท ๑ [ยส.1-1]
+
 ---
 
-## (dbo.MasterRequisitionType Id = 1)
+#### (dbo.MasterRequisitionType Id = 1)
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
@@ -20,7 +21,7 @@ li {
 </style>
 
 ## ❗ เงื่อนไข ยส.1
-## ประเภทการขอ (ยส.1)
+### ประเภทการขอ (ยส.1)
 
 | ลำดับ | ประเภทการขอ | LicenseGetById |
 |:---:|---|:---:|
@@ -32,7 +33,7 @@ li {
 | 6 | ขอยกเลิก | ✅ |
 | 7 | ขอใบแทน | ✅ |
 
-## วัตถุประสงค์ในการขออนุญาต + การดำเนินการ (ยส.1)
+### วัตถุประสงค์ในการขออนุญาต + การดำเนินการ (ยส.1)
 
 ![Narcotic1_Condition_1](/Narcotic1_Condition_1.png)
 
@@ -42,7 +43,7 @@ li {
 | 2. เพื่อการศึกษาวิจัย หรือเพื่อประโยชน์ในทางการแพทย์ หรือวิทยาศาสตร์ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 3. เพื่อใช้เป็นสารมาตรฐานในการตรวจวิเคราะห์ในปริมาณเล็กน้อย |  | ✅ | ✅ |  | ✅ |
 
-## วัตถุประสงค์ในการขออนุญาต + ประเภทผู้ขอ
+### วัตถุประสงค์ในการขออนุญาต + ประเภทผู้ขอ
 
 | วัตถุประสงค์/ประเภทผู้ขอ | หน่วยงานของรัฐที่เป็นนิติบุคคล | สภากาชาดไทย | สถาบันอุดมศึกษา | ผู้รับอนุญาตตามกฎหมาย |
 |---|:---:|:---:|:---:|:---:|
@@ -69,17 +70,18 @@ li {
 |---|:---:|:---:|:---:|
 | x. [วัตถุประสงค์ xxxx] | 1 | ยาเสพติดให้โทษในประเภท 1 ทุกชนิด (สารมาตรฐาน) | หน่วย <!-- IsNC4StandardUnit --> |
 
-## วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
+### วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
 
 <img src="Narcotic1_Condition_2.png" style="border: 1px solid black;" width="100%">
 
 ## 🔷 Field Condition
 ### 1.1 ข้อมูลผู้ขออนุญาต
+
 <img src="Narcotic1_Field Condition_2.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `Requisition`.`ParticipantTypeId` | ส่ง 1 - ผู้ขออนุญาต | |
+| 0 | - | `Requisition`.`ParticipantTypeId` | ส่ง 1 - ผู้ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อผู้ขออนุญาต | `Requisition`.`FullName` <br>`Requisition`.`JuristicName` | | - ลงคู่กับ juristicName |
 | 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`TaxId` | | - กองยาลง TaxId |
 | 3 | เลขที่ (ที่ตั้งสำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseNo` | | |
@@ -97,13 +99,13 @@ li {
 | X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
 | Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | - เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
 
-### 1.3 ข้อมูลผู้ดำเนินการใบอนุญาต
+### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
 
 <img src="Narcotic1_Field Condition_3.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 - ผู้ดำเนิน | |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 - ผู้ดำเนินการ ตาม `MasterParticipantType`.`Id` | |
 | 1 | คำนำหน้านาม | `RequisitionParticipant`.`PrefixId` | | |
 | 2 | ชื่อจริง | `RequisitionParticipant`.`FirstName` | | |
 | 3 | นามสกุล | `RequisitionParticipant`.`LastName` | | |
@@ -136,7 +138,7 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 3 | |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 3 - สถานที่ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
 | 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
 | 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
@@ -157,11 +159,19 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 7 - สถานที่จัดส่งเอกสาร ตาม `MasterParticipantType`.`Id` | |
 
 #### 3.1 ข้อมูลผู้ประสานงาน
 
 <img src="Narcotic1_Field Condition_6.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 6 - ผู้ประสานงาน ตาม `MasterParticipantType`.`Id` | |
+| 1 | ชื่อ-นามสกุล | `RequisitionParticipant`.`FullName` | | |
+| 2 | โทรศัพท์มือถือ | `RequisitionParticipant`.`Phone` | | |
+| 3 | โทรสาร | `RequisitionParticipant`.`Fax` | | |
+| 4 | อีเมล | `RequisitionParticipant`.`Email` | | |
 
 ### 4 เอกสารหลักฐาน
 
