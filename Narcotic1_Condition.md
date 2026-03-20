@@ -21,7 +21,7 @@ li {
 </style>
 
 ## ❗ เงื่อนไข ยส.1
-### ประเภทการขอ (ยส.1)
+### ประเภทการขอ (ยส.1-1)
 
 | ลำดับ | ประเภทการขอ | LicenseGetById |
 |:---:|---|:---:|
@@ -33,7 +33,7 @@ li {
 | 6 | ขอยกเลิก | ✅ |
 | 7 | ขอใบแทน | ✅ |
 
-### วัตถุประสงค์ในการขออนุญาต + การดำเนินการ (ยส.1)
+### วัตถุประสงค์ในการขออนุญาต + การดำเนินการ (ยส.1-1)
 
 ![Narcotic1_Condition_1](/Narcotic1_Condition_1.png)
 
@@ -43,7 +43,7 @@ li {
 | 2. เพื่อการศึกษาวิจัย หรือเพื่อประโยชน์ในทางการแพทย์ หรือวิทยาศาสตร์ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 3. เพื่อใช้เป็นสารมาตรฐานในการตรวจวิเคราะห์ในปริมาณเล็กน้อย |  | ✅ | ✅ |  | ✅ |
 
-### วัตถุประสงค์ในการขออนุญาต + ประเภทผู้ขอ
+### วัตถุประสงค์ในการขออนุญาต + ประเภทผู้ขอ(ยส.1-1)
 
 | วัตถุประสงค์/ประเภทผู้ขอ | หน่วยงานของรัฐที่เป็นนิติบุคคล | สภากาชาดไทย | สถาบันอุดมศึกษา | ผู้รับอนุญาตตามกฎหมาย |
 |---|:---:|:---:|:---:|:---:|
@@ -53,7 +53,7 @@ li {
 
 *ต้องมีแยกแบบ ยส.4 (รัฐวิสาหกิจ, สถาบันอุดมศึกษาของรัฐ, สถาบันอุดมศึกษาเอกชน) หรือไม่*
 
-### วัตถุประสงค์ + เงื่อนไขสาร
+### วัตถุประสงค์ + เงื่อนไขสาร (ยส.1-1)
 **ใช้ที่ 2.1 ข้อมูลยาเสพติดให้โทษในประเภท 1 ที่ขอรับอนุญาต**
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
@@ -70,12 +70,12 @@ li {
 |---|:---:|:---:|:---:|
 | x. [วัตถุประสงค์ xxxx] | 1 | ยาเสพติดให้โทษในประเภท 1 ทุกชนิด (สารมาตรฐาน) | หน่วย <!-- IsNC4StandardUnit --> |
 
-### วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
+### วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow (ยส.1-1)
 
 <img src="Narcotic1_Condition_2.png" style="border: 1px solid black;" width="100%">
 
-## 🔷 Field Condition
-### 1.1 ข้อมูลผู้ขออนุญาต
+## 🔷 Field Condition (ยส.1-1)
+### 1.1 ข้อมูลผู้ขออนุญาต (ยส.1-1)
 
 <img src="Narcotic1_Field Condition_2.png" style="border: 1px solid black;" width="100%">
 
@@ -99,9 +99,11 @@ li {
 | X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
 | Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | - เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
 
-### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
+### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต (ยส.1-1)
 
 <img src="Narcotic1_Field Condition_3.png" style="border: 1px solid black;" width="100%">
+
+*** (ยส.1-1) ไม่เก็บ Work permit no. ***
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
@@ -131,7 +133,7 @@ li {
 
 <!-- ### 2.1 ข้อมูลยาเสพติดให้โทษในประเภท 1 ที่ขอรับอนุญาต -->
 
-### 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
+### 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง (ยส.1-1)
 
 <img src="Narcotic1_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic1_Field Condition_4_1.png" style="border: 1px solid black;" width="100%">
@@ -153,7 +155,7 @@ li {
 | 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
-### ส่วนที่ 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร
+### ส่วนที่ 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร (ยส.1-1)
 
 <img src="Narcotic1_Field Condition_5.png" style="border: 1px solid black;" width="100%">
 
@@ -175,7 +177,7 @@ li {
 | 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
-#### 3.1 ข้อมูลผู้ประสานงาน
+#### 3.1 ข้อมูลผู้ประสานงาน (ยส.1-1)
 
 <img src="Narcotic1_Field Condition_6.png" style="border: 1px solid black;" width="100%">
 
@@ -187,10 +189,10 @@ li {
 | 3 | โทรสาร | `RequisitionParticipant`.`Fax` | | |
 | 4 | อีเมล | `RequisitionParticipant`.`Email` | | |
 
-### 4 เอกสารหลักฐาน
+### 4 เอกสารหลักฐาน (ยส.1-1)
 
-#### เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 1
+#### เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส.1-1
 
 <img src="Narcotic1_Condition_Attachment_1.png" style="border: 1px solid black;" width="80%">
 
-## 📄 ส่วนแบบ Print from PDF คำขอ
+## 📄 ส่วนแบบ Print from PDF คำขอ (ยส.1-1)

@@ -54,7 +54,7 @@ li {
 | 6. เพื่อประโยชน์ทางอุตสาหกรรม **ไม่อยู่ภายใต้ระบบปิด** | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 7. เพื่อใช้เป็นสารมาตรฐานในการตรวจวิเคราะห์             | ✅ | ✅ | ✅ | ไม่มีขอต่อเนื่อง | ไม่มีขอต่อเนื่อง |
 
-#### ***ขอต่อเนื่อง***
+#### ***ขอต่อเนื่อง (มีเฉพาะ ยส.4-1)***
 <ul>
   <li>ได้เฉพาะการดำเนินการ ผลิต นำเข้า ส่งออก ครอบครอง</li>
   <li>อ้างอิง Ref. ใบอนุญาต ยส.4 ตามวัตถุประสงค์ 3. 4. 5. 6. ดังนี้
@@ -103,7 +103,7 @@ li {
 | 5. เพื่อประโยชน์ทางอุตสาหกรรม | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 6. เพื่อใช้เป็นสารมาตรฐานในการตรวจวิเคราะห์ |  | ✅ | ✅ |  | ✅ |
 
-### วัตถุประสงค์ในการขออนุญาต + ประเภทผู้ขอ
+### วัตถุประสงค์ในการขออนุญาต + ประเภทผู้ขอ (ยส.4-1)
 
 <img src="Narcotic4_Condition_2.png" width="75%">
 
@@ -123,7 +123,7 @@ li {
 สถาบันอุดมศึกษาของรัฐ
 สถาบันอุดมศึกษาเอกชน -->
 
-### วัตถุประสงค์ + เงื่อนไขสาร
+### วัตถุประสงค์ + เงื่อนไขสาร (ยส.4-1)
 **ใช้ที่ 2.1 ข้อมูลยาเสพติดให้โทษในประเภท 4 ที่ขอรับอนุญาต**
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
@@ -142,11 +142,11 @@ li {
 |---|:---:|:---:|:---:|
 | x. [วัตถุประสงค์ xxxx] | 4 | ยาเสพติดให้โทษในประเภท 4 ทุกชนิด | IsNCUnit |
 
-### วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
+### วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow  (ยส.4-1)
 
 <img src="Narcotic4_Condition_3.png" width="100%">
 
-## 🔷 Field Condition
+## 🔷 Field Condition (ยส.4-1)
 ### วันที่
 
 | ลำดับ | ประเภทวันที่ | Field | เงื่อนไข |
@@ -159,7 +159,7 @@ li {
 | 6 | วันที่ | `License`.`IssueDate` |  |
 | 7 | วันที่ | `License`.`ExpireDate` |  |
 
-### 1.1 ข้อมูลผู้ขออนุญาต
+### 1.1 ข้อมูลผู้ขออนุญาต (ยส.4-1)
 
 <img src="Narcotic4_Field Condition_3.png" style="border: 1px solid black;" width="100%">
 
@@ -183,7 +183,7 @@ li {
 | X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
 | Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | - เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
 
-### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
+### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต (ยส.4-1)
 
 <img src="Narcotic4_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 
@@ -213,7 +213,7 @@ li {
 | 21 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 22 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
-### 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
+### 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง (ยส.4-1)
 <img src="Narcotic4_Field Condition_7.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
@@ -233,14 +233,14 @@ li {
 | 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
-### 2.3 ข้อมูลสถานที่เก็บ
+### 2.3 ข้อมูลสถานที่เก็บ (โดยเป็นลักษณะคลังเก็บสารเคมี โดยไม่ได้นำไปใช้ประโยชน์) (ยส.4-1)
 <img src="Narcotic4_Field Condition_8.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 4 - สถานที่เก็บ ตาม `MasterParticipantType`.`Id` | |
 
-### 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
+### 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย) (ยส.4-1)
 
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
 <img src="Narcotic4_Field Condition_5.png" style="border: 1px solid black;" width="100%">
@@ -277,7 +277,7 @@ li {
   </li>
 </ul>
 
-### ส่วนที่ 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร
+### ส่วนที่ 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร (ยส.4-1)
 <img src="Narcotic4_Field Condition_9.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
@@ -298,7 +298,7 @@ li {
 | 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
-#### 3.1 ข้อมูลผู้ประสานงาน
+#### 3.1 ข้อมูลผู้ประสานงาน (ยส.4-1)
 <img src="Narcotic4_Field Condition_10.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
@@ -309,7 +309,7 @@ li {
 | 3 | โทรสาร | `RequisitionParticipant`.`Fax` | | |
 | 4 | อีเมล | `RequisitionParticipant`.`Email` | | |
 
-### 4 เอกสารหลักฐาน
+### 4 เอกสารหลักฐาน (ยส.4-1)
 <img src="Narcotic4_Field Condition_11.png" style="border: 1px solid black;" width="100%">
 
 #### เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4
@@ -319,7 +319,7 @@ li {
 <img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic4_Condition_Attachment_3.png" style="border: 1px solid black;" width="80%">
 
-## 📄 ส่วนแบบ Print from PDF คำขอ
+## 📄 ส่วนแบบ Print from PDF คำขอ (ยส.4-1)
 ### เอกสารแนบท้าย กรณีเลือกสารมากกว่า 2 ชนิด
 
 `เอกสารแนบท้ายคำ[ขอใหม่, ขอเพิ่มชนิด, ขอเพิ่มปริมาณ] ใบอนุญาต[ผลิต, นำเข้า, ส่งออก, จำหน่าย, ครอบครอง] เพื่อ[วัตถุประสงค์] ของ [ชื่อนิติบุคลคล]`
