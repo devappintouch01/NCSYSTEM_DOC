@@ -2,7 +2,7 @@
 
 ---
 
-## (dbo.MasterRequisitionType Id = 19)
+#### (dbo.MasterRequisitionType Id = 19)
 
 ### Links
 
@@ -37,7 +37,7 @@ li {
 | 2 | ขอเพิ่มสาร (เพิ่มชนิด) | ✅ |
 | 3 | ขอเพิ่มปริมาณ | ✅ |
 | 4 | ขอต่อเนื่อง **คค. เท่าเดิม** | ✅ |
-| 5 | ขอต่อเนื่อง **คค. > เดิม** | ✅ |
+| 5 | ขอต่อเนื่อง **คค. มากกว่า ปริมาณเดิม** | ✅ |
 | 6 | ขอแก้ไข | ✅ |
 | 7 | ขอต่ออายุ | ✅ |
 | 8 | ขอยกเลิก | ✅ |
@@ -45,7 +45,7 @@ li {
 
 ### วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ (ยส.4-1)
 
-| วัตถุประสงค์/ประเภทการขอ | 1. ขอใหม่ | 2. ขอเพิ่มสาร (เพิ่มชนิด) | 3. ขอเพิ่มปริมาณ | 4. ขอต่อเนื่อง <br> เท่าเดิม | 5. ขอต่อเนื่อง <br> มากกว่าปริมาณเดิม |
+| วัตถุประสงค์/ประเภทการขอ | 1. ขอใหม่ | 2. ขอเพิ่มสาร (เพิ่มชนิด) | 3. ขอเพิ่มปริมาณ | 4. ขอต่อเนื่อง <br> คค. เท่าเดิม | 5. ขอต่อเนื่อง <br> คค. มากกว่าปริมาณเดิม |
 |---|:---:|:---:|:---:|:---:|:---:|
 | 1. เพื่อประโยชน์ของทางราชการในการป้องกันและปราบปรามการกระทำความผิดเกี่ยวกับยาเสพติดหรือความร่วมมือระหว่างประเทศ กรณีจำเป็นเร่งด่วน                     | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2. เพื่อการศึกษาและวิจัย                             | ✅ | ✅ | ✅ | ไม่มีขอต่อเนื่อง | ไม่มีขอต่อเนื่อง |
@@ -166,11 +166,11 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `Requisition`.`ParticipantTypeId` | ส่ง 1 - ผู้ขออนุญาต | |
+| 0 | - | `Requisition`.`ParticipantTypeId` | ส่ง 1 - ผู้ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อผู้ขออนุญาต | `Requisition`.`FullName` <br>`Requisition`.`JuristicName` | | - ลงคู่กับ juristicName |
 | 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`TaxId` | | - กองยาลง TaxId |
 | 3 | เลขที่ (ที่ตั้งสำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseNo` | | |
-| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (สำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (สำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 5 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 6 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
 | 7 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
@@ -190,19 +190,19 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 - ผู้ดำเนิน | |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 - ผู้ดำเนินการ ตาม `MasterParticipantType`.`Id` | |
 | 1 | คำนำหน้านาม | `RequisitionParticipant`.`PrefixId` | | |
 | 2 | ชื่อจริง | `RequisitionParticipant`.`FirstName` | | |
 | 3 | นามสกุล | `RequisitionParticipant`.`LastName` | | |
 | 4 | อายุ | `RequisitionParticipant`.`Age` | | |
 | 5 | วัน เดือน ปี เกิด | `RequisitionParticipant`.`BirthDate` | | |
 | 6 | สัญชาติ | `RequisitionParticipant`.`NationalityId` | | |
-| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`IdentificationNo` | เก็บเฉพาะเลขบัตรประชาชนเท่านั้น | - Cannot over 13 digits <br> - Need separator (0-0000-00000-00-0) |
+| 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`IdentificationNo` | เก็บเฉพาะเลขบัตรประชาชนเท่านั้น | - Cannot over 13 digits <br> - Need separator `(0-0000-00000-00-0)` |
 | 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป | |
 | 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` | | |
 | 10 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
 | 11 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
-| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
 | 15 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
@@ -219,10 +219,10 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 3 - สถานที่ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
 | 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
-| 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 4 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 5 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
 | 6 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
@@ -234,12 +234,12 @@ li {
 | 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
-### 2.3 ข้อมูลสถานที่นำเข้า
+### 2.3 ข้อมูลสถานที่เก็บ
 <img src="Narcotic4_Field Condition_8.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 4 - สถานที่เก็บ ตาม `MasterParticipantType`.`Id` | |
 
 ### 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย)
 
@@ -255,7 +255,7 @@ li {
 | 2 | ใบอนุญาตเลขที่ | `RequisitionParticipant`.`RecipientLicenseNo` | | |
 | 3 | ชื่อผู้ประสงค์ทีจะรับมอบ | `RequisitionParticipant`.`JuristicName` | | |
 | 4 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
-| 5 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
+| 5 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 6 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 7 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
 | 8 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
@@ -283,19 +283,24 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 7 - สถานที่จัดส่งเอกสาร ตาม `MasterParticipantType`.`Id` | |
 
 #### 3.1 ข้อมูลผู้ประสานงาน
 <img src="Narcotic4_Field Condition_10.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 6 - ผู้ประสานงาน ตาม `MasterParticipantType`.`Id` | |
+| 1 | ชื่อ-นามสกุล | `RequisitionParticipant`.`FullName` | | |
+| 2 | โทรศัพท์มือถือ | `RequisitionParticipant`.`Phone` | | |
+| 3 | โทรสาร | `RequisitionParticipant`.`Fax` | | |
+| 4 | อีเมล | `RequisitionParticipant`.`Email` | | |
 
 ### 4 เอกสารหลักฐาน
 <img src="Narcotic4_Field Condition_11.png" style="border: 1px solid black;" width="100%">
 
 #### เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4
-- https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI
+- [https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
 
 <img src="Narcotic4_Condition_Attachment_1.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="80%">

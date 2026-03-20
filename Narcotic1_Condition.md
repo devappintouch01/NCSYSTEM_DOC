@@ -67,14 +67,14 @@ li {
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
 |---|:---:|:---:|:---:|
-| x. [วัตถุประสงค์ xxxx] | 1 | ยาเสพติดให้โทษในประเภท 1 ทุกชนิด (สารมาตรฐาน) | **IsNC4StandardUnit ??** |
+| x. [วัตถุประสงค์ xxxx] | 1 | ยาเสพติดให้โทษในประเภท 1 ทุกชนิด (สารมาตรฐาน) | หน่วย <!-- IsNC4StandardUnit --> |
 
 ## วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow
 
 <img src="Narcotic1_Condition_2.png" style="border: 1px solid black;" width="100%">
 
 ## 🔷 Field Condition
-## 1.1 ข้อมูลผู้ขออนุญาต
+### 1.1 ข้อมูลผู้ขออนุญาต
 <img src="Narcotic1_Field Condition_2.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
@@ -136,7 +136,7 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 3 | |
 | 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
 | 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
 | 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
