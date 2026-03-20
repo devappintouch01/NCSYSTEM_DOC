@@ -282,7 +282,7 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0. | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 7 - สถานที่จัดส่งเอกสาร ตาม `MasterParticipantType`.`Id` | |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 7 - สถานที่จัดส่งเอกสาร ตาม `MasterParticipantType`.`Id` | |
 | 1 | การจัดส่งเอกสาร | `Requisition`.`DocumentDeliveryAddress` | การจัดส่งเอกสาร (1=ตามที่อยู่ผู้ขอรับใบอนุญาต, 2=ตามที่อยู่สถานที่ขอรับใบอนุญาต) | 1.1 ตามที่อยู่ผู้ขอรับใบอนุญาต, 2.2 ตามที่อยู่สถานที่ขอรับใบอนุญาต |
 | 2 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
 | 3 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
