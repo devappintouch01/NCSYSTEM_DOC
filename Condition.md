@@ -4,6 +4,8 @@
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|---|
+| 11, 16 | 20 มี.ค. 2569 | กองยา [4.11] | Condition | [ผยส.3](Narcotic3_Psychotropic3_4_Sales_Manufacture_Condition.md) |
+
 | 11, 16 | 12 มี.ค. 2569 | กองยา [4.11] | Condition | [จยส.3 จวจ.3/4](Narcotic3_Psychotropic3_4_Sales_Wholesales_Condition.md) |
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
