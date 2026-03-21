@@ -1,19 +1,36 @@
-## คำขอรับใบอนุญาต นำเข้าส่งออก เฉพาะคราว
+## คำขอรับใบอนุญาต นำเข้าส่งออก เฉพาะคราว (IMP/EXP)
 ---
 
-## (dbo.MasterRequisitionType Id = 25-46)
+#### (dbo.MasterRequisitionType Id = 25-46)
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
 - [Data Dic - Master Data real](https://docs.google.com/spreadsheets/d/1WpRC41tmqyOc8zVaxTVuwLxGgmi7inZATo8_LcCTXgE)
 - [FDA68_สรุปวัตถุประสงค์ ผู้อนุญาต และผู้อนุมัติ ในใบคำขอ](https://docs.google.com/spreadsheets/d/1B366oiRjTmnY7Jvt0lpH9ORXbmOgJaLXcYDHmDST8Qo)
 
-## ประเภท
-### ประเภท เฉพาะคราว
+- [Figma เฉพาะคราว](https://www.figma.com/board/8VA6aeLRsleXZW44d0SbsQ/%E0%B9%80%E0%B8%89%E0%B8%9E%E0%B8%B2%E0%B8%B0%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%A7-%E0%B8%AD%E0%B8%B7%E0%B9%88%E0%B8%99%E0%B9%86)
+
+Google sheets
+- [ปี2568 ใบอนุญาตเฉพาะคราว_นำเข้า](https://docs.google.com/spreadsheets/d/1hsVTwo9gI1xk8cmZ979OnQ61cjUX9-j4)
+- [ปี2568 ใบอนุญาตเฉพาะคราว_ส่งออก](https://docs.google.com/spreadsheets/d/18vAB_xg1Pc-C6s9N1GJ0enrd2k2lw8Y5)
+- [[FDA68] นำเข้า-ส่งออก เฉพาะคราว](https://docs.google.com/spreadsheets/d/1EEyq1PUJTJK2qtROfoRSZogiT5DKpjLyWeONZb2c9ws)
+- [คำนวนสูตร](https://docs.google.com/spreadsheets/d/1Y2ASf2KcLwmI0fgnfOaGgkTIYQm18GzMcrpJMt6Vobc/edit?gid=176943539#gid=176943539)
+
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
+### ประเภท
+#### ประเภท เฉพาะคราว (นำเข้าเฉพาะคราว/EXP ส่งออกเฉพาะคราว)
 <img src="Narcotic_Temporary_Condition_1.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
-|---|---|---|---|---|---|
+|:---:|:---:|:---:|---|:---:|:---:|
 | 1  | 25 | เฉพาะคราว | IMP-N1-1 นำเข้า เฉพาะคราว ยส.1 | ✅ |  |
 | 2  | 27 | เฉพาะคราว | IMP-N2-1 นำเข้า เฉพาะคราว ยส.2 | ✅ |  |
 | 3  | 29 | เฉพาะคราว | IMP-N3-1 นำเข้า เฉพาะคราว ยส.3 | ✅ |  |
@@ -31,27 +48,27 @@
 | 15 | 40 | เฉพาะคราว | EXP-P2-1 ส่งออก เฉพาะคราว วจ.2 |  | ✅ |
 | 16 | 42/44 | เฉพาะคราว | EXP-P3/4-1 ส่งออก เฉพาะคราว วจ.3/4 |  | ✅ |
 
-### ประเภท พิเศษ เฉพาะคราว
+#### ประเภท พิเศษ เฉพาะคราว
 <img src="Narcotic_Temporary_Condition_2.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
-|---|---|---|---|---|---|
+|:---:|:---:|:---:|---|:---:|:---:|
 | 17 | 45 | พิเศษเฉพาะคราว | EXP.SP-1 พิเศษเฉพาะคราว ส่งออก วจ. |  | ✅ |
 
-### ประเภท แต่ละครั้ง (ก็คือ เฉพาะคราว)
+#### ประเภท แต่ละครั้ง (ก็คือ เฉพาะคราว)
 <img src="Narcotic_Temporary_Condition_4.png" width="100%">
 <img src="Narcotic_Temporary_Condition_5.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
-|---|---|---|---|---|---|
+|:---:|:---:|:---:|---|:---:|:---:|
 | 18 | 35 | แต่ละครั้ง | NAR.5 นำเข้า ส่งออก ซึ่ง**กัญชา** แต่ละครั้ง | ✅ | ✅ |
 | 19 | 36 | แต่ละครั้ง | NAR.5(HEMP) นำเข้า ส่งออก ซึ่ง**กัญชง** แต่ละครั้ง | ✅ | ✅ |
 
-### ประเภท นำผ่าน
+#### ประเภท นำผ่าน
 <img src="Narcotic_Temporary_Condition_3.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
-|---|---|---|---|---|---|
+|:---:|:---:|:---:|---|:---:|:---:|
 | 20 | 46 | นำผ่าน | นผ.จ.1 คำขอรับใบอนุญาต / ใบแทนใบอนุญาต / แก้ไขรายการในใบอนุญาตนำผ่านวัตถุออกฤทธิ์ ***ใช้กับ วจ. 1 2 3 4*** |  |  |
 
 ## List field
@@ -144,5 +161,112 @@
 | | | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## 🔷 Field Condition
+### ส่วนที่ ๑ ข้อมูลผู้ขออนุญาต
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N1-1.png" style="border: 2px solid blue;" width="100%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N2-1.png" style="border: 2px solid blue;" width="100%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N3-1.png" style="border: 2px solid blue;" width="100%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N4-1.png" style="border: 2px solid blue;" width="100%">
+<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N5-1.png" style="border: 2px solid blue;" width="100%"> -->
+<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P1-1.png" style="border: 2px solid blue;" width="100%"> -->
+<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P2-1.png" style="border: 2px solid blue;" width="100%"> -->
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P3_4-1.png" style="border: 2px solid blue;" width="100%">
 
-## 📄 ส่วนแบบ Print from PDF คำขอ
+<!-- #### 1.1 ชื่อผู้ขออนุญาต -->
+<!-- #### 1.2 กรณีนำเข้าวัตถุดิบ -->
+<!-- #### 1.3 เหตุผลในการขออนุญาตครั้งนี้ -->
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | ชื่อผู้ขออนุญาต | `Requisition`.`xx` |  |  |
+| 0 | เลขประจำตัวประชาชน/เลขทะเบียนนิติบุคคล | `Requisition`.`xx` |  |  |
+| 0 | ใบอนุญาตเลขที่ | `Requisition`.`xx` |  |  |
+| 0 | ประเภทใบอนุญาต | `Requisition`.`xx` |  |  |
+| 0 | ใบสำคัญการขึ้นทะเบียนตำรับ | `Requisition`.`xx` |  | เฉพาะ IMP-N3-1, IMP-P3_4-1 (ยส.3 วจ.3/4) |
+| 0 | วัตถุประสงค์ในการนำเข้า | `Requisition`.`xx` |  | เฉพาะ IMP-N2-1, IMP-N5-1, IMP-P2-1 |
+| 0 | เหตุผลในการขออนุญาตครั้งนี้ | `Requisition`.`xx` |  |  |
+
+### ส่วนที่ ๒ (IMP นำเข้าเฉพาะคราว) ข้อมูลการนำเข้า (โปรดกรอกข้อมูลเป็นภาษาอังกฤษ)
+<img src="Narcotic_Temporary_Imp_Field_Condition_3.png" style="border: 2px solid blue;" width="100%">
+
+#### 2.1 ชื่อและที่อยู่ของผู้นำเข้า (Name and address of Importer)
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
+
+#### 2.2 ชื่อและที่อยู่ของผู้ส่งออก (Name and address of Exporter)
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
+
+#### 2.3 ชื่อและที่อยู่ของผู้ผลิต (Name and address of Manufacturer)
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
+
+##### 2.4 ช่องทางการนำเข้า
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+
+##### 2.5 ระบุด่านตรวจขาเข้า
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+
+### ส่วนที่ ๒ (EXP ส่งออกเฉพาะคราว) ข้อมูลการส่งออก (โปรดกรอกข้อมูลเป็นภาษาอังกฤษ)
+<img src="Narcotic_Temporary_Exp_Field_Condition_3.png" style="border: 2px solid blue;" width="100%">
+
+##### 2.1 ชื่อและที่อยู่ของผู้ส่งออก (Name and address of Exporter)
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
+
+
+##### 2.2 ชื่อและที่อยู่ของผู้นำเข้า (Name and address of Importer)
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
+
+##### 2.3 ชื่อและที่อยู่ของผู้ผลิต (Name and address of Manufacturer)
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
+
+##### 2.4 ช่องทางการส่งออก
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+
+##### 2.5 ด่านตรวจ
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+
+##### 2.6 ใบอนุญาตนำเข้า ***(เฉพาะ วจ.1 วจ.3 วจ.4)***
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+
+<img src="Narcotic_Temporary_Exp_Field_Condition_4.png" style="border: 2px solid blue;" width="100%">
+
+#### 2.(6/7) ยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก <br> Substance / Narcotic Drug to br imported / exported
+
+<img src="Narcotic_Temporary_Imp_Substance_Field_Condition.png" style="border: 2px solid blue;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `Requisition`.`xx` | | |
+| 0 | ชื่อสิ่งปรุง | `Requisition`.`xx` | | |
+| 0 | ชื่อยาเสพติดให้โทษในสิ่งปรุง | `Requisition`.`xx` | | |
+| 0 | ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย | `Requisition`.`xx` | | |
+| 0 | หน่วย | `Requisition`.`xx` | | |
+
+<!-- #### ส่วนที่ ๓ เอกสารหลักฐาน -->
+
+<!-- ## 📄 ส่วนแบบ Print from PDF คำขอ -->
