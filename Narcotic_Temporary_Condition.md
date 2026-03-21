@@ -213,11 +213,13 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| 0 | - |  |  |  |
 
 #### 2.5 ระบุด่านตรวจขาเข้า
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| 0 | - |  |  |  |
 
 ### ส่วนที่ ๒ (EXP ส่งออกเฉพาะคราว) ข้อมูลการส่งออก (โปรดกรอกข้อมูลเป็นภาษาอังกฤษ)
 <img src="Narcotic_Temporary_Exp_Field_Condition_3.png" style="border: 2px solid blue;" width="60%">
@@ -244,16 +246,19 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| 0 | - |  |  |  |
 
 #### 2.5 ด่านตรวจ
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| 0 | - |  |  |  |
 
 #### 2.6 ใบอนุญาตนำเข้า ***(เฉพาะ วจ.1 วจ.3 วจ.4)***
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| 0 | - |  |  |  |
 
 <img src="Narcotic_Temporary_Exp_Field_Condition_4.png" style="border: 2px solid blue;" width="60%">
 
