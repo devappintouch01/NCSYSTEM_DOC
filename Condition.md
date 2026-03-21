@@ -2,7 +2,7 @@
 
 <style scoped>
 table {
-  font-size: 13px;
+  font-size: 16px;
 }
 li {
   font-size: 13px;

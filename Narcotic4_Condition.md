@@ -10,6 +10,7 @@
 - [FDA68_สรุปวัตถุประสงค์ ผู้อนุญาต และผู้อนุมัติ ในใบคำขอ](https://docs.google.com/spreadsheets/d/1B366oiRjTmnY7Jvt0lpH9ORXbmOgJaLXcYDHmDST8Qo)
 
 - [Figma ยส.4](https://www.figma.com/board/eZAUMG4kub8P4xGJNtzuOF/%E0%B8%A2%E0%B8%AA.4)
+- [ตย.เอกสาร ยส.4](https://drive.google.com/drive/u/1/folders/1BNuS1dgM9mDpqsMMsS6hbLRU3dBa9MY4)
 - [เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
 
 <!-- ### API
@@ -261,7 +262,8 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 5 - ผู้รับมอบ ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อผู้รับอนุญาตที่รับมอบ | `RequisitionParticipant`.`JuristicName` | - ตอนดึงให้ดึงจาก RequisitionParticipant | |
 | 2 | ใบอนุญาตเลขที่ | `RequisitionParticipant`.`RecipientLicenseNo` | | |
 | 3 | ชื่อผู้ประสงค์ทีจะรับมอบ | `RequisitionParticipant`.`JuristicName` | | |

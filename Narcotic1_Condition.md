@@ -10,6 +10,7 @@
 - [FDA68_สรุปวัตถุประสงค์ ผู้อนุญาต และผู้อนุมัติ ในใบคำขอ](https://docs.google.com/spreadsheets/d/1B366oiRjTmnY7Jvt0lpH9ORXbmOgJaLXcYDHmDST8Qo)
 
 - [Figma ยส.1](https://www.figma.com/board/2vq44hMBfDujhC8g13qBXC/%E0%B8%A2%E0%B8%AA.1)
+- [ตย.เอกสาร ยส.1](https://drive.google.com/drive/u/1/folders/18Uv9_RM7pVDIbb-KoMh64jt6tfDQgVFa)
 
 <style scoped>
 table {
@@ -81,6 +82,7 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
 | 0 | - | `Requisition`.`ParticipantTypeId` | ส่ง 1 - ผู้ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อผู้ขออนุญาต | `Requisition`.`FullName` <br>`Requisition`.`JuristicName` | | - ลงคู่กับ juristicName |
 | 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`TaxId` | | - กองยาลง TaxId |
@@ -107,6 +109,7 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 2 - ผู้ดำเนินการ ตาม `MasterParticipantType`.`Id` | |
 | 1 | คำนำหน้านาม | `RequisitionParticipant`.`PrefixId` | | |
 | 2 | ชื่อจริง | `RequisitionParticipant`.`FirstName` | | |
@@ -140,6 +143,7 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 3 - สถานที่ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
 | 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
@@ -176,7 +180,8 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 5 - ผู้รับมอบ ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อผู้รับอนุญาตที่รับมอบ | `RequisitionParticipant`.`JuristicName` | - ตอนดึงให้ดึงจาก RequisitionParticipant | |
 | 2 | ใบอนุญาตเลขที่ | `RequisitionParticipant`.`RecipientLicenseNo` | | |
 | 3 | ชื่อผู้ประสงค์ทีจะรับมอบ | `RequisitionParticipant`.`JuristicName` | | |
@@ -201,7 +206,14 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ yyyy ตาม `MasterParticipantType`.`Id` | |
+| x | - | `RequisitionForeignEntity`.`RequisitionId` |  |  |
+| y | ForeignEntityId ผู้ส่งออกหรือผู้นำเข้าในต่างประเทศ | `RequisitionForeignEntity`.`ForeignEntityId` | เอามาจาก `MasterForeignEntity`.`Id` |  |
+| z | ForeignEntityType | `RequisitionForeignEntity`.`ForeignEntityType` | ประเภทผู้ผลิต/ผู้นำเข้า/ผู้ส่งออก (M=ผู้ผลิต, I=ผู้นำเข้า, E=ผู้ส่งออก) | ถ้าเป็นคำขอ**ส่งออก** ส่ง 'I' <br> ถ้าเป็นคำขอ**นำเข้า** ส่ง 'E' |
+| 1 | ชื่อผู้ส่งออกหรือผู้นำเข้าในต่างประเทศ | `RequisitionForeignEntity`.`ForeignEntityName` |  | เอามาจาก `MasterForeignEntity`.`Id` ที่เลือก แล้วหา `MasterForeignEntity`.`ForeignEntityName` |
+| 2 | ที่อยู่ของสถานที่ทำการ | `RequisitionForeignEntity`.`ForeignEntityAddress` |  | เอามาจาก `MasterForeignEntity`.`Id` ที่เลือก แล้วหา `MasterForeignEntity`.`FullAddress` |
+| 3.1 | (Id) ประเทศ | `RequisitionForeignEntity`.`CountryId` |  | เอามาจาก `MasterForeignEntity`.`Id` ที่เลือก แล้วหา `MasterForeignEntity`.`CountryId` |
+| 3.2 | (ชื่อ) ประเทศ | `RequisitionForeignEntity`.`CountryName` |  | เอามาจาก `MasterForeignEntity`.`Id` ที่เลือก แล้วหา `MasterForeignEntity`.`CountryName` |
+| 4 | วิธีการนำเข้าหรือส่งออก | `RequisitionForeignEntity`.`TransportTypeId` |  | เอามาจาก `MasterTransportType`.`Id` |
 
 ### ส่วนที่ 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร (ยส.1-1)
 
