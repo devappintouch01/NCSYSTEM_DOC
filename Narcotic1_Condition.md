@@ -155,6 +155,54 @@ li {
 | 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
+### 2.3 ข้อมูลของ<u>ผู้รับมอบ</u>ผลิตยาเสพติดให้โทษในประเภท 1 (กรณีขออนุญาตจำหน่าย) (ยส.1-1)
+
+*** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
+
+<ul>
+  <li>ค้นหาจาก
+    <ul>
+      <li>เลขที่ใบอนุญาต ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 1</li>
+      หรือ
+      <li>เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง
+      ยาเสพติดให้โทษในประเภท 1 ในระบบ</li>
+    </ul>
+  </li>
+</ul>
+
+<img src="Narcotic4_Field Condition_5.png" style="border: 1px solid black;" width="100%">
+
+<img src="Narcotic4_Field Condition_6.png" style="border: 1px solid black;" width="75%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| 1 | ชื่อผู้รับอนุญาตที่รับมอบ | `RequisitionParticipant`.`JuristicName` | - ตอนดึงให้ดึงจาก RequisitionParticipant | |
+| 2 | ใบอนุญาตเลขที่ | `RequisitionParticipant`.`RecipientLicenseNo` | | |
+| 3 | ชื่อผู้ประสงค์ทีจะรับมอบ | `RequisitionParticipant`.`JuristicName` | | |
+| 4 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
+| 5 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
+| 6 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 7 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 8 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 9 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 10 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 11 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 12 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 13 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 14 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 15 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+
+### 2.4 ข้อมูลผู้ส่งออกหรือผู้นำเข้าในต่างประเทศ (กรณีขออนุญาตนำเข้าหรือส่งออก)
+
+<img src="Narcotic1_Field Condition_7.png" style="border: 1px solid black;" width="100%">
+
+*** แสดงเมื่อเลือก OperationType เป็น **นำเข้า** หรือ **ส่งออก** ***
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ yyyy ตาม `MasterParticipantType`.`Id` | |
+
 ### ส่วนที่ 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร (ยส.1-1)
 
 <img src="Narcotic1_Field Condition_5.png" style="border: 1px solid black;" width="100%">

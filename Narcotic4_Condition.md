@@ -243,6 +243,18 @@ li {
 ### 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย) (ยส.4-1)
 
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
+
+<ul>
+  <li>ค้นหาจาก
+    <ul>
+      <li>เลขที่ใบอนุญาต ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 4</li>
+      หรือ
+      <li>เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง
+      ยาเสพติดให้โทษในประเภท 4 ในระบบ</li>
+    </ul>
+  </li>
+</ul>
+
 <img src="Narcotic4_Field Condition_5.png" style="border: 1px solid black;" width="100%">
 
 <img src="Narcotic4_Field Condition_6.png" style="border: 1px solid black;" width="75%">
@@ -265,17 +277,6 @@ li {
 | 13 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
 | 14 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 15 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
-
-<ul>
-  <li>ค้นหาจาก
-    <ul>
-      <li>เลขที่ใบอนุญาต ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 4</li>
-      หรือ
-      <li>เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง
-      ยาเสพติดให้โทษในประเภท 4 ในระบบ</li>
-    </ul>
-  </li>
-</ul>
 
 ### ส่วนที่ 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร (ยส.4-1)
 <img src="Narcotic4_Field Condition_9.png" style="border: 1px solid black;" width="100%">
