@@ -162,14 +162,14 @@ li {
 
 ## 🔷 Field Condition
 ### ส่วนที่ ๑ ข้อมูลผู้ขออนุญาต
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N1-1.png" style="border: 2px solid blue;" width="100%">
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N2-1.png" style="border: 2px solid blue;" width="100%">
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N3-1.png" style="border: 2px solid blue;" width="100%">
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N4-1.png" style="border: 2px solid blue;" width="100%">
-<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N5-1.png" style="border: 2px solid blue;" width="100%"> -->
-<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P1-1.png" style="border: 2px solid blue;" width="100%"> -->
-<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P2-1.png" style="border: 2px solid blue;" width="100%"> -->
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P3_4-1.png" style="border: 2px solid blue;" width="100%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N1-1.png" style="border: 2px solid blue;" width="80%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N2-1.png" style="border: 2px solid blue;" width="80%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N3-1.png" style="border: 2px solid blue;" width="80%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N4-1.png" style="border: 2px solid blue;" width="80%">
+<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N5-1.png" style="border: 2px solid blue;" width="80%"> -->
+<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P1-1.png" style="border: 2px solid blue;" width="80%"> -->
+<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P2-1.png" style="border: 2px solid blue;" width="80%"> -->
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P3_4-1.png" style="border: 2px solid blue;" width="80%">
 
 <!-- #### 1.1 ชื่อผู้ขออนุญาต -->
 <!-- #### 1.2 กรณีนำเข้าวัตถุดิบ -->
