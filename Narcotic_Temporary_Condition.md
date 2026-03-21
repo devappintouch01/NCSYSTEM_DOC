@@ -26,7 +26,7 @@ li {
 </style>
 
 ### ประเภท
-#### ประเภท เฉพาะคราว (นำเข้าเฉพาะคราว/EXP ส่งออกเฉพาะคราว)
+#### 1️⃣ ประเภท เฉพาะคราว (นำเข้าเฉพาะคราว/EXP ส่งออกเฉพาะคราว)
 <img src="Narcotic_Temporary_Condition_1.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
@@ -48,14 +48,14 @@ li {
 | 15 | 40 | เฉพาะคราว | EXP-P2-1 ส่งออก เฉพาะคราว วจ.2 |  | ✅ |
 | 16 | 42/44 | เฉพาะคราว | EXP-P3/4-1 ส่งออก เฉพาะคราว วจ.3/4 |  | ✅ |
 
-#### ประเภท พิเศษ เฉพาะคราว
+#### 2️⃣ ประเภท พิเศษ เฉพาะคราว
 <img src="Narcotic_Temporary_Condition_2.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
 |:---:|:---:|:---:|---|:---:|:---:|
 | 17 | 45 | พิเศษเฉพาะคราว | EXP.SP-1 พิเศษเฉพาะคราว ส่งออก วจ. |  | ✅ |
 
-#### ประเภท แต่ละครั้ง (ก็คือ เฉพาะคราว)
+#### 3️⃣ ประเภท แต่ละครั้ง (ก็คือ เฉพาะคราว)
 <img src="Narcotic_Temporary_Condition_4.png" width="100%">
 <img src="Narcotic_Temporary_Condition_5.png" width="100%">
 
@@ -64,7 +64,7 @@ li {
 | 18 | 35 | แต่ละครั้ง | NAR.5 นำเข้า ส่งออก ซึ่ง**กัญชา** แต่ละครั้ง | ✅ | ✅ |
 | 19 | 36 | แต่ละครั้ง | NAR.5(HEMP) นำเข้า ส่งออก ซึ่ง**กัญชง** แต่ละครั้ง | ✅ | ✅ |
 
-#### ประเภท นำผ่าน
+#### 4️⃣ ประเภท นำผ่าน
 <img src="Narcotic_Temporary_Condition_3.png" width="100%">
 
 | ลำดับ | MasterRequisitionType.Id | ประเภท | ชื่อประเภท | นำเข้า | ส่งออก |
@@ -162,14 +162,15 @@ li {
 
 ## 🔷 Field Condition
 ### ส่วนที่ ๑ ข้อมูลผู้ขออนุญาต
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N1-1.png" style="border: 2px solid blue;" width="80%">
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N2-1.png" style="border: 2px solid blue;" width="80%">
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N3-1.png" style="border: 2px solid blue;" width="80%">
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N4-1.png" style="border: 2px solid blue;" width="80%">
-<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N5-1.png" style="border: 2px solid blue;" width="80%"> -->
-<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P1-1.png" style="border: 2px solid blue;" width="80%"> -->
-<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P2-1.png" style="border: 2px solid blue;" width="80%"> -->
-<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P3_4-1.png" style="border: 2px solid blue;" width="80%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N1-1.png" style="border: 2px solid blue;" width="60%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N2-1.png" style="border: 2px solid blue;" width="60%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N3-1.png" style="border: 2px solid blue;" width="60%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N4-1.png" style="border: 2px solid blue;" width="60%">
+<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-N5-1.png" style="border: 2px solid blue;" width="60%"> -->
+<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P1-1.png" style="border: 2px solid blue;" width="60%"> -->
+<!-- <img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P2-1.png" style="border: 2px solid blue;" width="60%"> -->
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_IMP-P3_4-1.png" style="border: 2px solid blue;" width="60%">
+<img src="Narcotic_Temporary_Imp_Participant_Field_Condition_EXP.SP-1.png" style="border: 2px solid blue;" width="60%">
 
 <!-- #### 1.1 ชื่อผู้ขออนุญาต -->
 <!-- #### 1.2 กรณีนำเข้าวัตถุดิบ -->
@@ -181,13 +182,14 @@ li {
 | 0 | เลขประจำตัวประชาชน/เลขทะเบียนนิติบุคคล | `Requisition`.`xx` |  |  |
 | 0 | ใบอนุญาตเลขที่ | `Requisition`.`xx` |  |  |
 | 0 | ประเภทใบอนุญาต | `Requisition`.`xx` |  |  |
-| 0 | ผู้ได้รับการยกเว้นไม่ต้องขออนุญาตตามมาตรา ๓๒ | `Requisition`.`xx` | เฉพาะ IMP-P3_4-1 (ยส.3 วจ.3/4) |  |
+| 0 | ผู้ได้รับการยกเว้นไม่ต้องขออนุญาตตามมาตรา ๓๒ | `Requisition`.`xx` |  | เฉพาะ IMP-P3_4-1 (ยส.3 วจ.3/4) |
 | 0 | ใบสำคัญการขึ้นทะเบียนตำรับ | `Requisition`.`xx` |  | เฉพาะ IMP-N3-1, IMP-P3_4-1 (ยส.3 วจ.3/4) |
+| 0 | หน่วยงานของรัฐที่มีหน้าที่มนการป้องกัน ปราบปราม หรือแก้ไขปัญหายาเสพติด | `Requisition`.`xx` |  | เฉพาะ EXP-SP-1 |
 | 0 | วัตถุประสงค์ในการนำเข้า | `Requisition`.`xx` |  | เฉพาะ IMP-N2-1, IMP-N5-1, IMP-P2-1 |
 | 0 | เหตุผลในการขออนุญาตครั้งนี้ | `Requisition`.`xx` |  |  |
 
 ### ส่วนที่ ๒ (IMP นำเข้าเฉพาะคราว) ข้อมูลการนำเข้า (โปรดกรอกข้อมูลเป็นภาษาอังกฤษ)
-<img src="Narcotic_Temporary_Imp_Field_Condition_3.png" style="border: 2px solid blue;" width="100%">
+<img src="Narcotic_Temporary_Imp_Field_Condition_3.png" style="border: 2px solid blue;" width="60%">
 
 #### 2.1 ชื่อและที่อยู่ของผู้นำเข้า (Name and address of Importer)
 
@@ -207,58 +209,57 @@ li {
 |:---:|---|---|---|---|
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
 
-##### 2.4 ช่องทางการนำเข้า
+#### 2.4 ช่องทางการนำเข้า
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 
-##### 2.5 ระบุด่านตรวจขาเข้า
+#### 2.5 ระบุด่านตรวจขาเข้า
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 
 ### ส่วนที่ ๒ (EXP ส่งออกเฉพาะคราว) ข้อมูลการส่งออก (โปรดกรอกข้อมูลเป็นภาษาอังกฤษ)
-<img src="Narcotic_Temporary_Exp_Field_Condition_3.png" style="border: 2px solid blue;" width="100%">
+<img src="Narcotic_Temporary_Exp_Field_Condition_3.png" style="border: 2px solid blue;" width="60%">
 
-##### 2.1 ชื่อและที่อยู่ของผู้ส่งออก (Name and address of Exporter)
-
-| ลำดับ | Label | Table.Field | Condition | Remark |
-|:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
-
-
-##### 2.2 ชื่อและที่อยู่ของผู้นำเข้า (Name and address of Importer)
+#### 2.1 ชื่อและที่อยู่ของผู้ส่งออก (Name and address of Exporter)
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
 
-##### 2.3 ชื่อและที่อยู่ของผู้ผลิต (Name and address of Manufacturer)
+#### 2.2 ชื่อและที่อยู่ของผู้นำเข้า (Name and address of Importer)
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
 
-##### 2.4 ช่องทางการส่งออก
+#### 2.3 ชื่อและที่อยู่ของผู้ผลิต (Name and address of Manufacturer)
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง xx - สถานที่ xx ตาม `MasterParticipantType`.`Id` | |
+
+#### 2.4 ช่องทางการส่งออก
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 
-##### 2.5 ด่านตรวจ
+#### 2.5 ด่านตรวจ
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 
-##### 2.6 ใบอนุญาตนำเข้า ***(เฉพาะ วจ.1 วจ.3 วจ.4)***
+#### 2.6 ใบอนุญาตนำเข้า ***(เฉพาะ วจ.1 วจ.3 วจ.4)***
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 
-<img src="Narcotic_Temporary_Exp_Field_Condition_4.png" style="border: 2px solid blue;" width="100%">
+<img src="Narcotic_Temporary_Exp_Field_Condition_4.png" style="border: 2px solid blue;" width="60%">
 
 #### 2.(6/7) ยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก <br> Substance / Narcotic Drug to br imported / exported
 
-<img src="Narcotic_Temporary_Imp_Substance_Field_Condition.png" style="border: 2px solid blue;" width="100%">
+<img src="Narcotic_Temporary_Imp_Substance_Field_Condition.png" style="border: 2px solid blue;" width="60%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
@@ -267,6 +268,11 @@ li {
 | 0 | ชื่อยาเสพติดให้โทษในสิ่งปรุง | `Requisition`.`xx` | | |
 | 0 | ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย | `Requisition`.`xx` | | |
 | 0 | หน่วย | `Requisition`.`xx` | | |
+
+<!-- ### 2️⃣ พิเศษ เฉพาะคราว
+<!--### 3️⃣ ประเภท แต่ละครั้ง (ก็คือ เฉพาะคราว)-->
+<!--### 4️⃣ ประเภท นำผ่าน -->
+<!-- ## 🔷 Field Condition พิเศษ เฉพาะคราว -->
 
 <!-- #### ส่วนที่ ๓ เอกสารหลักฐาน -->
 
