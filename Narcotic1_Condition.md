@@ -176,9 +176,9 @@ li {
 
 <img src="Narcotic1_Field Condition_8.png" style="border: 1px solid black;" width="100%">
 
-<img src="Narcotic4_Field Condition_5.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic1_Field Condition_9.png" style="border: 1px solid black;" width="100%">
 
-<img src="Narcotic4_Field Condition_6.png" style="border: 1px solid black;" width="75%">
+<img src="Narcotic1_Field Condition_10.png" style="border: 1px solid black;" width="75%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
@@ -202,10 +202,10 @@ li {
 
 ### 2.4 ข้อมูลผู้ส่งออกหรือผู้นำเข้าในต่างประเทศ (กรณีขออนุญาตนำเข้าหรือส่งออก)
 
+<img src="Narcotic1_Field Condition_11.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic1_Field Condition_7.png" style="border: 1px solid black;" width="100%">
 
-*** แสดงเมื่อเลือก OperationType เป็น **นำเข้า** หรือ **ส่งออก** ***
-*** **มีหลายรายการเหมือน 2.3 ผู้รับมอบ ทำหน้าจอเหมือนกัน** ***  
+*** แสดงเมื่อเลือก OperationType เป็น **นำเข้า** หรือ **ส่งออก** <br> **มีหลายรายการเหมือน 2.3 ผู้รับมอบ ทำหน้าจอเหมือนกัน** ***
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
