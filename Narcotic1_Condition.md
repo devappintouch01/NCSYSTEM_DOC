@@ -174,6 +174,8 @@ li {
   </li>
 </ul>
 
+<img src="Narcotic1_Field Condition_8.png" style="border: 1px solid black;" width="100%">
+
 <img src="Narcotic4_Field Condition_5.png" style="border: 1px solid black;" width="100%">
 
 <img src="Narcotic4_Field Condition_6.png" style="border: 1px solid black;" width="75%">
@@ -203,6 +205,7 @@ li {
 <img src="Narcotic1_Field Condition_7.png" style="border: 1px solid black;" width="100%">
 
 *** แสดงเมื่อเลือก OperationType เป็น **นำเข้า** หรือ **ส่งออก** ***
+*** **มีหลายรายการเหมือน 2.3 ผู้รับมอบ ทำหน้าจอเหมือนกัน** ***  
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
