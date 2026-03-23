@@ -24,7 +24,7 @@ table {
 | 3 | - | `SystemUser`.`SkynetToken` |  |  |
 | 4 | - | `SystemUser`.`SkynetTokenExpiresAt` |  |  |
 
-   ** เอาเลขนิติบุคคลที่ได้รับมอบอำนาจ (จาก Field `CITIEZEN_ID_AUTHORIZE` ที่ได้จาก API Authen_Login) ไป Call API DOPA/DBD เพื่อให้ได้ข้อมูลนิติบุคคล (เรียกเหมือน 1.1 ข้อมูลผู้ขออนุญาต ของ ยส.4) แล้วมาใส่ในตาราง `dbo`.`JuristicPerson`, `dbo`.`MasterPlace` และ `dbo`.`MappingPlacePlaceAddress` เพื่อ Initial ข้อมูลสถานที่เริ่มต้น **
+> ** เอาเลขนิติบุคคลที่ได้รับมอบอำนาจ (จาก Field `CITIEZEN_ID_AUTHORIZE` ที่ได้จาก API Authen_Login) ไป Call API DOPA/DBD เพื่อให้ได้ข้อมูลนิติบุคคล (เรียกเหมือน 1.1 ข้อมูลผู้ขออนุญาต ของ ยส.4) แล้วมาใส่ในตาราง `dbo`.`JuristicPerson`, `dbo`.`MasterPlace` และ `dbo`.`MappingPlacePlaceAddress` เพื่อ Initial ข้อมูลสถานที่เริ่มต้น **
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;2.2 ตาราง `dbo`.`JuristicPerson`
 
