@@ -14,7 +14,8 @@ table {
 ที่ Service Authen_Login จะได้ข้อมูลการ Authen กลับมา
 
 2. บันทึกข้อมูลลงฐานข้อมูล NCSYSTEM
-   2.1 ตาราง `dbo`.`SystemUser`
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;2.1 ตาราง `dbo`.`SystemUser`
 
 | ลำดับ | Label | Table.Field | Filed จาก API | Remark |
 |:---:|---|---|---|---|
@@ -23,16 +24,16 @@ table {
 | 3 | - | `SystemUser`.`SkynetToken` |  |  |
 | 4 | - | `SystemUser`.`SkynetTokenExpiresAt` |  |  |
 
-   ** เอาเลขนิติบุคคลที่ได้รับมอบอำนาจ (จาก Field `zzzz` ที่ได้จาก API Authen_Login) ไป Call API DOPA/DBD เพื่อให้ได้ข้อมูลนิติบุคคล (เรียกเหมือน 1.1 ข้อมูลผู้ขออนุญาต ของ ยส.4) แล้วมาใส่ในตาราง `dbo`.`JuristicPerson`, `dbo`.`MasterPlace` และ `dbo`.`MappingPlacePlaceAddress` เพื่อ Initial ข้อมูลสถานที่เริ่มต้น **
+   ** เอาเลขนิติบุคคลที่ได้รับมอบอำนาจ (จาก Field `CITIEZEN_ID_AUTHORIZE` ที่ได้จาก API Authen_Login) ไป Call API DOPA/DBD เพื่อให้ได้ข้อมูลนิติบุคคล (เรียกเหมือน 1.1 ข้อมูลผู้ขออนุญาต ของ ยส.4) แล้วมาใส่ในตาราง `dbo`.`JuristicPerson`, `dbo`.`MasterPlace` และ `dbo`.`MappingPlacePlaceAddress` เพื่อ Initial ข้อมูลสถานที่เริ่มต้น **
 
-   2.2 ตาราง `dbo`.`JuristicPerson`
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;2.2 ตาราง `dbo`.`JuristicPerson`
 
 | ลำดับ | Label/Field name | Table.Field | Filed จาก API | Remark |
 |:---:|:---:|---|---|---|
 | 1 | - | `JuristicPerson`.`TaxNumer` |  |  |
 | 2 | - | `JuristicPerson`.`JuristicName` |  |  |
 
-   2.3 ตาราง `dbo`.`MasterPlace`
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;2.3 ตาราง `dbo`.`MasterPlace`
 
 | ลำดับ | Label/Field name | Table.Field | Filed จาก API | Remark |
 |:---:|---|---|---|---|
@@ -41,8 +42,7 @@ table {
 | 3 | - | `MasterPlace`.`PlaceNameEn` |  |  |
 | 4 | - | `MasterPlace`.`Active` |  | Set เป็น 1 |
 
-
-   2.4 ตาราง `dbo`.`MappingPlacePlaceAddress`
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;2.4 ตาราง `dbo`.`MappingPlacePlaceAddress`
 
 | ลำดับ | Label/Field name | Table.Field | Filed จาก API | Remark |
 |:---:|---|---|---|---|
