@@ -6,9 +6,6 @@
 table {
   font-size: 13px;
 }
-li {
-  font-size: 13px;
-}
 </style>
 
 ## การบันทึกข้อมูลลงระบบ NCSYSTEM
