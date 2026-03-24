@@ -95,3 +95,7 @@ graph TD
 | 18 | - | `MappingPlacePlaceAddress.Email` | | |
 | 19 | - | `MappingPlacePlaceAddress.Active` | | Set เป็น `1` |
 
+##### 2.4.1 การเพิ่มข้อมูลสถานที่ (ลงในตาราง ตาราง `dbo.MappingPlacePlaceAddress`)
+
+ตอนเพิ่มสถานที่ ให้เอา juristic ที่ได้จาก login ขณะนั้น มาตรวจสอบที่ JuristicPerson 
+เพื่อให้ลง MasterPlace และ MappingPlacePlaceAddress ถูกต้อง
