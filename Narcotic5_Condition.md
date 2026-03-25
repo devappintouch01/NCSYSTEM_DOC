@@ -105,6 +105,14 @@ li {
 | 21 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 22 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
+### 2.1 รายละเอียดของยาเสพติดให้โทษประเภท 5 ที่ขอรับอนุญาต
+
+<img src="Narcotic5_Field_Condition_6.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 1 | - | `RequisitionItemDetail`.`NarcoticTypeId` | ส่ง 5 - ยาเสพติดให้โทษประเภท 5 ตาม `MasterNarcoticType`.`Id` | |
+
 ### 2.2 ข้อมูลสถานที่ผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครอง
 
 <img src="Narcotic5_Field_Condition_2-2_1.png" style="border: 1px solid black;" width="100%">
@@ -130,15 +138,19 @@ li {
 *Show on (เฉพาะกรณีขออนุญาตผลิต โดยการปลูก) only*
 <img src="Narcotic5_Field_Condition_2-2-1.png" style="border: 1px solid black;" width="100%">
 
-| Label | Condition | Remark |
-|---|---|---|
-| ขนาดพื้นที่ปลูก (หน่วย : ตารางเมตร) | - Decimal with 4 digits (100.5432) |  |
-| ละติจูด |- Decimal with 6 digits (100.654321) |  |
-| ลองจิจูด | - Decimal with 6 digits (100.654321) |  |
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 1 | ขนาดพื้นที่ปลูก (หน่วย : ตารางเมตร) | - Decimal with 4 digits (100.5432) |  |
+| 2 | ละติจูด | - Decimal with 6 digits (100.654321) |  |
+| 3 | ลองจิจูด | - Decimal with 6 digits (100.654321) |  |
 
 #### 2.2.2 ข้อมูลของผู้ผลิตหรือผู้ส่งออกในต่างประเทศ (เฉพาะกรณีขออนุญาตนำเข้า)
 *Show on (เฉพาะกรณีขออนุญาตนำเข้า) only*
 <img src="Narcotic5_Field_Condition_2-2-2.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 1 | ชื่อผู้ผลิตหรือผู้ส่งออกในต่างประเทศ | - |  |
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ
 
