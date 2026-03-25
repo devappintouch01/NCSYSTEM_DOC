@@ -32,7 +32,25 @@ li {
 | 5 | ขอใบแทน | ✅ |
 
 ## 🔷 Field Condition
+
+### Step 1 (ยส.5-1)
+<img src="Narcotic5_Field_Condition_1_2.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic5_Field_Condition_1_3.png" style="border: 1px solid black;" width="80%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 1 | การดำเนินการ | `Requisition`.`OperationTypeId` |  | `MasterOperationType`.`Id` |
+| 1 | การดำเนินการ | `Requisition`.`OperationType` |  | ประเภทการดำเนินการ (00 - อื่น ๆ, 01 - ผลิต, 02 - ผลิตส่งออก, 03 - นำเข้า, <br> 04 - ส่งออก, 05 - จำหน่าย, 06 - จำหน่ายขายส่ง, 07 - ครอบครอง) |
+| 2 | ชนิดของยาเสพติดให้โทษในประเภท 5 | `Requisition`.`NarcoticPlantId` |  | ประเภทของพืชเสพติด อ้างอิง `MasterNarcoticPlantType`.`Id` <br> ส่ง 1 - ฝิ่น <br> ส่ง 2 - เห็ดขี้ควาย <br> ส่ง 99 - อื่นๆ |
+| 3 | ชนิดของพืชเสพติดประเภท 5 กรณีเป็นอื่นๆ | `Requisition`.`NarcoticPlantRemark` |  |  |
+| 4 | วัตถุประสงค์ในการขออนุญาต |  |  |  |
+| 5 | ผู้ขออนุญาต |  |  |  |
+
+### 1.1 ข้อมูลผู้ขอรับใบอนุญาต (ยส.5-1)
+
 ### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
+
+
 
 <img src="Narcotic5_Field_Condition_4.png" style="border: 1px solid black;" width="100%">
 
