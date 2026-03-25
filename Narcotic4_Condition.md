@@ -164,7 +164,6 @@ li {
 
 <img src="Narcotic4_Field Condition_3.png" style="border: 1px solid black;" width="100%">
 
-> &nbsp; 
 > 24 มี.ค. 2569
 > 1. เปิดทุก field เป็น enable แต่ยังให้ดึงข้อมูลจาก DOPA มา fill
 > 2. ย้าย จังหวัด ไปต่อกับ ถนน
@@ -172,7 +171,6 @@ li {
 > 4. โทรศัพท์มือถือ ปรับให้เป็น free text
 > 5. โทรสาร ปรับให้เป็น free text, not required
 > 6. อีเมล ปรับให้เป็น free text, not required
-> &nbsp; 
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|

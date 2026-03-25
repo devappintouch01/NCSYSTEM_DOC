@@ -80,7 +80,6 @@ li {
 
 <img src="Narcotic1_Field Condition_2.png" style="border: 1px solid black;" width="100%">
 
-> &nbsp; 
 > 24 มี.ค. 2569
 > 1. เปิดทุก field เป็น enable แต่ยังให้ดึงข้อมูลจาก DOPA มา fill
 > 2. ย้าย จังหวัด ไปต่อกับ ถนน
@@ -88,7 +87,6 @@ li {
 > 4. โทรศัพท์มือถือ ปรับให้เป็น free text
 > 5. โทรสาร ปรับให้เป็น free text, not required
 > 6. อีเมล ปรับให้เป็น free text, not required
-> &nbsp; 
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
@@ -117,12 +115,10 @@ li {
 
 *** (ยส.1-1) ไม่เก็บ Work permit no. ***
 
-> &nbsp; 
 > 24 มี.ค. 2569
 > 1. ซ่อน Work permit no.
 > 2. `เลขการมอบอำนาจ` เปลี่ยนเป็น `เลขการมอบอำนาจออนไลน์`
 > 3. เลขรหัสประจำบ้าน ไม่แสดง ให้แสดงต่อจาก เลขที่
-> &nbsp; 
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
@@ -157,6 +153,7 @@ li {
 
 <img src="Narcotic1_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic1_Field Condition_4_1.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic1_Field Condition_12.png" style="border: 1px solid black;" width="80%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
