@@ -80,6 +80,16 @@ li {
 
 <img src="Narcotic1_Field Condition_2.png" style="border: 1px solid black;" width="100%">
 
+> &nbsp; 
+> 24 มี.ค. 2569
+> 1. เปิดทุก field เป็น enable แต่ยังให้ดึงข้อมูลจาก DOPA มา fill
+> 2. ย้าย จังหวัด ไปต่อกับ ถนน
+> 3. ย้าย Email ไปต่อกับ โทรสาร  
+> 4. โทรศัพท์มือถือ ปรับให้เป็น free text
+> 5. โทรสาร ปรับให้เป็น free text, not required
+> 6. อีเมล ปรับให้เป็น free text, not required
+> &nbsp; 
+
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 | x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
@@ -95,9 +105,9 @@ li {
 | 9 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
 | 10 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
 | 11 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
-| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
-| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
-| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | Free text | Required field |
+| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | Free text | Not required field |
+| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | Type Email | Not required field | |
 | X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
 | Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | - เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
 
@@ -106,6 +116,13 @@ li {
 <img src="Narcotic1_Field Condition_3.png" style="border: 1px solid black;" width="100%">
 
 *** (ยส.1-1) ไม่เก็บ Work permit no. ***
+
+> &nbsp; 
+> 24 มี.ค. 2569
+> 1. ซ่อน Work permit no.
+> 2. `เลขการมอบอำนาจ` เปลี่ยนเป็น `เลขการมอบอำนาจออนไลน์`
+> 3. เลขรหัสประจำบ้าน ไม่แสดง ให้แสดงต่อจาก เลขที่
+> &nbsp; 
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
@@ -121,7 +138,7 @@ li {
 | 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป | |
 | ~~9~~ | ~~ใบอนุญาตทำงานเลขที่ (Work Permit No.) กรณีชาวต่างชาติ~~ | ~~`RequisitionParticipant`.`WorkPermit`~~ |  |  |
 | 10 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
-| 11 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 11 | เลขการมอบอำนาจออนไลน์ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
 | 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator (0000-000000-0) |
 | 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
