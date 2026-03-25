@@ -14,29 +14,29 @@
 
 - [UAT URL - https://permitfortraveler.vercel.app](https://permitfortraveler.vercel.app)
 
-## ประเภทการขอ
+## ประเภทการคำขอ
 
-| ประเภทการขอ |
-|---|
-| 1. IC |
-| 2. OC |
+| ลำดับ | ประเภทการคำขอ |
+|:---:|:---:|
+| 1 | IC-1 |
+| 2 | OC-1 |
 
+#### ตารางที่เกี่ยวข้อง
 
-TravelerPermitUser
+| ลำดับ | ชื่อตาราง | คำอธิบาย | หมายเหตุ |
+|:---:|---|---|:---:|
+| 1 | `TravelerPermitUser` | ผู้สมัครใช้งานระบบ Permit for traveler Carrying Narcotics | ทำตารางแล้ว |
+| 2 | `Requisition` | คำขอ | ทำตารางแล้ว |
+| 3 | `RequisitionTraveler` | ข้อมูลผู้สมัครใช้งานระบบ | ❌ ยังไม่ทำตาราง |
+| 4 | `RequisitionMedicationItem` | รายการยาที่ขอในคำขอยาติดตัว | ทำตารางแล้ว |
+| 5 | `RequisitionMedicationIngredient` | ส่วนประกอบของยาที่ขอในคำขอยาติดตัว | ทำตารางแล้ว |
+| 6 | `MasterMedicationUnit` | หน่วย | ❌ ยังไม่ทำตาราง |
+| 7 | `MasterNarcoticDrugForTraveler` |  | ❌ ยังไม่ทำตาราง |
+| 8 | `MasterTravelerPort` |  | ❌ ยังไม่ทำตาราง |
+| 9 | `LicenseTraveler` | ใบอนุญาต | ❌ ยังไม่ทำตาราง |
+| 10 | `LicenseMedicationItem` | รายการยาที่ขอในใบอนุญาต | ❌ ยังไม่ทำตาราง |
 
-Requisition
-RequisitionTraveler
-RequisitionMedicationItem รายการยาที่ขอในคำขอยาติดตัว
-RequisitionMedicationIngredient ส่วนประกอบของยาที่ขอในคำขอยาติดตัว
-
-MasterMedicationUnit
-MasterNarcoticDrugForTraveler
-MasterTravelerPort
-
-LicenseTraveler
-LicenseMedicationItem
-
-## 🔷 Field Condition (ยส.4-1)
+## 🔷 Field Condition (IC-1, OC-1)
 
 ### ตาราง Requisition
 
@@ -152,39 +152,40 @@ LicenseMedicationItem
 | 57 | If insufficient space, attach an additional statement. | `RequisitionTraveler`.`MedicalCostInThailandDetail` | varchar(2000) | | |
 
 
-<img src="IC_Field_Condition_8.png" style="border: 1px solid black;" width="100%">
+<img src="IC_Field_Condition_8.png" style="border: 1px solid black;" width="80%">
 
 ### ตาราง RequisitionMedicationItem รายการยาที่ขอในคำขอยาติดตัว
 
 | ลำดับ | Label | Table.Field | Data type | Condition | Remark |
 |:---:|---|---|---|---|---|
-| v | ผู้สร้าง | `RequisitionTraveler`.`CreateBy` | ผู้สร้าง อ้างอิง `TravelerPermitUser`.`Id` |  |  |
-| w | วันที่สร้าง | `RequisitionTraveler`.`CreateOn` | วันที่สร้าง |  |  |
-| x | ผู้แก้ไข | `RequisitionTraveler`.`UpdateBy` | ผู้แก้ไข อ้างอิง `TravelerPermitUser`.`Id` |  |  |
-| y | วันที่แก้ไข | `RequisitionTraveler`.`UpdateOn` | วันที่แก้ไข |  |  |
-| z | คำขอ | `RequisitionTraveler`.`RequisitionId` | int | คำขอ อ้างอิง `Requisition`.`Id` |  |  |
-| 1 | RequisitionId | `RequisitionMedicationItem`.`RequisitionId` | int | คำขอ อ้างอิง `Requisition`.`Id` |  |  |
+| u | Id | `RequisitionMedicationItem`.`Id` | int |  |  |
+| v | ผู้สร้าง | `RequisitionMedicationItem`.`CreateBy` | int | ผู้สร้าง อ้างอิง `TravelerPermitUser`.`Id` |  |
+| w | วันที่สร้าง | `RequisitionMedicationItem`.`CreateOn` | Date time | วันที่สร้าง |  |
+| x | ผู้แก้ไข | `RequisitionMedicationItem`.`UpdateBy` | int | ผู้แก้ไข อ้างอิง `TravelerPermitUser`.`Id` |  |
+| y | วันที่แก้ไข | `RequisitionMedicationItem`.`UpdateOn` | Date time | วันที่แก้ไข |  |
+| z | คำขอ | `RequisitionMedicationItem`.`RequisitionId` | int | คำขอ อ้างอิง `Requisition`.`Id` |  |
+| 1 | RequisitionId | `RequisitionMedicationItem`.`RequisitionId` | int | คำขอ อ้างอิง `Requisition`.`Id` |  |
 | 2 | Substance form | `RequisitionMedicationItem`.`SubstanceForm` | char(1) | รูปแบบของยา `(S=Solid, L=Liquid)` |  |
-| 3 | Trade name | `RequisitionMedicationItem`.`TradeName` | varchar(255) |  |  |
-| 4 | Daily Usage | `RequisitionMedicationItem`.`DailyUsage` | decimal(18,2) |  |  |
-| 5 | Daily Usage Unit | `RequisitionMedicationItem`.`DailyUsageUnitId` | int |  |  |
-| 6 | Total Quantity | `RequisitionMedicationItem`.`TotalQuantity` | decimal(18,2) |  |  |
-| 7 | Total Quantity Unit | `RequisitionMedicationItem`.`TotalQuantityUnitId` | int |  |  |
-| 8 | Amount Per Unit | `RequisitionMedicationItem`.`AmountPerUnit` | decimal(18,2) |  |  |
-| 9 | Amount Per Unit Unit | `RequisitionMedicationItem`.`AmountPerUnitUnitId` | int |  |  |
+| 3 | Trade name | `RequisitionMedicationItem`.`TradeName` | varchar(255) | ชื่อการค้า |  |
+| 4 | Daily Usage | `RequisitionMedicationItem`.`DailyUsage` | decimal(18,2) | ปริมาณที่ใช้ต่อวัน |  |
+| 5 | Daily Usage Unit | `RequisitionMedicationItem`.`DailyUsageUnitId` | int | หน่วยของปริมาณที่ใช้ต่อวัน อ้างอิง `MasterMedicationUnit`.`Id` |  |
+| 6 | Total Quantity | `RequisitionMedicationItem`.`TotalQuantity` | decimal(18,2) | ปริมาณที่ใช้รวม |  |
+| 7 | Total Quantity Unit | `RequisitionMedicationItem`.`TotalQuantityUnitId` | int | หน่วยของปริมาณที่ใช้รวม อ้างอิง `MasterMedicationUnit`.`Id` |  |
+| 8 | Amount Per Unit | `RequisitionMedicationItem`.`AmountPerUnit` | decimal(18,2) | ปริมาณต่อหน่วย |  |
+| 9 | Amount Per Unit Unit | `RequisitionMedicationItem`.`AmountPerUnitUnitId` | int | หน่วยของปริมาณต่อหน่วย อ้างอิง `MasterMedicationUnit`.`Id` |  |
 
-<img src="IC_Field_Condition_9.png" style="border: 1px solid black;" width="100%">
+<img src="IC_Field_Condition_9.png" style="border: 1px solid black;" width="80%">
 
 ### ตาราง RequisitionMedicationIngredient ส่วนประกอบของยาที่ขอในคำขอยาติดตัว
 
 | ลำดับ | Label | Table.Field | Data type | Condition | Remark |
 |:---:|---|---|---|---|---|
 | v | Id | `RequisitionMedicationIngredient`.`Id` | int |  |  |
-| w | ผู้สร้าง | `RequisitionTraveler`.`CreateBy` | ผู้สร้าง อ้างอิง `TravelerPermitUser`.`Id` |  |  |
-| x | วันที่สร้าง | `RequisitionTraveler`.`CreateOn` | วันที่สร้าง |  |  |
-| y | ผู้แก้ไข | `RequisitionTraveler`.`UpdateBy` | ผู้แก้ไข อ้างอิง `TravelerPermitUser`.`Id` |  |  |
-| z | วันที่แก้ไข | `RequisitionTraveler`.`UpdateOn` | วันที่แก้ไข |  |  |
-| 1 | RequisitionMedicationItemId | `RequisitionMedicationIngredient`.`RequisitionMedicationItemId` | int | รายการยาที่ขอในคำขอยาติดตัว อ้างอิง `RequisitionMedicationItem`.`Id` |  |  |
-| 2 | Generic name | `RequisitionMedicationIngredient`.`GenericNameId` | int | ชื่อสามัญ อ้างอิง `MasterNarcoticDrugForTraveler`.`Id` |  |  |
+| w | ผู้สร้าง | `RequisitionMedicationIngredient`.`CreateBy` | int | ผู้สร้าง อ้างอิง `TravelerPermitUser`.`Id` |  |
+| x | วันที่สร้าง | `RequisitionMedicationIngredient`.`CreateOn` | Date time | วันที่สร้าง |  |
+| y | ผู้แก้ไข | `RequisitionMedicationIngredient`.`UpdateBy` | int | ผู้แก้ไข อ้างอิง `TravelerPermitUser`.`Id` |  |
+| z | วันที่แก้ไข | `RequisitionMedicationIngredient`.`UpdateOn` | Date time | วันที่แก้ไข |  |
+| 1 | รายการยาที่ขอในคำขอยาติดตัว | `RequisitionMedicationIngredient`.`RequisitionMedicationItemId` | int | รายการยาที่ขอในคำขอยาติดตัว อ้างอิง `RequisitionMedicationItem`.`Id` |  |
+| 2 | Generic name | `RequisitionMedicationIngredient`.`GenericNameId` | int | ชื่อสามัญ อ้างอิง `MasterNarcoticDrugForTraveler`.`Id` |  |
 | 3 | Strength | `RequisitionMedicationIngredient`.`Strength` | varchar(255) | ความแรง |  |
 | 4 | Units | `RequisitionMedicationIngredient`.`GenericUnitId` | int | หน่วยของความแรง อ้างอิง `MasterMedicationUnit`.`Id`|  |
