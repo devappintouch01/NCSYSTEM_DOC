@@ -20,3 +20,18 @@
 |---|
 | 1. IC |
 | 2. OC |
+
+## 🔷 Field Condition (ยส.4-1)
+
+<img src="IC_Field_Condition_1.png" style="border: 1px solid black;" width="100%">
+<img src="IC_Field_Condition_2.png" style="border: 1px solid black;" width="100%">
+<img src="IC_Field_Condition_3.png" style="border: 1px solid black;" width="100%">
+<img src="IC_Field_Condition_4.png" style="border: 1px solid black;" width="100%">
+<img src="IC_Field_Condition_5.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| x | - | `RequisitionTraveler`.`RequisitionId` |  |  |
+| 1 | ชื่อผู้รับอนุญาตที่รับมอบ | `RequisitionTraveler`.`TravelerPermitUserId` | | |
+| 2 | นามสกุลของผู้เดินทาง | `RequisitionTraveler`.`FamilyName` | | |
+| 3 | ชื่อตัวของผู้เดินทาง | `RequisitionTraveler`.`GivenName` | | |
