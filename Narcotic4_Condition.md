@@ -178,9 +178,9 @@ li {
 | 9 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
 | 10 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
 | 11 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
-| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
-| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
-| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | Free text | Required field |
+| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | Free text | Not required field |
+| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | Type Email | Not required field | |
 | X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
 | Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | - เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
 
@@ -200,8 +200,8 @@ li {
 | 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`IdentificationNo` | เก็บเฉพาะเลขบัตรประชาชนเท่านั้น | - Cannot over 13 digits <br> - Need separator `(0-0000-00000-00-0)` |
 | 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป | |
 | 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` | | |
-| 10 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
-| 11 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 11 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
 | 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |

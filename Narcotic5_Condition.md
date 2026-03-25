@@ -34,23 +34,48 @@ li {
 ## 🔷 Field Condition
 
 ### Step 1 (ยส.5-1)
-<img src="Narcotic5_Field_Condition_1_2.png" style="border: 1px solid black;" width="80%">
-<img src="Narcotic5_Field_Condition_1_3.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic5_Field_Condition_1_2.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic5_Field_Condition_1_3.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 1 | การดำเนินการ | `Requisition`.`OperationTypeId` |  | `MasterOperationType`.`Id` |
+| 1 | การดำเนินการ | `Requisition`.`OperationTypeId` |  | การดำเนินการ อ้างอิง `MasterOperationType`.`Id` <br> 1 - ผลิต, 3 - นำเข้า, 4 - ส่งออก, 5 - จำหน่าย <br> 7 - ครอบครอง, 8 - ผลิตโดยการปลูก, 9 - ผลิตที่มิใช่การปลูก |
 | 1 | การดำเนินการ | `Requisition`.`OperationType` |  | ประเภทการดำเนินการ (00 - อื่น ๆ, 01 - ผลิต, 02 - ผลิตส่งออก, 03 - นำเข้า, <br> 04 - ส่งออก, 05 - จำหน่าย, 06 - จำหน่ายขายส่ง, 07 - ครอบครอง) |
-| 2 | ชนิดของยาเสพติดให้โทษในประเภท 5 | `Requisition`.`NarcoticPlantId` |  | ประเภทของพืชเสพติด อ้างอิง `MasterNarcoticPlantType`.`Id` <br> ส่ง 1 - ฝิ่น <br> ส่ง 2 - เห็ดขี้ควาย <br> ส่ง 99 - อื่นๆ |
+| 2 | ชนิดของยาเสพติดให้โทษในประเภท 5 | `Requisition`.`NarcoticPlantId` |  | ประเภทของพืชเสพติด อ้างอิง `MasterNarcoticPlantType`.`Id` <br> 1 - ฝิ่น, 2 - เห็ดขี้ควาย, 99 - อื่นๆ |
 | 3 | ชนิดของพืชเสพติดประเภท 5 กรณีเป็นอื่นๆ | `Requisition`.`NarcoticPlantRemark` |  |  |
-| 4 | วัตถุประสงค์ในการขออนุญาต |  |  |  |
-| 5 | ผู้ขออนุญาต |  |  |  |
+| 4 | วัตถุประสงค์ในการขออนุญาต | `Requisition`.`ObjectiveId` |  | วัตถุประสงค์ อ้างอิง `MasterObjective`.`Id` <br> โดย where หาจาก `MasterObjective`.`RequisitionTypeId` = `20` <br> 20 - เพื่อประโยชน์ของทางราชการในการป้องกันและปราบปรามการกระทำความผิดเกี่ยวกับยาเสพติด <br> 21 - เพื่อประโยชน์ในทางการแพทย์หรือการบำบัดหรือรักษาผู้ป่วย <br> 22 - เพื่อการวิเคราะห์ทางการแพทย์หรือวิทยาศาสตร์ <br> 23 - เพื่อการศึกษาวิจัยทางการแพทย์หรือวิทยาศาสตร์ |
+| 4.1 | ชื่อโครงการวิจัย |  | ถ้าเลือก `MasterObjective`.`Id` = 23 - เพื่อการศึกษาวิจัยทางการแพทย์หรือวิทยาศาสตร์ |  |
+| 4.2 | วันที่เริ่มต้นโครงการวิจัย |  | ถ้าเลือก `MasterObjective`.`Id` = 23 - เพื่อการศึกษาวิจัยทางการแพทย์หรือวิทยาศาสตร์ |  |
+| 4.3 | วันที่สิ้นสุดโครงการวิจัย |  | ถ้าเลือก `MasterObjective`.`Id` = 23 - เพื่อการศึกษาวิจัยทางการแพทย์หรือวิทยาศาสตร์ |  |
+| 5 | ผู้ขออนุญาต |  | |  |
+| 5.1 |  |  | |  |
+| 5.2 |  |  | |  |
 
 ### 1.1 ข้อมูลผู้ขอรับใบอนุญาต (ยส.5-1)
 
-### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต
+<img src="Narcotic5_Field_Condition_5.png" style="border: 1px solid black;" width="100%">
 
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 0 | - | `Requisition`.`ParticipantTypeId` | ส่ง 1 - ผู้ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
+| 1 | ชื่อผู้ขออนุญาต | `Requisition`.`FullName` <br>`Requisition`.`JuristicName` | | - ลงคู่กับ juristicName |
+| 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`TaxId` | | - กองยาลง TaxId |
+| 3 | เลขที่ (ที่ตั้งสำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseNo` | | |
+| 4 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (สำนักงานใหญ่) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
+| 5 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 6 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 7 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 8 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 9 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 10 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 11 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | Free text | Required field |
+| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | Free text | Not required field |
+| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | Type Email | Not required field | |
+| X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
+| Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | - เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
 
+### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต (ยส.5-1)
 
 <img src="Narcotic5_Field_Condition_4.png" style="border: 1px solid black;" width="100%">
 
@@ -65,9 +90,9 @@ li {
 | 6 | สัญชาติ | `RequisitionParticipant`.`NationalityId` | | |
 | 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`IdentificationNo` | เก็บเฉพาะเลขบัตรประชาชนเท่านั้น | - Cannot over 13 digits <br> - Need separator `(0-0000-00000-00-0)` |
 | 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป | |
-| 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` | | |
-| 10 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
-| 11 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| ~~9~~ | ~~ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ)~~ | ~~`RequisitionParticipant`.`WorkPermit`~~ | | |
+| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 11 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
 | 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
