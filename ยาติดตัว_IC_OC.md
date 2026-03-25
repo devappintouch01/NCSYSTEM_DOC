@@ -90,7 +90,7 @@
 | 15 | Your current residential address : Current Address | `RequisitionTraveler`.`ResidentialAddress` | varchar(1000) | | |
 | 16 | Your current residential address : Country | `RequisitionTraveler`.`ResidentialCountryId` | int | ประเทศของที่อยู่ปัจจุบัน อ้างอิง `MasterCountry.Id` | |
 | 17 | Your current residential address : Postal Code | `RequisitionTraveler`.`ResidentialPostalCode` | varchar(20) | | |
-| 18 | If the same as your residential address, write 'AS ABOVE'. | `RequisitionTraveler`.`IsCorrespondenceSame` | bit | ระบุว่าที่อยู่สำหรับติดต่อเป็นที่เดียวกับที่อยู่ปัจจุบันหรือไม่ `(1=ใช่,0=ไม่ใช่)` | **ทำradio button เพิ่ม จากหน้าจอปัจจุบัน** |
+| 18 | If the same as your residential address, write 'AS ABOVE'. | `RequisitionTraveler`.`IsCorrespondenceSame` | bit | ระบุว่าที่อยู่สำหรับติดต่อเป็นที่เดียวกับที่อยู่ปัจจุบันหรือไม่ `(1=ใช่,0=ไม่ใช่)` | **ทำ radio button เพิ่ม จากหน้าจอปัจจุบัน** |
 | 19 | Address for correspondence : Current Address | `RequisitionTraveler`.`CorrespondenceAddress` | varchar(1000) | ถ้า IsCorrespondenceSame = `1` ให้ Disable text area แล้วเติมคำว่า "AS ABOVE" และบันทึกคำว่า "AS ABOVE" ลงในฐานข้อมูล | |
 | 20 | Address for correspondence : Country | `RequisitionTraveler`.`CorrespondenceCountryId` | int | ประเทศของที่อยู่สำหรับติดต่อ อ้างอิง `MasterCountry.Id` <br> ถ้า IsCorrespondenceSame = `1` ให้ Disable | |
 | 21 | Address for correspondence : Postal Code | `RequisitionTraveler`.`CorrespondencePostalCode` | varchar(20) | ถ้า IsCorrespondenceSame = `1` ให้ Disable | |
