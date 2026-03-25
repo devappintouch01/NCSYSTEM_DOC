@@ -21,7 +21,7 @@
 | 1 | IC-1 |
 | 2 | OC-1 |
 
-#### ตารางที่เกี่ยวข้อง
+#### ตารางที่เกี่ยวข้อง (IC-1, OC-1)
 
 | ลำดับ | ชื่อตาราง | คำอธิบาย | หมายเหตุ |
 |:---:|---|---|:---:|
@@ -90,7 +90,7 @@
 | 15 | Your current residential address : Current Address | `RequisitionTraveler`.`ResidentialAddress` | varchar(1000) | | |
 | 16 | Your current residential address : Country | `RequisitionTraveler`.`ResidentialCountryId` | int | ประเทศของที่อยู่ปัจจุบัน อ้างอิง `MasterCountry.Id` | |
 | 17 | Your current residential address : Postal Code | `RequisitionTraveler`.`ResidentialPostalCode` | varchar(20) | | |
-| 18 | If the same as your residential address, write 'AS ABOVE'. | `RequisitionTraveler`.`IsCorrespondenceSame` | bit | ระบุว่าที่อยู่สำหรับติดต่อเป็นที่เดียวกับที่อยู่ปัจจุบันหรือไม่ `(1=ใช่,0=ไม่ใช่)` | |
+| 18 | If the same as your residential address, write 'AS ABOVE'. | `RequisitionTraveler`.`IsCorrespondenceSame` | bit | ระบุว่าที่อยู่สำหรับติดต่อเป็นที่เดียวกับที่อยู่ปัจจุบันหรือไม่ `(1=ใช่,0=ไม่ใช่)` | **ทำradio button เพิ่ม จากหน้าจอปัจจุบัน** |
 | 19 | Address for correspondence : Current Address | `RequisitionTraveler`.`CorrespondenceAddress` | varchar(1000) | ถ้า IsCorrespondenceSame = `1` ให้ Disable text area แล้วเติมคำว่า "AS ABOVE" และบันทึกคำว่า "AS ABOVE" ลงในฐานข้อมูล | |
 | 20 | Address for correspondence : Country | `RequisitionTraveler`.`CorrespondenceCountryId` | int | ประเทศของที่อยู่สำหรับติดต่อ อ้างอิง `MasterCountry.Id` <br> ถ้า IsCorrespondenceSame = `1` ให้ Disable | |
 | 21 | Address for correspondence : Postal Code | `RequisitionTraveler`.`CorrespondencePostalCode` | varchar(20) | ถ้า IsCorrespondenceSame = `1` ให้ Disable | |
@@ -148,9 +148,8 @@
 | 53 | Address | `RequisitionTraveler`.`ThailandContactAddress` | varchar(1000) | | |
 | 54 | Country | `RequisitionTraveler`.`ThailandContactCountryId` | int | ประเทศของที่อยู่ติดต่อ อ้างอิง `MasterCountry`.`Id` | |
 | 55 | Postal Code | `RequisitionTraveler`.`ThailandContactPostalCode` | varchar(20) | | |
-| 56 | Has Medical Cost In Thailand | `RequisitionTraveler`.`HasMedicalCostInThailand` | bit | ระบุว่าผู้เดินทางมีหรือคาดว่าจะมีค่าใช้จ่ายด้านการรักษาในประเทศไทยหรือไม่ (1=มี, 0=ไม่มี) | |
-| 57 | If insufficient space, attach an additional statement. | `RequisitionTraveler`.`MedicalCostInThailandDetail` | varchar(2000) | | |
-
+| 56 | During your proposed stay in Thailand, do you have or expect to incur medical costs or require treatment or medical follow up for your medical condition? | `RequisitionTraveler`.`HasMedicalCostInThailand` | bit | ระบุว่าผู้เดินทางมีหรือคาดว่าจะมีค่าใช้จ่ายด้านการรักษาในประเทศไทยหรือไม่ (1=มี, 0=ไม่มี) | **OC-1 ไม่มีส่วนนี้** |
+| 57 | If insufficient space, attach an additional statement. | `RequisitionTraveler`.`MedicalCostInThailandDetail` | varchar(2000) | | **OC-1 ไม่มีส่วนนี้** |
 
 <img src="IC_Field_Condition_8.png" style="border: 1px solid black;" width="80%">
 
