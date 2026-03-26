@@ -100,7 +100,7 @@ li {
 |:---:|---|---|---|---|
 | x | - | `RequisitionObjectiveApplicantDetail`.`RequisitionId` |  |  |
 | 1 | เลขที่ใบอนุญาตจัดตั้งสถาบันอุดมศึกษาเอกชน | `RequisitionObjectiveApplicantDetail`.`ApplicantPrivateUniversityLicenseNumber` | กรณีเลือกวัตถุประสงค์ เป็น `สถาบันอุดมศึกษาเอกชน ตามกฎหมายว่าด้วยสถาบันอุดมศึกษาเอกชน` |  |
-| 2.1 | ระบุประเภทใบอนุญาต | `RequisitionObjectiveApplicantDetail`.`ApplicantLicenseTypeId` | กรณีเลือกวัตถุประสงค์ เป็น `ผู้รับอนุญาตตามประมวลกฎหมายยาเสพติด/ตามกฎหมายว่าด้วยยา` |  |
+| 2.1 | ระบุประเภทใบอนุญาต | `RequisitionObjectiveApplicantDetail`.`ApplicantLicenseTypeId` | กรณีเลือกวัตถุประสงค์ เป็น `ผู้รับอนุญาตตามประมวลกฎหมายยาเสพติด/ตามกฎหมายว่าด้วยยา` | Dropdown ประเภทใบอนุญาตที่อ้างอิง อ้างอิง `MasterLicenseType`.`Id` |
 | 2.2 | เลขที่ใบอนุญาต | `RequisitionObjectiveApplicantDetail`.`ApplicantLicenseNumber` | กรณีเลือกวัตถุประสงค์ เป็น `ผู้รับอนุญาตตามประมวลกฎหมายยาเสพติด/ตามกฎหมายว่าด้วยยา` |  |
 
 ### 1.1 ข้อมูลผู้ขออนุญาต (ยส.1-1)
@@ -151,7 +151,7 @@ li {
 |:---:|---|---|---|---|
 | 1 | ไอดี ของ ใบอนุญาต | `Requisition`.`LicenseRefId` | ใบอนุญาตที่อ้างอิง อ้างอิง `License`.`Id` | |
 | 2 | ใบอนุญาตเลขที่ | `Requisition`.`LicenseRefNo` | เลขที่ใบอนุญาตที่อ้างอิง | |
-| 3 | ประเภทใบอนุญาต | `Requisition`.`LicenseRefType` | ประเภทใบอนุญาตที่อ้างอิง อ้างอิง `MasterLicenseType`.`Id`  | |
+| 3 | ประเภทใบอนุญาต | `Requisition`.`LicenseRefType` | ประเภทใบอนุญาตที่อ้างอิง อ้างอิง `MasterLicenseType`.`Id` | |
 
 ### 1.3 ข้อมูลผู้ดำเนินการใบอนุญาต (ยส.1-1)
 
@@ -197,13 +197,12 @@ li {
 
 <img src="Narcotic1_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic1_Field Condition_4_1.png" style="border: 1px solid black;" width="100%">
-<img src="Narcotic1_Field Condition_12.png" style="border: 1px solid black;" width="75%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 | x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 3 - สถานที่ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
-| 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
+| 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | ดึงข้อมูลจาก `MasterPlace`.`PlaceNameTh` | |
 | 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
 | 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 4 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
@@ -216,6 +215,10 @@ li {
 | 11 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
 | 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+
+<img src="Narcotic1_Field Condition_12.png" style="border: 1px solid black;" width="75%">
+
+*** ทำแบบ ยส.4 ***
 
 ### 2.3 ข้อมูลของ<u>ผู้รับมอบ</u>ผลิตยาเสพติดให้โทษในประเภท 1 (เฉพาะกรณีขออนุญาตจำหน่าย) (ยส.1-1)
 
