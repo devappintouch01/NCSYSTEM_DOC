@@ -138,6 +138,8 @@ response
 }
 ```
 
+<hr>
+
 #### PROFILE-LOCATION-CENTER
 
 **Endpoint:**
