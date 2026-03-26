@@ -76,12 +76,40 @@ li {
 <img src="Narcotic1_Condition_2.png" style="border: 1px solid black;" width="100%">
 
 ## 🔷 Field Condition (ยส.1-1)
+
+### การดำเนินการ + วัตถุประสงค์ในการขออนุญาต + ประเภทผู้ขออนุญาต
+
+<img src="Narcotic1_Field Condition_13_1.png" style="border: 1px solid black;" width="70%">
+<img src="Narcotic1_Field Condition_13.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 1 | การดำเนินการ | `Requisition`.`OperationTypeId` | การดำเนินการ อ้างอิง `MasterOperationType`.`Id` |  |
+
+<img src="Narcotic1_Field Condition_14_1.png" style="border: 1px solid black;" width="70%">
+<img src="Narcotic1_Field Condition_14.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 1 | วัตถุประสงค์ในการขออนุญาต | `Requisition`.`ObjectiveTypeId` |  |  |
+
+<img src="Narcotic1_Field Condition_15_1.png" style="border: 1px solid black;" width="70%">
+<img src="Narcotic1_Field Condition_15.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| x | - | `RequisitionObjectiveApplicantDetail`.`RequisitionId` |  |  |
+| 1 | เลขที่ใบอนุญาตจัดตั้งสถาบันอุดมศึกษาเอกชน | `RequisitionObjectiveApplicantDetail`.`ApplicantPrivateUniversityLicenseNumber` | กรณีเลือกวัตถุประสงค์ เป็น `สถาบันอุดมศึกษาเอกชน ตามกฎหมายว่าด้วยสถาบันอุดมศึกษาเอกชน` |  |
+| 2.1 | ระบุประเภทใบอนุญาต | `RequisitionObjectiveApplicantDetail`.`ApplicantLicenseTypeId` | กรณีเลือกวัตถุประสงค์ เป็น `ผู้รับอนุญาตตามประมวลกฎหมายยาเสพติด/ตามกฎหมายว่าด้วยยา` |  |
+| 2.2 | เลขที่ใบอนุญาต | `RequisitionObjectiveApplicantDetail`.`ApplicantLicenseNumber` | กรณีเลือกวัตถุประสงค์ เป็น `ผู้รับอนุญาตตามประมวลกฎหมายยาเสพติด/ตามกฎหมายว่าด้วยยา` |  |
+
 ### 1.1 ข้อมูลผู้ขออนุญาต (ยส.1-1)
 
 <img src="Narcotic1_Field Condition_2.png" style="border: 1px solid black;" width="100%">
 
 > 24 มี.ค. 2569
 > 1. เปิดทุก field เป็น enable แต่ยังให้ดึงข้อมูลจาก DOPA มา fill
+> (รหัสไปรษณีย์ ให้ disable แต่ให้ดึงตามตำบล/แขวง)
 > 2. ย้าย จังหวัด ไปต่อกับ ถนน
 > 3. ย้าย Email ไปต่อกับ โทรสาร  
 > 4. โทรศัพท์มือถือ ปรับให้เป็น free text
@@ -111,13 +139,29 @@ li {
 
 ### 1.2 ข้อมูลผู้ดำเนินการใบอนุญาต (ยส.1-1)
 
+<img src="Narcotic1_Field Condition_17.png" style="border: 1px solid black;" width="70%">
+<img src="Narcotic1_Field Condition_18.png" style="border: 1px solid black;" width="100%">
+
+<ul>
+  <li>1. ทำเป็น Radio เลือกได้ 1 ประเภทใบอนุญาต</li>
+  <li>2. ใช้ API GetLicense (api/License/Narcotic/Search) ค้นหาใบอนุญาตของตัวเอง</li>
+</ul>
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 1 | ไอดี ของ ใบอนุญาต | `Requisition`.`LicenseRefId` | ใบอนุญาตที่อ้างอิง อ้างอิง `License`.`Id` | |
+| 2 | ใบอนุญาตเลขที่ | `Requisition`.`LicenseRefNo` | เลขที่ใบอนุญาตที่อ้างอิง | |
+| 3 | ประเภทใบอนุญาต | `Requisition`.`LicenseRefType` | ประเภทใบอนุญาตที่อ้างอิง อ้างอิง `MasterLicenseType`.`Id`  | |
+
+### 1.3 ข้อมูลผู้ดำเนินการใบอนุญาต (ยส.1-1)
+
 <img src="Narcotic1_Field Condition_3.png" style="border: 1px solid black;" width="100%">
 
 *** (ยส.1-1) ไม่เก็บ Work permit no. ***
 
 > 24 มี.ค. 2569
 > 1. ซ่อน Work permit no.
-> 2. `เลขการมอบอำนาจ` เปลี่ยนเป็น `เลขการมอบอำนาจออนไลน์`
+> 2. `เลขการมอบอำนาจ` เปลี่ยนเป็น `เลขการมอบอำนาจออนไลน์` (แก้แล้ว)
 > 3. เลขรหัสประจำบ้าน ไม่แสดง ให้แสดงต่อจาก เลขที่
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
@@ -153,7 +197,7 @@ li {
 
 <img src="Narcotic1_Field Condition_4.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic1_Field Condition_4_1.png" style="border: 1px solid black;" width="100%">
-<img src="Narcotic1_Field Condition_12.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic1_Field Condition_12.png" style="border: 1px solid black;" width="75%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
@@ -173,17 +217,20 @@ li {
 | 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
-### 2.3 ข้อมูลของ<u>ผู้รับมอบ</u>ผลิตยาเสพติดให้โทษในประเภท 1 (กรณีขออนุญาตจำหน่าย) (ยส.1-1)
+### 2.3 ข้อมูลของ<u>ผู้รับมอบ</u>ผลิตยาเสพติดให้โทษในประเภท 1 (เฉพาะกรณีขออนุญาตจำหน่าย) (ยส.1-1)
 
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
 
 <ul>
   <li>ค้นหาจาก
     <ul>
-      <li>เลขที่ใบอนุญาต ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 1</li>
+      <li>เลขที่ใบอนุญาต ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 1 
+      <!-- <br> -  -->
+      <br> - ใช้ API GetLicense (api/License/Narcotic/Search) <br> - ทำเป็น Dropdown แสดงรายการใบอนุญาต ยส.1 <br> - แสดงข้อมูล ชื่อย่อใบอนุญาต, เลขที่ใบอนุญาต [ตัวอย่าง นยส4 กท 1/2569] <br> - แสดงเฉพาะใบอนุญาตที่ยังไม่หมดอายุ</li>
       หรือ
       <li>เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง
-      ยาเสพติดให้โทษในประเภท 1 ในระบบ</li>
+      ยาเสพติดให้โทษในประเภท 1 ในระบบ <br> - ** ยังไม่มี API ต้องหาจาก Requisition ** <br> - เฉพาะการดำเนินการที่มีสถานะ .... </li>
+      <li>หลังจากเลือกใบอนุญาต/เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** แล้ว <br> แสดงข้อมูลที่อยู่ของใบอนุญาตนั้น ๆ (จากตาราง LicenseAddress)</li>
     </ul>
   </li>
 </ul>
@@ -216,16 +263,21 @@ li {
 
 ### 2.4 ข้อมูลผู้ส่งออกหรือผู้นำเข้าในต่างประเทศ (กรณีขออนุญาตนำเข้าหรือส่งออก)
 
-<img src="Narcotic1_Field Condition_11.png" style="border: 1px solid black;" width="100%">
 <img src="Narcotic1_Field Condition_7.png" style="border: 1px solid black;" width="100%">
 
-*** แสดงเมื่อเลือก OperationType เป็น **นำเข้า** หรือ **ส่งออก** <br> **มีหลายรายการเหมือน 2.3 ผู้รับมอบ ทำหน้าจอเหมือนกัน** ***
+<img src="Narcotic1_Field Condition_16_2.png" style="border: 1px solid black;" width="100%">
+
+*** แสดงเมื่อเลือก OperationType เป็น **นำเข้า** หรือ **ส่งออก** ***
+<ul>
+  <li>API ดึงข้อมูล MasterForeignEntity (ยังไม่มี API)</li>
+</ul>
+
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 | x | - | `RequisitionForeignEntity`.`RequisitionId` |  |  |
 | y | ForeignEntityId ผู้ส่งออกหรือผู้นำเข้าในต่างประเทศ | `RequisitionForeignEntity`.`ForeignEntityId` | เอามาจาก `MasterForeignEntity`.`Id` |  |
-| z | ForeignEntityType | `RequisitionForeignEntity`.`ForeignEntityType` | ประเภทผู้ผลิต/ผู้นำเข้า/ผู้ส่งออก (M=ผู้ผลิต, I=ผู้นำเข้า, E=ผู้ส่งออก) | ถ้าเป็นคำขอ**ส่งออก** ส่ง 'I' <br> ถ้าเป็นคำขอ**นำเข้า** ส่ง 'E' |
+| z | ForeignEntityType | `RequisitionForeignEntity`.`ForeignEntityType` | ประเภทผู้ผลิต/ผู้นำเข้า/ผู้ส่งออก (I=ผู้นำเข้า, E=ผู้ส่งออก) | ถ้าเป็นคำขอ**ส่งออก** ส่ง 'I' <br> ถ้าเป็นคำขอ**นำเข้า** ส่ง 'E' |
 | 1 | ชื่อผู้ส่งออกหรือผู้นำเข้าในต่างประเทศ | `RequisitionForeignEntity`.`ForeignEntityName` |  | เอามาจาก `MasterForeignEntity`.`Id` ที่เลือก แล้วหา `MasterForeignEntity`.`ForeignEntityName` |
 | 2 | ที่อยู่ของสถานที่ทำการ | `RequisitionForeignEntity`.`ForeignEntityAddress` |  | เอามาจาก `MasterForeignEntity`.`Id` ที่เลือก แล้วหา `MasterForeignEntity`.`FullAddress` |
 | 3.1 | (Id) ประเทศ | `RequisitionForeignEntity`.`CountryId` |  | เอามาจาก `MasterForeignEntity`.`Id` ที่เลือก แล้วหา `MasterForeignEntity`.`CountryId` |
