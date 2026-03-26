@@ -179,8 +179,15 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | ชื่อผู้ขออนุญาต | `Requisition`.`xx` |  |  |
-| 0 | เลขประจำตัวประชาชน/เลขทะเบียนนิติบุคคล | `Requisition`.`xx` |  |  |
+| x | เลขที่ใบอนุญาต (dropdown) | `Requisition`.`LicenseRefId` | เอามาจาก `License`.`Id` |  |
+| y | เลขที่ใบอนุญาต (dropdown) | `Requisition`.`LicenseRefNo` | เอามาจาก `License`.`LicenseNo` |  |
+| 0 | ชื่อผู้ขออนุญาต | `RequisitionParticipant`.`ParticipantName` | เอามาจาก |  |
+| 0 | ที่ตั้งสำนักงานใหญ่ | `RequisitionParticipant`.`FullAddress` | เอามาจาก `License`.`FullAddress` |  |
+
+
+
+
+| 0 | เลขประจำตัวประชาชน/เลขทะเบียนนิติบุคคล | `RequisitionParticipant`.`ParticipantId` |  |  |
 | 0 | ใบอนุญาตเลขที่ | `Requisition`.`xx` |  |  |
 | 0 | ประเภทใบอนุญาต | `Requisition`.`xx` |  |  |
 | 0 | ผู้ได้รับการยกเว้นไม่ต้องขออนุญาตตามมาตรา ๓๒ | `Requisition`.`xx` |  | เฉพาะ IMP-P3_4-1 (ยส.3 วจ.3/4) |

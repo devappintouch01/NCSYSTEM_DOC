@@ -35,7 +35,6 @@ li {
 
 ### Step 1 (ยส.5-1)
 <img src="Narcotic5_Field_Condition_1_2.png" style="border: 1px solid black;" width="100%">
-<img src="Narcotic5_Field_Condition_1_3.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
@@ -43,13 +42,28 @@ li {
 | 1 | การดำเนินการ | `Requisition`.`OperationType` |  | ประเภทการดำเนินการ (00 - อื่น ๆ, 01 - ผลิต, 02 - ผลิตส่งออก, 03 - นำเข้า, <br> 04 - ส่งออก, 05 - จำหน่าย, 06 - จำหน่ายขายส่ง, 07 - ครอบครอง) |
 | 2 | ชนิดของยาเสพติดให้โทษในประเภท 5 | `Requisition`.`NarcoticPlantId` |  | ประเภทของพืชเสพติด อ้างอิง `MasterNarcoticPlant`.`Id` <br> 1 - ฝิ่น, 2 - เห็ดขี้ควาย, 99 - อื่นๆ |
 | 3 | ชนิดของพืชเสพติดประเภท 5 กรณีเป็นอื่นๆ | `Requisition`.`NarcoticPlantRemark` |  |  |
-| 4 | วัตถุประสงค์ในการขออนุญาต | `Requisition`.`ObjectiveId` |  | วัตถุประสงค์ อ้างอิง `MasterObjective`.`Id` <br> โดย where หาจาก `MasterObjective`.`RequisitionTypeId` = `20` <br> 20 - เพื่อประโยชน์ของทางราชการในการป้องกันและปราบปรามการกระทำความผิดเกี่ยวกับยาเสพติด <br> 21 - เพื่อประโยชน์ในทางการแพทย์หรือการบำบัดหรือรักษาผู้ป่วย <br> 22 - เพื่อการวิเคราะห์ทางการแพทย์หรือวิทยาศาสตร์ <br> 23 - เพื่อการศึกษาวิจัยทางการแพทย์หรือวิทยาศาสตร์ |
+
+<img src="Narcotic5_Field_Condition_1_3_2.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 4 | วัตถุประสงค์ในการขออนุญาต | `Requisition`.`ObjectiveId` |  | วัตถุประสงค์ อ้างอิง `MasterObjective`.`Id` <br> โดย Where จาก `MasterObjective`.`RequisitionTypeId` = `20` <br> 20 - เพื่อประโยชน์ของทางราชการในการป้องกันและปราบปรามการกระทำความผิดเกี่ยวกับยาเสพติด <br> 21 - เพื่อประโยชน์ในทางการแพทย์หรือการบำบัดหรือรักษาผู้ป่วย <br> 22 - เพื่อการวิเคราะห์ทางการแพทย์หรือวิทยาศาสตร์ <br> 23 - เพื่อการศึกษาวิจัยทางการแพทย์หรือวิทยาศาสตร์ |
 | 4.1 | ชื่อโครงการวิจัย |  | ถ้าเลือก `MasterObjective`.`Id` = 23 - เพื่อการศึกษาวิจัยทางการแพทย์หรือวิทยาศาสตร์ |  |
 | 4.2 | วันที่เริ่มต้นโครงการวิจัย |  | ถ้าเลือก `MasterObjective`.`Id` = 23 - เพื่อการศึกษาวิจัยทางการแพทย์หรือวิทยาศาสตร์ |  |
 | 4.3 | วันที่สิ้นสุดโครงการวิจัย |  | ถ้าเลือก `MasterObjective`.`Id` = 23 - เพื่อการศึกษาวิจัยทางการแพทย์หรือวิทยาศาสตร์ |  |
-| 5 | ผู้ขออนุญาต |  | |  |
-| 5.1 |  |  | |  |
-| 5.2 |  |  | |  |
+
+<img src="Narcotic5_Field_Condition_7.png" style="border: 1px solid black;" width="70%">
+<img src="Narcotic5_Field_Condition_1_3_1.png" style="border: 1px solid black;" width="100%">
+
+| ลำดับ | Label | Table.Field | Condition | Remark |
+|:---:|---|---|---|---|
+| 5 | ผู้ขออนุญาต | `RequisitionObjectiveApplicantDetail`.`ApplicantTypeId` |  | ประเภทผู้ขออนุญาต อ้างอิง `MasterApplicantType`.`Id` โดย Where จาก `MasterObjective`.`RequisitionTypeId` = `20` <br> 16 - เป็นหน่วยงานของรัฐ หน่วยงานในกำกับของรัฐ หรือ สภากาชาดไทย <br> 17 - เป็นคู่สัญญา หรือเป็นผู้ผลิตหรือผู้จัดซื้อตามที่ระบุไว้ในสัญญา เพื่อการจ้างผลิตหรือการจัดซื้อยาเสพติดให้โทษในประเภท ๕ กับสำนักงานคณะกรรมการอาหารและยา <br> 18 - เป็นผู้ได้รับอนุญาตตามประมวลกฎหมายยาเสพติดหรือกฎหมายว่าด้วยยา แล้วแต่กรณี <br> 19 - เป็นผู้รับอนุญาตประกอบกิจการสถานพยาบาล หรือสถานพยาบาลสัตว์ ที่มีผู้ประกอบวิชาชีพเป็นผู้ดำเนินการ แล้วแต่กรณี <br> 20 - สถาบันอุดมศึกษาเอกชน ตามกฎหมายว่าด้วยสถาบันอุดมศึกษาเอกชน <br> 21 - หน่วยงานเอกชนที่เป็นนิติบุคคล |
+| 5.1 | สัญญาเลขที่ | `RequisitionObjectiveApplicantDetail`.`ApplicantContractNumber` | กรณีเลือกวัตถุประสงค์ เป็น `17 - เป็นคู่สัญญา หรือเป็นผู้ผลิตหรือผู้จัดซื้อตามที่ระบุไว้ในสัญญา เพื่อการจ้างผลิตหรือการจัดซื้อยาเสพติดให้โทษในประเภท ๕ กับสำนักงานคณะกรรมการอาหารและยา` |  |
+| 5.2 | วันที่เริ่มต้นสัญญา | `RequisitionObjectiveApplicantDetail`.`ApplicantContractStartDate` | กรณีเลือกวัตถุประสงค์ เป็น `17 - เป็นคู่สัญญา หรือเป็นผู้ผลิตหรือผู้จัดซื้อตามที่ระบุไว้ในสัญญา เพื่อการจ้างผลิตหรือการจัดซื้อยาเสพติดให้โทษในประเภท ๕ กับสำนักงานคณะกรรมการอาหารและยา` |  |
+| 5.3 | วันที่สิ้นสุดสัญญา | `RequisitionObjectiveApplicantDetail`.`ApplicantContractEndDate` | กรณีเลือกวัตถุประสงค์ เป็น `17 - เป็นคู่สัญญา หรือเป็นผู้ผลิตหรือผู้จัดซื้อตามที่ระบุไว้ในสัญญา เพื่อการจ้างผลิตหรือการจัดซื้อยาเสพติดให้โทษในประเภท ๕ กับสำนักงานคณะกรรมการอาหารและยา` |  |
+| 6.1 | ระบุประเภทใบอนุญาต | `RequisitionObjectiveApplicantDetail`.`Applic  antLicenseTypeId` | กรณีเลือกวัตถุประสงค์ เป็น `18 - เป็นผู้ได้รับอนุญาตตามประมวลกฎหมายยาเสพติดหรือกฎหมายว่าด้วยยา แล้วแต่กรณี` | Dropdown ประเภทใบอนุญาตที่อ้างอิง อ้างอิง `MasterLicenseType`.`Id` |
+| 6.2 | เลขที่ใบอนุญาต | `RequisitionObjectiveApplicantDetail`.`ApplicantLicenseNumber` | กรณีเลือกวัตถุประสงค์ เป็น `18 - เป็นผู้ได้รับอนุญาตตามประมวลกฎหมายยาเสพติดหรือกฎหมายว่าด้วยยา แล้วแต่กรณี` |  |
+| 7 | เลขที่ใบอนุญาตจัดตั้งสถาบันอุดมศึกษาเอกชน | `RequisitionObjectiveApplicantDetail`.`ApplicantPrivateUniversityLicenseNumber` | กรณีเลือกวัตถุประสงค์ เป็น `20 - สถาบันอุดมศึกษาเอกชน ตามกฎหมายว่าด้วยสถาบันอุดมศึกษาเอกชน` |  |
 
 ### 1.1 ข้อมูลผู้ขอรับใบอนุญาต (ยส.5-1)
 
@@ -91,7 +105,7 @@ li {
 | 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`IdentificationNo` | เก็บเฉพาะเลขบัตรประชาชนเท่านั้น | - Cannot over 13 digits <br> - Need separator `(0-0000-00000-00-0)` |
 | 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป | |
 | ~~9~~ | ~~ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ)~~ | ~~`RequisitionParticipant`.`WorkPermit`~~ | | |
-| 10 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 10 | เลขการมอบอำนาจออนไลน์ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
 | 11 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
 | 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
@@ -140,9 +154,9 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 1 | ขนาดพื้นที่ปลูก (หน่วย : ตารางเมตร) | - Decimal with 4 digits (100.5432) |  |
-| 2 | ละติจูด | - Decimal with 6 digits (100.654321) |  |
-| 3 | ลองจิจูด | - Decimal with 6 digits (100.654321) |  |
+| 1 | ขนาดพื้นที่ปลูก (หน่วย : ตารางเมตร) | `qq`.`qq` | | - Decimal with 4 digits (100.5432) |
+| 2 | ละติจูด | `qq`.`qq` | | - Decimal with 6 digits (100.654321) |
+| 3 | ลองจิจูด | `qq`.`qq` | | - Decimal with 6 digits (100.654321) |
 
 #### 2.2.2 ข้อมูลของผู้ผลิตหรือผู้ส่งออกในต่างประเทศ (เฉพาะกรณีขออนุญาตนำเข้า)
 *Show on (เฉพาะกรณีขออนุญาตนำเข้า) only*
@@ -150,7 +164,7 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 1 | ชื่อผู้ผลิตหรือผู้ส่งออกในต่างประเทศ | - |  |
+| 1 | ชื่อผู้ผลิตหรือผู้ส่งออกในต่างประเทศ | `o`.`2` | | |
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ
 
