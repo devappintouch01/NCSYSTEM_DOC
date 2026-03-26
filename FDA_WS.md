@@ -53,20 +53,20 @@ POST https://regis.fda.moph.go.th/WS_GATEWAY/api/FDA_GATEWAY_DATA
 
 ##### 1. กท 198/2542 
 
-xml
+**XML:**
 ```json
 {
   "REGISTER_LICENSE" : "กท 198/2542 " 
 }
 ```
 
-base64
+**Base64:**
 
 ```
 ewogICJSRUdJU1RFUl9MSUNFTlNFIiA6ICLguIHguJcgMTk4LzI1NDIgIiAKfQ==
 ```
 
-body
+**Request Body:**
 
 ```json
 {
@@ -75,7 +75,7 @@ body
 }
 ```
 
-response
+**Response:**
 
 ```json
 {
@@ -171,7 +171,7 @@ POST https://regis.fda.moph.go.th/WS_GATEWAY/api/FDA_GATEWAY_DATA
 
 ##### 1. กท 198/2542 
 
-xml
+**XML:**
 ```json
 {
   "ENTREPRENEUR_IDENTIFY": "0105462000013",
@@ -180,13 +180,13 @@ xml
 }
 ```
 
-base64 บริษัท เยาวราช จำกัด
+**Base64 บริษัท เยาวราช จำกัด:**
 
 ```
 ewogICJFTlRSRVBSRU5FVVJfSURFTlRJRlkiOiAiMDEwNTQ2MjAwMDAxMyIsCiAgIkxPQ0FUSU9OX0xJQ0VOU0UiOiAiIiwKICAiVFlQRSIgOiAiRFJVRyIKfQ==
 ```
 
-response บริษัท เยาวราช จำกัด
+**Response บริษัท เยาวราช จำกัด:**
 
 ```json
 [
@@ -363,12 +363,12 @@ response บริษัท เยาวราช จำกัด
 ]
 ```
 
-base64 0105516006065 สยามเภสัช
+**Base64 0105516006065 สยามเภสัช:**
 
 ```
 ewogICJFTlRSRVBSRU5FVVJfSURFTlRJRlkiOiAiMDEwNTUxNjAwNjA2NSIsCiAgIkxPQ0FUSU9OX0xJQ0VOU0UiOiAiIiwKICAiVFlQRSIgOiAiRFJVRyIKfQ==
 ```
-response 0105516006065 สยามเภสัช
+**Response 0105516006065 สยามเภสัช:**
 
 ```json
 [
