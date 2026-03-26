@@ -31,9 +31,13 @@ li {
 | 4 | ขอยกเลิก | ✅ |
 | 5 | ขอใบแทน | ✅ |
 
+### วัตถุประสงค์ในการขออนุญาต + ประเภทการขอ + flow (ยส.5-1)
+
+<img src="Narcotic5_Field_Condition_8.png" style="border: 1px solid black;" width="100%">
+
 ## 🔷 Field Condition
 
-### Step 1 (ยส.5-1)
+### การดำเนินการ + วัตถุประสงค์ในการขออนุญาต + ประเภทผู้ขออนุญาต (ยส.5-1)
 <img src="Narcotic5_Field_Condition_1_2.png" style="border: 1px solid black;" width="100%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
@@ -165,6 +169,8 @@ li {
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 | 1 | ชื่อผู้ผลิตหรือผู้ส่งออกในต่างประเทศ | `o`.`2` | | |
+
+### 2.3 xxxx
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ
 
