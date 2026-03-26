@@ -154,9 +154,9 @@ li {
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 1 | ขนาดพื้นที่ปลูก (หน่วย : ตารางเมตร) | `qq`.`qq` | | - Decimal with 4 digits (100.5432) |
-| 2 | ละติจูด | `qq`.`qq` | | - Decimal with 6 digits (100.654321) |
-| 3 | ลองจิจูด | `qq`.`qq` | | - Decimal with 6 digits (100.654321) |
+| 1 | ขนาดพื้นที่ปลูก (หน่วย : ตารางเมตร) | `RequisitionItemDetail`.`CultivationAreaSize` | | - Decimal with 4 digits (100.5432) |
+| 2 | ละติจูด | `RequisitionItemDetail`.`Latitude` | | - Decimal with 6 digits (100.654321) |
+| 3 | ลองจิจูด | `RequisitionItemDetail`.`Longitude` | | - Decimal with 6 digits (100.654321) |
 
 #### 2.2.2 ข้อมูลของผู้ผลิตหรือผู้ส่งออกในต่างประเทศ (เฉพาะกรณีขออนุญาตนำเข้า)
 *Show on (เฉพาะกรณีขออนุญาตนำเข้า) only*
