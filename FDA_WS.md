@@ -16,9 +16,9 @@ POST https://regis.fda.moph.go.th/WS_GATEWAY/api/GET_TOKEN
 | `CTZNO` | `0000000000000` |
 
 **Response:**
-```json
+<pre><code class="language-json">
 [Token]
-```
+</code></pre>
 
 <hr>
 
@@ -54,11 +54,11 @@ POST https://regis.fda.moph.go.th/WS_GATEWAY/api/FDA_GATEWAY_DATA
 ##### 1. กท 198/2542 
 
 **XML:**
-```json
+<pre><code class="language-json">
 {
   "REGISTER_LICENSE" : "กท 198/2542 " 
 }
-```
+</code></pre>
 
 **Base64:**
 
@@ -68,18 +68,18 @@ ewogICJSRUdJU1RFUl9MSUNFTlNFIiA6ICLguIHguJcgMTk4LzI1NDIgIiAKfQ==
 
 **Request Body:**
 
-```json
+<pre><code class="language-json">
 {
   "CTZNO_REQ": "0000000000000",
   "XML_DATAS": "ewogICJSRUdJU1RFUl9MSUNFTlNFIiA6ICLguIHguJcgMTk4LzI1NDIgIiAKfQ=="
 }
-```
+</code></pre>
 
 **Response:**
 <details>
 <summary>Response กท 198/2542</summary>
 
-```json
+<pre><code class="language-json">
 {
   "Info": {
     "PV_NAME": "กรุงเทพมหานคร",
@@ -138,7 +138,7 @@ ewogICJSRUdJU1RFUl9MSUNFTlNFIiA6ICLguIHguJcgMTk4LzI1NDIgIiAKfQ==
   ],
   "ProductLocations": []
 }
-```
+</code></pre>
 
 </details>
 
@@ -176,13 +176,13 @@ POST https://regis.fda.moph.go.th/WS_GATEWAY/api/FDA_GATEWAY_DATA
 ##### 1. กท 198/2542 
 
 **XML:**
-```json
+<pre><code class="language-json">
 {
   "ENTREPRENEUR_IDENTIFY": "0105462000013",
   "LOCATION_LICENSE": "",
   "TYPE" : "DRUG"
 }
-```
+</code></pre>
 
 **Base64 บริษัท เยาวราช จำกัด:**
 
@@ -194,7 +194,7 @@ ewogICJFTlRSRVBSRU5FVVJfSURFTlRJRlkiOiAiMDEwNTQ2MjAwMDAxMyIsCiAgIkxPQ0FUSU9OX0xJ
 
 <details>
 
-```json
+<pre><code class="language-json">
 [
   {
     "LOCATION_INFO_IDA": 4,
@@ -367,7 +367,7 @@ ewogICJFTlRSRVBSRU5FVVJfSURFTlRJRlkiOiAiMDEwNTQ2MjAwMDAxMyIsCiAgIkxPQ0FUSU9OX0xJ
     "LOCATION_PRODUCT_OCCUPY": []
   }
 ]
-```
+</code></pre>
 
 </details>
 
@@ -383,7 +383,7 @@ ewogICJFTlRSRVBSRU5FVVJfSURFTlRJRlkiOiAiMDEwNTUxNjAwNjA2NSIsCiAgIkxPQ0FUSU9OX0xJ
 
 <summary>Response 0105516006065 สยามเภสัช</summary>
 
-```json
+<pre><code class="language-json">
 [
   {
     "LOCATION_INFO_IDA": 10207,
@@ -5520,6 +5520,6 @@ ewogICJFTlRSRVBSRU5FVVJfSURFTlRJRlkiOiAiMDEwNTUxNjAwNjA2NSIsCiAgIkxPQ0FUSU9OX0xJ
     "LOCATION_PRODUCT_OCCUPY": []
   }
 ]
-```
+</code></pre>
 
 </details>
