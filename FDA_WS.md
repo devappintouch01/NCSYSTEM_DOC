@@ -173,7 +173,7 @@ POST https://regis.fda.moph.go.th/WS_GATEWAY/api/FDA_GATEWAY_DATA
 }
 ```
 
-##### 1. กท 198/2542 
+##### 1. 0105462000013 บริษัท เยาวราช จำกัด
 
 **XML:**
 <pre><code class="language-json">
@@ -370,6 +370,8 @@ ewogICJFTlRSRVBSRU5FVVJfSURFTlRJRlkiOiAiMDEwNTQ2MjAwMDAxMyIsCiAgIkxPQ0FUSU9OX0xJ
 </code></pre>
 
 </details>
+
+##### 2. 0105516006065 บริษัท สยามเภสัช จำกัด
 
 **Base64 0105516006065 สยามเภสัช:**
 
