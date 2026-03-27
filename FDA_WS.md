@@ -367,7 +367,8 @@ ewogICJFTlRSRVBSRU5FVVJfSURFTlRJRlkiOiAiMDEwNTQ2MjAwMDAxMyIsCiAgIkxPQ0FUSU9OX0xJ
   }
 ]
 ```
-<details>
+
+</details>
 
 **Base64 0105516006065 สยามเภสัช:**
 
@@ -377,6 +378,7 @@ ewogICJFTlRSRVBSRU5FVVJfSURFTlRJRlkiOiAiMDEwNTUxNjAwNjA2NSIsCiAgIkxPQ0FUSU9OX0xJ
 **Response 0105516006065 สยามเภสัช:**
 
 <details>
+
 ```json
 [
   {
