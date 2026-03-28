@@ -30,7 +30,7 @@
 | 3 | `RequisitionTraveler` | ข้อมูลผู้สมัครใช้งานระบบ | ✔ ทำตารางแล้ว | Transaction |
 | 4 | `RequisitionMedicationItem` | รายการยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว | Transaction |
 | 5 | `RequisitionMedicationIngredient` | ส่วนประกอบของยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว | Transaction |
-| 6 | `MasterMedicationUnit` | หน่วย | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
+| 6 | `MasterMedicationUnit` | หน่วยของยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
 | 7 | `MasterNarcoticDrugForTraveler` | ยา/สารเสพติดสำหรับผู้เดินทาง | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
 | 8 | `MasterTravelerPort` | ท่า/สนามบินของการเดินทาง | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
 | 9 | `LicenseTraveler` | ใบอนุญาต | ❌ ยังไม่ทำตาราง | Transaction |
