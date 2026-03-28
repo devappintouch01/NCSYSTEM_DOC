@@ -23,18 +23,18 @@
 
 #### ตารางที่เกี่ยวข้อง (IC-1, OC-1)
 
-| ลำดับ | ชื่อตาราง | คำอธิบาย | หมายเหตุ |
-|:---:|---|---|:---:|
-| 1 | `TravelerPermitUser` | ผู้สมัครใช้งานระบบ Permit for traveler Carrying Narcotics | ✔ ทำตารางแล้ว |
-| 2 | `Requisition` | คำขอ | ✔ ทำตารางแล้ว |
-| 3 | `RequisitionTraveler` | ข้อมูลผู้สมัครใช้งานระบบ | ✔ ทำตารางแล้ว |
-| 4 | `RequisitionMedicationItem` | รายการยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว |
-| 5 | `RequisitionMedicationIngredient` | ส่วนประกอบของยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว |
-| 6 | `MasterMedicationUnit` | หน่วย | ❌ ยังไม่ทำตาราง |
-| 7 | `MasterNarcoticDrugForTraveler` |  | ❌ ยังไม่ทำตาราง |
-| 8 | `MasterTravelerPort` | ท่า/สนามบินของการเดินทาง | 🟡 กำลังดำเนินการ |
-| 9 | `LicenseTraveler` | ใบอนุญาต | ❌ ยังไม่ทำตาราง |
-| 10 | `LicenseMedicationItem` | รายการยาที่ขอในใบอนุญาต | ❌ ยังไม่ทำตาราง |
+| ลำดับ | ชื่อตาราง | คำอธิบาย | ตาราง | ข้อมูล |
+|:---:|---|---|:---:|:---:|
+| 1 | `TravelerPermitUser` | ผู้สมัครใช้งานระบบ Permit for traveler Carrying Narcotics | ✔ ทำตารางแล้ว | Transaction |
+| 2 | `Requisition` | คำขอ | ✔ ทำตารางแล้ว | Transaction |
+| 3 | `RequisitionTraveler` | ข้อมูลผู้สมัครใช้งานระบบ | ✔ ทำตารางแล้ว | Transaction |
+| 4 | `RequisitionMedicationItem` | รายการยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว | Transaction |
+| 5 | `RequisitionMedicationIngredient` | ส่วนประกอบของยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว | Transaction |
+| 6 | `MasterMedicationUnit` | หน่วย | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
+| 7 | `MasterNarcoticDrugForTraveler` | ยา/สารเสพติดสำหรับผู้เดินทาง | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
+| 8 | `MasterTravelerPort` | ท่า/สนามบินของการเดินทาง | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
+| 9 | `LicenseTraveler` | ใบอนุญาต | ❌ ยังไม่ทำตาราง | Transaction |
+| 10 | `LicenseMedicationItem` | รายการยาที่ขอในใบอนุญาต | ❌ ยังไม่ทำตาราง | Transaction |
 
 ## 🔷 Field Condition (IC-1, OC-1)
 
@@ -189,13 +189,42 @@
 | 3 | Strength | `RequisitionMedicationIngredient`.`Strength` | varchar(255) | ความแรง |  |
 | 4 | Units | `RequisitionMedicationIngredient`.`GenericUnitId` | int | หน่วยของความแรง อ้างอิง `MasterMedicationUnit`.`Id`|  |
 
+### ตาราง MasterMedicationUnit หน่วยของยาที่ขอในคำขอยาติดตัว
+
+| ลำดับ | Label | Table.Field | Data type | Not null | Description | Condition | Remark |
+|:---:|---|---|---|:---:|---|---|---|
+| v | Id | `MasterMedicationUnit`.`Id` | int | Y | รหัสอ้างอิงที่ใช้ในระบบ | | |
+| w | ผู้สร้าง | `MasterMedicationUnit`.`CreateBy` | int | N | ผู้สร้าง อ้างอิง `SystemUser`.`Id` | | |
+| x | วันที่สร้าง | `MasterMedicationUnit`.`CreateOn` | datetime | N | วันที่สร้าง | | |
+| y | ผู้แก้ไข | `MasterMedicationUnit`.`UpdateBy` | int | N | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` | | |
+| z | วันที่แก้ไข | `MasterMedicationUnit`.`UpdateOn` | datetime | N | วันที่แก้ไข | | |
+| 1 | หน่วย | `MasterMedicationUnit`.`UnitName` | varchar(255) | N | หน่วยของยา | | |
+| 2 | เป็นหน่วยของยารูปแบบของแข็ง | `MasterMedicationUnit`.`IsSolidUnit` | bit | N | เป็นหน่วยของยารูปแบบของแข็ง (1=ใช่, 0=ไม่ใช่) |  |  |
+| 3 | เป็นหน่วยของยารูปแบบของเหลว | `MasterMedicationUnit`.`IsLiquidUnit` | bit | N | เป็นหน่วยของยารูปแบบของเหลว (1=ใช่, 0=ไม่ใช่) |  |  |
+
+### ตาราง MasterNarcoticDrugForTraveler ยา/สารเสพติดสำหรับผู้เดินทาง
+
+| ลำดับ | Label | Table.Field | Data type | Not null | Description | Condition | Remark |
+|:---:|---|---|---|:---:|---|---|---|
+| v | Id | `MasterNarcoticDrugForTraveler`.`Id` | int | Y | รหัสอ้างอิงที่ใช้ในระบบ | | |
+| w | ผู้สร้าง | `MasterNarcoticDrugForTraveler`.`CreateBy` | int | N | ผู้สร้าง อ้างอิง `SystemUser`.`Id` | | |
+| x | วันที่สร้าง | `MasterNarcoticDrugForTraveler`.`CreateOn` | datetime | N | วันที่สร้าง | | |
+| y | ผู้แก้ไข | `MasterNarcoticDrugForTraveler`.`UpdateBy` | int | N | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` | | |
+| z | วันที่แก้ไข | `MasterNarcoticDrugForTraveler`.`UpdateOn` | datetime | N | วันที่แก้ไข | | |
+| 1 | ชื่อยา/สารเสพติด | `MasterNarcoticDrugForTraveler`.`NarcoticName` | varchar(255) | N | ชื่อยา/สารเสพติด | | |
+| 2 | ประเภท | `MasterNarcoticDrugForTraveler`.`NarcoticTypeId` | int | N | ประเภท อ้างอิง `MasterNarcoticType`.`Id` | | |
+| 3 | ใช้งาน | `MasterNarcoticDrugForTraveler`.`Active` | bit | N | ใช้งาน (1=ใช้งาน, 0=ไม่ใช้งาน) | | |
+
 ### ตาราง MasterTravelerPort ท่า/สนามบินของการเดินทาง
 
 | ลำดับ | Label | Table.Field | Data type | Not null | Description | Condition | Remark |
 |:---:|---|---|---|:---:|---|---|---|
 | v | Id | `MasterTravelerPort`.`Id` | int | Y | รหัสอ้างอิงที่ใช้ในระบบ | | |
-| w | ผู้สร้าง | `MasterTravelerPort`.`CreateBy` | int | N | ผู้สร้าง อ้างอิง SystemUser.Id | | |
-| x | วันที่สร้าง | `MasterTravelerPort`.`CreateOn` | Date time | N | วันที่สร้าง | | |
-| y | ผู้แก้ไข | `MasterTravelerPort`.`UpdateBy` | int | N | ผู้แก้ไข อ้างอิง SystemUser.Id | | |
-| z | วันที่แก้ไข | `MasterTravelerPort`.`UpdateOn` | Date time | N | วันที่แก้ไข | | |
-| 1 | ชื่อท่า/สนามบิน | `MasterTravelerPort`.`PortName` | varchar(255) | N | ชื่อท่า/สนามบิน | | |
+| w | ผู้สร้าง | `MasterTravelerPort`.`CreateBy` | int | N | ผู้สร้าง อ้างอิง `SystemUser`.`Id` | | |
+| x | วันที่สร้าง | `MasterTravelerPort`.`CreateOn` | datetime | N | วันที่สร้าง | | |
+| y | ผู้แก้ไข | `MasterTravelerPort`.`UpdateBy` | int | N | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` | | |
+| z | วันที่แก้ไข | `MasterTravelerPort`.`UpdateOn` | datetime | N | วันที่แก้ไข | | |
+| 1 | ชื่อท่า/สนามบิน | `MasterTravelerPort`.`PortNameEn` | varchar(255) | N | ชื่อท่า/สนามบิน | | |
+| 2 | ประเภทการเดินทาง | `MasterTravelerPort`.`TransporTypeId` | int | N | ประเภทการเดินทาง อ้างอิง `MasterTransportType`.`Id` | | |
+| 3 | จังหวัด | `MasterTravelerPort`.`ProvinceId` | int | N | จังหวัด อ้างอิง `MasterProvince`.`Id` | | |
+| 4 | ใช้งาน | `MasterTravelerPort`.`Active` | bit | N | ใช้งาน (1=ใช้งาน, 0=ไม่ใช้งาน) | | |
