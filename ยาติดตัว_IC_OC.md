@@ -63,9 +63,9 @@
 | x | วันที่แก้ไข | `RequisitionTraveler`.`UpdateOn` | วันที่แก้ไข |  |
 | y | คำขอ | `RequisitionTraveler`.`RequisitionId` | int | คำขอ อ้างอิง `Requisition`.`Id` |  |
 | z | ข้อมูลผู้สมัครใช้งานระบบ | `RequisitionTraveler`.`TravelerPermitUserId` | int | ข้อมูลผู้สมัครใช้งานระบบ Permit for traveler Carrying Narcotics อ้างอิง `TravelerPermitUser`.`Id` | |
-| 1 | FamilyName | `RequisitionTraveler`.`FamilyName` | varchar(255) | | |
-| 2 | GivenName | `RequisitionTraveler`.`GivenName` | varchar(255) | | |
-| 3 | Name in your own script or character - if applicable | `RequisitionTraveler`.`NativeName` | varchar(255) | |
+| 1 | FamilyName | `RequisitionTraveler`.`FamilyName` | varchar(255) | นามสกุลของผู้เดินทาง | |
+| 2 | GivenName | `RequisitionTraveler`.`GivenName` | varchar(255) | ชื่อตัวของผู้เดินทาง | |
+| 3 | Name in your own script or character - if applicable | `RequisitionTraveler`.`NativeName` | varchar(255) | ชื่อ–นามสกุลตามภาษาเจ้าของประเทศ | |
 | 4 | Nationality - as shown in your passport | `RequisitionTraveler`.`NationalityId` | int | สัญชาติ อ้างอิง `MasterNationality`.`Id` | |
 
 <img src="IC_Field_Condition_2.png" style="border: 1px solid black;" width="100%"><!-- 4-7 -->
@@ -76,10 +76,10 @@
 | 6 | Country of Passport | `RequisitionTraveler`.`PassportCountryId` | int | ประเทศของพาสปอร์ต อ้างอิง `MasterCountry`.`Id` | |
 | 7 | Date of issue | `RequisitionTraveler`.`PassportIssueDate` | Date time | วันที่ออกหนังสือเดินทาง | |
 | 8 | Date of expiry | `RequisitionTraveler`.`PassportExpiryDate` | Date time |วันที่หนังสือเดินทางหมดอายุ | |
-| 9 | Issuing authority / Place of issue as shown in your passport | `RequisitionTraveler`.`PassportIssuePlace` | varchar(500) | | |
-| 10 | Sex | `RequisitionTraveler`.`Sex` | char(1) | | |
-| 11 | Date of birth | `RequisitionTraveler`.`BirthDate` | Date time | | |
-| 12 | Place of birth : Town/city | `RequisitionTraveler`.`BirthCity` | varchar(500) | | |
+| 9 | Issuing authority / Place of issue as shown in your passport | `RequisitionTraveler`.`PassportIssuePlace` | varchar(500) | สถานที่ออกหนังสือเดินทาง | |
+| 10 | Sex | `RequisitionTraveler`.`Sex` | char(1) | เพศของผู้เดินทาง (1=ชาย, 2=หญิง) | |
+| 11 | Date of birth | `RequisitionTraveler`.`BirthDate` | Date time | วันเดือนปีเกิดของผู้เดินทาง | |
+| 12 | Place of birth : Town/city | `RequisitionTraveler`.`BirthCity` | varchar(500) | เมืองที่เกิด | |
 | 13 | Place of birth : Country | `RequisitionTraveler`.`BirthCountryId` | int | ประเทศที่เกิด อ้างอิง `MasterCountry`.`Id` | |
 
 <img src="IC_Field_Condition_3.png" style="border: 1px solid black;" width="100%"><!-- 8-10 -->
@@ -87,9 +87,9 @@
 | ลำดับ | Label | Table.Field | Data type | Condition | Remark |
 |:---:|---|---|---|---|---|
 | 14 | Country where you live | `RequisitionTraveler`.`ResidenceCountryId` | int | ประเทศพำนัก อ้างอิง `MasterCountry`.`Id` | |
-| 15 | Your current residential address : Current Address | `RequisitionTraveler`.`ResidentialAddress` | varchar(1000) | | |
+| 15 | Your current residential address : Current Address | `RequisitionTraveler`.`ResidentialAddress` | varchar(1000) | ที่อยู่ปัจจุบันของผู้เดินทาง | |
 | 16 | Your current residential address : Country | `RequisitionTraveler`.`ResidentialCountryId` | int | ประเทศของที่อยู่ปัจจุบัน อ้างอิง `MasterCountry.Id` | |
-| 17 | Your current residential address : Postal Code | `RequisitionTraveler`.`ResidentialPostalCode` | varchar(20) | | |
+| 17 | Your current residential address : Postal Code | `RequisitionTraveler`.`ResidentialPostalCode` | varchar(20) | รหัสไปรษณีย์ของที่อยู่ปัจจุบัน | |
 | 18 | If the same as your residential address, write 'AS ABOVE'. | `RequisitionTraveler`.`IsCorrespondenceSame` | bit | ระบุว่าที่อยู่สำหรับติดต่อเป็นที่เดียวกับที่อยู่ปัจจุบันหรือไม่ `(1=ใช่,0=ไม่ใช่)` | **ทำ radio button เพิ่ม จากหน้าจอปัจจุบัน** |
 | 19 | Address for correspondence : Current Address | `RequisitionTraveler`.`CorrespondenceAddress` | varchar(1000) | ถ้า IsCorrespondenceSame = `1` ให้ Disable text area แล้วเติมคำว่า "AS ABOVE" และบันทึกคำว่า "AS ABOVE" ลงในฐานข้อมูล | |
 | 20 | Address for correspondence : Country | `RequisitionTraveler`.`CorrespondenceCountryId` | int | ประเทศของที่อยู่สำหรับติดต่อ อ้างอิง `MasterCountry.Id` <br> ถ้า IsCorrespondenceSame = `1` ให้ Disable | |
@@ -99,57 +99,57 @@
 
 | ลำดับ | Label | Table.Field | Data type | Condition | Remark |
 |:---:|---|---|---|---|---|
-| 22 | telephone numbers : Office hours Country Code | `RequisitionTraveler`.`OfficePhoneCountryCode` | varchar(10) | | |
-| 23 | telephone numbers : Office hours Area Code | `RequisitionTraveler`.`OfficePhoneAreaCode` | varchar(10) | | |
-| 24 | telephone numbers : Office hours Number | `RequisitionTraveler`.`OfficePhoneNumber` | varchar(50) | | |
-| 25 | telephone numbers : After hours Country Code | `RequisitionTraveler`.`AfterHourPhoneCountryCode` | varchar(10) | | |
-| 26 | telephone numbers : After hours Area Code | `RequisitionTraveler`.`AfterHourPhoneAreaCode` | varchar(10) | | |
-| 27 | telephone numbers : After hours Number | `RequisitionTraveler`.`AfterHourPhoneNumber` | varchar(50) | | |
-| 28 | department communicating : Email | `RequisitionTraveler`.`Email` | varchar(255) | | |
-| 29 | department communicating : Fax Country Code | `RequisitionTraveler`.`FaxCountryCode` | varchar(10) | | |
-| 30 | department communicating : Fax Area Code | `RequisitionTraveler`.`FaxAreaCode` | varchar(10) | | |
-| 31 | department communicating : Fax Number | `RequisitionTraveler`.`FaxNumber` | varchar(50) | | |
-| 32 | Allow Electronic Contact | `RequisitionTraveler`.`AllowElectronicContact` | bit | | |
+| 22 | telephone numbers : Office hours Country Code | `RequisitionTraveler`.`OfficePhoneCountryCode` | varchar(10) | รหัสประเทศของเบอร์โทรศัพท์ในเวลาราชการ | |
+| 23 | telephone numbers : Office hours Area Code | `RequisitionTraveler`.`OfficePhoneAreaCode` | varchar(10) | รหัสพื้นที่ของเบอร์โทรศัพท์ในเวลาราชการ | |
+| 24 | telephone numbers : Office hours Number | `RequisitionTraveler`.`OfficePhoneNumber` | varchar(50) | เบอร์โทรศัพท์ในเวลาราชการ | |
+| 25 | telephone numbers : After hours Country Code | `RequisitionTraveler`.`AfterHourPhoneCountryCode` | varchar(10) | รหัสประเทศของเบอร์โทรศัพท์นอกเวลาราชการ | |
+| 26 | telephone numbers : After hours Area Code | `RequisitionTraveler`.`AfterHourPhoneAreaCode` | varchar(10) | รหัสพื้นที่ของเบอร์โทรศัพท์นอกเวลาราชการ | |
+| 27 | telephone numbers : After hours Number | `RequisitionTraveler`.`AfterHourPhoneNumber` | varchar(50) | เบอร์โทรศัพท์นอกเวลาราชการ | |
+| 28 | department communicating : Email | `RequisitionTraveler`.`Email` | varchar(255) | อีเมล | |
+| 29 | department communicating : Fax Country Code | `RequisitionTraveler`.`FaxCountryCode` | varchar(10) | รหัสประเทศของเบอร์โทรสาร | |
+| 30 | department communicating : Fax Area Code | `RequisitionTraveler`.`FaxAreaCode` | varchar(10) | รหัสพื้นที่ของเบอร์โทรสาร | |
+| 31 | department communicating : Fax Number | `RequisitionTraveler`.`FaxNumber` | varchar(50) | เบอร์โทรสาร | |
+| 32 | Allow Electronic Contact | `RequisitionTraveler`.`AllowElectronicContact` | bit | อนุญาตให้ติดต่อทางอิเล็กทรอนิกส์หรือไม่ (1=ใช่,0=ไม่ใช่) | |
 
 <img src="IC_Field_Condition_5.png" style="border: 1px solid black;" width="100%"><!-- 13-14 -->
 
 | ลำดับ | Label | Table.Field | Data type | Condition | Remark |
 |:---:|---|---|---|---|---|
-| 33 | Briefly describe the medical treatment you have received in your home country. lf insufficient space, attach an additional statement. | `RequisitionTraveler`.`MedicalTreatmentDetail` | nvarchar(2000) | | |
-| 34 | details of the doctor : Name and Licence number of doctor | `RequisitionTraveler`.`DoctorNameAndLicense` | varchar(255) | | |
-| 35 | details of the doctor : Address | `RequisitionTraveler`.`DoctorAddress` | varchar(1000) | | |
+| 33 | Briefly describe the medical treatment you have received in your home country. lf insufficient space, attach an additional statement. | `RequisitionTraveler`.`MedicalTreatmentDetail` | nvarchar(2000) | รายละเอียดการรักษาทางการแพทย์ที่ผู้เดินทางได้รับในประเทศต้นทาง | |
+| 34 | details of the doctor : Name and Licence number of doctor | `RequisitionTraveler`.`DoctorNameAndLicense` | varchar(255) | ชื่อและใบอนุญาตของแพทย์ผู้ให้การรักษา | |
+| 35 | details of the doctor : Address | `RequisitionTraveler`.`DoctorAddress` | varchar(1000) | ที่อยู่ของแพทย์ผู้ให้การรักษา | |
 | 36 | details of the doctor : Country | `RequisitionTraveler`.`DoctorCountryId` | int | ประเทศของแพทย์ผู้ให้การรักษา อ้างอิง `MasterCountry`.`Id` | |
-| 37 | details of the doctor : Postal Code | `RequisitionTraveler`.`DoctorPostalCode` | varchar(20) | | |
+| 37 | details of the doctor : Postal Code | `RequisitionTraveler`.`DoctorPostalCode` | varchar(20) | รหัสไปรษณีย์ของแพทย์ผู้ให้การรักษา | |
 
 <img src="IC_Field_Condition_6.png" style="border: 1px solid black;" width="100%"><!-- 15, 18 -->
 
 | ลำดับ | Label | Table.Field | Data type | Condition | Remark |
 |:---:|---|---|---|---|---|
-| 38 | Give the expected date of arrival and departure from Thailand : Date of arrival | `RequisitionTraveler`.`ArrivalDate` | datetime | | |
-| 39 | Give the expected date of arrival and departure from Thailand : Date of departure | `RequisitionTraveler`.`DepartureDate` | datetime | | |
-| 40 | Give the expected date of arrival and departure from Thailand : Details of arrangement | `RequisitionTraveler`.`ArrangementDetail` | varchar(2000) | | |
-| 41 | Give details of your itineraries : Port of Departure (from your country) | `RequisitionTraveler`.`DeparturePort` | varchar(255) | | |
-| 42 | Give details of your itineraries : Transport by | `RequisitionTraveler`.`DeparturePortId` | int | | |
-| 43 | Give details of your itineraries : Carrier/Flight number | `RequisitionTraveler`.`DepartureTransportBy` | char(1) | | |
-| 44 | DepartureCarrierAndFlightNumber | `RequisitionTraveler`.`DepartureCarrierAndFlightNumber` | varchar(255) | | |
-| 45 | Give details of your itineraries : Port of Entry (in Thailand) | `RequisitionTraveler`.`EntryPort` | varchar(255) | | |
-| 46 | Give details of your itineraries : Transport by | `RequisitionTraveler`.`EntryPortId` | int | | |
-| 47 | Give details of your itineraries : Carrier/Flight number | `RequisitionTraveler`.`EntryTransportBy` | char(1) | | |
-| 48 | EntryCarrierAndFlightNumber | `RequisitionTraveler`.`EntryCarrierAndFlightNumber` | varchar(255) | | |
+| 38 | Give the expected date of arrival and departure from Thailand : Date of arrival | `RequisitionTraveler`.`ArrivalDate` | datetime |วันที่เดินทางมาถึงประเทศไทย | |
+| 39 | Give the expected date of arrival and departure from Thailand : Date of departure | `RequisitionTraveler`.`DepartureDate` | datetime |วันที่เดินทางออกจากประเทศไทย | |
+| 40 | Give the expected date of arrival and departure from Thailand : Details of arrangement | `RequisitionTraveler`.`ArrangementDetail` | varchar(2000) | รายละเอียดการจัดการดูแลรักษาต่อในประเทศต้นทาง | |
+| 41 | Give details of your itineraries : Port of Departure (from your country) | `RequisitionTraveler`.`DeparturePort` | varchar(255) | ท่า/สนามบินต้นทางในประเทศต้นทาง | |
+| 42 | Give details of your itineraries : Transport by | `RequisitionTraveler`.`DeparturePortId` | int | ท่า/สนามบินต้นทางในประเทศต้นทาง อ้างอิง `MasterTravelerPort`.`Id` | |
+| 43 | Give details of your itineraries : Carrier/Flight number | `RequisitionTraveler`.`DepartureTransportBy` | char(1) | ประเภทการเดินทางขาออก (A=Airline, B=Bus / Coach Operator, C=Cruise Line, F=Ferry Operator, P=Private Vehicle, T=Train Operator) | |
+| 44 | DepartureCarrierAndFlightNumber | `RequisitionTraveler`.`DepartureCarrierAndFlightNumber` | varchar(255) | ชื่อสายการบินหรือผู้ให้บริการขนส่งขาออก และหมายเลขเที่ยวบินหรือหมายเลขพาหนะขาออก | |
+| 45 | Give details of your itineraries : Port of Entry (in Thailand) | `RequisitionTraveler`.`EntryPort` | varchar(255) | ท่า/สนามบินที่เดินทางเข้า | |
+| 46 | Give details of your itineraries : Transport by | `RequisitionTraveler`.`EntryPortId` | int | ท่า/สนามบินที่เดินทางเข้า อ้างอิง `MasterTravelerPort`.`Id` | |
+| 47 | Give details of your itineraries : Carrier/Flight number | `RequisitionTraveler`.`EntryTransportBy` | char(1) | ประเภทการเดินทางเข้า (A=Airline, B=Bus / Coach Operator, C=Cruise Line, F=Ferry Operator, P=Private Vehicle, T=Train Operator) | |
+| 48 | EntryCarrierAndFlightNumber | `RequisitionTraveler`.`EntryCarrierAndFlightNumber` | varchar(255) | ชื่อสายการบินหรือผู้ให้บริการขนส่งขาเข้า และหมายเลขเที่ยวบินหรือหมายเลขพาหนะขาเข้า | |
 
 <img src="IC_Field_Condition_7.png" style="border: 1px solid black;" width="100%"><!-- 19, 20 -->
 
 | ลำดับ | Label | Table.Field | Data type | Condition | Remark |
 |:---:|---|---|---|---|---|
 | 49 | any relatives or friends in Thailand? | `RequisitionTraveler`.`HasRelativeInThailand` | bit | ระบุว่าผู้เดินทางมีญาติหรือเพื่อนอยู่ในประเทศไทยหรือไม่ (1=มี, 0=ไม่มี) | |
-| 50 | Name of person | `RequisitionTraveler`.`ThailandContactName` | varchar(255) | | |
-| 51 | Relationship | `RequisitionTraveler`.`ThailandContactRelationship` | varchar(100) | | |
-| 52 | Permanent resident of Thailand? | `RequisitionTraveler`.`ThailandContactIsPermanentResident` | bit | | |
-| 53 | Address | `RequisitionTraveler`.`ThailandContactAddress` | varchar(1000) | | |
-| 54 | Country | `RequisitionTraveler`.`ThailandContactCountryId` | int | ประเทศของที่อยู่ติดต่อ อ้างอิง `MasterCountry`.`Id` | |
-| 55 | Postal Code | `RequisitionTraveler`.`ThailandContactPostalCode` | varchar(20) | | |
+| 50 | Name of person | `RequisitionTraveler`.`ThailandContactName` | varchar(255) | ชื่อญาติหรือเพื่อนที่ติดต่อได้ในประเทศไทย | |
+| 51 | Relationship | `RequisitionTraveler`.`ThailandContactRelationship` | varchar(100) | ความสัมพันธ์กับผู้เดินทาง | |
+| 52 | Permanent resident of Thailand? | `RequisitionTraveler`.`ThailandContactIsPermanentResident` | bit | ระบุว่าผู้นั้นเป็นผู้มีถิ่นที่อยู่ในประเทศไทยหรือไม่ (1=ใช่, 0=ไม่ใช่) | |
+| 53 | Address | `RequisitionTraveler`.`ThailandContactAddress` | varchar(1000) | ที่อยู่ของผู้นั้น | |
+| 54 | Country | `RequisitionTraveler`.`ThailandContactCountryId` | int | ประเทศของผู้นั้น อ้างอิง `MasterCountry`.`Id` | |
+| 55 | Postal Code | `RequisitionTraveler`.`ThailandContactPostalCode` | varchar(20) | รหัสไปรษณีย์ของผู้นั้น | |
 | 56 | During your proposed stay in Thailand, do you have or expect to incur medical costs or require treatment or medical follow up for your medical condition? | `RequisitionTraveler`.`HasMedicalCostInThailand` | bit | ระบุว่าผู้เดินทางมีหรือคาดว่าจะมีค่าใช้จ่ายด้านการรักษาในประเทศไทยหรือไม่ (1=มี, 0=ไม่มี) | **OC-1 ไม่มีส่วนนี้** |
-| 57 | If insufficient space, attach an additional statement. | `RequisitionTraveler`.`MedicalCostInThailandDetail` | varchar(2000) | | **OC-1 ไม่มีส่วนนี้** |
+| 57 | If insufficient space, attach an additional statement. | `RequisitionTraveler`.`MedicalCostInThailandDetail` | varchar(2000) | รายละเอียดค่าใช้จ่ายหรือการรักษาทางการแพทย์ในประเทศไทย | **OC-1 ไม่มีส่วนนี้** |
 
 <img src="IC_Field_Condition_8.png" style="border: 1px solid black;" width="80%">
 
