@@ -268,7 +268,9 @@ li {
 
 <img src="Narcotic1_Field Condition_7.png" style="border: 1px solid black;" width="100%">
 
-<img src="Narcotic1_Field Condition_16_2.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic1_Field Condition_21.png" style="border: 1px solid black;" width="100%">
+
+<img src="Narcotic1_Field Condition_20_1.png" style="border: 1px solid black;" width="80%">
 
 *** แสดงเมื่อเลือก OperationType เป็น **นำเข้า** หรือ **ส่งออก** ***
 <ul>
