@@ -25,14 +25,14 @@
 
 | ลำดับ | ชื่อตาราง | คำอธิบาย | หมายเหตุ |
 |:---:|---|---|:---:|
-| 1 | `TravelerPermitUser` | ผู้สมัครใช้งานระบบ Permit for traveler Carrying Narcotics | ทำตารางแล้ว |
-| 2 | `Requisition` | คำขอ | ทำตารางแล้ว |
-| 3 | `RequisitionTraveler` | ข้อมูลผู้สมัครใช้งานระบบ | ❌ ยังไม่ทำตาราง |
-| 4 | `RequisitionMedicationItem` | รายการยาที่ขอในคำขอยาติดตัว | ทำตารางแล้ว |
-| 5 | `RequisitionMedicationIngredient` | ส่วนประกอบของยาที่ขอในคำขอยาติดตัว | ทำตารางแล้ว |
+| 1 | `TravelerPermitUser` | ผู้สมัครใช้งานระบบ Permit for traveler Carrying Narcotics | ✔ ทำตารางแล้ว |
+| 2 | `Requisition` | คำขอ | ✔ ทำตารางแล้ว |
+| 3 | `RequisitionTraveler` | ข้อมูลผู้สมัครใช้งานระบบ | ✔ ทำตารางแล้ว |
+| 4 | `RequisitionMedicationItem` | รายการยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว |
+| 5 | `RequisitionMedicationIngredient` | ส่วนประกอบของยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว |
 | 6 | `MasterMedicationUnit` | หน่วย | ❌ ยังไม่ทำตาราง |
 | 7 | `MasterNarcoticDrugForTraveler` |  | ❌ ยังไม่ทำตาราง |
-| 8 | `MasterTravelerPort` |  | ❌ ยังไม่ทำตาราง |
+| 8 | `MasterTravelerPort` | ท่า/สนามบินของการเดินทาง | 🟡 กำลังดำเนินการ |
 | 9 | `LicenseTraveler` | ใบอนุญาต | ❌ ยังไม่ทำตาราง |
 | 10 | `LicenseMedicationItem` | รายการยาที่ขอในใบอนุญาต | ❌ ยังไม่ทำตาราง |
 
@@ -53,7 +53,7 @@
 
 <img src="IC_Field_Condition_1.png" style="border: 1px solid black;" width="100%"><!-- 1-3 -->
 
-### ตาราง RequisitionTraveler
+### ตาราง RequisitionTraveler รายละเอียดนักท่องเที่ยว
 
 | ลำดับ | Label | Table.Field | Data type | Condition | Remark |
 |:---:|---|---|---|---|---|
@@ -188,3 +188,14 @@
 | 2 | Generic name | `RequisitionMedicationIngredient`.`GenericNameId` | int | ชื่อสามัญ อ้างอิง `MasterNarcoticDrugForTraveler`.`Id` |  |
 | 3 | Strength | `RequisitionMedicationIngredient`.`Strength` | varchar(255) | ความแรง |  |
 | 4 | Units | `RequisitionMedicationIngredient`.`GenericUnitId` | int | หน่วยของความแรง อ้างอิง `MasterMedicationUnit`.`Id`|  |
+
+### ตาราง MasterTravelerPort ท่า/สนามบินของการเดินทาง
+
+| ลำดับ | Label | Table.Field | Data type | Not null | Description | Condition | Remark |
+|:---:|---|---|---|:---:|---|---|---|
+| v | Id | `MasterTravelerPort`.`Id` | int | Y | รหัสอ้างอิงที่ใช้ในระบบ | | |
+| w | ผู้สร้าง | `MasterTravelerPort`.`CreateBy` | int | N | ผู้สร้าง อ้างอิง SystemUser.Id | | |
+| x | วันที่สร้าง | `MasterTravelerPort`.`CreateOn` | Date time | N | วันที่สร้าง | | |
+| y | ผู้แก้ไข | `MasterTravelerPort`.`UpdateBy` | int | N | ผู้แก้ไข อ้างอิง SystemUser.Id | | |
+| z | วันที่แก้ไข | `MasterTravelerPort`.`UpdateOn` | Date time | N | วันที่แก้ไข | | |
+| 1 | ชื่อท่า/สนามบิน | `MasterTravelerPort`.`PortName` | varchar(255) | N | ชื่อท่า/สนามบิน | | |
