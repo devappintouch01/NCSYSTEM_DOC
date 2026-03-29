@@ -30,7 +30,7 @@
 | 3 | `RequisitionTraveler` | ข้อมูลผู้สมัครใช้งานระบบ | ✔ ทำตารางแล้ว | Transaction |
 | 4 | `RequisitionMedicationItem` | รายการยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว | Transaction |
 | 5 | `RequisitionMedicationIngredient` | ส่วนประกอบของยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว | Transaction |
-| 6 | `MasterMedicationUnit` | หน่วยของยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
+| 6 | `MasterMedicationUnit` | หน่วยของยาที่ขอในคำขอยาติดตัว | ✔ ทำตารางแล้ว | ✔ เพิ่มข้อมูลแล้ว (54 records) |
 | 7 | `MasterNarcoticDrugForTraveler` | ยา/สารเสพติดสำหรับผู้เดินทาง | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
 | 8 | `MasterTravelerPort` | ท่า/สนามบินของการเดินทาง | ✔ ทำตารางแล้ว | ❌ ยังไม่ได้เพิ่มข้อมูล |
 | 9 | `LicenseTraveler` | ใบอนุญาต | ❌ ยังไม่ทำตาราง | Transaction |
@@ -199,8 +199,14 @@
 | y | ผู้แก้ไข | `MasterMedicationUnit`.`UpdateBy` | int | N | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` | | |
 | z | วันที่แก้ไข | `MasterMedicationUnit`.`UpdateOn` | datetime | N | วันที่แก้ไข | | |
 | 1 | หน่วย | `MasterMedicationUnit`.`UnitName` | varchar(255) | N | หน่วยของยา | | |
-| 2 | เป็นหน่วยของยารูปแบบของแข็ง | `MasterMedicationUnit`.`IsSolidUnit` | bit | N | เป็นหน่วยของยารูปแบบของแข็ง (1=ใช่, 0=ไม่ใช่) |  |  |
-| 3 | เป็นหน่วยของยารูปแบบของเหลว | `MasterMedicationUnit`.`IsLiquidUnit` | bit | N | เป็นหน่วยของยารูปแบบของเหลว (1=ใช่, 0=ไม่ใช่) |  |  |
+| 2 | เป็นหน่วยของยารูปแบบของแข็ง | `MasterMedicationUnit`.`IsSolidUnit` | bit | N | เป็นหน่วยของยารูปแบบของแข็ง (1=ใช่, 0=ไม่ใช่) | | |
+| 3 | เป็นหน่วยของยารูปแบบของเหลว | `MasterMedicationUnit`.`IsLiquidUnit` | bit | N | เป็นหน่วยของยารูปแบบของเหลว (1=ใช่, 0=ไม่ใช่) | | |
+| 4 | ใช้เป็นหน่วย Daily Usage | `MasterMedicationUnit`.`IsDailyUsageUnit` | bit | N | แสดงใน dropdown Daily Usage (1=ใช่, 0=ไม่ใช่) | filter `WHERE IsDailyUsageUnit = 1` ร่วมกับ `IsSolidUnit` หรือ `IsLiquidUnit` ตาม `RequisitionMedicationItem`.`SubstanceForm` | |
+| 5 | ใช้เป็นหน่วย Total Quantity | `MasterMedicationUnit`.`IsTotalQuantityUnit` | bit | N | แสดงใน dropdown Total Quantity (1=ใช่, 0=ไม่ใช่) | filter `WHERE IsTotalQuantityUnit = 1` ร่วมกับ `IsSolidUnit` หรือ `IsLiquidUnit` ตาม `RequisitionMedicationItem`.`SubstanceForm` | |
+| 6 | ใช้เป็นหน่วย Amount Per Unit | `MasterMedicationUnit`.`IsAmountPerUnitUnit` | bit | N | แสดงใน dropdown Amount Per Unit เฉพาะ Liquid (1=ใช่, 0=ไม่ใช่) | filter `WHERE IsAmountPerUnitUnit = 1 AND IsLiquidUnit = 1` แสดง field นี้เฉพาะเมื่อ `SubstanceForm = 'L'` | |
+| 7 | ใช้เป็นหน่วย Strength | `MasterMedicationUnit`.`IsStrengthUnit` | bit | N | แสดงใน dropdown Strength ของ Ingredient (1=ใช่, 0=ไม่ใช่) | filter `WHERE IsStrengthUnit = 1` ร่วมกับ `IsSolidUnit` หรือ `IsLiquidUnit` ตาม `SubstanceForm` ของ parent `RequisitionMedicationItem` | |
+
+> `mcg/hr` ใช้ได้ทั้ง Solid และ Liquid (patch transdermal)
 
 ### ตาราง MasterNarcoticDrugForTraveler ยา/สารเสพติดสำหรับผู้เดินทาง
 
@@ -214,6 +220,7 @@
 | 1 | ชื่อยา/สารเสพติด | `MasterNarcoticDrugForTraveler`.`NarcoticName` | varchar(255) | N | ชื่อยา/สารเสพติด | | |
 | 2 | ประเภท | `MasterNarcoticDrugForTraveler`.`NarcoticTypeId` | int | N | ประเภท อ้างอิง `MasterNarcoticType`.`Id` | | |
 | 3 | ใช้งาน | `MasterNarcoticDrugForTraveler`.`Active` | bit | N | ใช้งาน (1=ใช้งาน, 0=ไม่ใช้งาน) | | |
+| 4 | หมายเหตุ | `MasterNarcoticDrugForTraveler`.`Remark` | nvarchar(100) | N | หมายเหตุ | | |
 
 ### ตาราง MasterTravelerPort ท่า/สนามบินของการเดินทาง
 
