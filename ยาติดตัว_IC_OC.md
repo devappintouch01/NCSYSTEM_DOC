@@ -232,6 +232,6 @@
 | y | ผู้แก้ไข | `MasterTravelerPort`.`UpdateBy` | int | N | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` | | |
 | z | วันที่แก้ไข | `MasterTravelerPort`.`UpdateOn` | datetime | N | วันที่แก้ไข | | |
 | 1 | ชื่อท่า/สนามบิน | `MasterTravelerPort`.`PortNameEn` | varchar(255) | N | ชื่อท่า/สนามบิน | | |
-| 2 | ประเภทการเดินทาง | `MasterTravelerPort`.`TransporTypeId` | int | N | ประเภทการเดินทาง อ้างอิง `MasterTransportType`.`Id` | | |
+| 2 | ประเภทการเดินทาง | `MasterTravelerPort`.`TransportTypeId` | int | N | ประเภทการเดินทาง อ้างอิง `MasterTransportType`.`Id` | | |
 | 3 | จังหวัด | `MasterTravelerPort`.`ProvinceId` | int | N | จังหวัด อ้างอิง `MasterProvince`.`Id` | | |
 | 4 | ใช้งาน | `MasterTravelerPort`.`Active` | bit | N | ใช้งาน (1=ใช้งาน, 0=ไม่ใช้งาน) | | |
