@@ -273,10 +273,6 @@ li {
 <img src="Narcotic1_Field Condition_20_1.png" style="border: 1px solid black;" width="80%">
 
 *** แสดงเมื่อเลือก OperationType เป็น **นำเข้า** หรือ **ส่งออก** ***
-<ul>
-  <li>API ดึงข้อมูล MasterForeignEntity (ยังไม่มี API)</li>
-</ul>
-
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
