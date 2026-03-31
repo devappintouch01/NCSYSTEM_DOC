@@ -270,17 +270,29 @@ li {
 
 <img src="Narcotic_Temporary_Exp_Field_Condition_4.png" style="border: 2px solid blue;" width="100%">
 
-#### 2.(6/7) ยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก <br> Substance / Narcotic Drug to br imported / exported
+#### 2.(6/7) ยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก <br> Substance / Narcotic Drug to imported / exported
 
 <img src="Narcotic_Temporary_Imp_Substance_Field_Condition.png" style="border: 2px solid blue;" width="60%">
 
-| ลำดับ | Label | Table.Field | Condition | Remark |
-|:---:|---|---|---|---|
-| 0 | - | `Requisition`.`xx` | | |
-| 0 | ชื่อสิ่งปรุง | `Requisition`.`xx` | | |
-| 0 | ชื่อยาเสพติดให้โทษในสิ่งปรุง | `Requisition`.`xx` | | |
-| 0 | ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย | `Requisition`.`xx` | | |
-| 0 | หน่วย | `Requisition`.`xx` | | |
+#### Table RequisitionTemporaryItemDetail
+รายะเอียดของยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก
+
+| ลำดับ | Field_name | Data type | Allow Nulls | Description | Remark |
+|:---:|---|---|:---:|---|---|
+| 1 | Id | int | N | รหัสอ้างอิงที่ใช้ในระบบ | Id |
+| 2 | CreateBy | int | N | ผู้สร้าง อ้างอิง `SystemUser`.`Id` | CreateBy |
+| 3 | CreateOn | datetime | N | วันที่สร้าง | CreateOn |
+| 4 | UpdateBy | int | Y | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` | UpdateBy |
+| 5 | UpdateOn | datetime | Y | วันที่แก้ไข | UpdateOn |
+| 6 | Quantity | decimal(18,4) | Y | จำนวน | Quantity |
+| 7 | UnitOfQuantity | int | Y | หน่วยของจำนวน อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of quantity |
+| 8 | ContentPerQuantity | decimal(18,4) | Y | ปริมาณต่อจำนวน | Content per quantity |
+| 9 | UnitOfContentPerQuantity | int | Y | หน่วยของปริมาณต่อจำนวน อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of content per quantity |
+| 10 | NameOfSubstanceOrPreparations | nvarchar(500) | Y | ชื่อสิ่งปรุง | Name of substance or preparations (free text) |  
+| 11 | NarcoticSubstancesContainedTherein | int | Y | ชื่อยาเสพติดให้โทษในสิ่งปรุง อ้างอิง `MasterNarcoticEster`.`Id` | Narcotic substances contained therein |
+| 12 | ContentPerUnit | decimal(18,4) | Y | ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย | Content per unit |
+| 13 | UnitOfContentPerUnit | int | Y | หน่วยของปริมาณยาเสพติดให้โทษในหนึ่งหน่วย อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of content per unit |
+| 14 | TotalQuantityOfNarcoticSubstances | decimal(18,4) | Y | รวมปริมาณยาเสพติดให้โทษ | Total quantity of narcotic substances |
 
 <!-- ### 2️⃣ พิเศษ เฉพาะคราว
 <!--### 3️⃣ ประเภท แต่ละครั้ง (ก็คือ เฉพาะคราว)-->
