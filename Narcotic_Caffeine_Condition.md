@@ -21,7 +21,7 @@
 
 <img src="Narcotic_Caffeine_Condition_1.png" style="border: 1px solid black;" width="100%">
 
-## ตาราง
+## Table ตาราง
 
 ### dbo.MasterNarcoticCaffeine สารกาเฟอีน
 
@@ -34,16 +34,22 @@
 | 5 | UpdateOn | datetime | Y | วันที่แก้ไข | UpdateOn |
 | 6 | NarcoticCaffeineNameEN | nvarchar(500) | Y | ชื่อสารกาเฟอีนภาษาอังกฤษ |
 | 7 | NarcoticCaffeineNameTH | nvarchar(500) | Y | ชื่อสารกาเฟอีนภาษาไทย |
-| 8 | NarcoticTypeId | int | Y |  |
-| 9 | Active | bit | Y |  |
+| 8 | NarcoticTypeId | int | Y | ประเภทวัตถุเสพติด อ้างอิง `MasterNarcoticType`.`Id` |
+| 9 | Active | bit | Y | ใช้งาน (1 = ใช้งาน, 0 = ไม่ใช้งาน) |
 
-#### ตัวอย่าง Data
+#### ตัวอย่าง Data ในตาราง dbo.MasterNarcoticCaffeine
 
 | Id | CreateBy | CreateOn | UpdateBy | UpdateOn | NarcoticCaffeineNameEN | NarcoticCaffeineNameTH | NarcoticTypeId | Active |
 |---|---|---|---|---|---|---|---|---|
 | 1 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine | กาเฟอีน | 1 | 1 |
 | 2 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Anhydrous | กาเฟอีน แอนไฮดรัส | 1 | 1 |
 | 3 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Methyltheobromine | เมททิลทีโอโบรมีน | 1 | 1 |
+
+### dbo.RequisitionItemDetail รายละเอียดสารที่ขอรับอนุญาตในคำขอ
+
+| ลำดับ | Column Name | Data Type | Allow Nulls | Field Description | Remark |
+|---|---|---|:---:|---|---|
+| 15 | NarcoticCaffeineId | int | Y | สารกาเฟอีน อ้างอิง `MasterNarcoticCaffeine`.`Id` | เพิ่ม Column ใหม่ |
 
 ## ❗ เงื่อนไขรร.1    
 ## 🔷 Field Condition

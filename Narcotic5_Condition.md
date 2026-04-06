@@ -200,10 +200,10 @@ li {
 | x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 12 - ผู้นำเข้าในต่างประเทศ ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อผู้ผลิตหรือผู้ส่งออกในต่างประเทศ | `RequisitionParticipant`.`FullNameName` | | |
+
 ### 2.3 xxxx
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ
-
 
 ```
 เลือกเห็ดขี้ควาย 
