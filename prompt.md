@@ -86,3 +86,75 @@ CreateBy, UpdateBy ยังลงไม่ถูก
 - บันทึกการประชุม
   - 
 ```
+
+```
+Context:
+branch dev คือ branch หลัก
+ได้มีการ merge code จาก branch dev ไปที่ dev-1 แล้วแก้ conflict เรียบร้อยแล้ว
+จากนั้น merge จาก dev-1 เข้าที่ dev
+
+Problems:
+Branch dev login แล้ว redirect ไปที่ privus.fda.moph.go.th ซึ่งไม่ถูก
+โดยทดสอบกลับที่ branch backup_dev_28032569_1 ซึ่งเป็น backup ของ dev
+และ bk-dev-1 ซึ่งเป็น backup ของ dev-1 สามารถ Login แล้ว ไปที่ /ChooseSystem ได้ปกติ
+
+Task:
+1. ตรวจสอบการ merge branch ว่าระหว่างนั้นทำให้ code หายไป หรือทำงานไม่ถูกต้อง
+2. แนะนำวิธีการแก้ไข
+3. ตรวจสอบที่ appsettings.json
+4. สามารถเชื่อมต่อ Database (NCDB) เพื่อประกอบการตรวจสอบ
+```
+
+```
+Context:
+Database NCDB เป็น MS SQL Server
+
+Task: 
+1. ทำ script สร้าง column ของตาราง RequisitionTraveler เรียงลำดับ Column ตามในไฟล์นี้ พร้อม Field Description เอามาจาก column condition พร้อม data type ตามในไฟล์นี้
+```
+
+```
+Context:
+branch dev คือ branch หลัก
+ได้มีการ merge code จาก branch dev ไปที่ dev-1 แล้วแก้ conflict เรียบร้อยแล้ว
+จากนั้น merge จาก dev-1 เข้าที่ dev
+
+Problems:
+Branch dev-1 ที่ narcotic-4-request มา edit draft แล้วจากน้้นกดแก้ไขและเปลี่ยนวัตถุประสงค์ ก็จะพบ error 
+System.InvalidOperationException: The association between entity types 'Requisition' and 'RequisitionObjectiveApplicantDetail' has been severed, but the relationship is either marked as required or is implicitly required because the foreign key is not nullable. If the dependent/child entity should be deleted when a required relationship is severed, configure the relationship to use cascade deletes.
+
+Task:
+1. ตรวจสอบการ merge branch ว่าระหว่างนั้นทำให้ code หายไป หรือทำงานไม่ถูกต้อง
+2. แนะนำวิธีการแก้ไข
+3. สามารถเชื่อมต่อ Database (NCDB) เพื่อประกอบการตรวจสอบ
+```
+
+```
+จากภาพใน Folder D:\GIT\NCSystem\brain_NCSYSTEM\Documents\ICOC\UNIT
+ช่วยออกแบบ ตาราง หน่วยของยาที่ขอในคำขอยาติดตัว และ field ที่ใช้เก็บข้อมูล
+```
+
+NarcoticLocationRequisitionService.cs
+
+```
+Context:
+branch dev คือ branch หลัก
+ได้มีการ merge code จาก branch dev ไปที่ dev-1 แล้วแก้ conflict เรียบร้อยแล้ว
+จากนั้น merge จาก dev-1 เข้าที่ dev
+
+Problems:
+ที่ไฟล์ NarcoticLocationRequisitionService.cs ของ Branch dev-1 มี code 
+TODO: [SCAFFOLD-FIX] มาอย่างไร แล้วทำไมถึงถูก comment
+
+Task:
+1. ตรวจสอบการ merge branch ว่าระหว่างนั้นทำให้ code หายไป หรือทำงานไม่ถูกต้อง
+2. แนะนำวิธีการแก้ไข
+3. สามารถเชื่อมต่อ Database (NCDB) เพื่อประกอบการตรวจสอบ
+```
+
+```
+compare commit f958c6d25bef6d7d9deea3a5fcfc9e7df430c837 (bk-dev-1-20260405_1) กับ
+commit 324ec2fd7ec04b59e441438ad9d4dc6ca45fa4af (dev) ครับ ว่ามีอะไรเปลี่ยนบ้าง
+เพราะว่ารูปภาพใน path /images/submenu/narcotic5.png, /images/submenu/narcotic5.png ถูก rollback กลับไปเป็นของอันเก่ามาก เลยอยากรู้ว่ามีอะไรที่เป็นแบบนี้อีกไหม
+หรือว่าถูกเปลี่ยนกับโดยตั้งใจ
+```
