@@ -1,5 +1,5 @@
 ## FDA PAYMENT SPEC
 
 - [เอกสารการเชื่อมโยงระบบการชำระเงิน](D:\GIT\NCSystem\brain_NCSYSTEM\Documents\8. การเชื่อมโยงระบบการชำระเงิน.pdf)
-- [ข้อคำถาม]()
-- [Process ID เลขกระบวนงาน ระบบวัตถุเสพติด](https://docs.google.com/spreadsheets/d/1MA6jZJUQkVVX8WSK8BIMZGzvR396TNAdXu7XFcG0EVk/)
+- [[FDA68] ข้อสอบถามการเชื่อมโยงระบบชำระเงิน](https://docs.google.com/spreadsheets/d/1uQdXR8ZykieIk_3_9ROyfw2KRVDJof74iEO2S5ZaCeo/)
+- [Process ID เลขกระบวนงาน ระบบวัตถุเสพติด](https://docs.google.com/spreadsheets/d/1uQdXR8ZykieIk_3_9ROyfw2KRVDJof74iEO2S5ZaCeo/edit?gid=1288377238#gid=1288377238)
