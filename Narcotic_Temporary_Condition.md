@@ -32,7 +32,7 @@ li {
 ### สรุปจาก ไฟล์ db_design.html (07-04-2026) [db_design.html](db_design_07-04-2026.html)
 
 1. ใช้ตาม Option A
-2. ไม่ต้องเพิ่ม Column
+<!-- 2. ไม่ต้องเพิ่ม Column -->
 
 ### การคำนวน ยาเสพติด / วัตถุออกฤทธิ์ การคำนวน ที่ขอนำเข้า / ส่งออก ที่หัวข้อ 2.6
 - [2.6 ยาเสพติด / วัตถุออกฤทธิ์ การคำนวน ที่ขอนำเข้า / ส่งออก](https://docs.google.com/spreadsheets/d/12AhPd0wMLwmX6djC96rrsnbhhdAAhhrxlAPZ_IiTaF0/)
@@ -318,3 +318,83 @@ li {
 <!-- ## 📄 ส่วนแบบ Print from PDF คำขอ -->
 
 <!-- Temporary -->
+<!-- 
+- IMP-N1-1 คือ MasterRequisitionType.Id = 25 แสดงคำว่า ชื่อสิ่งปรุง (Name of substance or preparations)
+- EXP-N1-1 คือ MasterRequisitionType.Id = 26 แสดงคำว่า ชื่อยาเสพติดให้โทษหรือสิ่งปรุง (Name of narcotic substances or preparations)
+- IMP-N2-1 คือ MasterRequisitionType.Id = 27 แสดงคำว่า ชื่อยาเสพติดให้โทษหรือสิ่งปรุง (Name of narcotic substances or preparations)
+- EXP-N2-1 คือ MasterRequisitionType.Id = 28 แสดงคำว่า ชื่อยาเสพติดให้โทษหรือสิ่งปรุง (Name of narcotic substances or preparations)
+- IMP-N3-1 คือ MasterRequisitionType.Id = 29 แสดงคำว่า ชื่อสิ่งปรุง (Name of substance or preparations)
+- EXP-N3-1 คือ MasterRequisitionType.Id = 30 แสดงคำว่า ชื่อสิ่งปรุง (Name of substance or preparations)
+- IMP-N4-1 คือ MasterRequisitionType.Id = 31 ไม่แสดงช่องนี้
+- EXP-N4-1 คือ MasterRequisitionType.Id = 32 ไม่แสดงช่องนี้
+- IMP-N5-1 คือ MasterRequisitionType.Id = 33 แสดงคำว่า ชื่อยาเสพติดให้โทษหรือสิ่งปรุง (Name of substance or preparations)
+- EXP-N5-1 คือ MasterRequisitionType.Id = 34 แสดงคำว่า ชื่อยาเสพติดให้โทษหรือสิ่งปรุง (Name of substance or preparations)
+- IMP-P1-1 คือ MasterRequisitionType.Id = 37 แสดงคำว่า ชื่อวัตถุออกฤทธิ์หรือสิ่งปรุง (Name of substance or preparations)
+- EXP-P1-1 คือ MasterRequisitionType.Id = 38 แสดงคำว่า ชื่อวัตถุออกฤทธิ์หรือสิ่งปรุง (Name of substance or preparations)
+- IMP-P2-1 คือ MasterRequisitionType.Id = 39 แสดงคำว่า ชื่อวัตถุออกฤทธิ์หรือสิ่งปรุง (Name of substance or preparations)
+- EXP-P2-1 คือ MasterRequisitionType.Id = 40 แสดงคำว่า ชื่อวัตถุออกฤทธิ์หรือสิ่งปรุง (Name of substance or preparations)
+- IMP-P3-1 คือ MasterRequisitionType.Id = 41 แสดงคำว่า ชื่อวัตถุออกฤทธิ์หรือสิ่งปรุง (Name of substance or preparations)
+- EXP-P3-1 คือ MasterRequisitionType.Id = 42 แสดงคำว่า ชื่อวัตถุออกฤทธิ์หรือสิ่งปรุง (Name of substance or preparations)
+- IMP-P4-1 คือ MasterRequisitionType.Id = 43 แสดงคำว่า ชื่อวัตถุออกฤทธิ์หรือสิ่งปรุง (Name of substance or preparations)
+- EXP-P4-1 คือ MasterRequisitionType.Id = 44 แสดงคำว่า ชื่อวัตถุออกฤทธิ์หรือสิ่งปรุง (Name of substance or preparations)
+- EXP.SP-1 คือ MasterRequisitionType.Id = 45 แสดงคำว่า ชื่อวัตถุออกฤทธิ์หรือสิ่งปรุง (Name of substance or preparations)
+
+- IMP-N1-1 คือ MasterRequisitionType.Id = 25 แสดงคำว่า ชื่อยาเสพติดให้โทษในสิ่งปรุง (Narcotic substance contained therein)
+- EXP-N1-1 คือ MasterRequisitionType.Id = 26 แสดงคำว่า ชื่อยาเสพติดให้โทษในสิ่งปรุง (Narcotic substance contained therein)
+- IMP-N2-1 คือ MasterRequisitionType.Id = 27 แสดงคำว่า ชื่อยาเสพติดให้โทษในสิ่งปรุง (Narcotic substance contained therein)
+- EXP-N2-1 คือ MasterRequisitionType.Id = 28 แสดงคำว่า ชื่อยาเสพติดให้โทษในสิ่งปรุง (Narcotic substance contained therein)
+- IMP-N3-1 คือ MasterRequisitionType.Id = 29 แสดงคำว่า ชื่อยาเสพติดให้โทษในสิ่งปรุง (Narcotic substance contained therein)
+- EXP-N3-1 คือ MasterRequisitionType.Id = 30 แสดงคำว่า ชื่อยาเสพติดให้โทษในสิ่งปรุง (Narcotic substance contained therein)
+- IMP-N4-1 คือ MasterRequisitionType.Id = 31 แสดงคำว่า ชื่อยาเสพติดให้โทษ (Name of substance)
+- EXP-N4-1 คือ MasterRequisitionType.Id = 32 แสดงคำว่า ชื่อยาเสพติดให้โทษ (Name of substance)
+- IMP-N5-1 คือ MasterRequisitionType.Id = 33 แสดงคำว่า ชื่อยาเสพติดให้โทษในสิ่งปรุง (Narcotic substance contained therein)
+- EXP-N5-1 คือ MasterRequisitionType.Id = 34 แสดงคำว่า ชื่อยาเสพติดให้โทษในสิ่งปรุง (Narcotic substance contained therein)
+- IMP-P1-1 คือ MasterRequisitionType.Id = 37 แสดงคำว่า ชื่อวัตถุออกฤทธิ์ในสิ่งปรุง (Psychotropic substance contained therein)
+- EXP-P1-1 คือ MasterRequisitionType.Id = 38 แสดงคำว่า ชื่อวัตถุออกฤทธิ์ในสิ่งปรุง (Psychotropic substance contained therein)
+- IMP-P2-1 คือ MasterRequisitionType.Id = 39 แสดงคำว่า ชื่อวัตถุออกฤทธิ์ในสิ่งปรุง (Psychotropic substance contained therein)
+- EXP-P2-1 คือ MasterRequisitionType.Id = 40 แสดงคำว่า ชื่อวัตถุออกฤทธิ์ในสิ่งปรุง (Psychotropic substance contained therein)
+- IMP-P3-1 คือ MasterRequisitionType.Id = 41 แสดงคำว่า ชื่อวัตถุออกฤทธิ์ในสิ่งปรุง (Psychotropic substance contained therein)
+- EXP-P3-1 คือ MasterRequisitionType.Id = 42 แสดงคำว่า ชื่อวัตถุออกฤทธิ์ในสิ่งปรุง (Psychotropic substance contained therein)
+- IMP-P4-1 คือ MasterRequisitionType.Id = 43 แสดงคำว่า ชื่อวัตถุออกฤทธิ์ในสิ่งปรุง (Psychotropic substance contained therein)
+- EXP-P4-1 คือ MasterRequisitionType.Id = 44 แสดงคำว่า ชื่อวัตถุออกฤทธิ์ในสิ่งปรุง (Psychotropic substance contained therein)
+- EXP.SP-1 คือ MasterRequisitionType.Id = 45 แสดงคำว่า ชื่อวัตถุออกฤทธิ์ในสิ่งปรุง (Psychotropic substance contained therein)
+
+- IMP-N1-1 คือ MasterRequisitionType.Id = 25 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- EXP-N1-1 คือ MasterRequisitionType.Id = 26 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- IMP-N2-1 คือ MasterRequisitionType.Id = 27 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- EXP-N2-1 คือ MasterRequisitionType.Id = 28 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- IMP-N3-1 คือ MasterRequisitionType.Id = 29 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- EXP-N3-1 คือ MasterRequisitionType.Id = 30 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- IMP-N4-1 คือ MasterRequisitionType.Id = 31 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- EXP-N4-1 คือ MasterRequisitionType.Id = 32 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- IMP-N5-1 คือ MasterRequisitionType.Id = 33 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- EXP-N5-1 คือ MasterRequisitionType.Id = 34 แสดงคำว่า ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย (Contain per unit)
+- IMP-P1-1 คือ MasterRequisitionType.Id = 37 แสดงคำว่า ปริมาณวัตถุออกฤทธิ์ในหนึ่งหน่วย (Contain per unit)
+- EXP-P1-1 คือ MasterRequisitionType.Id = 38 แสดงคำว่า ปริมาณวัตถุออกฤทธิ์ในหนึ่งหน่วย (Contain per unit)
+- IMP-P2-1 คือ MasterRequisitionType.Id = 39 แสดงคำว่า ปริมาณวัตถุออกฤทธิ์ในหนึ่งหน่วย (Contain per unit)
+- EXP-P2-1 คือ MasterRequisitionType.Id = 40 แสดงคำว่า ปริมาณวัตถุออกฤทธิ์ในหนึ่งหน่วย (Contain per unit)
+- IMP-P3-1 คือ MasterRequisitionType.Id = 41 แสดงคำว่า ปริมาณวัตถุออกฤทธิ์ในหนึ่งหน่วย (Contain per unit)
+- EXP-P3-1 คือ MasterRequisitionType.Id = 42 แสดงคำว่า ปริมาณวัตถุออกฤทธิ์ในหนึ่งหน่วย (Contain per unit)
+- IMP-P4-1 คือ MasterRequisitionType.Id = 43 แสดงคำว่า ปริมาณวัตถุออกฤทธิ์ในหนึ่งหน่วย (Contain per unit)
+- EXP-P4-1 คือ MasterRequisitionType.Id = 44 แสดงคำว่า ปริมาณวัตถุออกฤทธิ์ในหนึ่งหน่วย (Contain per unit)
+- EXP.SP-1 คือ MasterRequisitionType.Id = 45 แสดงคำว่า ปริมาณวัตถุออกฤทธิ์ในหนึ่งหน่วย (Contain per unit)
+
+- IMP-N1-1 คือ MasterRequisitionType.Id = 25 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- EXP-N1-1 คือ MasterRequisitionType.Id = 26 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- IMP-N2-1 คือ MasterRequisitionType.Id = 27 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- EXP-N2-1 คือ MasterRequisitionType.Id = 28 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- IMP-N3-1 คือ MasterRequisitionType.Id = 29 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- EXP-N3-1 คือ MasterRequisitionType.Id = 30 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- IMP-N4-1 คือ MasterRequisitionType.Id = 31 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- EXP-N4-1 คือ MasterRequisitionType.Id = 32 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- IMP-N5-1 คือ MasterRequisitionType.Id = 33 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- EXP-N5-1 คือ MasterRequisitionType.Id = 34 แสดงคำว่า รวมปริมาณยาเสพติดให้โทษ (Total quantity of narcotic substance)
+- IMP-P1-1 คือ MasterRequisitionType.Id = 37 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
+- EXP-P1-1 คือ MasterRequisitionType.Id = 38 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
+- IMP-P2-1 คือ MasterRequisitionType.Id = 39 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
+- EXP-P2-1 คือ MasterRequisitionType.Id = 40 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
+- IMP-P3-1 คือ MasterRequisitionType.Id = 41 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
+- EXP-P3-1 คือ MasterRequisitionType.Id = 42 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
+- IMP-P4-1 คือ MasterRequisitionType.Id = 43 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
+- EXP-P4-1 คือ MasterRequisitionType.Id = 44 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
+- EXP.SP-1 คือ MasterRequisitionType.Id = 45 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance) -->
