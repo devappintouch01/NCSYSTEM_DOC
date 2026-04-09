@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB Design — เฉพาะคราว Temporary Permit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Sarabun', sans-serif; background: #f5f5f5; }
+        .section-header { background-color: #1a5276; color: white; padding: 0.75rem; font-size: 1rem; }
+        .option-card { border: 2px solid #ddd; border-radius: 12px; transition: all 0.3s; cursor: pointer; }
+        .option-card:hover { border-color: #4472C4; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .option-card.selected { border-color: #16a34a; background: #f0fdf4; }
+        .badge-recommend { background: #16a34a; }
+        .badge-alt { background: #f59e0b; }
+        .table-schema th { background: #1a5276; color: white; font-size: 0.85rem; }
+        .table-schema td { font-size: 0.85rem; vertical-align: top; }
+        .field-existing { background: #e8f5e9; }
+        .field-new { background: #fff3cd; }
+        .field-z4gap { background: #ffebee; }
+        .legend-box { display: inline-block; width: 16px; height: 16px; border-radius: 3px; margin-right: 4px; vertical-align: middle; }
+        .er-diagram { font-family: monospace; font-size: 0.8rem; line-height: 1.4; background: #1e293b; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; }
+        .er-table { color: #fbbf24; }
+        .er-field { color: #93c5fd; }
+        .er-pk { color: #f87171; }
+        .er-fk { color: #86efac; }
+        .er-arrow { color: #94a3b8; }
+        .pros { color: #16a34a; }
+        .cons { color: #dc2626; }
+        .tab-btn { cursor: pointer; padding: 0.5rem 1rem; border: 2px solid #ddd; border-radius: 8px; background: white; font-size: 0.9rem; }
+        .tab-btn.active { border-color: #1a5276; background: #e8f4fd; font-weight: bold; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .verify-ok { color: #16a34a; font-weight: bold; }
+        .verify-fail { color: #dc2626; font-weight: bold; }
+        .verify-warn { color: #f59e0b; font-weight: bold; }
+        .verify-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-left: 6px; }
+        .verify-badge.ok { background: #dcfce7; color: #166534; }
+        .verify-badge.fail { background: #fee2e2; color: #991b1b; }
+        .verify-badge.warn { background: #fef3c7; color: #92400e; }
+        .warning-box { background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .error-box { background: #fee2e2; border: 2px solid #dc2626; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .fix-code { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.8rem; white-space: pre; overflow-x: auto; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark" style="background: #1a5276;">
+    <div class="container-fluid">
+        <span class="navbar-brand">DB Design — เฉพาะคราว Temporary Permit</span>
+        <span class="text-white small">3 Options + ER Diagram + Migration Plan + Verification Status</span>
+    </div>
+</nav>
+
+<div class="container-fluid py-3">
+
+<!-- Navigation -->
+<div class="d-flex gap-2 mb-4 justify-content-center flex-wrap">
+    <div class="tab-btn active" onclick="showSection('overview')">ภาพรวม</div>
+    <div class="tab-btn" onclick="showSection('optionA')">Option A: ใช้ตารางเดิม</div>
+    <div class="tab-btn" onclick="showSection('optionB')">Option B: แยกตาราง</div>
+    <div class="tab-btn" onclick="showSection('optionC')">Option C: Hybrid</div>
+    <div class="tab-btn" onclick="showSection('er')">ER Diagram</div>
+    <div class="tab-btn" onclick="showSection('compare')">เปรียบเทียบ</div>
+    <div class="tab-btn" onclick="showSection('migration')">Migration Plan</div>
+    <div class="tab-btn" onclick="showSection('verification')">Verification Status</div>
+</div>
+
+<!-- ============================================ -->
+<!-- OVERVIEW -->
+<!-- ============================================ -->
+<div id="sec-overview" class="section active">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <h4 class="text-center mb-4">สถานะปัจจุบัน — DB สำหรับเฉพาะคราว</h4>
+
+            <div class="card mb-4">
+                <h5 class="section-header">ตารางที่มีอยู่แล้วใน DB</h5>
+                <div class="card-body">
+                    <p class="mb-2"><span class="legend-box" style="background:#e8f5e9;"></span> <strong>มีอยู่ + Z4 map แล้ว</strong> | <span class="legend-box" style="background:#fff3cd;"></span> <strong>มีอยู่ แต่ Z4 ยังไม่ map</strong> | <span class="legend-box" style="background:#ffebee;"></span> <strong>ยังไม่มีใน DB</strong></p>
+
+                    <table class="table table-bordered table-sm table-schema">
+                        <thead><tr><th>ตาราง</th><th>สถานะ</th><th>Fields ที่เกี่ยวกับเฉพาะคราว</th><th>Z4 Map?</th></tr></thead>
+                        <tbody>
+                            <tr class="field-existing"><td><strong>Requisition</strong></td><td>มีอยู่</td><td>TransportTypeId, ExportPortId, EntryPortId, EntryForeignPortId</td><td>❌ ยังไม่ map</td></tr>
+                            <tr class="field-new"><td><strong>RequisitionForeignEntity</strong> <span class="verify-badge ok">Verified</span></td><td>มี DAL</td><td>EntityName, Address, Country, TransportTypeId, ForeignEntityType (M/I/E)</td><td>❌ ยังไม่ map</td></tr>
+                            <tr class="field-z4gap"><td><strong>RequisitionTemporaryItemDetail</strong> <span class="verify-badge fail">FK Broken</span></td><td>มี DAL model แต่ไม่มี FK relationship</td><td>NarcoticDrugId, PharmaceuticalForm, ContentPerUnit, TotalQuantity, UnitId</td><td>❌ Navigation property ขาด</td></tr>
+                            <tr class="field-existing"><td><strong>RequisitionParticipant</strong></td><td>มีอยู่</td><td>ใช้สำหรับ ผู้ขอ (type=1)</td><td>✅</td></tr>
+                            <tr class="field-existing"><td><strong>RequisitionDocumentAttachment</strong></td><td>มีอยู่</td><td>เอกสารแนบ</td><td>✅</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <h5 class="section-header">17 Fields ที่ Z4 ขาด</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6>Foreign Entity (9 fields)</h6>
+                            <ul class="small">
+                                <li>Importer Name + Address + Country</li>
+                                <li>Exporter Name + Address + Country</li>
+                                <li>Manufacturer Name + Address + Country</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Transport & Port (3 fields)</h6>
+                            <ul class="small">
+                                <li>TransportType (Air/Sea/Other)</li>
+                                <li>Port of Entry</li>
+                                <li>Port of Export (ส่งออกเท่านั้น)</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Substance + Auth (5 fields)</h6>
+                            <ul class="small">
+                                <li>Content per unit</li>
+                                <li>Total quantity</li>
+                                <li>Import Authorization No.</li>
+                                <li>Import Auth Date</li>
+                                <li>Import Auth Agency</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <strong>คำถาม:</strong> จะเพิ่ม fields เหล่านี้อย่างไร? มี 3 ทางเลือก →
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A: ใช้ตารางเดิม -->
+<!-- ============================================ -->
+<div id="sec-optionA" class="section">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="option-card p-4 mb-4 selected">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Option A: ใช้ตารางเดิม + เพิ่ม columns <span class="badge badge-recommend">แนะนำ</span></h4>
+                    <span class="badge bg-success fs-6">Effort: ต่ำ</span>
+                </div>
+                <p class="text-muted">เพิ่ม columns ที่ขาดลงใน Requisition table เดิม + ใช้ RequisitionForeignEntity ที่มี DAL แล้ว</p>
+
+                <h5 class="mt-4">Requisition Table — เพิ่ม columns (ส่วนใหญ่มีอยู่แล้ว)</h5>
+                <table class="table table-bordered table-sm table-schema">
+                    <thead><tr><th>Column</th><th>Type</th><th>สถานะ</th><th>ใช้โดย</th></tr></thead>
+                    <tbody>
+                        <tr class="field-new"><td>TransportTypeId</td><td>INT NULL FK</td><td>มีใน DB แล้ว</td><td>เฉพาะคราว ทั้งหมด</td></tr>
+                        <tr class="field-new"><td>ExportPortId</td><td>INT NULL FK</td><td>มีใน DB แล้ว</td><td>ส่งออก</td></tr>
+                        <tr class="field-new"><td>EntryPortId</td><td>INT NULL FK</td><td>มีใน DB แล้ว</td><td>นำเข้า + ส่งออก</td></tr>
+                        <tr class="field-new"><td>EntryForeignPortId</td><td>INT NULL FK</td><td>มีใน DB แล้ว</td><td>นำเข้า</td></tr>
+                        <tr class="field-z4gap"><td>ImportAuthorizationNo</td><td>VARCHAR(50) NULL</td><td><strong>ต้องเพิ่ม</strong></td><td>ส่งออก</td></tr>
+                        <tr class="field-z4gap"><td>ImportAuthDate</td><td>DATETIME NULL</td><td><strong>ต้องเพิ่ม</strong></td><td>ส่งออก</td></tr>
+                        <tr class="field-z4gap"><td>ImportAuthAgency</td><td>NVARCHAR(255) NULL</td><td><strong>ต้องเพิ่ม</strong></td><td>ส่งออก</td></tr>
+                        <tr class="field-z4gap"><td>ImportingCountryId</td><td>INT NULL FK</td><td><strong>ต้องเพิ่ม</strong></td><td>ส่งออก</td></tr>
+                    </tbody>
+                </table>
+                <p class="small text-muted">* 4 columns แรกมีอยู่แล้ว แค่ Z4 ยังไม่ map | 4 columns หลังต้องเพิ่ม (ALTER TABLE)</p>
+
+                <div class="alert alert-success mt-4 mb-2">
+                    <strong>ImportAuth 4 columns confirmed missing</strong> — ทั้ง 4 columns ด้านบน (ImportAuthorizationNo, ImportAuthDate, ImportAuthAgency, ImportingCountryId) ยืนยันว่าไม่มีใน DB จริง ต้อง ALTER TABLE เพิ่ม
+                </div>
+
+                <h5 class="mt-4">RequisitionForeignEntity — มี DAL แล้ว แค่เพิ่ม Z4 mapping <span class="verify-badge ok">Verified Working</span></h5>
+                <table class="table table-bordered table-sm table-schema">
+                    <thead><tr><th>Column</th><th>Type</th><th>คำอธิบาย</th></tr></thead>
+                    <tbody>
+                        <tr><td>Id</td><td>INT PK</td><td></td></tr>
+                        <tr><td>RequisitionId</td><td>INT FK</td><td>→ Requisition.Id</td></tr>
+                        <tr><td>ForeignEntityType</td><td>CHAR(1)</td><td>M=ผู้ผลิต, I=ผู้นำเข้า, E=ผู้ส่งออก</td></tr>
+                        <tr><td>EntityName</td><td>NVARCHAR(500)</td><td>ชื่อ+ที่อยู่</td></tr>
+                        <tr><td>Address</td><td>NVARCHAR(1000)</td><td>ที่อยู่</td></tr>
+                        <tr><td>Country</td><td>NVARCHAR(255)</td><td>ประเทศ</td></tr>
+                        <tr><td>TransportTypeId</td><td>INT NULL FK</td><td>→ MasterTransportType</td></tr>
+                    </tbody>
+                </table>
+
+                <h5 class="mt-4">RequisitionTemporaryItemDetail — DAL model มีอยู่แล้ว แต่ FK relationship ขาด <span class="verify-badge fail">Must Fix</span></h5>
+                <table class="table table-bordered table-sm table-schema">
+                    <thead><tr><th>Column</th><th>Type</th><th>คำอธิบาย</th></tr></thead>
+                    <tbody>
+                        <tr><td>Id</td><td>INT PK</td><td></td></tr>
+                        <tr><td>RequisitionId</td><td>INT FK</td><td>→ Requisition.Id</td></tr>
+                        <tr><td>NarcoticDrugId</td><td>INT NULL FK</td><td>→ MasterNarcoticDrug</td></tr>
+                        <tr><td>PharmaceuticalForm</td><td>NVARCHAR(255)</td><td>รูปแบบยา (วจ.2-4 เท่านั้น)</td></tr>
+                        <tr><td>ContentPerUnit</td><td>DECIMAL(18,6)</td><td>ปริมาณสารในหนึ่งหน่วย</td></tr>
+                        <tr><td>TotalQuantity</td><td>DECIMAL(18,6)</td><td>ปริมาณรวม</td></tr>
+                        <tr><td>UnitId</td><td>INT NULL FK</td><td>→ MasterNarcoticUnit</td></tr>
+                        <tr><td>Quantity</td><td>INT</td><td>จำนวนหน่วย</td></tr>
+                        <tr><td>DrugContained</td><td>NVARCHAR(500)</td><td>สารที่มีอยู่ (ยส.1-3)</td></tr>
+                        <tr><td>Remark</td><td>NVARCHAR(500)</td><td></td></tr>
+                    </tbody>
+                </table>
+
+                <div class="error-box mt-3">
+                    <h6>&#x26A0; Verification Finding: Navigation Property ขาด — ต้องแก้ไข</h6>
+                    <p class="small mb-2">DAL model <code>RequisitionTemporaryItemDetail</code> มีอยู่แล้ว แต่ไม่มี FK navigation property เชื่อมกลับไปหา <code>Requisition</code> ทำให้ EF Core ไม่สร้าง relationship</p>
+                    <p class="small mb-1"><strong>Fix 1:</strong> เพิ่ม navigation property ใน <code>RequisitionTemporaryItemDetail.cs</code></p>
+                    <div class="fix-code">// RequisitionTemporaryItemDetail.cs
+public int RequisitionId { get; set; }
+
+// ADD: Navigation property
+[ForeignKey("RequisitionId")]
+public virtual Requisition Requisition { get; set; }</div>
+                    <p class="small mb-1 mt-2"><strong>Fix 2:</strong> เพิ่ม collection navigation ใน <code>Requisition.cs</code></p>
+                    <div class="fix-code">// Requisition.cs
+// ADD: Collection navigation property
+public virtual ICollection&lt;RequisitionTemporaryItemDetail&gt; RequisitionTemporaryItemDetails { get; set; }</div>
+                </div>
+
+                <div class="warning-box mt-3">
+                    <h6>&#x26A0; Transit Fields ยังขาดใน Option A</h6>
+                    <p class="small mb-2">Option A ปัจจุบันครอบคลุมเฉพาะ Import/Export เท่านั้น ยังไม่มี Transit-specific columns:</p>
+                    <ul class="small mb-1">
+                        <li><strong>TransitFromCountryId</strong> (INT NULL FK) — ประเทศต้นทาง</li>
+                        <li><strong>TransitToCountryId</strong> (INT NULL FK) — ประเทศปลายทาง</li>
+                        <li><strong>TransitRoute</strong> (NVARCHAR(500)) — เส้นทางนำผ่าน</li>
+                        <li><strong>CustomsCheckpoint1</strong> (NVARCHAR(255)) — ด่านศุลกากร 1</li>
+                        <li><strong>CustomsCheckpoint2</strong> (NVARCHAR(255)) — ด่านศุลกากร 2</li>
+                    </ul>
+                    <p class="small mb-0"><strong>ทางเลือก:</strong> (1) เพิ่ม 5 columns เหล่านี้ใน Requisition table ด้วย (ALTER TABLE เพิ่มเป็น 9 columns) หรือ (2) ใช้ Option C สำหรับ Transit โดยแยกเป็น RequisitionTransit table</p>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h6 class="pros">ข้อดี</h6>
+                        <ul>
+                            <li>ใช้ Requisition table เดิม — ไม่ต้องสร้างตารางหลักใหม่</li>
+                            <li>RequisitionForeignEntity มี DAL แล้ว — แค่เพิ่ม Z4 mapping</li>
+                            <li>Query ง่าย — JOIN กับ Requisition ตรง</li>
+                            <li>คำขอปกติ + เฉพาะคราว อยู่ใน table เดียว — report ง่าย</li>
+                            <li><strong>ALTER TABLE เพิ่มแค่ 4 columns</strong></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="cons">ข้อเสีย</h6>
+                        <ul>
+                            <li>Requisition table มี columns เยอะขึ้น (46 → 50)</li>
+                            <li>columns เฉพาะคราว จะเป็น NULL ในคำขอปกติ</li>
+                            <li>ต้องสร้าง DAL model ใหม่สำหรับ RequisitionTemporaryItemDetail</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION B: แยกตาราง -->
+<!-- ============================================ -->
+<div id="sec-optionB" class="section">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="option-card p-4 mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Option B: แยกตาราง RequisitionTemporary <span class="badge badge-alt">ทางเลือก</span></h4>
+                    <span class="badge bg-warning text-dark fs-6">Effort: กลาง</span>
+                </div>
+                <p class="text-muted">สร้างตารางใหม่ RequisitionTemporary เก็บ fields เฉพาะคราวทั้งหมด — FK กลับ Requisition</p>
+
+                <h5 class="mt-4">RequisitionTemporary (ตารางใหม่)</h5>
+                <table class="table table-bordered table-sm table-schema">
+                    <thead><tr><th>Column</th><th>Type</th><th>คำอธิบาย</th></tr></thead>
+                    <tbody>
+                        <tr><td>Id</td><td>INT PK</td><td></td></tr>
+                        <tr><td>RequisitionId</td><td>INT FK UNIQUE</td><td>→ Requisition.Id (1:1)</td></tr>
+                        <tr><td>PermitType</td><td>CHAR(1)</td><td>I=Import, E=Export, T=Transit</td></tr>
+                        <tr><td>TransportTypeId</td><td>INT NULL FK</td><td>→ MasterTransportType</td></tr>
+                        <tr><td>ExportPortId</td><td>INT NULL FK</td><td>→ MasterPort (ท่าส่งออก)</td></tr>
+                        <tr><td>EntryPortId</td><td>INT NULL FK</td><td>→ MasterPort (ท่านำเข้า)</td></tr>
+                        <tr><td>ImportAuthorizationNo</td><td>VARCHAR(50)</td><td>เลขที่ใบอนุญาตนำเข้าจากปลายทาง</td></tr>
+                        <tr><td>ImportAuthDate</td><td>DATETIME NULL</td><td>วันที่ออกใบอนุญาต</td></tr>
+                        <tr><td>ImportAuthAgency</td><td>NVARCHAR(255)</td><td>หน่วยงานที่ออก</td></tr>
+                        <tr><td>ImportingCountryId</td><td>INT NULL FK</td><td>→ MasterCountry</td></tr>
+                        <tr><td>TransitFromCountryId</td><td>INT NULL FK</td><td>Transit: ประเทศต้นทาง</td></tr>
+                        <tr><td>TransitToCountryId</td><td>INT NULL FK</td><td>Transit: ประเทศปลายทาง</td></tr>
+                        <tr><td>TransitRoute</td><td>NVARCHAR(500)</td><td>เส้นทางนำผ่าน</td></tr>
+                        <tr><td>ValidityStartDate</td><td>DATETIME NULL</td><td>วันเริ่มใช้</td></tr>
+                        <tr><td>ValidityEndDate</td><td>DATETIME NULL</td><td>วันหมดอายุ</td></tr>
+                        <tr><td>CustomsCheckpoint1</td><td>NVARCHAR(255)</td><td>ด่านศุลกากร 1</td></tr>
+                        <tr><td>CustomsCheckpoint2</td><td>NVARCHAR(255)</td><td>ด่านศุลกากร 2</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h6 class="pros">ข้อดี</h6>
+                        <ul>
+                            <li>Requisition table ไม่บวม — separation of concerns</li>
+                            <li>Transit fields แยกชัด ไม่ปนกับ Import/Export</li>
+                            <li>เพิ่ม fields อนาคตได้ง่าย</li>
+                            <li>ไม่มี NULL columns ใน Requisition สำหรับคำขอปกติ</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="cons">ข้อเสีย</h6>
+                        <ul>
+                            <li>ต้องสร้างตาราง + DAL model + migration ใหม่</li>
+                            <li>Query ต้อง JOIN เพิ่ม</li>
+                            <li>1:1 relationship อาจ redundant</li>
+                            <li><strong>Requisition.TransportTypeId/PortId ที่มีอยู่แล้วจะ unused</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION C: Hybrid -->
+<!-- ============================================ -->
+<div id="sec-optionC" class="section">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="option-card p-4 mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Option C: Hybrid — ใช้เดิม + แยกเฉพาะ Transit <span class="badge badge-alt">ทางเลือก</span></h4>
+                    <span class="badge bg-info text-dark fs-6">Effort: กลาง</span>
+                </div>
+                <p class="text-muted">Import/Export ใช้ columns เดิมใน Requisition | Transit สร้างตาราง RequisitionTransit แยก</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5>Import/Export → Requisition เดิม</h5>
+                        <ul class="small">
+                            <li>TransportTypeId ✅ มีอยู่</li>
+                            <li>ExportPortId ✅ มีอยู่</li>
+                            <li>EntryPortId ✅ มีอยู่</li>
+                            <li>ImportAuthorizationNo → เพิ่ม</li>
+                            <li>ImportAuthDate → เพิ่ม</li>
+                            <li>ImportAuthAgency → เพิ่ม</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Transit → RequisitionTransit (ใหม่)</h5>
+                        <ul class="small">
+                            <li>TransitFromCountryId</li>
+                            <li>TransitToCountryId</li>
+                            <li>TransitRoute</li>
+                            <li>CustomsCheckpoint1/2</li>
+                            <li>ValidityStartDate/EndDate</li>
+                            <li>PermitType (N/R/A)</li>
+                            <li>AmendmentDetails</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h6 class="pros">ข้อดี</h6>
+                        <ul>
+                            <li>Import/Export ง่าย — ใช้ columns ที่มี + เพิ่มน้อย</li>
+                            <li>Transit แยกชัด — structure ต่างมาก</li>
+                            <li>Best of both worlds</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="cons">ข้อเสีย</h6>
+                        <ul>
+                            <li>Logic ซับซ้อนขึ้น — ต้อง check ว่าเป็น IMP/EXP หรือ Transit</li>
+                            <li>2 patterns ใน codebase</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- ER DIAGRAM -->
+<!-- ============================================ -->
+<div id="sec-er" class="section">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <h4 class="text-center mb-4">ER Diagram — Option A (แนะนำ) <span class="verify-badge warn">Updated after verification</span></h4>
+
+            <div class="er-diagram">
+<pre>
+<span class="er-table">┌─────────────────────────────────────────┐</span>
+<span class="er-table">│           Requisition                   │</span>
+<span class="er-table">├─────────────────────────────────────────┤</span>
+<span class="er-pk">│ PK  Id                    INT           │</span>
+<span class="er-field">│     RequisitionTypeId     INT     FK    │</span>
+<span class="er-field">│     NarcoticTypeId        INT     FK    │</span>
+<span class="er-field">│     OperationType         CHAR(2)       │</span>
+<span class="er-field">│     Status                INT           │</span>
+<span class="er-field">│     WriteDate             DATETIME      │</span>
+<span class="er-field">│     ...                   (46 cols)     │</span>
+<span class="er-field">│     ─── เฉพาะคราว (มีอยู่แล้ว) ───       │</span>
+<span class="er-fk">│     TransportTypeId       INT     FK ──│──→ MasterTransportType</span>
+<span class="er-fk">│     ExportPortId          INT     FK ──│──→ MasterPort</span>
+<span class="er-fk">│     EntryPortId           INT     FK ──│──→ MasterPort</span>
+<span class="er-fk">│     EntryForeignPortId    INT     FK    │</span>
+<span class="er-field">│     ─── เฉพาะคราว (เพิ่มใหม่) ───        │</span>
+<span class="er-pk">│ NEW ImportAuthorizationNo VARCHAR(50)   │</span>
+<span class="er-pk">│ NEW ImportAuthDate        DATETIME      │</span>
+<span class="er-pk">│ NEW ImportAuthAgency      NVARCHAR(255) │</span>
+<span class="er-pk">│ NEW ImportingCountryId    INT     FK ──│──→ MasterCountry</span>
+<span class="er-field">│                                         │</span>
+<span class="er-field">│  <span style="color:#fbbf24;">── Navigation Properties (ต้องเพิ่ม) ──</span>  │</span>
+<span class="er-fk">│  ICollection&lt;RequisitionForeignEntity&gt;  │</span>
+<span class="er-fk">│  ICollection&lt;RequisitionTemporary       │</span>
+<span class="er-fk">│              ItemDetail&gt;  <span style="color:#f87171;">★ FIX NEEDED</span> │</span>
+<span class="er-table">└───────────┬─────────────────────────────┘</span>
+            <span class="er-arrow">│ 1</span>
+            <span class="er-arrow">│</span>
+    <span class="er-arrow">┌───────┼───────────────┐</span>
+    <span class="er-arrow">│ *     │ *             │ *</span>
+<span class="er-table">┌───┴───────────┐ ┌───┴────────────┐ ┌──┴──────────────────┐</span>
+<span class="er-table">│ Requisition   │ │ Requisition    │ │ Requisition          │</span>
+<span class="er-table">│ ForeignEntity │ │ Temporary      │ │ Participant          │</span>
+<span class="er-table">│  <span style="color:#86efac;">✅ Verified</span>  │ │ ItemDetail     │ ├──────────────────────┤</span>
+<span class="er-table">├───────────────┤ │ <span style="color:#f87171;">❌ FK Broken</span>  │ │PK Id                 │</span>
+<span class="er-pk">│PK Id          │ ├────────────────┤ │FK RequisitionId      │</span>
+<span class="er-fk">│FK RequisitionId│ │PK Id           │ │   ParticipantTypeId  │</span>
+<span class="er-field">│   EntityType  │ │<span style="color:#f87171;">FK RequisitionId</span>│ │   FullName           │</span>
+<span class="er-field">│   (M/I/E)    │ │  <span style="color:#f87171;">↑ NO NAV PROP</span> │ │   ...                │</span>
+<span class="er-field">│   EntityName  │ │FK NarcoticDrugId│ │                      │</span>
+<span class="er-field">│   Address     │ │   Pharma Form  │ │                      │</span>
+<span class="er-field">│   Country     │ │   ContentPerUnit│ │                      │</span>
+<span class="er-field">│   TransportId │ │   TotalQuantity│ │                      │</span>
+<span class="er-field">│               │ │FK UnitId       │ │                      │</span>
+<span class="er-table">└───────────────┘ └────────────────┘ └──────────────────────┘</span>
+    <span style="color:#86efac;">✅ DAL Verified</span>   <span style="color:#f87171;">❌ FK ขาด-ต้องแก้</span>   <span style="color:#86efac;">✅ มีอยู่ + Z4 map</span>
+</pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- COMPARE -->
+<!-- ============================================ -->
+<div id="sec-compare" class="section">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <h4 class="text-center mb-4">เปรียบเทียบ 3 Options</h4>
+
+            <table class="table table-bordered">
+                <thead class="table-dark"><tr><th>เกณฑ์</th><th>Option A<br>ใช้ตารางเดิม</th><th>Option B<br>แยกตาราง</th><th>Option C<br>Hybrid</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>ALTER TABLE</strong></td><td class="table-success">เพิ่ม 4 columns</td><td class="table-warning">ไม่แก้ Requisition</td><td class="table-success">เพิ่ม 3 columns</td></tr>
+                    <tr><td><strong>CREATE TABLE</strong></td><td>TemporaryItemDetail</td><td>Temporary + TemporaryItemDetail</td><td>Transit + TemporaryItemDetail</td></tr>
+                    <tr><td><strong>DAL Model</strong></td><td class="table-success">เพิ่ม 1 model</td><td class="table-warning">เพิ่ม 2 models</td><td class="table-warning">เพิ่ม 2 models</td></tr>
+                    <tr><td><strong>Z4 PayloadMapper</strong></td><td class="table-success">เพิ่ม map fields</td><td class="table-warning">เพิ่ม map + JOIN</td><td class="table-warning">เพิ่ม map + conditional</td></tr>
+                    <tr><td><strong>Query complexity</strong></td><td class="table-success">ง่าย</td><td class="table-warning">JOIN เพิ่ม</td><td class="table-warning">Conditional JOIN</td></tr>
+                    <tr><td><strong>NULL columns</strong></td><td class="table-warning">มี (คำขอปกติ)</td><td class="table-success">ไม่มี</td><td class="table-success">น้อย</td></tr>
+                    <tr><td><strong>ใช้ columns ที่มีอยู่</strong></td><td class="table-success">✅ ใช้ 4 cols เดิม</td><td class="table-danger">❌ columns เดิม unused</td><td class="table-success">✅ IMP/EXP ใช้เดิม</td></tr>
+                    <tr><td><strong>Transit support</strong></td><td class="table-warning">ต้องเพิ่ม cols อีก</td><td class="table-success">✅ รองรับ</td><td class="table-success">✅ แยกตาราง</td></tr>
+                    <tr><td><strong>Effort รวม</strong></td><td class="table-success"><strong>ต่ำ</strong></td><td class="table-warning">กลาง</td><td class="table-warning">กลาง</td></tr>
+                    <tr><td><strong>Risk</strong></td><td class="table-success">ต่ำ (ไม่แก้ structure)</td><td class="table-warning">กลาง (ตารางใหม่)</td><td class="table-warning">กลาง</td></tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-success">
+                <strong>แนะนำ Option A</strong> เพราะ:
+                <ul class="mb-0">
+                    <li>Columns ส่วนใหญ่มีอยู่แล้วใน DB (TransportTypeId, PortIds)</li>
+                    <li>เพิ่มแค่ 4 columns ใหม่ (ImportAuth*)</li>
+                    <li>RequisitionForeignEntity มี DAL แล้ว</li>
+                    <li>ต้องสร้างแค่ 1 DAL model ใหม่ (TemporaryItemDetail)</li>
+                    <li>ไม่ต้องเปลี่ยน V1 code — <strong>ทำเฉพาะ Z4</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- MIGRATION PLAN -->
+<!-- ============================================ -->
+<div id="sec-migration" class="section">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <h4 class="text-center mb-4">Migration Plan — Option A</h4>
+
+            <div class="card mb-3">
+                <h5 class="section-header">Phase 1: DB + DAL (ไม่กระทบ V1)</h5>
+                <div class="card-body">
+                    <table class="table table-sm">
+                        <thead class="table-light"><tr><th>#</th><th>งาน</th><th>ไฟล์</th><th>Effort</th></tr></thead>
+                        <tbody>
+                            <tr><td>1.1</td><td>ALTER TABLE Requisition เพิ่ม 4 columns</td><td>SQL Migration</td><td>ต่ำ</td></tr>
+                            <tr><td>1.2</td><td>แก้ FK navigation property ใน RequisitionTemporaryItemDetail.cs <span class="verify-badge fail">Must Fix</span></td><td>NCSystem.DAL/Models/RequisitionTemporaryItemDetail.cs</td><td>ต่ำ</td></tr>
+                            <tr><td>1.3</td><td>เพิ่ม ICollection&lt;RequisitionTemporaryItemDetail&gt; ใน Requisition.cs <span class="verify-badge fail">Must Fix</span></td><td>NCSystem.DAL/Models/Requisition.cs</td><td>ต่ำ</td></tr>
+                            <tr><td>1.4</td><td>เพิ่ม DbSet ใน NCDBContext (ถ้ายังไม่มี)</td><td>NCSystem.DAL/Models/NCDBContext.cs</td><td>ต่ำ</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="alert alert-warning small mb-0">
+                        <strong>หมายเหตุ:</strong> ต้องแก้ DAL แต่ไม่กระทบ V1 — เพิ่ม model + DbSet เท่านั้น ไม่แก้ logic เดิม
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <h5 class="section-header">Phase 2: Z4 API (ทำเฉพาะ Z4)</h5>
+                <div class="card-body">
+                    <div class="error-box mb-3">
+                        <strong>&#x26A0; Verification Finding:</strong> API Controller สำหรับ Temporary Permit ยังไม่มี — ต้องสร้าง <strong>เป็นอย่างแรก</strong> ก่อนทำ task อื่นใน Phase 2
+                    </div>
+                    <table class="table table-sm">
+                        <thead class="table-light"><tr><th>#</th><th>งาน</th><th>ไฟล์</th><th>Effort</th></tr></thead>
+                        <tbody>
+                            <tr class="table-danger"><td>2.0</td><td><strong>สร้าง API Controller สำหรับ Temporary Permit (ต้องทำก่อน!)</strong> <span class="verify-badge fail">Missing</span></td><td>NCSystem.API/Controllers/Z4/</td><td>กลาง</td></tr>
+                            <tr><td>2.1</td><td>Z4_FormPayload เพิ่ม transport/port/auth fields</td><td>NCSystem.API/Models/Z4/</td><td>ต่ำ</td></tr>
+                            <tr><td>2.2</td><td>Z4_PayloadMapper เพิ่ม map ForeignEntity + TemporaryItem</td><td>NCSystem.API/Services/Z4/</td><td>กลาง</td></tr>
+                            <tr><td>2.3</td><td>FormTypeRegistry เพิ่ม temporary permit types</td><td>NCSystem.API/Services/Z4/</td><td>ต่ำ</td></tr>
+                            <tr><td>2.4</td><td>Z4_LookupController เพิ่ม: TransportType, Port, Country</td><td>NCSystem.API/Controllers/</td><td>ต่ำ</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <h5 class="section-header">Phase 3: Z4 MVC (Views + JS)</h5>
+                <div class="card-body">
+                    <table class="table table-sm">
+                        <thead class="table-light"><tr><th>#</th><th>งาน</th><th>ไฟล์</th><th>Effort</th></tr></thead>
+                        <tbody>
+                            <tr><td>3.1</td><td>Z4_TemporaryPermitController สร้างใหม่</td><td>NCSystem/Z4_Controllers/</td><td>กลาง</td></tr>
+                            <tr><td>3.2</td><td>Z4 Views สร้าง IMP/EXP form (5 steps)</td><td>NCSystem/Z4_Views/Z4_TemporaryPermit/</td><td>สูง</td></tr>
+                            <tr><td>3.3</td><td>Z4 Views สร้าง Transit form (7 steps)</td><td>NCSystem/Z4_Views/Z4_TemporaryPermit/</td><td>สูง</td></tr>
+                            <tr><td>3.4</td><td>Shared partials ใหม่: _ForeignEntity, _TransportInfo</td><td>NCSystem/Z4_Views/_Shared/</td><td>กลาง</td></tr>
+                            <tr><td>3.5</td><td>JS conditions + mapping</td><td>NCSystem/wwwroot/js/z4/forms/</td><td>กลาง</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <h5 class="section-header">Phase 4: Testing</h5>
+                <div class="card-body">
+                    <table class="table table-sm">
+                        <thead class="table-light"><tr><th>#</th><th>งาน</th><th>Effort</th></tr></thead>
+                        <tbody>
+                            <tr><td>4.1</td><td>CIC Automation Guide สำหรับเฉพาะคราว</td><td>ต่ำ</td></tr>
+                            <tr><td>4.2</td><td>ทดสอบ IMP ทุก substance type (9 ประเภท)</td><td>กลาง</td></tr>
+                            <tr><td>4.3</td><td>ทดสอบ EXP ทุก substance type</td><td>กลาง</td></tr>
+                            <tr><td>4.4</td><td>ทดสอบ Transit</td><td>กลาง</td></tr>
+                            <tr><td>4.5</td><td>เทียบ PDF output กับตัวอย่างใบอนุญาตจริง</td><td>กลาง</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <strong>Timeline ประมาณ:</strong> Phase 1 (1 วัน) → Phase 2 (2 วัน) → Phase 3 (3-5 วัน) → Phase 4 (2 วัน) = <strong>~8-10 วัน</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- VERIFICATION STATUS -->
+<!-- ============================================ -->
+<div id="sec-verification" class="section">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <h4 class="text-center mb-4">Verification Status — Use Case Verification Results</h4>
+            <p class="text-center text-muted mb-4">ผลการตรวจสอบจาก use case verification เมื่อเทียบกับ codebase จริง (2026-04-01)</p>
+
+            <div class="card mb-4">
+                <h5 class="section-header">DB Tables & DAL Models</h5>
+                <div class="card-body p-0">
+                    <table class="table table-bordered table-sm mb-0">
+                        <thead class="table-light"><tr><th>Component</th><th>Status</th><th>Details</th><th>Action Required</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Requisition</strong> table</td>
+                                <td><span class="verify-ok">&#x2705; Verified</span></td>
+                                <td>Table + DAL model มีอยู่ครบ, TransportTypeId/ExportPortId/EntryPortId/EntryForeignPortId columns มีใน DB แล้ว</td>
+                                <td>ต้องเพิ่ม 4 columns (ImportAuth*) + Navigation property สำหรับ TemporaryItemDetail</td>
+                            </tr>
+                            <tr>
+                                <td><strong>RequisitionForeignEntity</strong></td>
+                                <td><span class="verify-ok">&#x2705; Verified Working</span></td>
+                                <td>DAL model มีอยู่, FK relationship ทำงานได้, EntityType รองรับ M/I/E</td>
+                                <td>แค่เพิ่ม Z4 mapping</td>
+                            </tr>
+                            <tr>
+                                <td><strong>RequisitionTemporaryItemDetail</strong></td>
+                                <td><span class="verify-fail">&#x274C; FK Broken</span></td>
+                                <td>DAL model มีอยู่ แต่ไม่มี navigation property เชื่อม FK กลับไปหา Requisition</td>
+                                <td>
+                                    <strong>Must Fix:</strong><br>
+                                    1. เพิ่ม <code>[ForeignKey] + virtual Requisition</code> ใน RequisitionTemporaryItemDetail.cs<br>
+                                    2. เพิ่ม <code>ICollection&lt;RequisitionTemporaryItemDetail&gt;</code> ใน Requisition.cs
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>RequisitionParticipant</strong></td>
+                                <td><span class="verify-ok">&#x2705; Verified</span></td>
+                                <td>มีอยู่ + Z4 map แล้ว, ใช้สำหรับ ผู้ขอ (type=1)</td>
+                                <td>ไม่ต้องทำอะไร</td>
+                            </tr>
+                            <tr>
+                                <td><strong>RequisitionDocumentAttachment</strong></td>
+                                <td><span class="verify-ok">&#x2705; Verified</span></td>
+                                <td>มีอยู่ + Z4 map แล้ว</td>
+                                <td>ไม่ต้องทำอะไร</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <h5 class="section-header">Missing Columns Verification</h5>
+                <div class="card-body p-0">
+                    <table class="table table-bordered table-sm mb-0">
+                        <thead class="table-light"><tr><th>Column</th><th>Table</th><th>Status</th><th>Notes</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>ImportAuthorizationNo</td>
+                                <td>Requisition</td>
+                                <td><span class="verify-fail">&#x274C; Confirmed Missing</span></td>
+                                <td>ต้อง ALTER TABLE เพิ่ม VARCHAR(50) NULL</td>
+                            </tr>
+                            <tr>
+                                <td>ImportAuthDate</td>
+                                <td>Requisition</td>
+                                <td><span class="verify-fail">&#x274C; Confirmed Missing</span></td>
+                                <td>ต้อง ALTER TABLE เพิ่ม DATETIME NULL</td>
+                            </tr>
+                            <tr>
+                                <td>ImportAuthAgency</td>
+                                <td>Requisition</td>
+                                <td><span class="verify-fail">&#x274C; Confirmed Missing</span></td>
+                                <td>ต้อง ALTER TABLE เพิ่ม NVARCHAR(255) NULL</td>
+                            </tr>
+                            <tr>
+                                <td>ImportingCountryId</td>
+                                <td>Requisition</td>
+                                <td><span class="verify-fail">&#x274C; Confirmed Missing</span></td>
+                                <td>ต้อง ALTER TABLE เพิ่ม INT NULL FK -> MasterCountry</td>
+                            </tr>
+                            <tr>
+                                <td>TransitFromCountryId</td>
+                                <td>Requisition (Option A) / RequisitionTransit (Option C)</td>
+                                <td><span class="verify-warn">&#x26A0; Not Covered in Option A</span></td>
+                                <td>Transit-specific, ต้องตัดสินใจว่าจะเพิ่มใน Requisition หรือแยกตาราง</td>
+                            </tr>
+                            <tr>
+                                <td>TransitToCountryId</td>
+                                <td>Requisition (Option A) / RequisitionTransit (Option C)</td>
+                                <td><span class="verify-warn">&#x26A0; Not Covered in Option A</span></td>
+                                <td>Transit-specific</td>
+                            </tr>
+                            <tr>
+                                <td>TransitRoute</td>
+                                <td>Requisition (Option A) / RequisitionTransit (Option C)</td>
+                                <td><span class="verify-warn">&#x26A0; Not Covered in Option A</span></td>
+                                <td>Transit-specific</td>
+                            </tr>
+                            <tr>
+                                <td>CustomsCheckpoint1</td>
+                                <td>Requisition (Option A) / RequisitionTransit (Option C)</td>
+                                <td><span class="verify-warn">&#x26A0; Not Covered in Option A</span></td>
+                                <td>Transit-specific</td>
+                            </tr>
+                            <tr>
+                                <td>CustomsCheckpoint2</td>
+                                <td>Requisition (Option A) / RequisitionTransit (Option C)</td>
+                                <td><span class="verify-warn">&#x26A0; Not Covered in Option A</span></td>
+                                <td>Transit-specific</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <h5 class="section-header">API & Controller Layer</h5>
+                <div class="card-body p-0">
+                    <table class="table table-bordered table-sm mb-0">
+                        <thead class="table-light"><tr><th>Component</th><th>Status</th><th>Action Required</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>API Controller สำหรับ Temporary Permit</strong></td>
+                                <td><span class="verify-fail">&#x274C; Missing</span></td>
+                                <td>ต้องสร้างเป็นอย่างแรกใน Phase 2 — เป็น blocking dependency สำหรับ task อื่นทั้งหมด</td>
+                            </tr>
+                            <tr>
+                                <td>Z4_FormPayload models</td>
+                                <td><span class="verify-warn">&#x26A0; Needs Extension</span></td>
+                                <td>เพิ่ม transport/port/auth fields</td>
+                            </tr>
+                            <tr>
+                                <td>Z4_PayloadMapper</td>
+                                <td><span class="verify-warn">&#x26A0; Needs Extension</span></td>
+                                <td>เพิ่ม mapping สำหรับ ForeignEntity + TemporaryItem</td>
+                            </tr>
+                            <tr>
+                                <td>FormTypeRegistry</td>
+                                <td><span class="verify-warn">&#x26A0; Needs Extension</span></td>
+                                <td>เพิ่ม temporary permit types</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <h5 class="section-header">Summary</h5>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="p-3" style="background:#dcfce7; border-radius:8px;">
+                                <h2 class="mb-0" style="color:#166534;">4</h2>
+                                <p class="mb-0 small"><strong>Verified OK</strong></p>
+                                <p class="mb-0 small text-muted">Requisition, ForeignEntity, Participant, DocAttachment</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3" style="background:#fee2e2; border-radius:8px;">
+                                <h2 class="mb-0" style="color:#991b1b;">3</h2>
+                                <p class="mb-0 small"><strong>Issues Found</strong></p>
+                                <p class="mb-0 small text-muted">TemporaryItemDetail FK, 4 Missing Columns, API Controller Missing</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3" style="background:#fef3c7; border-radius:8px;">
+                                <h2 class="mb-0" style="color:#92400e;">5</h2>
+                                <p class="mb-0 small"><strong>Transit Gaps</strong></p>
+                                <p class="mb-0 small text-muted">Transit columns not covered in Option A</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div><!-- container -->
+
+<script>
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById('sec-' + id).classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

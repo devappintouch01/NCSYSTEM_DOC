@@ -17,6 +17,9 @@ Google sheets
 - [[FDA68] นำเข้า-ส่งออก เฉพาะคราว](https://docs.google.com/spreadsheets/d/1EEyq1PUJTJK2qtROfoRSZogiT5DKpjLyWeONZb2c9ws)
 - [คำนวนสูตร](https://docs.google.com/spreadsheets/d/1Y2ASf2KcLwmI0fgnfOaGgkTIYQm18GzMcrpJMt6Vobc/edit?gid=176943539#gid=176943539)
 
+#### Screen
+- [XD 4.14_เฉพาะคราว ยส วจ_5_11](https://drive.google.com/drive/u/2/folders/1INdaxWNeOMnv9bv0R42WvYN9UayTdAGr)
+
 <style scoped>
 table {
   font-size: 13px;
@@ -25,6 +28,12 @@ li {
   font-size: 13px;
 }
 </style>
+
+### สรุปจาก ไฟล์ db_design.html (07-04-2026) [db_design.html](db_design_07-04-2026.html)
+
+1. ใช้ตาม Option A
+2. ไม่ต้องเพิ่ม Column
+
 
 ### ประเภท
 #### 1️⃣ ประเภท เฉพาะคราว (นำเข้าเฉพาะคราว/EXP ส่งออกเฉพาะคราว)
