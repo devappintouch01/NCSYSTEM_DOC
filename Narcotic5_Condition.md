@@ -11,6 +11,10 @@
 
 - [Figma ยส.5](https://www.figma.com/board/EWDQbpKKq9Rh4AkENTVOQG/%E0%B8%A2%E0%B8%AA5---%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B9%81%E0%B8%9C%E0%B8%99?t=kvjSziK881AvYaUS-6)
 
+#### เอกสารจากเจ้าหน้าที่
+- [รวม Link เอกสารแนบ](https://docs.google.com/spreadsheets/d/1Tnz5E6aaWrrCA9C2pav3H_k-QUgSM0WpExkef0Ws-gI)
+  - [09 ยส.5_ใบหลัก](https://docs.google.com/spreadsheets/d/101t7PIrUSOWUupRA9zun1rpiM7VyNDPXd1j7yJxnhh8)
+
 <style scoped>
 table {
   font-size: 13px;
@@ -40,6 +44,10 @@ li {
 - สถาบันอุดมศึกษาเอกชน ตามกฎหมายว่าด้วยสถาบันอุดมศึกษาเอกชน
 - หน่วยงานเอกชนที่เป็นนิติบุคคล
 -->
+
+### Narcotic 5 Condition
+
+- [[FDA68] Narcotic 5 Condition](https://docs.google.com/spreadsheets/d/1i5sP9T74M53AdxnZHyuO5b7oZ94tSXAChSi8A99lHAg)
 
 ### วัตถุประสงค์ / สาร
 

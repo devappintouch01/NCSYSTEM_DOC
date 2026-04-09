@@ -20,6 +20,10 @@ Google sheets
 #### Screen
 - [XD 4.14_เฉพาะคราว ยส วจ_5_11](https://drive.google.com/drive/u/2/folders/1INdaxWNeOMnv9bv0R42WvYN9UayTdAGr)
 
+#### เอกสารจากเจ้าหน้าที่
+- [รวม Link เอกสารแนบ](https://docs.google.com/spreadsheets/d/1Tnz5E6aaWrrCA9C2pav3H_k-QUgSM0WpExkef0Ws-gI)
+  - [01 ใบอนุญาตเฉพาะคราว](https://docs.google.com/spreadsheets/d/1Fl-6BZzlN1sBIMndh_mG1BPnw5qeU3cbMB6-Lqsis0g)
+
 <style scoped>
 table {
   font-size: 13px;
@@ -35,8 +39,7 @@ li {
 <!-- 2. ไม่ต้องเพิ่ม Column -->
 
 ### การคำนวน ยาเสพติด / วัตถุออกฤทธิ์ การคำนวน ที่ขอนำเข้า / ส่งออก ที่หัวข้อ 2.6
-- [2.6 ยาเสพติด / วัตถุออกฤทธิ์ การคำนวน ที่ขอนำเข้า / ส่งออก](https://docs.google.com/spreadsheets/d/12AhPd0wMLwmX6djC96rrsnbhhdAAhhrxlAPZ_IiTaF0/)
-
+- [การคำนวน 2.6 ยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก](https://docs.google.com/spreadsheets/d/12AhPd0wMLwmX6djC96rrsnbhhdAAhhrxlAPZ_IiTaF0/)
 
 ### ประเภท
 #### 1️⃣ ประเภท เฉพาะคราว (นำเข้าเฉพาะคราว/EXP ส่งออกเฉพาะคราว)
