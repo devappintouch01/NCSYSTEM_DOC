@@ -20,6 +20,15 @@
 - [NARCO_list_update_15_09_2025_NEW.pdf](Documents\ICOC\DRUGLIST\NARCO_list_update_15_09_2025_NEW.pdf)
 - [PHYCHO_list_update_25_07_2025.pdf](Documents\ICOC\DRUGLIST\PHYCHO_list_update_25_07_2025.pdf)
 
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
 ## ประเภทการคำขอ
 
 | ลำดับ | ประเภทการคำขอ |
