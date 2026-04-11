@@ -66,7 +66,7 @@
 | 6 | RequisitionId | int | N | รหัสคำขอ อ้างอิง `Requisition`.`Id` | RequisitionId |
 | 7 | CaffeineId | int | N | สารกาเฟอีน อ้างอิง `MasterCaffeine`.`Id` | CaffeineId |
 | 8 | Quantity | decimal(18,4) | N | ปริมาณ | Quantity |
-| 9 | UnitId | int | N | หน่วย อ้างอิง `MasterUnit`.`Id` | UnitId |
+| 9 | UnitId | int | N | หน่วย อ้างอิง `MasterNarcoticUnit`.`Id` | UnitId |
 | 10 | OriginCountry | nvarchar(50) | N | ประเทศผู้ผลิต | OriginCountry |
 | 11 | Remark | nvarchar(500) | Y | หมายเหตุ | Remark |
 
@@ -85,7 +85,7 @@
 | 6 | LicenseId | int | N | รหัสใบอนุญาต อ้างอิง `License`.`Id` | LicenseId |
 | 7 | CaffeineId | สารกาเฟอีน อ้างอิง `MasterCaffeine`.`Id` | CaffeineId |
 | 8 | Quantity | decimal(18,4) | N | ปริมาณ | Quantity |
-| 9 | UnitId | int | N | หน่วย อ้างอิง `MasterUnit`.`Id` | UnitId |
+| 9 | UnitId | int | N | หน่วย อ้างอิง `MasterNarcoticUnit`.`Id` | UnitId |
 | 10 | OriginCountry | nvarchar(50) | N | ประเทศผู้ผลิต | OriginCountry |
 | 11 | Remark | nvarchar(500) | Y | หมายเหตุ | Remark |
 
