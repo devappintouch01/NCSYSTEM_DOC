@@ -15,7 +15,7 @@ Google sheets
 - [ปี2568 ใบอนุญาตเฉพาะคราว_นำเข้า](https://docs.google.com/spreadsheets/d/1hsVTwo9gI1xk8cmZ979OnQ61cjUX9-j4)
 - [ปี2568 ใบอนุญาตเฉพาะคราว_ส่งออก](https://docs.google.com/spreadsheets/d/18vAB_xg1Pc-C6s9N1GJ0enrd2k2lw8Y5)
 - [[FDA68] นำเข้า-ส่งออก เฉพาะคราว](https://docs.google.com/spreadsheets/d/1EEyq1PUJTJK2qtROfoRSZogiT5DKpjLyWeONZb2c9ws)
-- [คำนวนสูตร](https://docs.google.com/spreadsheets/d/1Y2ASf2KcLwmI0fgnfOaGgkTIYQm18GzMcrpJMt6Vobc/edit?gid=176943539#gid=176943539)
+- [สูตรคำนวน](https://docs.google.com/spreadsheets/d/1Y2ASf2KcLwmI0fgnfOaGgkTIYQm18GzMcrpJMt6Vobc/edit?gid=176943539#gid=176943539)
 
 #### Screen
 - [XD 4.14_เฉพาะคราว ยส วจ_5_11](https://drive.google.com/drive/u/2/folders/1INdaxWNeOMnv9bv0R42WvYN9UayTdAGr)
