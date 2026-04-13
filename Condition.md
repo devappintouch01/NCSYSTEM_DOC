@@ -34,7 +34,7 @@ li {
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|---|
-| 25-46 | 16 มี.ค. 2569 | กอง ต. [4.14] | Condition | [เฉพาะคราว Temporary](Narcotic_Temporary_Condition.md) |
+| 25-46 | 16 มี.ค. 2569 | กอง ต. [4.14] | Condition | [เฉพาะคราว Temporary](Condition/Temporary/Narcotic_Temporary_Condition.md) |
 
 ### Condition ทะเบียนตำรับ Receipe, ตัวอย่าง Sample, คำรับรอง Certificate 
 
@@ -50,7 +50,7 @@ li {
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|---|
-| 23-24 | 17 มี.ค. 2569 | กอง ต. [4.17] | Condition | [ยาติดตัว IC OC](ยาติดตัว_IC_OC.md) |
+| 23-24 | 17 มี.ค. 2569 | กอง ต. [4.17] | Condition | [ยาติดตัว IC OC](Condition/ICOC/ยาติดตัว_IC_OC.md) |
 
 ### รายงาน
 
