@@ -207,15 +207,21 @@ li {
 ### 📝 วจ.1-1 (RequisitionTypeId = 2)
 > • มี อย. และ <span style="color: red;">สสจ.</span><br>• อย. ได้ทุกกิจกรรม (ผลิต นำเข้า ส่งออก จำหน่าย ครอบครอง)<br>• <span style="color: green;">สสจ.</span> ได้เฉพาะ <span style="color: red;">ครอบครอง</span>
 
-<div style="display: flex; align-items: flex-start; gap: 0px;">
-  <img src="วจ1-1_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;">
-  <img src="วจ1-1_ขอใหม่_สสจ.png" width="50%" style="border: 1px solid blue;">
-</div>
+<details>
+  <summary>📸 คลิกเพื่อดูรูปภาพ Workflow วจ.1-1</summary>
+  <div style="display: flex; align-items: flex-start; gap: 0px;">
+    <img src="วจ1-1_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;">
+    <img src="วจ1-1_ขอใหม่_สสจ.png" width="50%" style="border: 1px solid blue;">
+  </div>
+</details>
 
 #### 🔹 วจ.1-1 ขอใหม่ อย.
 > • อย. ได้ทุกกิจกรรม (ผลิต นำเข้า ส่งออก จำหน่าย ครอบครอง)
 
-<img src="วจ1-1_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;">
+<details>
+  <summary>📸 คลิกเพื่อดูรูปภาพ Workflow วจ.1-1 ขอใหม่ อย.</summary>
+  <img src="วจ1-1_ขอใหม่_อย.png" width="75%" style="border: 1px solid blue;">
+</details>
 
 | ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
 |:---:|:---:|:---:|:---:|:---:|:---:|---|---|:---:|:---:|
@@ -224,7 +230,14 @@ li {
 #### 🔹 วจ.1-1 ขอใหม่ สสจ.
 > • ได้เฉพาะกิจกรรม <span style="color: red;">ครอบครอง</span>
 
-<img src="วจ1-1_ขอใหม่_สสจ.png" width="50%" style="border: 1px solid blue;">
+<details>
+  <summary>📸 คลิกเพื่อดูรูปภาพ Workflow วจ.1-1 ขอใหม่ สสจ.</summary>
+  <img src="วจ1-1_ขอใหม่_สสจ.png" width="75%" style="border: 1px solid blue;">
+</details>
+
+| ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
+|:---:|:---:|:---:|:---:|:---:|:---:|---|---|:---:|:---:|
+| 1 | กอง ต. | ขอใหม่ | 2 | วจ.1-1 | - | - | **L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• ตรวจสอบคำขอ<br>**• ถ้าครบถ้วน/ถูกต้อง**<br>**L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• รับคำขอ<br>**L2 - เภสัชกรชำนาญการพิเศษ**<br>• ลงนามอนุมัติ | Flow สั้น | FLOW_SHORT |
 
 <!-- ## ตาราง WorkflowDefinition
 ### กองยา -->
