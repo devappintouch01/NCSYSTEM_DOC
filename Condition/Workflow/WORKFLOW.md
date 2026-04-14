@@ -292,9 +292,9 @@ li {
 </details>
 
 
-<div style="padding: 16px; border-left: 6px solid #e74c3c; background-color: #fdf2f2; color: #c0392b; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-  <span style="font-size: 24px;">⚠️</span>
-  <span>ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ.</span>
+<div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+  <span style="font-size: 24px;">📌</span>
+  <span>ยังไม่ทราบ flow การอนุมัติของ <strong>สสจ.</strong> — รอสอบถามเจ้าหน้าที่เพิ่มเติม</span>
 </div>
 
 ### 📝 ผนส. ยส.2/วจ.2 (RequisitionTypeId = 3)
@@ -344,9 +344,9 @@ li {
 </details>
 
 
-<div style="padding: 16px; border-left: 6px solid #e74c3c; background-color: #fdf2f2; color: #c0392b; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-  <span style="font-size: 24px;">⚠️</span>
-  <span>ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ.</span>
+<div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+  <span style="font-size: 24px;">📌</span>
+  <span>ยังไม่ทราบ flow การอนุมัติของ <strong>สสจ.</strong> — รอสอบถามเจ้าหน้าที่เพิ่มเติม</span>
 </div>
 
 ### 📝 จ.ย.ส. 2-1/ว.จ. 2-1 (RequisitionTypeId = 4)
@@ -379,9 +379,9 @@ li {
   <img src="จ_ยส2วจ2_ขอใหม่_สสจ.png" width="80%" style="border: 2px solid #2ecc71; border-radius: 8px; margin-top: 10px;">
 </details>
 
-<div style="padding: 16px; border-left: 6px solid #e74c3c; background-color: #fdf2f2; color: #c0392b; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-  <span style="font-size: 24px;">⚠️</span>
-  <span>ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ.</span>
+<div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+  <span style="font-size: 24px;">📌</span>
+  <span>ยังไม่ทราบ flow การอนุมัติของ <strong>สสจ.</strong> — รอสอบถามเจ้าหน้าที่เพิ่มเติม</span>
 </div>
 
 ---
@@ -404,9 +404,9 @@ li {
 ### 📝 แต่ละครั้ง NAR.5 (กัญชา กัญชง) (RequisitionTypeId = 35, 36)
 
 
-<div style="padding: 16px; border-left: 6px solid #e74c3c; background-color: #fdf2f2; color: #c0392b; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-  <span style="font-size: 24px;">⚠️</span>
-  <span>ยังไม่แน่ใจเรื่องการอนุมัติ</span>
+<div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+  <span style="font-size: 24px;">📌</span>
+  <span>ยังไม่ทราบ flow การอนุมัติ — รอสอบถามเจ้าหน้าที่เพิ่มเติม</span>
 </div>
 
 ### 📝 นำผ่าน นผจ (RequisitionTypeId = 46)
