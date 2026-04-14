@@ -97,7 +97,7 @@ li {
 | 18 มี.ค. 2569 | All | Doc | [FDA AUTHEN (Skynet)](SYKNET.md) |
 
 
-[WORKFLOW](WORKFLOW.md)
+[WORKFLOW](Condition/Workflow/WORKFLOW.md)
 
 
 
