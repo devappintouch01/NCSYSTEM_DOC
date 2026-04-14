@@ -57,7 +57,7 @@ li {
 #### 📂 dbo.MasterRequisition
 
 <details>
-  <summary>📂 คลิกเพื่อดูตาราง dbo.MasterRequisition</summary>
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterRequisition</summary>
 
 | Id | ชื่อประเภทใบคำขอ (RequisitionTypeNameTh) | รหัสแบบฟอร์ม |
 |:---:|---|:---:|
@@ -118,7 +118,7 @@ li {
 #### 📂 dbo.MasterObjective
 
 <details>
-  <summary>📂 คลิกเพื่อดูตาราง dbo.MasterObjective</summary>
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterObjective</summary>
 
 | Id | วัตถุประสงค์ (ObjectiveNameTh) | RequisitionTypeId |
 |:---:|---|:---:|
@@ -286,7 +286,7 @@ li {
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow ผนส. ยส.2/วจ.2</summary>
-  <img src="ผนส_ยส2วจ2_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;">
+  <img src="ผนส_ยส2วจ2_ขอใหม่_อย.png" width="80%" style="border: 1px solid blue;">
 </details>
 
 ### 📝 คค.1-1 (RequisitionTypeId = 6)
@@ -305,16 +305,16 @@ li {
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow คค.1-1 อย.</summary>
-  <img src="คค_ยส2วจ2_ขอใหม่_อย.png" width="60%" style="border: 1px solid blue;">
+  <img src="คค_ยส2วจ2_ขอใหม่_อย.png" width="80%" style="border: 1px solid blue;">
 </details>
 
-#### 🔹 คค.1-1 ขอใหม่ <span style="color: green;">สสจ.</span>
+#### 🔹 คค.1-1 ขอใหม่ สสจ.
 
 > • <span style="color: green;">สสจ.</span> ได้เฉพาะ วัตถุประสงค์ เพื่อการบำบัดรักษาหรือป้องกันโรคให้แก่ผู้ป่วยหรือสัตว์ป่วยในทางการแพทย์
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow คค.1-1 สสจ.</summary>
-  <img src="คค_ยส2วจ2_ขอใหม่_สสจ.png" width="60%" style="border: 1px solid blue;">
+  <img src="คค_ยส2วจ2_ขอใหม่_สสจ.png" width="80%" style="border: 1px solid blue;">
 </details>
 
 ### 📝 จ.ย.ส. 2-1/ว.จ. 2-1 (RequisitionTypeId = 4)
@@ -333,14 +333,14 @@ li {
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow จ.ย.ส. 2-1/ว.จ. 2-1 อย.</summary>
-  <img src="จ_ยส2วจ2_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;">
+  <img src="จ_ยส2วจ2_ขอใหม่_อย.png" width="80%" style="border: 1px solid blue;">
 </details>
 
 #### 🔹 จ.ย.ส. 2-1/ว.จ. 2-1 ขอใหม่ สสจ.
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow จ.ย.ส. 2-1/ว.จ. 2-1 สสจ.</summary>
-  <img src="จ_ยส2วจ2_ขอใหม่_สสจ.png" width="50%" style="border: 1px solid blue;">
+  <img src="จ_ยส2วจ2_ขอใหม่_สสจ.png" width="80%" style="border: 1px solid blue;">
 </details>
 
 ---
@@ -353,7 +353,7 @@ li {
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow IMP, EXP</summary>
-    <img src="เฉพาะคราว.png" width="60%" style="border: 1px solid blue;">
+    <img src="เฉพาะคราว.png" width="80%" style="border: 1px solid blue;">
 </details>
 
 | ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
@@ -371,7 +371,7 @@ li {
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow นำผ่าน นผจ</summary>
-    <img src="นำผ่าน.png" width="60%" style="border: 1px solid blue;">
+    <img src="นำผ่าน.png" width="80%" style="border: 1px solid blue;">
 </details>
 
 | ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
