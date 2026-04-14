@@ -206,7 +206,7 @@ li {
 
 ### 📝 วจ.1-1 (RequisitionTypeId = 2)
 
-<div style="display: flex; align-items: flex-start; gap: 10px;">
+<div style="display: flex; align-items: flex-start; gap: 1px;">
   <img src="วจ1-1_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;">
   <img src="วจ1-1_ขอใหม่_สสจ.png" width="50%" style="border: 1px solid blue;">
 </div>
