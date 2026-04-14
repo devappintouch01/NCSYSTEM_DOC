@@ -56,7 +56,7 @@ li {
 
 #### 📂 dbo.MasterRequisition
 
-<details>
+<details markdown="1">
 <summary>📂 คลิกเพื่อดูตาราง dbo.MasterRequisition</summary>
 
 | Id | ชื่อประเภทใบคำขอ (RequisitionTypeNameTh) | รหัสแบบฟอร์ม |
@@ -117,7 +117,7 @@ li {
 
 #### 📂 dbo.MasterObjective
 
-<details>
+<details markdown="1">
 <summary>📂 คลิกเพื่อดูตาราง dbo.MasterObjective</summary>
 
 | Id | วัตถุประสงค์ (ObjectiveNameTh) | RequisitionTypeId |
