@@ -232,7 +232,7 @@ li {
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow วจ.1-1 ขอใหม่ สสจ.</summary>
-  <img src="วจ1-1_ขอใหม่_สสจ.png" width="75%" style="border: 1px solid blue;">
+  <img src="วจ1-1_ขอใหม่_สสจ.png" width="60%" style="border: 1px solid blue;">
 </details>
 
 | ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
