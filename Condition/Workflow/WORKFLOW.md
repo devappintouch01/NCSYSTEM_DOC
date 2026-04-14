@@ -206,7 +206,7 @@ li {
 
 ### 📝 วจ.1-1 (RequisitionTypeId = 2)
 
-<img src="วจ1-1_ขอใหม่_อย.png" width="45%" style="border: 1px solid blue;"><img src="วจ1-1_ขอใหม่_สสจ.png" width="45%" style="border: 1px solid blue;">
+<img src="วจ1-1_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;"><img src="วจ1-1_ขอใหม่_สสจ.png" width="50%" style="border: 1px solid blue;">
 
 > • มี อย. และ <span style="color: red;">สสจ.</span> <br> • อย. ได้ทุกกิจกรรม (ผลิต นำเข้า ส่งออก จำหน่าย ครอบครอง) <br> • <span style="color: green;">สสจ.</span> ได้เฉพาะ <span style="color: red;">ครอบครอง</span>
 
