@@ -40,10 +40,12 @@ li {
 | Id | คำขอ | Progress | Status | Link |
 |:---:|:---|:---:|:---:|:---|
 | 1 | ยส.1-1 | 100% | ✅ | [ไปที่รายละเอียด](#-ยส1-1-requisitiontypeid--1) |
-| 2 | วจ.1-1 | 0% | 🚧 | [ไปที่รายละเอียด](#-วจ1-1-requisitiontypeid--2) |
-| 3 | ผนส. ยส.2/วจ.2 | 0% | 🚧 | [ไปที่รายละเอียด](#-ผนส-ยส2วจ2-requisitiontypeid--3) |
+| 2 | วจ.1-1 | 50% | 🚧 | [ไปที่รายละเอียด](#-วจ1-1-requisitiontypeid--2) |
+| 4 | จ.ย.ส. 2-1/ว.จ. 2-1 | 10% | 🚧 | [ไปที่รายละเอียด](#-จยส-2-1วจ-2-1-requisitiontypeid--4) |
+| 6 | คค.1-1 | 10% | 🚧 | [ไปที่รายละเอียด](#-คค1-1-requisitiontypeid--6) |
 | 19 | ยส.4-1 | 100% | ✅ | [ไปที่รายละเอียด](#-ยส4-1-requisitiontypeid--19) |
-| 20 | ยส.5 | 50% | 🚧 | [ไปที่รายละเอียด](#-ยส5-requisitiontypeid--20) | 
+| 20 | ยส.5 | 50% | 🚧 | [ไปที่รายละเอียด](#-ยส5-requisitiontypeid--20) |
+| 3 | ผนส. ยส.2/วจ.2 | 10% | 🚧 | [ไปที่รายละเอียด](#-ผนส-ยส2วจ2-requisitiontypeid--3) | 
 
 ---
 
@@ -235,9 +237,53 @@ li {
   <img src="วจ1-1_ขอใหม่_สสจ.png" width="60%" style="border: 1px solid blue;">
 </details>
 
-| ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
-|:---:|:---:|:---:|:---:|:---:|:---:|---|---|:---:|:---:|
-| 1 | กอง ต. | ขอใหม่ | 2 | วจ.1-1 | - | - | **L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• ตรวจสอบคำขอ<br>**• ถ้าครบถ้วน/ถูกต้อง**<br>**L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• รับคำขอ<br>**L2 - เภสัชกรชำนาญการพิเศษ**<br>• ลงนามอนุมัติ | Flow สั้น | FLOW_SHORT |
+> [!IMPORTANT]
+> **ยังไม่แน่ใจเรื่องการอนุมัติ**
+
+### 📝 ผนส. ยส.2/วจ.2 (RequisitionTypeId = 3)
+
+> • มีแต่ อย. ไม่มี <span style="color: red;">สสจ.</span>
+
+<details>
+  <summary>📸 คลิกเพื่อดูรูปภาพ Workflow ผนส. ยส.2/วจ.2</summary>
+  <img src="ผนส_ยส2วจ2_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;">
+</details>
+
+### 📝 จ.ย.ส. 2-1/ว.จ. 2-1 (RequisitionTypeId = 4)
+
+> • มี อย. และ <span style="color: red;">สสจ.</span><br>• <span style="color: green;">สสจ.</span> วัตถุประสงค์ หน่วยกระจายยา <span style="color: red;">ไม่ได้</span>
+
+<details>
+  <summary>📸 คลิกเพื่อดูรูปภาพ Workflow จ.ย.ส. 2-1/ว.จ. 2-1</summary>
+  <div style="display: flex; align-items: flex-start; gap: 0px;">
+    <img src="จ_ยส2วจ2_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;">
+    <img src="จ_ยส2วจ2_ขอใหม่_สสจ.png" width="50%" style="border: 1px solid blue;">
+  </div>
+</details>
+
+#### 🔹 จ.ย.ส. 2-1/ว.จ. 2-1 ขอใหม่ อย.
+
+#### 🔹 จ.ย.ส. 2-1/ว.จ. 2-1 ขอใหม่ สสจ.
+
+### 📝 คค.1-1 (RequisitionTypeId = 6)
+
+> ใช้กับ ยส.2 วจ.2 วจ.3 วจ.4
+
+#### 🔹 คค.1-1 เลือกสารเป็น ยส.2
+
+> • มี อย. และ <span style="color: red;">สสจ.</span>
+
+<details>
+  <summary>📸 คลิกเพื่อดูรูปภาพ Workflow คค.1-1 เลือกสารเป็น ยส.2</summary>
+  <div style="display: flex; align-items: flex-start; gap: 0px;">
+    <img src="คค_ยส2วจ2_ขอใหม่_อย.png" width="50%" style="border: 1px solid blue;">
+    <img src="คค_ยส2วจ2_ขอใหม่_สสจ.png" width="50%" style="border: 1px solid blue;">
+  </div>
+</details>
+
+#### 🔹 คค.1-1 ยส.2 ขอใหม่ อย.
+
+#### 🔹 คค.1-1 ยส.2 ขอใหม่ สสจ.
 
 <!-- ## ตาราง WorkflowDefinition
 ### กองยา -->
