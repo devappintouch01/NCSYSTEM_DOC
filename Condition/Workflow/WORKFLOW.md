@@ -41,9 +41,9 @@ li {
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|:---:|
 | 1 | สถานที่ | ยส.1-1 | ✅ มี | ❌ <span style="color: red;">ไม่มี</span> | 0% | ❌ | | [ไปที่รายละเอียด](#-ยส1-1-requisitiontypeid--1) |
 | 2 | สถานที่ | วจ.1-1 | ✅ มี | ✅ มี | 50% | 🚧 | ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ. | [ไปที่รายละเอียด](#-วจ1-1-requisitiontypeid--2) |
-| 3 | สถานที่ | ผนส. ยส.2/วจ.2 | ✅ มี | ❌ <span style="color: red;">ไม่มี</span> | 0% | ❌ | | [ไปที่รายละเอียด](#-ผนส-ยส2วจ2-requisitiontypeid--3) |
-| 4 | สถานที่ | จ.ย.ส. 2-1/ว.จ. 2-1 | ✅ มี | ✅ มี | 0% | ❌ | | [ไปที่รายละเอียด](#-จยส-2-1วจ-2-1-requisitiontypeid--4) |
-| 6 | สถานที่ | คค.1-1 | ✅ มี | ✅ มี | 0% | ❌ | | [ไปที่รายละเอียด](#-คค1-1-requisitiontypeid--6) |
+| 3 | สถานที่ | ผนส. ยส.2/วจ.2 | ✅ มี | ❌ <span style="color: red;">ไม่มี</span> | 100% | ✅ | | [ไปที่รายละเอียด](#-ผนส-ยส2วจ2-requisitiontypeid--3) |
+| 4 | สถานที่ | จ.ย.ส. 2-1/ว.จ. 2-1 | ✅ มี | ✅ มี | 50% | 🚧 | ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ. | [ไปที่รายละเอียด](#-จยส-2-1วจ-2-1-requisitiontypeid--4) |
+| 6 | สถานที่ | คค.1-1 | ✅ มี | ✅ มี | 50% | 🚧 | ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ. | [ไปที่รายละเอียด](#-คค1-1-requisitiontypeid--6) |
 | 19 | สถานที่ | ยส.4-1 | ✅ มี | ❌ <span style="color: red;">ไม่มี</span> | 0% | ❌ | | [ไปที่รายละเอียด](#-ยส4-1-requisitiontypeid--19) |
 | 20 | สถานที่ | ยส.5 | ✅ มี | ❌ <span style="color: red;">ไม่มี</span> | 0% | ❌ | | [ไปที่รายละเอียด](#-ยส5-requisitiontypeid--20) |
 | 25-34, 37-44, 45 | เฉพาะคราว | IMP, EXP | ✅ มี | ❌ <span style="color: red;">ไม่มี</span> | 100% | ✅ | | [ไปที่รายละเอียด](#-เฉพาะคราว-imp-exp-requisitiontypeid--25-34-37-44-45) |
@@ -278,8 +278,12 @@ li {
 </details>
 
 
-> [!CAUTION]
-> **ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ.**
+<div style="padding: 16px; border-left: 6px solid #e74c3c; background-color: #fdf2f2; color: #c0392b; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+  <span style="font-size: 24px;">⚠️</span>
+  <span>ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ.</span>
+</div>
+
+
 
 ### 📝 ผนส. ยส.2/วจ.2 (RequisitionTypeId = 3)
 
@@ -320,7 +324,7 @@ li {
 
 #### 🔹 คค.1-1 ขอใหม่ สสจ.
 
-> • <span style="color: green;">สสจ.</span> ได้เฉพาะ วัตถุประสงค์ เพื่อการบำบัดรักษาหรือป้องกันโรคให้แก่ผู้ป่วยหรือสัตว์ป่วยในทางการแพทย์
+> • <span style="color: green;">สสจ.</span> ได้เฉพาะ วัตถุประสงค์ **เพื่อการบำบัดรักษาหรือป้องกันโรคให้แก่ผู้ป่วยหรือสัตว์ป่วยในทางการแพทย์**
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow คค.1-1 สสจ.</summary>
@@ -328,8 +332,12 @@ li {
 </details>
 
 
-> [!CAUTION]
-> **ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ.**
+<div style="padding: 16px; border-left: 6px solid #e74c3c; background-color: #fdf2f2; color: #c0392b; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+  <span style="font-size: 24px;">⚠️</span>
+  <span>ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ.</span>
+</div>
+
+
 
 ### 📝 จ.ย.ส. 2-1/ว.จ. 2-1 (RequisitionTypeId = 4)
 
@@ -362,8 +370,12 @@ li {
 </details>
 
 
-> [!CAUTION]
-> **ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ.**
+<div style="padding: 16px; border-left: 6px solid #e74c3c; background-color: #fdf2f2; color: #c0392b; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+  <span style="font-size: 24px;">⚠️</span>
+  <span>ยังไม่แน่ใจเรื่องการอนุมัติของ สสจ.</span>
+</div>
+
+
 
 ---
 
@@ -385,8 +397,10 @@ li {
 ### 📝 แต่ละครั้ง NAR.5 (กัญชา กัญชง) (RequisitionTypeId = 35, 36)
 
 
-> [!CAUTION]
-> **ยังไม่แน่ใจเรื่องการอนุมัติ**
+<div style="padding: 16px; border-left: 6px solid #e74c3c; background-color: #fdf2f2; color: #c0392b; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+  <span style="font-size: 24px;">⚠️</span>
+  <span>ยังไม่แน่ใจเรื่องการอนุมัติ</span>
+</div>
 
 ### 📝 นำผ่าน นผจ (RequisitionTypeId = 46)
 
