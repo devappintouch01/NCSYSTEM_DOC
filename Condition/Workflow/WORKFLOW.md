@@ -240,7 +240,7 @@ li {
 #### 🔹 ยส.4-1 ขอใหม่
 > • มีแต่ อย. <span style="color: red;">ไม่มี</span> <span style="color: green;">สสจ.</span>
 
-<details>
+<!-- <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow ยส.4-1 ขอใหม่ (17-01-2569)</summary>
   <img src="ยส4-1_ขอใหม่_อย_1.png" width="80%" style="border: 1px solid blue;">
 </details>
@@ -248,6 +248,14 @@ li {
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow ยส.4-1 ขอใหม่ (20-01-2569)</summary>
   <img src="ยส4-1_ขอใหม่_อย_2.png" width="80%" style="border: 1px solid blue;">
+</details> -->
+
+<details>
+  <summary>📸 คลิกเพื่อดูรูปภาพ Workflow ยส.4-1 ขอใหม่ (17-01-2569) & (20-01-2569)</summary>
+  <div style="display: flex; align-items: flex-start; gap: 0px;">
+    <img src="ยส4-1_ขอใหม่_อย_1.png" width="50%" style="border: 1px solid blue;">
+    <img src="ยส4-1_ขอใหม่_อย_2.png" width="50%" style="border: 1px solid blue;">
+  </div>
 </details>
 
 | ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
