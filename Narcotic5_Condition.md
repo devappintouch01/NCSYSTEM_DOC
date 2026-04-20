@@ -2,6 +2,15 @@
 
 ---
 
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
 #### (dbo.MasterRequisitionType Id = 20)
 ### Links
 
@@ -14,15 +23,6 @@
 #### เอกสารจากเจ้าหน้าที่
 - [รวม Link เอกสารแนบ](https://docs.google.com/spreadsheets/d/1Tnz5E6aaWrrCA9C2pav3H_k-QUgSM0WpExkef0Ws-gI)
   - [09 ยส.5_ใบหลัก](https://docs.google.com/spreadsheets/d/101t7PIrUSOWUupRA9zun1rpiM7VyNDPXd1j7yJxnhh8)
-
-<style scoped>
-table {
-  font-size: 13px;
-}
-li {
-  font-size: 13px;
-}
-</style>
 
 ## ❗ เงื่อนไข ยส.5    
 ### ประเภทการขอ (ยส.5)

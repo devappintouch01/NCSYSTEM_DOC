@@ -2,6 +2,15 @@
 
 ---
 
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
 ## (dbo.MasterRequisitionType Id = 51)
 ### Links
 

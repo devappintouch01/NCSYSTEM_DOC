@@ -2,6 +2,15 @@
 ## Application for an **outbound carrying** by traveller under treatment of medical preparations containing substances under control of the single convention on narcotic drugs, 1961 and the convention on psychotropic substances, 1971 [OC-1]
 ---
 
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
 ## (dbo.MasterRequisitionType Id = 23, 24)
 ### Links
 
@@ -19,15 +28,6 @@
   - [01 ใบอนุญาตเฉพาะคราว](https://docs.google.com/spreadsheets/d/10X0-dsu49gNVBW77nDRY51Gh2whJQVaxbaBYPRsJlrM)
 - [NARCO_list_update_15_09_2025_NEW.pdf](Documents\ICOC\DRUGLIST\NARCO_list_update_15_09_2025_NEW.pdf)
 - [PHYCHO_list_update_25_07_2025.pdf](Documents\ICOC\DRUGLIST\PHYCHO_list_update_25_07_2025.pdf)
-
-<style scoped>
-table {
-  font-size: 13px;
-}
-li {
-  font-size: 13px;
-}
-</style>
 
 ## ประเภทการคำขอ
 
