@@ -17,7 +17,7 @@
 
 | คำขอ | Link | 
 |---|---|
-| เฉพาะคราว | [Link หลัก NCSystem](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import) |
+| ระบบวัตถุเสพติด | [Link หลัก NCSystem](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import) |
 | เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.1](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import) |
 | เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.1](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/export) |
 | เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.4](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/import) |
