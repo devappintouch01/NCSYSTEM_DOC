@@ -111,12 +111,12 @@ li {
 | 2 | Refresh Token | ใช้ในการขอ Access Token ใหม่ | 14 วัน |  |
 | 3 | Skynet Token | ใช้ในการเข้าถึง Skynet | 30 นาที (ระบบวัตถุเสพติด) |  |
 
-| คำขอ | Link | 
-|---|---|
-| ระบบวัตถุเสพติด | [Link หลัก NCSystem](https://localhost:7078){:target="_blank"} |
-| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.1](https://localhost:7078/Z4_Narcotic1Temporary/form/import){:target="_blank"} |
-| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.1](https://localhost:7078/Z4_Narcotic1Temporary/form/export){:target="_blank"} |
-| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.4](https://localhost:7078/Z4_Narcotic4Temporary/form/import){:target="_blank"} |
-| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.4](https://localhost:7078/Z4_Narcotic4Temporary/form/export){:target="_blank"} |
+| คำขอ | localhost link | Production link |
+|---|---|---|
+| ระบบวัตถุเสพติด | [Link หลัก NCSystem](https://localhost:7078){:target="_blank"} | [Link หลัก NCSystem](https://devx.softsuite.co.th/NCSystem){:target="_blank"} |
+| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.1 localhost](https://localhost:7078/Z4_Narcotic1Temporary/form/import){:target="_blank"} | [นำเข้า เฉพาะคราว ยส.1 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import){:target="_blank"} |
+| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.1 localhost](https://localhost:7078/Z4_Narcotic1Temporary/form/export){:target="_blank"} | [ส่งออก เฉพาะคราว ยส.1 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/export){:target="_blank"} |
+| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.4 localhost](https://localhost:7078/Z4_Narcotic4Temporary/form/import){:target="_blank"} | [นำเข้า เฉพาะคราว ยส.4 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/import){:target="_blank"} |
+| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.4 localhost](https://localhost:7078/Z4_Narcotic4Temporary/form/export){:target="_blank"} | [ส่งออก เฉพาะคราว ยส.4 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/export){:target="_blank"} |
 
 <img src="boomcat.jpg" width="20%">
