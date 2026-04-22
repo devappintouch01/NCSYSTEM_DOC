@@ -111,12 +111,14 @@ li {
 | 2 | Refresh Token | ใช้ในการขอ Access Token ใหม่ | 14 วัน |  |
 | 3 | Skynet Token | ใช้ในการเข้าถึง Skynet | 30 นาที (ระบบวัตถุเสพติด) |  |
 
-| คำขอ | localhost link | Production link |
-|---|---|---|
-| ระบบวัตถุเสพติด | [Link หลัก NCSystem](https://localhost:7078){:target="_blank"} | [Link หลัก NCSystem](https://devx.softsuite.co.th/NCSystem){:target="_blank"} |
-| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.1 localhost](https://localhost:7078/Z4_Narcotic1Temporary/form/import){:target="_blank"} | [นำเข้า เฉพาะคราว ยส.1 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import){:target="_blank"} |
-| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.1 localhost](https://localhost:7078/Z4_Narcotic1Temporary/form/export){:target="_blank"} | [ส่งออก เฉพาะคราว ยส.1 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/export){:target="_blank"} |
-| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.4 localhost](https://localhost:7078/Z4_Narcotic4Temporary/form/import){:target="_blank"} | [นำเข้า เฉพาะคราว ยส.4 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/import){:target="_blank"} |
-| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.4 localhost](https://localhost:7078/Z4_Narcotic4Temporary/form/export){:target="_blank"} | [ส่งออก เฉพาะคราว ยส.4 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/export){:target="_blank"} |
+| # | ระบบ/คำขอ | localhost link | Production link |
+|---|---|---|---|
+| 1 | ระบบวัตถุเสพติด | [Link หลัก NCSystem](https://localhost:7078){:target="_blank"} | [Link หลัก NCSystem](https://devx.softsuite.co.th/NCSystem){:target="_blank"} |
+| 2 | สถานที่ | [คค.ยส.2 localhost](https://localhost:7078/PossessionRequest/Possession2_3_4/48?parentId=32){:target="_blank"} | [คค.ยส.2 Production](https://devx.softsuite.co.th/NCSystem/PossessionRequest/Possession2_3_4/48?parentId=32){:target="_blank"} |
+| 3 | สถานที่ | [คค.วจ.2 localhost](https://localhost:7078/PossessionRequest/Possession2_3_4/40?parentId=28){:target="_blank"} | [คค.วจ.2 Production](https://devx.softsuite.co.th/NCSystem/PossessionRequest/Possession2_3_4/40?parentId=28){:target="_blank"} |
+| 4 | เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.1 localhost](https://localhost:7078/Z4_Narcotic1Temporary/form/import){:target="_blank"} | [นำเข้า เฉพาะคราว ยส.1 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import){:target="_blank"} |
+| 5 | เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.1 localhost](https://localhost:7078/Z4_Narcotic1Temporary/form/export){:target="_blank"} | [ส่งออก เฉพาะคราว ยส.1 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/export){:target="_blank"} |
+| 6 | เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.4 localhost](https://localhost:7078/Z4_Narcotic4Temporary/form/import){:target="_blank"} | [นำเข้า เฉพาะคราว ยส.4 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/import){:target="_blank"} |
+| 7 | เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.4 localhost](https://localhost:7078/Z4_Narcotic4Temporary/form/export){:target="_blank"} | [ส่งออก เฉพาะคราว ยส.4 Production](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/export){:target="_blank"} |
 
 <img src="boomcat.jpg" width="20%">
