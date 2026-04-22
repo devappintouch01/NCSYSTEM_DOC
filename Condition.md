@@ -112,7 +112,7 @@ li {
 | 3 | Skynet Token | ใช้ในการเข้าถึง Skynet | 30 นาที (ระบบวัตถุเสพติด) |  |
 
 | # | ระบบ/คำขอ | localhost link | Production link |
-|---|---|---|---|
+|---|:---:|---|---|
 | 1 | ระบบวัตถุเสพติด | [Link หลัก NCSystem](https://localhost:7078){:target="_blank"} | [Link หลัก NCSystem](https://devx.softsuite.co.th/NCSystem){:target="_blank"} |
 | 2 | สถานที่ | [คค.ยส.2 localhost](https://localhost:7078/PossessionRequest/Possession2_3_4/48?parentId=32){:target="_blank"} | [คค.ยส.2 Production](https://devx.softsuite.co.th/NCSystem/PossessionRequest/Possession2_3_4/48?parentId=32){:target="_blank"} |
 | 3 | สถานที่ | [คค.วจ.2 localhost](https://localhost:7078/PossessionRequest/Possession2_3_4/40?parentId=28){:target="_blank"} | [คค.วจ.2 Production](https://devx.softsuite.co.th/NCSystem/PossessionRequest/Possession2_3_4/40?parentId=28){:target="_blank"} |
