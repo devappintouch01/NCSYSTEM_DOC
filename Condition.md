@@ -118,7 +118,6 @@ li {
 
 | # | ระบบ/คำขอ | วันที่นำเสนอ | localhost link | Production link |
 |---|:---:|---|---|---|
-
 | 1 | สถานที่ | 23 เม.ย. 2569 | [วจ.1-1 localhost](https://localhost:7078/Psychotropic1Request/Psychotropic1AllRequest/37?parentId=27){:target="_blank"} | [วจ.1-1 Production](https://devx.softsuite.co.th/NCSystem/Psychotropic1Request/Psychotropic1AllRequest/37?parentId=27){:target="_blank"} |
 | 2 | สถานที่ | 27 เม.ย. 2569 | [จำหน่าย ยส.2 วจ.2 localhost](https://localhost:7078/Narcotic2Request/Narcotic2_2Sale/39?parentId=28){:target="_blank"} | [จำหน่าย ยส.2 วจ.2 Production](https://devx.softsuite.co.th/NCSystem/Narcotic2Request/Narcotic2_2Sale/39?parentId=28){:target="_blank"} |
 | 3 | สถานที่ | 27 เม.ย. 2569 | [ผลิต นำเข้า ส่งออก (ผนส. ยส.2/วจ.2) localhost](https://localhost:7078/Narcotic2Request/Narcotic2_1ManufactureImportExport/38?parentId=28){:target="_blank"} | [ผลิต นำเข้า ส่งออก (ผนส. ยส.2/วจ.2) Production](https://devx.softsuite.co.th/NCSystem/Narcotic2Request/Narcotic2_1ManufactureImportExport/38?parentId=28){:target="_blank"} |
