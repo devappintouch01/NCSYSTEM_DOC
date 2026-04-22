@@ -15,13 +15,13 @@
 | 10 มี.ค. 2569 | กอง ต. | Log + Spec | ท็อป | [กอง ต. ยส.5]() |
 | 09 มี.ค. 2569 | กอง ต. | Log + Spec | ท็อป | [กอง ต. คค.1 Possession](20260309/20260309_Possession.md) |
 
-| xxx |
-|---|
-| [Link หลัก NCSystem](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import) |
-| [นำเข้า เฉพาะคราว ยส.1](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import) |
-| [ส่งออก เฉพาะคราว ยส.1](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/export) |
-| [นำเข้า เฉพาะคราว ยส.4](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/import) |
-| [ส่งออก เฉพาะคราว ยส.4](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/export) |
+| คำขอ | Link | 
+|---|---|
+| เฉพาะคราว | [Link หลัก NCSystem](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import) |
+| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.1](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/import) |
+| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.1](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic1Temporary/form/export) |
+| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.4](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/import) |
+| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.4](https://devx.softsuite.co.th/NCSystem/Z4_Narcotic4Temporary/form/export) |
 
 
 <img src="psyduck.jpg" width="20%">
