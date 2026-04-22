@@ -1,5 +1,7 @@
 ## Condition
 
+---
+
 <style scoped>
 table {
   font-size: 16px;
@@ -108,5 +110,13 @@ li {
 | 1 | Access Token | ใช้ในการเข้าถึง API | 30 นาที | JwtTokenManager.cs / DefaultAccessTokenExpiryMinutes |
 | 2 | Refresh Token | ใช้ในการขอ Access Token ใหม่ | 14 วัน |  |
 | 3 | Skynet Token | ใช้ในการเข้าถึง Skynet | 30 นาที (ระบบวัตถุเสพติด) |  |
+
+| คำขอ | Link | 
+|---|---|
+| ระบบวัตถุเสพติด | [Link หลัก NCSystem](https://localhost:7078){:target="_blank"} |
+| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.1](https://localhost:7078/Z4_Narcotic1Temporary/form/import){:target="_blank"} |
+| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.1](https://localhost:7078/Z4_Narcotic1Temporary/form/export){:target="_blank"} |
+| เฉพาะคราว | [นำเข้า เฉพาะคราว ยส.4](https://localhost:7078/Z4_Narcotic4Temporary/form/import){:target="_blank"} |
+| เฉพาะคราว | [ส่งออก เฉพาะคราว ยส.4](https://localhost:7078/Z4_Narcotic4Temporary/form/export){:target="_blank"} |
 
 <img src="boomcat.jpg" width="20%">
