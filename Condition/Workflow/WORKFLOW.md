@@ -840,3 +840,5 @@ li {
 | 5 | กอง ต. | วจ. 1 | ขอใหม่ | 120 |
 | 6 | กอง ต. | วจ. 2 | ขอใหม่ | 130 |
 | 7 | กอง ต. | วจ. 3 | ขอใหม่ | 140 | -->
+
+<div style="display:none;">by [Carbamino8](https://github.com/Carbamino8)</div>
