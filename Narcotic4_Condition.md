@@ -2,6 +2,15 @@
 
 ---
 
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
 #### (dbo.MasterRequisitionType Id = 19)
 ### Links
 
@@ -18,15 +27,6 @@
 ติดตามสถานะคำขอ
 StatusRequest
 ``` -->
-
-<style scoped>
-table {
-  font-size: 13px;
-}
-li {
-  font-size: 13px;
-}
-</style>
 
 ## ❗ เงื่อนไข ยส.4
 ### ประเภทการขอ (ยส.4-1)

@@ -2,6 +2,15 @@
 
 ---
 
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
 #### (dbo.MasterRequisitionType Id = 1)
 ### Links
 
@@ -11,15 +20,6 @@
 
 - [Figma ยส.1](https://www.figma.com/board/2vq44hMBfDujhC8g13qBXC/%E0%B8%A2%E0%B8%AA.1)
 - [ตย.เอกสาร ยส.1](https://drive.google.com/drive/u/1/folders/18Uv9_RM7pVDIbb-KoMh64jt6tfDQgVFa)
-
-<style scoped>
-table {
-  font-size: 13px;
-}
-li {
-  font-size: 13px;
-}
-</style>
 
 ## ❗ เงื่อนไข ยส.1
 ### ประเภทการขอ (ยส.1-1)

@@ -11,6 +11,9 @@
 
 - [Figma ยส.4](https://www.figma.com/board/eZAUMG4kub8P4xGJNtzuOF/%E0%B8%A2%E0%B8%AA.4)
 - [เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
+- **อ้างอิงหลักเกณฑ์ใหม่:**
+  - [กฎกระทรวงการอนุญาตผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครองซึ่งยาเสพติดให้โทษในประเภท 4 พ.ศ. 2567](file:///D:/GIT/NCSystem/brain_NCSYSTEM/Documents/NC4/กฎกระทรวงการอนุญาต_67.pdf)
+  - [แนวทางการพิจารณาอนุญาต ยส.4 พ.ศ. 2568](file:///D:/GIT/NCSystem/brain_NCSYSTEM/Documents/NC4/แนวทางการพิจารณาอนุญาต_ยส.4_พ.ศ._2568%20ฉบับผ่านคณะกรรมการ.pdf)
 
 <!-- ### API
 ```
@@ -28,6 +31,10 @@ li {
 </style>
 
 ## ❗ เงื่อนไข ยส.4
+### 📅 กำหนดการและเงื่อนไขสำคัญ (ตามแนวทางฯ 2568)
+*   **การยื่นคำขอต่อเนื่อง/ต่ออายุ:** ต้องยื่นคำขอระหว่างวันที่ **15 - 30 กันยายน** ของปี เพื่อให้สามารถออกใบอนุญาตได้ทันวันที่ 1 มกราคม ของปีถัดไป
+*   **การจัดการสารคงเหลือ:** หากไม่ประสงค์จะขอรับใบอนุญาตต่อเนื่องในปีถัดไป และมีสารคงเหลือ ณ วันที่ 31 ธันวาคม **ต้องแจ้งความประสงค์ขออนุมัติทำลายสารต่อ อย. เป็นลายลักษณ์อักษร** (หากครอบครองยาเสพติดโดยไม่มีใบอนุญาตมีความผิดตาม ม. 91 แห่งประมวลกฎหมายยาเสพติด)
+
 ### ประเภทการขอ (ยส.4-1)
 
 | ลำดับ | ประเภทการขอ | LicenseGetById |
@@ -136,6 +143,9 @@ li {
 | 6. เพื่อประโยชน์ทางอุตสาหกรรม **ไม่อยู่ภายใต้ระบบปิด** | 4 | ยส.4 | IsNC4OpenSystemIndustryUnit |
 | 7. เพื่อใช้เป็นสารมาตรฐานในการตรวจวิเคราะห์ | 4 | ยส.4  **ที่เป็นสารมาตรฐาน** | IsNC4StandardUnit |
 
+> [!NOTE]
+> **เกณฑ์การพิจารณาปริมาณ:** พิจารณาจากกำลังการผลิต (Production Capacity), แผนการใช้ประโยชน์, และสถิติการใช้ย้อนหลัง (Consumption Statistics) เป็นหลัก
+
 **ยาเสพติดให้โทษในประเภท 4 ทุกชนิด**
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
@@ -200,7 +210,7 @@ li {
 | 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป | |
 | 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` | | |
 | 10 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
-| 11 | เลขการมอบอำนาจ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 11 | เลขการมอบอำนาจออนไลน์ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
 | 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
@@ -318,6 +328,13 @@ li {
 <img src="Narcotic4_Condition_Attachment_1.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic4_Condition_Attachment_3.png" style="border: 1px solid black;" width="80%">
+
+#### เพิ่มเติมตามแนวทางฯ 2568:
+*   **แผนการใช้ประโยชน์ (Benefit Utilization Plan):** ต้องระบุรายละเอียดการใช้ ปริมาณ และสถานที่ใช้อย่างชัดเจน
+*   **แบบฟอร์มเฉพาะ:**
+    *   **F-N2-131 / ย.ส. 4/5-1:** สำหรับคำชี้แจงประกอบการพิจารณา
+    *   **F-N2-177:** สำหรับการขออนุญาตในระบบอุตสาหกรรมระบบปิด (Closed System)
+*   **ใบกำกับภาษี/ใบสั่งซื้อ (PO):** สำหรับตรวจสอบปริมาณการจัดซื้อจริงในปีก่อนหน้า
 
 ## 📄 ส่วนแบบ Print from PDF คำขอ (ยส.4-1)
 ### เอกสารแนบท้าย กรณีเลือกสารมากกว่า 2 ชนิด
