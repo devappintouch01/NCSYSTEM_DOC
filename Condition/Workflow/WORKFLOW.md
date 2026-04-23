@@ -484,7 +484,7 @@ li {
 
 ### 📝 คค.1-1 (RequisitionTypeId = 6)
 
-> • มี อย. และ <span style="color: green;">สสจ.</span><br>• ใช้กับ ยส.2 วจ.2 วจ.3 วจ.4
+> • มี อย. และ <span style="color: green;">สสจ.</span><br>• ใช้กับ ยส.2 วจ.2 วจ.3 วจ.4<br>• ชำระพร้อม (กรณีเรือ ยกเว้นค่าคำขอ)
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow คค.1-1</summary>
@@ -503,9 +503,9 @@ li {
 
 | ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
 |:---:|:---:|:---:|:---:|:---:|:---:|---|---|:---:|:---:|
-| 1 | กอง ต. | ขอใหม่ | 6 | คค.1-1 | - | - | **L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• ตรวจสอบคำขอ<br>**• ถ้าครบถ้วน/ถูกต้อง**<br>**L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• รับคำขอ<br>**L2 - เภสัชกรชำนาญการ**<br>• ลงนามอนุมัติ | Flow สั้น | FLOW_NOCOM_A |
+| 1 | กอง ต. | ขอใหม่ | 6 | คค.1-1 | - | - | **L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• ตรวจสอบคำขอ<br>**• ถ้าครบถ้วน/ถูกต้อง**<br>**L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• รับคำขอ<br>• เสนอลงนาม<br>**L2 - เภสัชกรชำนาญการ**<br>• ลงนามอนุมัติ | Flow สั้น | FLOW_NOCOM_A |
 
-#### 🔹 คค.1-1 ขอใหม่ สสจ.
+#### 🔹 คค.1-1 ขอใหม่ <span style="color: green;">สสจ.</span>
 
 > • <span style="color: green;">สสจ.</span> ได้เฉพาะ วัตถุประสงค์ **เพื่อการบำบัดรักษาหรือป้องกันโรคให้แก่ผู้ป่วยหรือสัตว์ป่วยในทางการแพทย์**
 
@@ -514,12 +514,14 @@ li {
   <img src="คค_ยส2วจ2_ขอใหม่_สสจ.png" width="80%" style="border: 1px solid blue;">
 </details>
 
-
-<div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+<!-- <div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
   <span style="font-size: 24px;">📌</span>
   <span>ยังไม่ทราบ flow การอนุมัติของ <strong>สสจ.</strong> — รอสอบถามเจ้าหน้าที่เพิ่มเติม</span>
-</div>
+</div> -->
 
+| ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
+|:---:|:---:|:---:|:---:|:---:|:---:|---|---|:---:|:---:|
+| 1 | กอง ต. | ขอใหม่ | 6 | คค.1-1 | - | - | **L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• ตรวจสอบคำขอ<br>**• ถ้าครบถ้วน/ถูกต้อง**<br>**L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• รับคำขอ<br>• เสนอลงนาม<br>**L2 - เภสัชกรชำนาญการขึ้นไป**<br>• กดอนุมัติ (ในระบบ)<br><span style="color: red;">• Print out ใบอนุญาต + เซนต์ใบอนุญาต (นายแพทย์/ผู้ว่าฯ)(นอกระบบ)</span> | Flow สั้น | FLOW_??? |
 ### 📝 คก.ย.ส. 2-1 (RequisitionTypeId = 7)
 
 > • มีแต่ อย. <span style="color: red;">ไม่มี</span> <span style="color: green;">สสจ.</span>
