@@ -388,12 +388,12 @@ li {
 </details>
 
 | ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
-|:---:|:---:|:---:|:---:|:---:|:---:|---|---|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|:---:|:---:|
 | 1 | กอง ต. | ขอใหม่ - ผลิต นำเข้า ส่งออก จำหน่าย | 2 | วจ.1-1 | 24,25,26 | - | **L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• ตรวจสอบคำขอ<br>**• ถ้าครบถ้วน/ถูกต้อง**<br>**L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• รับคำขอ<br>**L2 - เภสัชกรชำนาญการพิเศษ**<br>• ลงนามอนุมัติ | Flow สั้น | FLOW_SHORT |
 | 2 | กอง ต. | ขอใหม่ - ครอบครอง| 2 | วจ.1-1 | 24,25,26 | - | **L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• ตรวจสอบคำขอ<br>**• ถ้าครบถ้วน/ถูกต้อง**<br>**L1 - เจ้าหน้าที่/เภสัชกรชำนาญการ**<br>• รับคำขอ<br>**L2 - เภสัชกรชำนาญการ**<br>• ลงนามอนุมัติ | Flow สั้น | FLOW_NOCOM_A |
 
 #### 🔹 วจ.1-1 ขอใหม่ สสจ.
-> • ได้เฉพาะกิจกรรม <span style="color: red;">ครอบครอง</span>
+> • ได้เฉพาะกิจกรรม **<span style="color: red;">ครอบครอง</span>**
 
 <details>
   <summary>📸 คลิกเพื่อดูรูปภาพ Workflow วจ.1-1 ขอใหม่ สสจ.</summary>
@@ -401,10 +401,14 @@ li {
 </details>
 
 
-<div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+<!-- <div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
   <span style="font-size: 24px;">📌</span>
   <span>ยังไม่ทราบ flow การอนุมัติของ <strong>สสจ.</strong> — รอสอบถามเจ้าหน้าที่เพิ่มเติม</span>
-</div>
+</div> -->
+
+| ลำดับ | กอง | ดำเนินการ | Id คำขอ | คำขอ | วัตถุประสงค์ Id | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|:---:|:---:|
+| 1 | กอง ต. | ขอใหม่ - ครอบครอง| 2 | วจ.1-1 | 24,25,26 | - |  | Flow สั้น | FLOW_??? |
 
 ### 📝 ผนส. ยส.2/วจ.2 (RequisitionTypeId = 3)
 
@@ -450,10 +454,14 @@ li {
   <img src="จ_ยส2วจ2_ขอใหม่_สสจ.png" width="80%" style="border: 1px solid blue;">
 </details>
 
-<div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+<!-- <div style="padding: 16px; border-left: 6px solid #e67e22; background-color: #fef9f0; color: #b7770d; border-radius: 8px; margin: 24px 0; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
   <span style="font-size: 24px;">📌</span>
   <span>ยังไม่ทราบ flow การอนุมัติของ <strong>สสจ.</strong> — รอสอบถามเจ้าหน้าที่เพิ่มเติม</span>
-</div>
+</div> -->
+
+| ลำดับ | กอง | ดำเนินการ | Id | คำขอ | วัตถุประสงค์ | Level / ขั้นตอนการทำงาน | Flow | Flow Id |
+|:---:|:---:|:---:|:---:|:---:|---|---|:---:|:---:|
+| 1 | กอง ต. | ขอใหม่ | 4 | จ.ย.ส. 2-1/ว.จ. 2-1 | - |  | Flow สั้น | FLOW_??? |
 
 ### 📝 จก.ย.ส. 2-1 (RequisitionTypeId = 5)
 
