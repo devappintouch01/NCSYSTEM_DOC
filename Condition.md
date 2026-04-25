@@ -19,6 +19,7 @@ li {
 
 Google Drive Project
 - [[อย.] ระบบ > อาหารและยา](https://drive.google.com/drive/u/1/folders/14rycxzYfSChwA2ke9CMCFEYJnKh2Qw5f)
+- [[อย.] ระบบ > อาหารและยา > กอง ต](https://drive.google.com/drive/u/1/folders/1qFa_GTYcrRKNmYS9AK5GIsL4q-aAm2hi)
 
 ### Condition สถานที่ Place
 
