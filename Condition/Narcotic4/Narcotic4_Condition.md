@@ -2,25 +2,6 @@
 
 ---
 
-#### (dbo.MasterRequisitionType Id = 19)
-### Links
-
-- [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
-- [Data Dic - Master Data real](https://docs.google.com/spreadsheets/d/1WpRC41tmqyOc8zVaxTVuwLxGgmi7inZATo8_LcCTXgE)
-- [FDA68_สรุปวัตถุประสงค์ ผู้อนุญาต และผู้อนุมัติ ในใบคำขอ](https://docs.google.com/spreadsheets/d/1B366oiRjTmnY7Jvt0lpH9ORXbmOgJaLXcYDHmDST8Qo)
-
-- [Figma ยส.4](https://www.figma.com/board/eZAUMG4kub8P4xGJNtzuOF/%E0%B8%A2%E0%B8%AA.4)
-- [เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
-- **อ้างอิงหลักเกณฑ์ใหม่:**
-  - [กฎกระทรวงการอนุญาตผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครองซึ่งยาเสพติดให้โทษในประเภท 4 พ.ศ. 2567](file:///D:/GIT/NCSystem/brain_NCSYSTEM/Documents/NC4/กฎกระทรวงการอนุญาต_67.pdf)
-  - [แนวทางการพิจารณาอนุญาต ยส.4 พ.ศ. 2568](file:///D:/GIT/NCSystem/brain_NCSYSTEM/Documents/NC4/แนวทางการพิจารณาอนุญาต_ยส.4_พ.ศ._2568%20ฉบับผ่านคณะกรรมการ.pdf)
-
-<!-- ### API
-```
-ติดตามสถานะคำขอ
-StatusRequest
-``` -->
-
 <style scoped>
 table {
   font-size: 13px;
@@ -30,11 +11,24 @@ li {
 }
 </style>
 
-## ❗ เงื่อนไข ยส.4
-### 📅 กำหนดการและเงื่อนไขสำคัญ (ตามแนวทางฯ 2568)
-*   **การยื่นคำขอต่อเนื่อง/ต่ออายุ:** ต้องยื่นคำขอระหว่างวันที่ **15 - 30 กันยายน** ของปี เพื่อให้สามารถออกใบอนุญาตได้ทันวันที่ 1 มกราคม ของปีถัดไป
-*   **การจัดการสารคงเหลือ:** หากไม่ประสงค์จะขอรับใบอนุญาตต่อเนื่องในปีถัดไป และมีสารคงเหลือ ณ วันที่ 31 ธันวาคม **ต้องแจ้งความประสงค์ขออนุมัติทำลายสารต่อ อย. เป็นลายลักษณ์อักษร** (หากครอบครองยาเสพติดโดยไม่มีใบอนุญาตมีความผิดตาม ม. 91 แห่งประมวลกฎหมายยาเสพติด)
+#### (dbo.MasterRequisitionType Id = 19)
+### Links
 
+- [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
+- [Data Dic - Master Data real](https://docs.google.com/spreadsheets/d/1WpRC41tmqyOc8zVaxTVuwLxGgmi7inZATo8_LcCTXgE)
+- [FDA68_สรุปวัตถุประสงค์ ผู้อนุญาต และผู้อนุมัติ ในใบคำขอ](https://docs.google.com/spreadsheets/d/1B366oiRjTmnY7Jvt0lpH9ORXbmOgJaLXcYDHmDST8Qo)
+
+- [Figma ยส.4](https://www.figma.com/board/eZAUMG4kub8P4xGJNtzuOF/%E0%B8%A2%E0%B8%AA.4)
+- [ตย.เอกสาร ยส.4](https://drive.google.com/drive/u/1/folders/1BNuS1dgM9mDpqsMMsS6hbLRU3dBa9MY4)
+- [เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
+
+<!-- ### API
+```
+ติดตามสถานะคำขอ
+StatusRequest
+``` -->
+
+## ❗ เงื่อนไข ยส.4
 ### ประเภทการขอ (ยส.4-1)
 
 | ลำดับ | ประเภทการขอ | LicenseGetById |
@@ -99,7 +93,7 @@ li {
 
 ### วัตถุประสงค์ในการขออนุญาต + การดำเนินการ (ยส.4-1)
 
-![Narcotic4_Condition_1](/Narcotic4_Condition_1.png)
+![Narcotic4_Condition_1](Narcotic4_Condition_1.png)
 
 | วัตถุประสงค์/การดำเนินการ | ผลิต | นำเข้า | ส่งออก | จำหน่าย | ครอบครอง |
 |---|:---:|:---:|:---:|:---:|:---:|
@@ -143,9 +137,6 @@ li {
 | 6. เพื่อประโยชน์ทางอุตสาหกรรม **ไม่อยู่ภายใต้ระบบปิด** | 4 | ยส.4 | IsNC4OpenSystemIndustryUnit |
 | 7. เพื่อใช้เป็นสารมาตรฐานในการตรวจวิเคราะห์ | 4 | ยส.4  **ที่เป็นสารมาตรฐาน** | IsNC4StandardUnit |
 
-> [!NOTE]
-> **เกณฑ์การพิจารณาปริมาณ:** พิจารณาจากกำลังการผลิต (Production Capacity), แผนการใช้ประโยชน์, และสถิติการใช้ย้อนหลัง (Consumption Statistics) เป็นหลัก
-
 **ยาเสพติดให้โทษในประเภท 4 ทุกชนิด**
 
 | วัตถุประสงค์ (Objective) / <br> สาร | ประเภทสาร (NarcoticTypeId) | เงื่อนไขสาร <br> ([dbo].[MasterNarcoticEster]) | เงื่อนไขหน่วย (MasterNarcoticUnit) |
@@ -173,8 +164,17 @@ li {
 
 <img src="Narcotic4_Field Condition_3.png" style="border: 1px solid black;" width="100%">
 
+> 24 มี.ค. 2569
+> 1. เปิดทุก field เป็น enable แต่ยังให้ดึงข้อมูลจาก DOPA มา fill
+> 2. ย้าย จังหวัด ไปต่อกับ ถนน
+> 3. ย้าย Email ไปต่อกับ โทรสาร  
+> 4. โทรศัพท์มือถือ ปรับให้เป็น free text
+> 5. โทรสาร ปรับให้เป็น free text, not required
+> 6. อีเมล ปรับให้เป็น free text, not required
+
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
+| x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
 | 0 | - | `Requisition`.`ParticipantTypeId` | ส่ง 1 - ผู้ขออนุญาต ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อผู้ขออนุญาต | `Requisition`.`FullName` <br>`Requisition`.`JuristicName` | | - ลงคู่กับ juristicName |
 | 2 | เลขทะเบียนนิติบุคคล | `Requisition`.`TaxId` | | - กองยาลง TaxId |
@@ -187,9 +187,9 @@ li {
 | 9 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
 | 10 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
 | 11 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
-| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
-| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
-| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
+| 12 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | Free text | Required field |
+| 13 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | Free text | Not required field |
+| 14 | อีเมล | `RequisitionParticipantAddress`.`Email` | Type Email | Not required field | |
 | X | ที่อยู่แบบเต็ม | `RequisitionParticipant`.`FullAddress` | | - เอา ParticipantAddress ทุกอันมาต่อกันแล้วคั่นด้วยคำว่า "และ" |
 | Z | ที่อยู่แบบเต็ม | `RequisitionParticipantAddress`.`FullAddress` | | - เอาทุก field มา concat กัน, ถ้าไม่มีค่าให้เป็น ชื่อหัวข้อ + '-' |
 
@@ -209,8 +209,8 @@ li {
 | 7 | เลขประจำตัวประชาชน | `RequisitionParticipant`.`IdentificationNo` | เก็บเฉพาะเลขบัตรประชาชนเท่านั้น | - Cannot over 13 digits <br> - Need separator `(0-0000-00000-00-0)` |
 | 8 | หนังสือเดินทางเลขที่ | `RequisitionParticipant`.`NumberOtherIdcard` | (กอง ต.) แต่ OtherIdCard ไม่ต้องส่งอะไรไป | |
 | 9 | ใบอนุญาตทำงานเลขที่ (กรณีชาวต่างชาติ) | `RequisitionParticipant`.`WorkPermit` | | |
-| 10 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
-| 11 | เลขการมอบอำนาจออนไลน์ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 10 | เลขการมอบอำนาจออนไลน์ | `RequisitionParticipant`.`PowerOfAttorneyNo` | | |
+| 11 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
 | 12 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
 | 13 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
 | 14 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
@@ -249,17 +249,46 @@ li {
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
 | 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 4 - สถานที่เก็บ ตาม `MasterParticipantType`.`Id` | |
+| 1 | ชื่อสถานที่ | `RequisitionParticipant`.`LocationName` | | |
+| 2 | เลขที่ | `RequisitionParticipantAddress`.`HouseNo` | - Can type text เพื่อให้รองรับ อาคาร ชั้น ห้อง | |
+| 3 | เลขรหัสประจำบ้านตามทะเบียนบ้าน (ตามทะเบียนราษฎร์ กระทรวงมหาดไทย) | `RequisitionParticipantAddress`.`HouseCode` | - Cannot over 11 digits | - Need separator `(0000-000000-0)` |
+| 4 | หมู่ที่ | `RequisitionParticipantAddress`.`VillageNo` | | |
+| 5 | ตรอก/ซอย | `RequisitionParticipantAddress`.`Lane` | | |
+| 6 | ถนน | `RequisitionParticipantAddress`.`Street` | | |
+| 7 | จังหวัด | `RequisitionParticipantAddress`.`ProvinceId` | | |
+| 8 | อำเภอ/เขต | `RequisitionParticipantAddress`.`AmphurId` | | |
+| 9 | ตำบล/แขวง | `RequisitionParticipantAddress`.`TambonId` | | |
+| 10 | รหัสไปรษณีย์ | `RequisitionParticipantAddress`.`Postcode` | | |
+| 11 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
+| 12 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
+| 13 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
 
 ### 2.4 ข้อมูลของผู้รับมอบผลิตยาเสพติดให้โทษในประเภท 4 (กรณีขออนุญาตจำหน่าย) (ยส.4-1)
 
 *** แสดงเมื่อเลือก OperationType เป็น **จำหน่าย** ***
+
+<ul>
+  <li>ค้นหาจาก
+    <ul>
+      <li>เลขที่ใบอนุญาต ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 4
+      <!-- <br> -  -->
+      <br> - ใช้ API GetLicense (api/License/Narcotic/Search) <br> - ทำเป็น Dropdown แสดงรายการใบอนุญาต ยส.4 <br> - แสดงข้อมูล ชื่อย่อใบอนุญาต, เลขที่ใบอนุญาต [ตัวอย่าง นยส4 กท 1/2569] <br> - แสดงเฉพาะใบอนุญาตที่ยังไม่หมดอายุ</li>
+      หรือ
+      <li>เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง
+      ยาเสพติดให้โทษในประเภท 4 ในระบบ <br> - ** ยังไม่มี API ต้องหาจาก Requisition ** <br> - เฉพาะการดำเนินการที่มีสถานะ .... </li>
+      <li>หลังจากเลือกใบอนุญาต/เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** แล้ว <br> แสดงข้อมูลที่อยู่ของใบอนุญาตนั้น ๆ (จากตาราง LicenseAddress)</li>
+    </ul>
+  </li>
+</ul>
+
 <img src="Narcotic4_Field Condition_5.png" style="border: 1px solid black;" width="100%">
 
 <img src="Narcotic4_Field Condition_6.png" style="border: 1px solid black;" width="75%">
 
 | ลำดับ | Label | Table.Field | Condition | Remark |
 |:---:|---|---|---|---|
-| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง ?? | |
+| x | - | `RequisitionParticipant`.`RequisitionId` |  |  |
+| 0 | - | `RequisitionParticipant`.`ParticipantTypeId` | ส่ง 5 - ผู้รับมอบ ตาม `MasterParticipantType`.`Id` | |
 | 1 | ชื่อผู้รับอนุญาตที่รับมอบ | `RequisitionParticipant`.`JuristicName` | - ตอนดึงให้ดึงจาก RequisitionParticipant | |
 | 2 | ใบอนุญาตเลขที่ | `RequisitionParticipant`.`RecipientLicenseNo` | | |
 | 3 | ชื่อผู้ประสงค์ทีจะรับมอบ | `RequisitionParticipant`.`JuristicName` | | |
@@ -275,17 +304,6 @@ li {
 | 13 | โทรศัพท์มือถือ | `RequisitionParticipantAddress`.`Phone` | | |
 | 14 | โทรสาร | `RequisitionParticipantAddress`.`Fax` | | |
 | 15 | อีเมล | `RequisitionParticipantAddress`.`Email` | | |
-
-<ul>
-  <li>ค้นหาจาก
-    <ul>
-      <li>เลขที่ใบอนุญาต ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง ยาเสพติดให้โทษในประเภท 4</li>
-      หรือ
-      <li>เลขที่ใบอนุญาต **ระหว่างการขออนุญาต** ผลิต นำเข้า ส่งออก หรือมีไว้ในครอบครอง
-      ยาเสพติดให้โทษในประเภท 4 ในระบบ</li>
-    </ul>
-  </li>
-</ul>
 
 ### ส่วนที่ 3 สถานที่สำหรับติดต่อจัดส่งเอกสาร (ยส.4-1)
 <img src="Narcotic4_Field Condition_9.png" style="border: 1px solid black;" width="100%">
@@ -329,32 +347,41 @@ li {
 <img src="Narcotic4_Condition_Attachment_2.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic4_Condition_Attachment_3.png" style="border: 1px solid black;" width="80%">
 
-#### เพิ่มเติมตามแนวทางฯ 2568:
-*   **แผนการใช้ประโยชน์ (Benefit Utilization Plan):** ต้องระบุรายละเอียดการใช้ ปริมาณ และสถานที่ใช้อย่างชัดเจน
-*   **แบบฟอร์มเฉพาะ:**
-    *   **F-N2-131 / ย.ส. 4/5-1:** สำหรับคำชี้แจงประกอบการพิจารณา
-    *   **F-N2-177:** สำหรับการขออนุญาตในระบบอุตสาหกรรมระบบปิด (Closed System)
-*   **ใบกำกับภาษี/ใบสั่งซื้อ (PO):** สำหรับตรวจสอบปริมาณการจัดซื้อจริงในปีก่อนหน้า
-
 ## 📄 ส่วนแบบ Print from PDF คำขอ (ยส.4-1)
 ### เอกสารแนบท้าย กรณีเลือกสารมากกว่า 2 ชนิด
 
-`เอกสารแนบท้ายคำ[ขอใหม่, ขอเพิ่มชนิด, ขอเพิ่มปริมาณ] ใบอนุญาต[ผลิต, นำเข้า, ส่งออก, จำหน่าย, ครอบครอง] เพื่อ[วัตถุประสงค์] ของ [ชื่อนิติบุคลคล]`
+`เอกสารแนบท้ายคำ[ขอใหม่, ขอเพิ่มชนิด, ขอเพิ่มปริมาณ] ใบอนุญาต[ผลิต, นำเข้า, ส่งออก, จำหน่าย, ครอบครอง] เพื่อ[วัตถุประสงค์] [กรณี... ถ้ามี] ของ [ชื่อนิติบุคลคล]`
 
 ```
 ตัวอย่าง 1
 
-เอกสารแนบท้ายคำขอใหม่ ใบอนุญาตผลิต เพื่อประโยชน์ทางอุตสาหกรรม ของ บริษัท อินกริดิออน (ประเทศไทย) จำกัด
+เอกสารแนบท้ายคำขอใหม่ ใบอนุญาตผลิต เพื่อประโยชน์ทางอุตสาหกรรม กรณีอุตสาหกรรมอยู่ภายใต้ระบบปิด ของ บริษัท อินกริดิออน (ประเทศไทย) จำกัด
 
 ๒.๑ ข้อมูลยาเสพติดให้โทษในประเภท 4 ที่ขอรับอนุญาต
      ๑. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
         ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
      ๒. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
         ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
+     ๓. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
+        ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
 ```
 
 ```
 ตัวอย่าง 2
+
+เอกสารแนบท้ายคำขอใหม่ ใบอนุญาตผลิต เพื่อประโยชน์ทางอุตสาหกรรม กรณีอุตสาหกรรมไม่อยู่ภายใต้ระบบปิด ของ บริษัท อินกริดิออน (ประเทศไทย) จำกัด
+
+๒.๑ ข้อมูลยาเสพติดให้โทษในประเภท 4 ที่ขอรับอนุญาต
+     ๑. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
+        ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
+     ๒. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
+        ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
+     ๓. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
+        ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................   
+```
+
+```
+ตัวอย่าง 3
 
 เอกสารแนบท้ายคำขอเพิ่มชนิด ใบอนุญาตครอบครอง เพื่อประโยชน์ทางวิทยาศาสตร์ ของ สภากาชาดไทย
 
@@ -363,5 +390,6 @@ li {
         ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
      ๒. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
         ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
-
+     ๓. ชื่อยาเสพติดให้โทษในประเภท 4 ........[ชื่อยาเสพติดให้โทษในประเภท 4 + (สารมาตรฐาน [ถ้าเป็น])]........
+        ปริมาณที่ขอรับอนุญาต ................[ปริมาณ หน่วย].............................................
 ```
