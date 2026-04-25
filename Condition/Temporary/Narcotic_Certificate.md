@@ -2,7 +2,16 @@
 
 ---
 
-## (dbo.MasterRequisitionType Id = 47)
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
+#### (dbo.MasterRequisitionType Id = 47)
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)

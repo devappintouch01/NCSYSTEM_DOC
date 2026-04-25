@@ -42,11 +42,11 @@ li {
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|---|
-| 47 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [หนังสือรับรอง Certificate ร.ส.1](Narcotic_Certificate.md) |
-| 48 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [หนังสือรับรอง (แก้ไข) ร.ส.2](Narcotic_Edit_Certificate.md) |
+| 47 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [หนังสือรับรอง Certificate ร.ส.1](Condition/Temporary/Narcotic_Certificate.md) |
+| 48 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [หนังสือรับรอง (แก้ไข) ร.ส.2](Condition/Temporary/Narcotic_Edit_Certificate.md) |
 | 49 | 16 มี.ค. 2569 | กอง ต. [4.16] | Condition | [ทะเบียนตำรับ Recepie ท.บ.1](Condition/Narcotic_Receipe/Narcotic_Receipe_Condition.md) |
-| 50 | 16 มี.ค. 2569 | กอง ต. [4.16] | Condition | [ทะเบียนตำรับ (แก้ไขทะเบียน) ท.บ.3](Narcotic_Edit_Receipe.md) |
-| 51 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [ตัวอย่าง Sample ต.ย.1](Narcotic_Sample.md) |
+| 50 | 16 มี.ค. 2569 | กอง ต. [4.16] | Condition | [ทะเบียนตำรับ (แก้ไขทะเบียน) ท.บ.3](Condition/Temporary/Narcotic_Edit_Receipe.md) |
+| 51 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [ตัวอย่าง Sample ต.ย.1](Condition/Temporary/Narcotic_Sample.md) |
 
 ### Condition ยาติดตัว
 

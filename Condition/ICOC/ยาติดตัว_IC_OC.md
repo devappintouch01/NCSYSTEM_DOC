@@ -1,5 +1,6 @@
 ## Application for an **inbound carrying** by traveller under treatment of medical preparations containing substances under control of the single convention on narcotic drugs, 1961 and the convention on psychotropic substances, 1971 [IC-1]
 ## Application for an **outbound carrying** by traveller under treatment of medical preparations containing substances under control of the single convention on narcotic drugs, 1961 and the convention on psychotropic substances, 1971 [OC-1]
+
 ---
 
 <style scoped>
@@ -11,7 +12,7 @@ li {
 }
 </style>
 
-## (dbo.MasterRequisitionType Id = 23, 24)
+#### (dbo.MasterRequisitionType Id = 23, 24)
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)

@@ -1,7 +1,7 @@
 ## คำขอรับใบอนุญาต คำขอต่ออายุใบอนุญาต และคำขอรับใบแทนอนุญาตจำหน่ายยาเสพติดให้โทษประเภท 2 หรือวัตถุออกฤทธิ์ในประเภท 2 [จ.ย.ส. 2-1/ว.จ. 2-1]
 ---
 
-## (dbo.MasterRequisitionType Id = 4)
+#### (dbo.MasterRequisitionType Id = 4)
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
