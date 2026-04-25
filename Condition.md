@@ -11,6 +11,15 @@ li {
 }
 </style>
 
+### Links
+
+- [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
+- [Data Dic - Master Data real](https://docs.google.com/spreadsheets/d/1WpRC41tmqyOc8zVaxTVuwLxGgmi7inZATo8_LcCTXgE)
+- [FDA68_สรุปวัตถุประสงค์ ผู้อนุญาต และผู้อนุมัติ ในใบคำขอ](https://docs.google.com/spreadsheets/d/1B366oiRjTmnY7Jvt0lpH9ORXbmOgJaLXcYDHmDST8Qo)
+
+Google Drive Project
+- [[อย.] ระบบ > อาหารและยา](https://drive.google.com/drive/u/1/folders/14rycxzYfSChwA2ke9CMCFEYJnKh2Qw5f)
+
 ### Condition สถานที่ Place
 
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
