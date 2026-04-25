@@ -21,15 +21,15 @@ li {
 | Id | วันที่อัปเดท | กอง | ประเภท | เอกสาร |
 |---|---|---|---|---|
 | 1 | 12 มี.ค. 2569 | กอง ต. [4.8] | Condition | [ยส.1-1](Narcotic1_Condition.md) |
-| 2 | 12 มี.ค. 2569 | กอง ต. [4.9] | Condition | [วจ.1-1](Psychotropic1_Condition.md) |
-| 4 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [ผนส. ยส.2/วจ.2](Narcotic2_Condition.md) |
+| 2 | 12 มี.ค. 2569 | กอง ต. [4.9] | Condition | [วจ.1-1](Condition/Psychotropic1/Psychotropic1_Condition.md) |
+| 4 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [ผนส. ยส.2/วจ.2](Condition/Narcotic2/Narcotic2_Condition.md) |
 | 5 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | จยส 2 |
 | 3 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | จกยส 2 |
-| 6 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [คค.1-1](Narcotic_Possession_Condition.md) |
+| 6 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [คค.1-1](Condition/Narcotic_Possession/Narcotic_Possession_Condition.md) |
 | 7 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | คกยส. 2 |
-| 19 | 12 มี.ค. 2569 | กอง ต. [4.12] | Condition | [ยส.4-1](Narcotic4_Condition.md) |
-| 20 | 12 มี.ค. 2569 | กอง ต. [4.13] | Condition | [ยส.5](Narcotic5_Condition.md) |
-| 21 | 18 มี.ค. 2569 | กอง ต. [4.xx] | Condition | [รร.1 (กาเฟอีน)](Narcotic_Caffeine_Condition.md) |
+| 19 | 12 มี.ค. 2569 | กอง ต. [4.12] | Condition | [ยส.4-1](Condition/Narcotic4/Narcotic4_Condition.md) |
+| 20 | 12 มี.ค. 2569 | กอง ต. [4.13] | Condition | [ยส.5](Condition/Narcotic5/Narcotic5_Condition.md) |
+| 21 | 18 มี.ค. 2569 | กอง ต. [4.xx] | Condition | [รร.1 (กาเฟอีน)](Condition/Narcotic_Caffeine/Narcotic_Caffeine_Condition.md) |
 | xx | 17 มี.ค. 2569 | กอง ต. [4.xx] | Condition | [สืบค้น](Narcotic_Search.md) |
 
 ### Condition เฉพาะคราว Temporary
@@ -44,7 +44,7 @@ li {
 |---|---|---|---|---|
 | 47 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [หนังสือรับรอง Certificate ร.ส.1](Narcotic_Certificate.md) |
 | 48 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [หนังสือรับรอง (แก้ไข) ร.ส.2](Narcotic_Edit_Certificate.md) |
-| 49 | 16 มี.ค. 2569 | กอง ต. [4.16] | Condition | [ทะเบียนตำรับ Recepie ท.บ.1](Narcotic_Receipe.md) |
+| 49 | 16 มี.ค. 2569 | กอง ต. [4.16] | Condition | [ทะเบียนตำรับ Recepie ท.บ.1](Condition/Narcotic_Receipe/Narcotic_Receipe_Condition.md) |
 | 50 | 16 มี.ค. 2569 | กอง ต. [4.16] | Condition | [ทะเบียนตำรับ (แก้ไขทะเบียน) ท.บ.3](Narcotic_Edit_Receipe.md) |
 | 51 | 16 มี.ค. 2569 | กอง ต. [4.15] | Condition | [ตัวอย่าง Sample ต.ย.1](Narcotic_Sample.md) |
 
