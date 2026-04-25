@@ -23,6 +23,7 @@ li {
 Google sheets
 - [0806_ยส1_4](https://drive.google.com/drive/u/1/folders/1cDD_W3vuPtodUtt8x0oaeuC9nUxFmcAN)
 - [0814_เช้า_เฉพาะคราว](https://drive.google.com/drive/u/1/folders/1-fokyPQafi1DZUz0fhKw9hQdhPOYRkUc)
+- [0818_งานทะเบียน](https://drive.google.com/drive/u/1/folders/1khcYk7sH7rFgW6LruzVAGexosTe3aVHl)
 
 - [ตย.เอกสาร ยส.4](https://drive.google.com/drive/u/1/folders/1BNuS1dgM9mDpqsMMsS6hbLRU3dBa9MY4)
 - [เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
