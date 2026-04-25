@@ -19,6 +19,11 @@ li {
 - [FDA68_สรุปวัตถุประสงค์ ผู้อนุญาต และผู้อนุมัติ ในใบคำขอ](https://docs.google.com/spreadsheets/d/1B366oiRjTmnY7Jvt0lpH9ORXbmOgJaLXcYDHmDST8Qo)
 
 - [Figma ยส.4](https://www.figma.com/board/eZAUMG4kub8P4xGJNtzuOF/%E0%B8%A2%E0%B8%AA.4)
+
+Google sheets
+- [0806_ยส1_4](https://drive.google.com/drive/u/1/folders/1cDD_W3vuPtodUtt8x0oaeuC9nUxFmcAN)
+- [0814_เช้า_เฉพาะคราว](https://drive.google.com/drive/u/1/folders/1-fokyPQafi1DZUz0fhKw9hQdhPOYRkUc)
+
 - [ตย.เอกสาร ยส.4](https://drive.google.com/drive/u/1/folders/1BNuS1dgM9mDpqsMMsS6hbLRU3dBa9MY4)
 - [เอกสารแนบในแต่ละวัตถุประสงค์ของ ยส. 4](https://drive.google.com/drive/folders/1y3kI2UJyY4YayVMlbP_dlyOjxKeZGECI)
 

@@ -23,7 +23,7 @@ li {
 | 1 | 12 มี.ค. 2569 | กอง ต. [4.8] | Condition | [ยส.1-1](Narcotic1_Condition.md) |
 | 2 | 12 มี.ค. 2569 | กอง ต. [4.9] | Condition | [วจ.1-1](Condition/Psychotropic1/Psychotropic1_Condition.md) |
 | 4 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [ผนส. ยส.2/วจ.2](Condition/Narcotic2/Narcotic2_Condition.md) |
-| 5 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | จยส 2 |
+| 5 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [จยส 2](Condition/Narcotic2/Narcotic2_Psychotropic2_Sale_Condition.md) |
 | 3 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | จกยส 2 |
 | 6 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | [คค.1-1](Condition/Narcotic_Possession/Narcotic_Possession_Condition.md) |
 | 7 | 12 มี.ค. 2569 | กอง ต. [4.10] | Condition | คกยส. 2 |
