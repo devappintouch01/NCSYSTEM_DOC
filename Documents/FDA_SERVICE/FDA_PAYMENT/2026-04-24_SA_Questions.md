@@ -3,7 +3,11 @@
 **Date:** 2026-04-24
 **Purpose:** รวบรวมคำถามทั้งหมดที่ทีม Dev ต้องได้คำตอบก่อน (และระหว่าง) implement ระบบเชื่อมโยงการชำระเงิน อย.
 **Audience:** SA + ทีม FDA Payment Gateway
-**Related:** `UseCases.md` · `Diagrams.md` · `../../zProject_Story/ch30_fda_payment_integration_discovery.md`
+**Related:**
+- [FDA_PAYMENT_SPEC.md](FDA_PAYMENT_SPEC.md) — Q&A คำตอบจาก SA + Endpoints
+- [Q&A Excel (Google Sheet)](https://docs.google.com/spreadsheets/d/1uQdXR8ZykieIk_3_9ROyfw2KRVDJof74iEO2S5ZaCeo) — ข้อสอบถามการเชื่อมโยงระบบชำระเงิน
+- [Bruno Collection](../../../brain_NCSYSTEM/FDA_WS/FDA%20PAYMENT%20-%20WS_PAYMENT_FDA/) — ไฟล์ .bru สำหรับทดสอบ API
+- `zProject_Story/ch30_fda_payment_integration_discovery.md` — Discovery story
 
 ## วิธีใช้เอกสาร
 

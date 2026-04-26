@@ -10,6 +10,18 @@
 
 ---
 
+### Endpoints (Production — ไม่มี Sandbox)
+
+| # | ชื่อ | Method | URL |
+|---|---|---|---|
+| API 1 | Check_Regis_Fee (optional) | POST | `https://platba.fda.moph.go.th/fda_payment_new/fdafee/Check_Regis_Fee` |
+| API 2 | Create_Fee_List | POST | `https://platba.fda.moph.go.th/fda_payment_new/fdafee/Create_Fee_List` |
+| API 3 | Payment Page (redirect) | GET | `https://platba.fda.moph.go.th/fda_payment?Token={FeeUnique}&Org={Org}&identify={Identify}` |
+
+> **หมายเหตุ:** API 3 ไม่ใช่ REST call — เป็น URL สำหรับ redirect browser ไปยังหน้าชำระเงินของ FDA
+
+---
+
 1. **Token** — ขอได้จากที่ไหน | [ตอบ 29-03-2569] ไม่มี token
 2. **Org** — ค่าของ อย. ยาเสพติด คือเลขอะไร | [ตอบ 29-03-2569] กองวัตถุเสพติดคือ 2
 3. **FeeSubCode** — รายการทั้งหมดสำหรับยาเสพติด | [ตอบ 29-03-2569] ดูที่ FeeSubCode
