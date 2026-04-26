@@ -28,8 +28,16 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: ระบบ NCSystem ต้องทำ API รับผลการชำระเงินเอง และทำงานต่อเอง
+- คำตอบหลัก: FDA จะยิง callback กลับมาที่ NCSystem (ไม่ใช่ NCSystem pull)
+- Source: Q&A Excel ข้อ 23.4
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] NCSystem ส่ง callback URL ให้ FDA ตอนไหน — ผ่าน field ใน `Create_Fee_List` body หรือลงทะเบียนล่วงหน้าแบบ static ต่อ Org?
+- [ ] FDA ยิง callback มาเป็น POST JSON หรือรูปแบบอื่น?
+- [ ] callback URL ต้องอยู่บน public internet หรือ FDA มี VPN/private network เข้ามา?
 
 ---
 
@@ -47,8 +55,16 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ — ขอตัวอย่าง sample payload จริง 1-2 รายการ ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: FDA ยิง callback กลับมา โดย NCSystem ต้องทำ API รับ
+- คำตอบหลัก: FeeRefIda = ID ของ Requisition ในระบบ NCSystem → ใช้ match กลับหา record ที่ต้องอัปเดต
+- Source: Q&A Excel ข้อ 23.4-23.5, 16.3
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] ขอ sample callback payload จริง 1-2 รายการ (JSON? XML? form-urlencoded?)
+- [ ] field ทั้งหมดที่ FDA ส่งมาใน callback body มีอะไรบ้าง? โดยเฉพาะ status field ชื่ออะไร และมีค่าอะไรบ้าง?
+- [ ] มี HMAC/signature header ไหม เช่น `X-FDA-Signature`?
 
 ---
 
@@ -67,8 +83,17 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: NCSystem ไม่ต้อง whitelist IP เพื่อเรียก FDA API (ฝั่ง outbound)
+- คำตอบหลัก: ไม่ต้อง mTLS ฝั่ง NCSystem เรียก FDA
+- เงื่อนไข/ข้อยกเว้น: ยังไม่ชัดเจนว่า FDA ยืนยันตัวเองตอนยิง callback กลับมาอย่างไร
+- Source: Q&A Excel ข้อ 25.1-25.2
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] FDA จะยิง callback มาจาก IP range อะไร? NCSystem ต้อง whitelist ไหม?
+- [ ] FDA ส่ง auth header / signature อะไรมาใน callback request ไหม (เพื่อ NCSystem จะได้ verify ว่าเป็น FDA จริง)?
+- [ ] ถ้าไม่มีอะไรเลย — แนวทางที่ FDA แนะนำเพื่อป้องกัน fake callback คืออะไร?
 
 ---
 
@@ -85,8 +110,16 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ — ถ้าไม่มีจริง ขอ process การ cleanup test rows ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: URL https://platba.fda.moph.go.th เป็น Production
+- คำตอบหลัก: ไม่มี UAT/Sandbox แยก
+- คำตอบหลัก: ไม่มี test credentials
+- Source: Q&A Excel ข้อ 22.1-22.3
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] เมื่อ test บน Production แล้วต้องการลบ test rows ออก — ขั้นตอนที่ถูกต้องคืออะไร? ติดต่อใคร?
+- [ ] มีวิธีทำให้ FDA รู้ว่า row ไหนเป็น test data (เช่น prefix ProcessId ด้วย `TEST_`) ไหม?
 
 ---
 
@@ -105,7 +138,11 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ — ถ้า Required ให้ระบุวิธีได้ค่า + TTL + refresh ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: ไม่มี token — ไม่ต้องส่ง field นี้
+- เงื่อนไข/ข้อยกเว้น: Q&A ใหม่กว่า PDF คู่มือ → ใช้ Q&A เป็น source of truth (เหมือน CQ-D ที่ปิดแล้ว)
+- Source: Q&A Excel ข้อ 1, 9.1-9.5
+→ ปิด: ไม่ต้องส่ง token field
 ```
 
 ---
@@ -126,6 +163,10 @@
 [ รอตอบ ]
 ```
 
+**คำถามที่ยังต้องถาม SA:**
+- [ ] FDA retry callback กี่ครั้งถ้า NCSystem ไม่ตอบหรือตอบ 5xx?
+- [ ] ถ้า retry หมดแล้ว — ใครรับผิดชอบ reconcile และทำอย่างไร?
+
 ---
 
 ### Q7. Query Status API — FDA เปิดให้ NCSystem pull สถานะได้ไหม?
@@ -140,8 +181,15 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: ไม่มี API ตรวจสอบสถานะ
+- คำตอบหลัก: FeeUnique ใช้อ้างอิง transaction เท่านั้น ไม่สามารถเรียก API อื่นด้วย FeeUnique ได้
+- Source: Q&A Excel ข้อ 8, 24.2
+→ ปิด: ไม่มี pull-based status check — ต้องใช้ callback อย่างเดียว หรือ manual reconcile
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] ถ้า callback หาย และไม่มี Query Status API — กระบวนการ manual reconcile ที่ถูกต้องคืออะไร? ติดต่อใคร?
 
 ---
 
@@ -160,6 +208,17 @@
 [ รอตอบ — ขอ enum list ทั้งหมด + ความหมายแต่ละค่า ]
 ```
 
+**ผลทดสอบจริง (2026-04-26):**
+```
+- ยิง FeeRefStatus=999 (ค่าที่ไม่น่ามีใน enum) → ได้ 300 เหมือนเดิม
+- API ไม่ reject ค่าที่ invalid → แสดงว่า validation ไม่เกิดที่ field นี้
+  หรือ check เกิดหลัง ProcessId lookup (ซึ่ง fail ก่อน)
+- ยังต้องถาม SA เพื่อรู้ semantic ที่ถูกต้อง
+```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] `FeeRefStatus` enum มีค่าอะไรบ้าง และแต่ละค่าหมายความว่าอะไร? ตอน Create_Fee_List ใหม่ควรส่งค่าอะไร?
+
 ---
 
 ### Q9. `FeeResult` 300 vs 400 — ต่างกันอย่างไร?
@@ -174,8 +233,28 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: 300, 400 เป็นแค่รหัสสถานะ ไม่มีความหมาย retryable/non-retryable ชัดเจน
+- คำตอบหลัก: มี 404 เพิ่มเติม = ไม่พบ transaction
+- คำตอบหลัก: FeeErrorMsg เป็นข้อความธรรมดา ไม่มี error code มาตรฐาน
+- Source: Q&A Excel ข้อ 21.1-21.3
 ```
+
+**ผลทดสอบจริง (2026-04-26):**
+```
+สิ่งที่ค้นพบจากการยิง API โดยตรง:
+- HTTP transport layer ตอบ 200 OK เสมอ (แม้ business logic fail)
+- FeeResult ใน response body คือ "Error" (string) ไม่ใช่ตัวเลข — FeeCode เป็น "300" (string)
+- 300 = business rule error หลัง ProcessId lookup — เกิดจาก ProcessId ไม่ได้ลงทะเบียน
+- ไม่สามารถ trigger 400 ได้โดยส่ง missing/invalid fields — API deserialize แบบ lenient
+  (body ว่าง, Org=0, FeeSubCode="99", FeeAmt=-1, FeeRefStatus=999 ล้วนได้ 300 เหมือนกัน)
+- แสดงว่า 400 อาจเกิดเฉพาะ business case อื่น ไม่ใช่ field validation
+- Malformed JSON → ASP.NET MVC unhandled exception (HTML error page, ไม่ใช่ JSON)
+- GET method → HTTP 404 (route ไม่รองรับ GET)
+```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] FeeCode 400 เกิดในกรณีใดบ้าง? (ทดสอบแล้วไม่สามารถ trigger ด้วย invalid input ได้)
 
 ---
 
@@ -192,8 +271,15 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ — ขอรายการ FeeSubCode ที่ NCSystem ควรใช้ + เงื่อนไขการเลือก ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: รายการ FeeSubCode ที่ใช้ได้ (8 รายการ): 0,1,2,3,4,5,6,12
+- คำตอบหลัก: 07-11 ไม่มีในรายการ → list นี้คือ master ที่ถูกต้อง
+- เงื่อนไข/ข้อยกเว้น: ใน SPEC.md ลำดับคือ 0,1,2,3,4,6,5,12 (5 กับ 6 สลับกัน — ระวัง)
+- Source: Q&A Excel ข้อ 3 + FeeSubCode table
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] กองวัตถุเสพติด (Org=2) ควรแสดง FeeSubCode ทั้ง 8 ค่าให้ผู้ใช้เลือก หรือกรอง subset ตามประเภทคำขอ? เงื่อนไขการเลือกแต่ละค่าเป็นอย่างไร?
 
 ---
 
@@ -210,8 +296,13 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ — ควรเป็น workflow state transition ใหม่หรือใช้ status เดิม ]
+[ รอตอบ ]
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] หลัง callback Paid เข้ามา Requisition.Status ควรเปลี่ยนเป็นค่าอะไร? (เป็น status code ใหม่หรือใช้ค่าที่มีอยู่แล้ว?)
+- [ ] Flow นี้ใช้ค่า status เดียวกันทุกฟอร์ม หรือแต่ละฟอร์มมี post-payment status ต่างกัน?
+- [ ] การชำระเงินเกิดขึ้น **ก่อน** หรือ **หลัง** L1 Review? (กระทบว่า status transition เกิดที่ step ไหน)
 
 ---
 
@@ -231,6 +322,10 @@
 [ รอตอบ ]
 ```
 
+**คำถามที่ยังต้องถาม SA:**
+- [ ] FDA retry callback ไหม? ถ้าใช่ — จะยิง callback เดิมซ้ำกี่ครั้ง?
+- [ ] field ที่ใช้เป็น idempotency key ใน callback payload คืออะไร? (`FeeUnique`?)
+
 ---
 
 ## 🟢 Minor — ตอบช้าได้ แต่ควรเก็บไว้ใน backlog
@@ -243,8 +338,11 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ — ระบุ rule ชัดเจนต่อประเภทคำขอ หรือเสนอ default value ]
+[ รอตอบ ]
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] สำหรับคำขอกองวัตถุเสพติด (Org=2) กรณี default — `FeePvncd` ควรใช้จังหวัดของ **สถานประกอบการผู้ขอ** หรือ **สำนักงาน อย. ที่รับผิดชอบ (กทม.=10)**?
 
 ---
 
@@ -255,11 +353,20 @@
 - NCSystem ส่งเอง (เช่น current + 7 วัน)?
 - หรือ platba override ให้?
 - มี max limit ไหม (ไม่เกิน 30 วัน?)
+- Q&A ข้อ 14.2: ครบ FeeExpDate แล้ว ชำระไม่ได้ — แต่สร้างใหม่ได้ไหม?
 
 **คำตอบ SA:**
 ```
-[ รอตอบ — default policy ที่ NCSystem ควรใช้ ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: "แล้วแต่การลงทะเบียน" = NCSystem เป็นคนกำหนดส่งไป
+- คำตอบหลัก: ครบ FeeExpDate แล้วผู้ใช้ชำระไม่ได้
+- เงื่อนไข/ข้อยกเว้น: Format ตามรูปแบบวันที่ปกติ (ดู CQ-A: ISO 8601 "2026-03-09T13:38:41.327Z")
+- Source: Q&A Excel ข้อ 14.1-14.3
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] "แล้วแต่การลงทะเบียน" หมายความว่า SA ต้องกำหนด policy ให้ NCSystem — กองวัตถุเสพติดใช้กี่วัน?
+- [ ] ถ้า FeeExpDate หมดแล้ว NCSystem สร้าง Create_Fee_List ใหม่สำหรับคำขอเดิมได้ไหม? (ProcessId ซ้ำได้ตาม Q&A 11.5)
 
 ---
 
@@ -273,8 +380,15 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ — confirm ว่า IsGroup=0 เพียงพอสำหรับ Phase 1 ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: IsGroup=0 = ไม่ออกใบสั่งแบบกลุ่ม
+- คำตอบหลัก: IsGroup=1 = รวมหลายรายการในบิลเดียว (ต้องมี FeeDetail ≥ 2 รายการ)
+- เงื่อนไข/ข้อยกเว้น: "แล้วแต่กรณี" — ไม่ระบุ default
+- Source: Q&A Excel ข้อ 17.1-17.6
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] กองวัตถุเสพติด Phase 1 — confirm ได้ไหมว่าใช้ `IsGroup=0` ทั้งหมด? มี form ไหนที่ต้องการ IsGroup=1?
 
 ---
 
@@ -286,8 +400,17 @@
 
 **คำตอบ SA:**
 ```
-[ รอตอบ — ยืนยัน format ที่ไม่ชน + ความยาว max ]
+คำตอบ SA (2026-03-29, ผู้ตอบ: SA_C):
+- คำตอบหลัก: ProcessId = รหัสกระบวนการหลักตามหน่วยงานกำหนด กำหนดแล้วส่งให้ IT เพื่อใช้เพิ่มในระบบ
+- คำตอบหลัก: ต้อง unique ทั้งระบบ FDA
+- คำตอบหลัก: ส่งซ้ำได้ (เป็นแค่การลงรายการรอชำระ)
+- คำตอบหลัก: ProcessSubId กำหนดเองได้ถ้ามี
+- Source: Q&A Excel ข้อ 11.1-11.5
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] ProcessId ที่ IT กำหนดสำหรับกองวัตถุเสพติด (Org=2) มี list อยู่ที่ไหน? (Q&A บอกว่า "กำหนดแล้วส่งให้ IT" — ต้องขอ list นั้น)
+- [ ] ความยาว max ของ ProcessId คือกี่ตัวอักษร?
 
 ---
 
@@ -305,6 +428,9 @@
 [ รอตอบ — ถ้ามี URL ขอ sample และวิธีสร้าง link ]
 ```
 
+**คำถามที่ยังต้องถาม SA:**
+- [ ] หลังชำระสำเร็จ — platba สร้างใบเสร็จให้ผู้ใช้ download ได้ไหม? ถ้าได้ NCSystem แสดง link อย่างไร?
+
 ---
 
 ### Q18. ProcessId Mapping Master (160 รายการ) — Source of truth อยู่ที่ไหน?
@@ -319,6 +445,9 @@
 [ รอตอบ — ระบุเจ้าของ source + cadence update ]
 ```
 
+**คำถามที่ยังต้องถาม SA:**
+- [ ] ProcessId list ที่กองวัตถุเสพติดใช้ (จาก Google Sheet ~160 รายการ) — NCSystem ต้อง seed ใน DB หรือ hardcode? ถ้า อย. เพิ่ม/แก้ไข NCSystem รู้ได้อย่างไร?
+
 ---
 
 ### Q19. Max FeeAmt / Min FeeAmt — มีขอบเขตไหม?
@@ -331,6 +460,9 @@
 ```
 [ รอตอบ ]
 ```
+
+**คำถามที่ยังต้องถาม SA:**
+- [ ] FeeAmt — platba มี min/max ที่ยอมรับไหม? รองรับทศนิยมกี่ตำแหน่ง (สตางค์)?
 
 ---
 
@@ -346,9 +478,50 @@
 [ รอตอบ ]
 ```
 
+**คำถามที่ยังต้องถาม SA:**
+- [ ] กรณี Requisition ถูก reject หลังชำระแล้ว — กระบวนการ refund ทำผ่านใคร? NCSystem มี API cancel ได้ไหม?
+- [ ] FDA ส่ง callback สถานะ Refunded/Cancelled กลับมาด้วยไหม?
+
+---
+
+## 🔬 ผลทดสอบ Live API — Infrastructure Facts (2026-04-26)
+
+สรุปสิ่งที่ค้นพบจากการยิง API จริงโดยไม่ต้อง ProcessId จาก FDA:
+
+| สิ่งที่ค้นพบ | รายละเอียด | ผลกระทบต่อ Dev |
+|---|---|---|
+| HTTP transport = 200 เสมอ | แม้ business logic fail → response body FeeResult="Error" | NCSystem ต้อง check `FeeResult` ใน body ไม่ใช่ HTTP status |
+| FeeCode = string "300" | ไม่ใช่ integer — `"FeeCode":"300"` | DTO field ต้องเป็น `string` ไม่ใช่ `int` |
+| FeeResult = string "Error"/"200" | ไม่ใช่ numeric code | DTO field เป็น `string` |
+| Response มี extra fields | `FeeIda`, `FeeNo`, `FeePath` อยู่ใน response แต่ไม่อยู่ใน PDF | ต้อง map ใน DTO ด้วย (อาจใช้ตอน success) |
+| Validation lenient มาก | body ว่าง, Org=0, FeeRefStatus=999, FeeSubCode="99" → ได้ 300 เหมือนกัน | API check ProcessId ก่อน validate fields อื่น — validation เกิดทีหลัง |
+| Malformed JSON → HTML exception | ASP.NET ไม่มี global error handler → stack trace รั่ว | NCSystem ต้องส่ง valid JSON เท่านั้น; อย่า log HTML response เป็น error |
+| Stack: ASP.NET MVC 5.2 / .NET 4.7 | เปิดเผยใน error page + headers | ข้อมูล security: `customErrors mode="Off"` บน prod — แจ้ง FDA ถ้าต้องการ |
+| CORS: `Access-Control-Allow-Origin: *` | ทุก origin เข้าได้ | เรียกจาก browser ได้โดยตรง (แต่ควรเรียกผ่าน backend เพื่อ security) |
+| Response time ~90ms | ค่อนข้างเร็ว | ไม่ต้องกังวลเรื่อง timeout สำหรับ normal call |
+| Set-Cookie: `cookiesession1` | FDA set session cookie | NCSystem backend ไม่ต้องสนใจ cookie นี้ |
+| token field = ignored | ยิงทั้งมีและไม่มี → response เหมือนกัน | ยืนยัน: ไม่ต้องส่ง token |
+
 ---
 
 ## ✅ ปิดแล้ว — เก็บไว้อ้างอิง
+
+### [CLOSED] Q5. `token` ใน Create_Fee_List
+
+- **คำตอบ (จาก Q&A ข้อ 1, 9.1-9.5, 29-03-2569):** ไม่มี token — ไม่ต้องส่ง field นี้เลย
+- **⚠️ ขัดกับ PDF คู่มือ** (PDF ระบุ Required=Y) — Q&A ใหม่กว่า ใช้ Q&A เป็น truth
+- **ยืนยันจากทดสอบจริง (2026-04-26):** ยิงทั้งแบบมี `"token":"fake_token_value"` และไม่มี field นี้ → ได้ response เหมือนกันทุกประการ = API ไม่ validate token เลย
+- **Source:** Q&A Excel ข้อ 1, 9.1-9.5 + live test
+
+---
+
+### [CLOSED] Q7. Query Status API
+
+- **คำตอบ (จาก Q&A ข้อ 8, 24.2, 29-03-2569):** ไม่มี API ตรวจสอบสถานะ, FeeUnique ใช้อ้างอิงเท่านั้น
+- **ผลกระทบ:** ต้องใช้ callback อย่างเดียว — reconcile ต้อง manual
+- **Source:** Q&A Excel ข้อ 8, 24.2
+
+---
 
 ### [CLOSED] CQ-A. `FeeExpDate` Format?
 
@@ -385,14 +558,16 @@
 
 ## ภาคผนวก — Priority Matrix สำหรับ SA
 
-| Priority | จำนวน | ต้องได้คำตอบก่อน |
-|---|---|---|
-| 🔴 Critical | 4 (Q1-Q4) | เริ่มเขียน UC-04 callback |
-| 🟡 Important | 8 (Q5-Q12) | E2E test |
-| 🟢 Minor | 8 (Q13-Q20) | Phase 2 / polish |
-| ✅ Closed | 6 (CQ-A…F) | — |
+| Priority | จำนวน | ต้องได้คำตอบก่อน | สถานะ |
+|---|---|---|---|
+| 🔴 Critical | 4 (Q1-Q4) | เริ่มเขียน UC-04 callback | มีคำตอบบางส่วน — ยังมีคำถาม follow-up |
+| 🟡 Important | 6 (Q6,Q8-Q12) | E2E test | รอตอบ |
+| 🟢 Minor | 8 (Q13-Q20) | Phase 2 / polish | รอตอบ |
+| ✅ Closed | 8 (Q5,Q7,CQ-A…F) | — | ปิดแล้ว |
 
-**แนะนำ:** ส่ง Q1-Q4 (🔴 Critical) ให้ SA **ก่อน** เพื่อ unblock UC-04 ส่วนที่เหลือรวบรวมส่งพร้อมกันในรอบ follow-up
+**สถานะ 2026-04-26:** Q5 และ Q7 ปิดแล้ว (ยืนยันจาก Q&A Excel 29-03-2569) — Q1-Q4 มีคำตอบบางส่วนแต่ยังต้องถาม follow-up เรื่อง callback mechanics
+
+**แนะนำ:** ส่ง follow-up questions ใต้ Q1-Q4 ให้ SA **ก่อน** เพื่อ unblock UC-04 callback implementation
 
 ---
 
