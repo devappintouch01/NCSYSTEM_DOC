@@ -12,17 +12,33 @@ li {
 
 ---
 
-## 📌 [Issue 21] ยส 1 เช็ค ยส 1 แนบไฟล์แล้ว ไม่แสดงไฟล์ที่แนบ
-**[Eng]: Narcotic License Type 1 (ยส. 1): Check after attaching files - uploaded files are not displayed.**
+## 📌 [Issue 21] ยส 1 แนบไฟล์แล้ว ไม่แสดงไฟล์ที่แนบ
+**[Eng]: Narcotic License Type 1 (ยส. 1): Attached files are not displayed after uploading.**
 - **ประเภทใบอนุญาต (RequisitionType):** `ยส.1-1` (Id: 1)
-- **ปัญหาที่พบ:** ในส่วนของการ "แนบไฟล์" เมื่อกดปุ่ม Submit ตัว Pop up ที่เด้งขึ้นมาไม่มี Icon แสดงผล
+- **ปัญหาที่พบ:** หลังจากผู้ใช้อัปโหลด/แนบไฟล์ในหน้าคำขอ ยส.1 แล้ว ระบบไม่แสดงรายการไฟล์ที่แนบไว้ให้เห็นบนหน้าจอ
 - **สิ่งที่ต้องดำเนินการ (Action Required):**
-  - [ ] ตรวจสอบ Component ของ Pop up แจ้งเตือน ว่ามีการส่งค่าประเภทของ Icon ถูกต้องหรือไม่
-  - *(Eng): Check the popup notification component to ensure it receives and renders the correct icon type parameter.*
+  - [ ] ตรวจสอบ API Upload ว่าบันทึกไฟล์สำเร็จหรือไม่ และตรวจสอบ Logic การ Fetch/Render รายการไฟล์ที่แนบในหน้าจอ UI
+  - *(Eng): Verify if the file upload API successfully saves the files, and check the frontend logic for fetching and rendering the attached file list.*
 
-Issue 22 วจ 1 เช็ค วจ 1 ใน Print form คำขอ (DevExpress) วจ 1 คุณสมบัติของผู้อนุญาต ไม่แสดงข้อมูลที่ได้เลือกไว้
+---
 
-28	วจ 1	หัวข้อ 2.2 ชื่อสถานที่ ไม่แสดงใน Print form คำขอ (DevExpress)
+## 📌 [Issue 22] วจ 1 ใน Print form คำขอ (DevExpress) คุณสมบัติของผู้อนุญาต ไม่แสดงข้อมูลที่ได้เลือกไว้
+**[Eng]: Psychotropic License Type 1 (ว.จ. 1): Selected applicant qualifications are not displayed in the DevExpress Print Form.**
+- **ประเภทใบอนุญาต (RequisitionType):** `ว.จ. 1-1` (Id: 2)
+- **ปัญหาที่พบ:** เมื่อพิมพ์เอกสารคำขอผ่าน DevExpress ข้อมูล "คุณสมบัติของผู้อนุญาต" ที่ผู้ใช้เลือกไว้ ไม่ถูกนำไปแสดงผลบนเอกสาร
+- **สิ่งที่ต้องดำเนินการ (Action Required):**
+  - [ ] ตรวจสอบการส่งค่า Parameter/Dataset จากหน้าจอไปยัง DevExpress Report ว่าส่งฟิลด์คุณสมบัติผู้อนุญาตไปครบถ้วนหรือไม่
+  - *(Eng): Inspect the parameters or dataset passed to the DevExpress report to ensure the selected applicant qualifications are properly mapped and included.*
+
+---
+
+## 📌 [Issue 28] วจ 1 หัวข้อ 2.2 ชื่อสถานที่ ไม่แสดงใน Print form คำขอ (DevExpress)
+**[Eng]: Psychotropic License Type 1 (ว.จ. 1): Location Name in Section 2.2 is not displayed in the DevExpress Print Form.**
+- **ประเภทใบอนุญาต (RequisitionType):** `ว.จ. 1-1` (Id: 2)
+- **ปัญหาที่พบ:** เมื่อพิมพ์เอกสารคำขอผ่าน DevExpress ข้อมูล "ชื่อสถานที่" ในหัวข้อ 2.2 ไม่แสดงผลบนเอกสาร
+- **สิ่งที่ต้องดำเนินการ (Action Required):**
+  - [ ] ตรวจสอบการ Binding Data ฟิลด์ชื่อสถานที่ (Location Name) ภายในตัว Report ของ DevExpress ว่าแมพกับชื่อฟิลด์ถูกต้องหรือไม่
+  - *(Eng): Verify the data binding for the Location Name field within the DevExpress report template to ensure it matches the dataset.*
 
 ## 📌 [Issue 60] Pop up เมื่อเพิ่มสถานที่ ไม่มี Icon แจ้งเตือน
 **[Eng]: Alert popup when adding a location is missing an icon.**
