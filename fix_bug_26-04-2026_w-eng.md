@@ -12,11 +12,25 @@ li {
 
 ---
 
+## 📌 [Issue 21] ยส 1 เช็ค ยส 1 แนบไฟล์แล้ว ไม่แสดงไฟล์ที่แนบ
+**[Eng]: Narcotic License Type 1 (ยส. 1): Check after attaching files - uploaded files are not displayed.**
+- **ประเภทใบอนุญาต (RequisitionType):** `ยส.1-1` (Id: 1)
+- **ปัญหาที่พบ:** ในส่วนของการ "แนบไฟล์" เมื่อกดปุ่ม Submit ตัว Pop up ที่เด้งขึ้นมาไม่มี Icon แสดงผล
+- **สิ่งที่ต้องดำเนินการ (Action Required):**
+  - [ ] ตรวจสอบ Component ของ Pop up แจ้งเตือน ว่ามีการส่งค่าประเภทของ Icon ถูกต้องหรือไม่
+  - *(Eng): Check the popup notification component to ensure it receives and renders the correct icon type parameter.*
+
+Issue 22 วจ 1 เช็ค วจ 1 ใน Print form คำขอ (DevExpress) วจ 1 คุณสมบัติของผู้อนุญาต ไม่แสดงข้อมูลที่ได้เลือกไว้
+
+28	วจ 1	หัวข้อ 2.2 ชื่อสถานที่ ไม่แสดงใน Print form คำขอ (DevExpress)
+
 ## 📌 [Issue 60] Pop up เมื่อเพิ่มสถานที่ ไม่มี Icon แจ้งเตือน
+**[Eng]: Alert popup when adding a location is missing an icon.**
 - **ประเภทใบอนุญาต (RequisitionType):** `ยส.4-1` (Id: 19)
 - **ปัญหาที่พบ:** ในส่วนของการ "เพิ่มสถานที่" เมื่อกดปุ่ม Submit ตัว Pop up ที่เด้งขึ้นมาไม่มี Icon แสดงผล
 - **สิ่งที่ต้องดำเนินการ (Action Required):**
   - [ ] ตรวจสอบ Component ของ Pop up แจ้งเตือน ว่ามีการส่งค่าประเภทของ Icon ถูกต้องหรือไม่
+  - *(Eng): Check the popup notification component to ensure it receives and renders the correct icon type parameter.*
 
 ---
 
@@ -48,19 +62,24 @@ li {
 ---
 
 ## 📌 [Issue 69] ยังไม่กรองข้อมูลคุณสมบัติผู้ขออนุญาตเฉพาะยาเสพติดประเภท 1
+**[Eng]: Applicant qualification data is not filtered specifically for Narcotic Category 1.**
 - **ประเภทใบอนุญาต (RequisitionType):** `ยส.1-1` (Id: 1)
 - **ปัญหาที่พบ:** ในหน้าคำขอใหม่ ส่วน "คุณสมบัติของผู้ขออนุญาต ประเภทใบอนุญาต" ระบบยังไม่ได้กรอง (Filter) ข้อมูลเฉพาะยาเสพติดให้โทษประเภท 1
 - **สิ่งที่ต้องดำเนินการ (Action Required):**
   - [ ] ตรวจสอบ API และเงื่อนไขการ Query ข้อมูลคุณสมบัติให้แสดงผลเฉพาะ ยาเสพติดให้โทษประเภท 1 เท่านั้น
+  - *(Eng): Review the API and query conditions to ensure the applicant qualifications grid only displays data relevant to Narcotic Category 1.*
 
 ---
 
 ## 📌 [Not sure case] [Issue 76] ไม่แสดงฟิลด์ให้กรอกข้อมูลเมื่อเลือก "ผลิตเพื่อส่งออก"
+**[Eng]: Input fields are not displayed when "Manufacture for Export" (ผลิตเพื่อส่งออก) is selected.**
 - **ประเภทใบอนุญาต (RequisitionType):** `ผนส. ยส.2/วจ.2` (Id: 3)
 - **ปัญหาที่พบ:** เมื่อเลือกประเภทเป็น "ผลิตเพื่อส่งออก" ระบบไม่แสดงข้อ 1.3 และ 1.4 ให้กรอกข้อมูล
 - **สิ่งที่ต้องดำเนินการ (Action Required):**
   - [ ] ตรวจสอบเงื่อนไขการซ่อน/แสดง (Visibility) ของหน้าจอในข้อ 1.3 และ 1.4 เมื่อเลือก "ผลิตเพื่อส่งออก"
+  - *(Eng): Verify the UI visibility logic for Sections 1.3 and 1.4 when the "Manufacture for Export" option is chosen.*
   - [ ] ตรวจสอบเงื่อนไขการ Validate หน้าจอว่ามีการ Implement ให้สอดคล้องกับเงื่อนไขนี้แล้วหรือยัง
+  - *(Eng): Check the frontend validation rules to ensure they align with this visibility condition.*
 
 ---
 
@@ -109,12 +128,16 @@ li {
 ---
 
 ## 📌 [Issue 85] ตรวจสอบ Popup เลือกสถานที่ขออนุญาตจำหน่าย
+**[Eng]: "Select Location for Sale" popup is empty.**
 - **ประเภทใบอนุญาต (RequisitionType):** `จ.ย.ส. 2-1/ว.จ. 2-1` (Id: 4)
 - **ปัญหาที่พบ:** ในข้อ "2.1 สถานที่ที่ขออนุญาตจำหน่าย" เมื่อกด Popup แล้วไม่แสดงข้อมูลสถานที่ให้เลือก (ข้อมูลว่างเปล่า)
 - **สิ่งที่ต้องดำเนินการ (Action Required):**
   - [ ] ตรวจสอบ Code ส่วน Frontend (หน้าจอ UI) ว่ามีการ Implement Popup และมีส่วนแสดงผลสถานที่ถูกต้องหรือไม่
+  - *(Eng): Inspect the frontend code to verify the popup implementation and its location list rendering logic.*
   - [ ] ตรวจสอบว่ามีการเรียกใช้ API สำหรับดึงข้อมูลสถานที่มารองรับหรือไม่ 
+  - *(Eng): Ensure the API used to fetch locations for this specific popup is being called correctly.*
   - [ ] หากมี API แล้ว ให้ตรวจสอบ Network/Console Log ว่า API ส่งค่าข้อมูลกลับมาถูกต้อง หรือมี Error อะไรหรือไม่
+  - *(Eng): If the API is implemented, check the Network tab and Console logs to see if the response is correct or if there are any errors.*
 
 ---
 
@@ -165,9 +188,9 @@ li {
     - `Views/Narcotic4Request/_partialView/_modalConsent.cshtml` — ✅ ตรวจแล้ว เนื้อหาตรงกับ ยส.4 (ประเภท 4)
     - `Views/Narcotic5Request/_partialView/_modalConsent.cshtml` — ✅ ตรวจแล้ว เนื้อหาตรงกับ ยส.5 (ประเภท 5)
     - `Views/Psychotropic1Request/_partialView/_modalConsentPsychotropic1.cshtml` — ✅ ตรวจแล้ว เนื้อหาตรงกับ ว.จ. 1 (แก้แล้วใน Issue 63)
-    - `Views/Narcotic3Request/_partialView/_modalConsent.cshtml` — ⚠️ ใช้รูปแบบต่างออกไป (consent 3 ข้อ) ต้องตรวจ wording
-    - `Views/Psychotropic3Request/_partialView/_modalConsent.cshtml` — ⚠️ ใช้รูปแบบต่างออกไป (consent 3 ข้อ) ต้องตรวจ wording
-    - `Views/Psychotropic4Request/_partialView/_modalConsent.cshtml` — ⚠️ ใช้รูปแบบต่างออกไป (consent 3 ข้อ) ต้องตรวจ wording
+    - `Views/Narcotic3Request/_partialView/_modalConsent.cshtml` — ⚠️ ใช้รูปแบบต่างออกไป (consent 3 ข้อ) ต้องตรวจ wording *(Eng): Uses a different format (3 consent clauses), need to verify wording.*
+    - `Views/Psychotropic3Request/_partialView/_modalConsent.cshtml` — ⚠️ ใช้รูปแบบต่างออกไป (consent 3 ข้อ) ต้องตรวจ wording *(Eng): Uses a different format (3 consent clauses), need to verify wording.*
+    - `Views/Psychotropic4Request/_partialView/_modalConsent.cshtml` — ⚠️ ใช้รูปแบบต่างออกไป (consent 3 ข้อ) ต้องตรวจ wording *(Eng): Uses a different format (3 consent clauses), need to verify wording.*
 
 ---
 
