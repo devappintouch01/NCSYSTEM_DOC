@@ -97,7 +97,7 @@ li {
   - [ ] ตรวจสอบเงื่อนไขการ Validate หน้าจอว่ามีการ Implement ให้สอดคล้องกับเงื่อนไขนี้แล้วหรือยัง
   - *(Eng): Check the frontend validation rules to ensure they align with this visibility condition.*
 
----
+
 
 ## 📌 [Issue 78] เปลี่ยนฟิลด์เลขรหัสประจำบ้านให้เป็นแบบกรอกอิสระ (Freetext)
 - **ประเภทใบอนุญาต (RequisitionType):** `ผนส. ยส.2/วจ.2` (Id: 3)
@@ -154,6 +154,20 @@ li {
   - *(Eng): Ensure the API used to fetch locations for this specific popup is being called correctly.*
   - [ ] หากมี API แล้ว ให้ตรวจสอบ Network/Console Log ว่า API ส่งค่าข้อมูลกลับมาถูกต้อง หรือมี Error อะไรหรือไม่
   - *(Eng): If the API is implemented, check the Network tab and Console logs to see if the response is correct or if there are any errors.*
+
+---
+
+## 📌 [Issue N/A] ปรับปรุงรายการ Dropdown และรูปแบบการแสดงผลชื่อยา
+**[Eng]: Improve drug dropdown list and display format for drug names.**
+- **ประเภทใบอนุญาต (RequisitionType):** `ผนส. ยส.2/วจ.2` (Id: 3)
+- **ปัญหาที่พบ:** ในขั้นตอนที่ 3 ส่วนการเพิ่มข้อมูลยา
+  - รายการใน Dropdown แสดงทั้ง "ยาเสพติดประเภท 2" และ "วัตถุออกฤทธิ์ประเภท 2" พร้อมกัน (ระบบยังไม่ได้กรองตามประเภทที่เลือกไว้ตอนเริ่มต้น)
+  - รูปแบบการแสดงผลชื่อยากับ Ester ปัจจุบันใช้เครื่องหมาย `+` คั่น (เช่น "Drug + Ester") ต้องการให้เปลี่ยนเป็นช่องว่าง ` ` (Space) แทน
+- **สิ่งที่ต้องดำเนินการ (Action Required):**
+  - [ ] ตรวจสอบและแก้ไข Logic การกรองข้อมูลยาใน Dropdown ให้แสดงเฉพาะประเภทที่ตรงกับคำขอ
+  - *(Eng): Items in dropdown show both Narcotic 2 and Psychotropic 2. Need to filter them based on the selected requisition type.*
+  - [ ] แก้ไขการ Binding/Display ชื่อยาในตารางและ Modal ให้ใช้ Space แทนเครื่องหมาย `+`
+  - *(Eng): Replace the '+' separator between Narcotic and Ester names with a space ' '.*
 
 ---
 
