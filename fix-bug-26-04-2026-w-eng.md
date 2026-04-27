@@ -32,6 +32,26 @@ li {
 
 ---
 
+## 📌 [Issue 25] วจ 1 ข้อมูล 2.1 ไม่แสดงใน Print form คำขอ (DevExpress)
+**[Eng]: Psychotropic License Type 1 (ว.จ. 1): Data in Section 2.1 is not displayed in the DevExpress Print Form.**
+- **ประเภทใบอนุญาต (RequisitionType):** `ว.จ. 1-1` (Id: 2)
+- **ปัญหาที่พบ:** ข้อมูลในหัวข้อ "2.1 สถานที่ที่ขออนุญาต" ไม่แสดงผลในเอกสารคำขอที่พิมพ์ผ่าน DevExpress
+- **สิ่งที่ต้องดำเนินการ (Action Required):**
+  - [ ] ตรวจสอบการ Binding Data ใน DevExpress Report สำหรับหัวข้อ 2.1
+  - *(Eng): Verify the data binding in the DevExpress report for Section 2.1.*
+
+---
+
+## 📌 [Issue 26] วจ 1 ส่วนที่ 3 สถานที่สำหรับติดต่อ ข้อมูลที่เลือกไว้ ไม่แสดงใน Print form คำขอ (DevExpress)
+**[Eng]: Psychotropic License Type 1 (ว.จ. 1): Selected data in Section 3 (Contact Location) is not displayed in the DevExpress Print Form.**
+- **ประเภทใบอนุญาต (RequisitionType):** `ว.จ. 1-1` (Id: 2)
+- **ปัญหาที่พบ:** ข้อมูลที่ผู้ใช้เลือกไว้ในหัวข้อ "ส่วนที่ 3 สถานที่สำหรับติดต่อ" ไม่แสดงผลในเอกสารคำขอที่พิมพ์ผ่าน DevExpress
+- **สิ่งที่ต้องดำเนินการ (Action Required):**
+  - [ ] ตรวจสอบการ Mapping ข้อมูลส่วนที่ 3 เข้ากับ Report Template ของ DevExpress
+  - *(Eng): Check the data mapping for Section 3 into the DevExpress report template.*
+
+---
+
 ## 📌 [Issue 28] วจ 1 หัวข้อ 2.2 ชื่อสถานที่ ไม่แสดงใน Print form คำขอ (DevExpress)
 **[Eng]: Psychotropic License Type 1 (ว.จ. 1): Location Name in Section 2.2 is not displayed in the DevExpress Print Form.**
 - **ประเภทใบอนุญาต (RequisitionType):** `ว.จ. 1-1` (Id: 2)
@@ -39,6 +59,20 @@ li {
 - **สิ่งที่ต้องดำเนินการ (Action Required):**
   - [ ] ตรวจสอบการ Binding Data ฟิลด์ชื่อสถานที่ (Location Name) ภายในตัว Report ของ DevExpress ว่าแมพกับชื่อฟิลด์ถูกต้องหรือไม่
   - *(Eng): Verify the data binding for the Location Name field within the DevExpress report template to ensure it matches the dataset.*
+
+---
+
+## 📌 [Issue 49] คค 1-1 ปรับเอกสารแนบตามวัตถุประสงค์
+**[Eng]: Narcotic License Type 1 (ค.ค. 1-1): Adjust attached documents according to purpose.**
+- **ประเภทใบอนุญาต (RequisitionType):** `ค.ค. 1-1` (Id: 3)
+- **ปัญหาที่พบ:** ต้องปรับปรุงส่วนของเอกสารแนบให้สอดคล้องกับวัตถุประสงค์ของใบอนุญาต
+- **สิ่งที่ต้องดำเนินการ (Action Required):**
+  - [ ] ตรวจสอบ Code การทำงานของส่วนเอกสารแนบ 
+  - *(Eng): Check the code logic for the attachment section.*
+  - [ ] ถ้าทำงานถูกอยู่แล้ว ให้เช็ครายการเอกสารแนบจากใน database
+  - *(Eng): If the code logic is correct, check the list of attached documents in the database. (MasterAttachmentType)*
+
+---
 
 ## 📌 [Issue 60] Pop up เมื่อเพิ่มสถานที่ ไม่มี Icon แจ้งเตือน
 **[Eng]: Alert popup when adding a location is missing an icon.**
