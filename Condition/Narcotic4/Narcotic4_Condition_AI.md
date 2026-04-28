@@ -2,6 +2,15 @@
 
 ---
 
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
+
 #### (dbo.MasterRequisitionType Id = 19)
 ### Links
 
@@ -15,20 +24,21 @@
   - [กฎกระทรวงการอนุญาตผลิต นำเข้า ส่งออก จำหน่าย หรือมีไว้ในครอบครองซึ่งยาเสพติดให้โทษในประเภท 4 พ.ศ. 2567](file:///D:/GIT/NCSystem/brain_NCSYSTEM/Documents/NC4/กฎกระทรวงการอนุญาต_67.pdf)
   - [แนวทางการพิจารณาอนุญาต ยส.4 พ.ศ. 2568](file:///D:/GIT/NCSystem/brain_NCSYSTEM/Documents/NC4/แนวทางการพิจารณาอนุญาต_ยส.4_พ.ศ._2568%20ฉบับผ่านคณะกรรมการ.pdf)
 
+#### เอกสารจากเจ้าหน้าที่
+- [รวม Link เอกสารแนบ](https://docs.google.com/spreadsheets/d/1Tnz5E6aaWrrCA9C2pav3H_k-QUgSM0WpExkef0Ws-gI)
+  - [09 ยส.5_ใบหลัก](https://docs.google.com/spreadsheets/d/101t7PIrUSOWUupRA9zun1rpiM7VyNDPXd1j7yJxnhh8)
+
+#### PRINT FORM
+- [PRINT FORM](https://drive.google.com/drive/u/1/folders/1sEE7MFRQSwhtctGj4HeZR6RJy4-Bp_zd)
+  - [4.13 - ยส5](https://drive.google.com/drive/u/1/folders/1jvFoTWzmvnqgh6-05BpLev_n71RfzmPq)
+    - [คำขอ](https://drive.google.com/drive/u/1/folders/1A5kN4AEmBT37HYIqCHmmQfizO43jAXhf)
+    - [ใบอนุญาต](https://drive.google.com/drive/u/1/folders/1Rj7WndPJtrwd894bbZc_AdDLH_aYb_Qz)
+
 <!-- ### API
 ```
 ติดตามสถานะคำขอ
 StatusRequest
 ``` -->
-
-<style scoped>
-table {
-  font-size: 13px;
-}
-li {
-  font-size: 13px;
-}
-</style>
 
 ## ❗ เงื่อนไข ยส.4
 ### 📅 กำหนดการและเงื่อนไขสำคัญ (ตามแนวทางฯ 2568)

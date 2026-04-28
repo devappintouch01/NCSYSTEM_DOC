@@ -12,8 +12,6 @@ li {
 </style>
 
 #### (dbo.MasterRequisitionType Id = 2)
-### [เงื่อนไข วจ.1]
-
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
@@ -22,7 +20,8 @@ li {
 
 - [Figma วจ.1](https://www.figma.com/board/UIPAZvSkDF1152KUElG9Ce/%E0%B8%A7%E0%B8%88-1)
 
-## ประเภทการขอ
+## ❗ เงื่อนไข วจ.1-1
+### ประเภทการขอ (วจ.1-1)
 
 | ประเภทการขอ |
 |---|

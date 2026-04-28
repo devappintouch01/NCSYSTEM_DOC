@@ -12,6 +12,8 @@ li {
 </style>
 
 #### (dbo.MasterRequisitionType Id = 1)
+### [เงื่อนไข ยส.1-1]
+
 ### Links
 
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
