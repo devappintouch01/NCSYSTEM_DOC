@@ -1,5 +1,15 @@
 ## คำขอรับใบอนุญาต นำเข้าส่งออก เฉพาะคราว (IMP/EXP)
+
 ---
+
+<style scoped>
+table {
+  font-size: 13px;
+}
+li {
+  font-size: 13px;
+}
+</style>
 
 #### (dbo.MasterRequisitionType Id = 25-46)
 ### Links
@@ -11,7 +21,10 @@
 - [Figma เฉพาะคราว](https://www.figma.com/board/8VA6aeLRsleXZW44d0SbsQ/%E0%B9%80%E0%B8%89%E0%B8%9E%E0%B8%B2%E0%B8%B0%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%A7-%E0%B8%AD%E0%B8%B7%E0%B9%88%E0%B8%99%E0%B9%86)
 
 Google sheets
+- [0806_ยส1_4](https://drive.google.com/drive/u/1/folders/1cDD_W3vuPtodUtt8x0oaeuC9nUxFmcAN)
 - [0814_เช้า_เฉพาะคราว](https://drive.google.com/drive/u/1/folders/1-fokyPQafi1DZUz0fhKw9hQdhPOYRkUc)
+- [0818_งานทะเบียน](https://drive.google.com/drive/u/1/folders/1khcYk7sH7rFgW6LruzVAGexosTe3aVHl)
+
 - [ปี2568 ใบอนุญาตเฉพาะคราว_นำเข้า](https://docs.google.com/spreadsheets/d/1hsVTwo9gI1xk8cmZ979OnQ61cjUX9-j4)
 - [ปี2568 ใบอนุญาตเฉพาะคราว_ส่งออก](https://docs.google.com/spreadsheets/d/18vAB_xg1Pc-C6s9N1GJ0enrd2k2lw8Y5)
 - [[FDA68] นำเข้า-ส่งออก เฉพาะคราว](https://docs.google.com/spreadsheets/d/1EEyq1PUJTJK2qtROfoRSZogiT5DKpjLyWeONZb2c9ws)
@@ -22,16 +35,13 @@ Google sheets
 
 #### เอกสารจากเจ้าหน้าที่
 - [รวม Link เอกสารแนบ](https://docs.google.com/spreadsheets/d/1Tnz5E6aaWrrCA9C2pav3H_k-QUgSM0WpExkef0Ws-gI)
-  - [01 ใบอนุญาตเฉพาะคราว](https://docs.google.com/spreadsheets/d/1Fl-6BZzlN1sBIMndh_mG1BPnw5qeU3cbMB6-Lqsis0g)
+  - [01 ใบอนุญาตเฉพาะคราว](https://docs.google.com/spreadsheets/d/1_dM_qdHePqdiKo1mUgiH3WYOQa988UsY93a79hc0oJc)
 
-<style scoped>
-table {
-  font-size: 13px;
-}
-li {
-  font-size: 13px;
-}
-</style>
+#### PRINT FORM
+- [PRINT FORM](https://drive.google.com/drive/u/1/folders/1sEE7MFRQSwhtctGj4HeZR6RJy4-Bp_zd)
+  - [4.14 - ใบเฉพาะคราว](https://drive.google.com/drive/u/1/folders/1XHesQ17Pb6SSN6Rs7NkbyjVzgGcZsg5_)
+    - [คำขอ](https://drive.google.com/drive/u/1/folders/1KzQeM0otnFBnjyJoMeRqDCwUNfZvKgYx)
+    - [ใบอนุญาต](https://drive.google.com/drive/u/1/folders/16jVBx6f3nCXrPlQSdttA02f1M5qJ7XUF)
 
 ### สรุปจาก ไฟล์ db_design.html (07-04-2026) [db_design.html](db_design_07-04-2026.html)
 
@@ -300,16 +310,50 @@ li {
 | 4 | UpdateBy | int | Y | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` | UpdateBy |
 | 5 | UpdateOn | datetime | Y | วันที่แก้ไข | UpdateOn |
 | 6 | RequisitionId | int | N | คำขอ อ้างอิง `Requisition`.`Id` |  |
-| 7 | Quantity | decimal(18,4) | Y | จำนวน | Quantity |
-| 8 | Type | char(1) | Y | ประเภท (S=ตัวอย่าง Sample, R=สารมาตรฐาน Reference Standard, M=วัตถุดิบ Raw Material, P=ผลิตภัณฑ์ Finished Product) | Type |
-| 9 | UnitOfQuantity | int | Y | หน่วยของจำนวน อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of quantity |
-| 10 | ContentPerQuantity | decimal(18,4) | Y | ปริมาณต่อจำนวน | Content per quantity |
-| 11 | UnitOfContentPerQuantity | int | Y | หน่วยของปริมาณต่อจำนวน อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of content per quantity |
-| 12 | NameOfSubstanceOrPreparations | nvarchar(500) | Y | ชื่อสิ่งปรุง | Name of substance or preparations (free text) |  
-| 13 | NarcoticSubstancesContainedTherein | int | Y | ชื่อยาเสพติดให้โทษในสิ่งปรุง อ้างอิง `MasterNarcoticEster`.`Id` | Narcotic substances contained therein |
-| 14 | ContentPerUnit | decimal(18,4) | Y | ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย | Content per unit |
-| 15 | UnitOfContentPerUnit | int | Y | หน่วยของปริมาณยาเสพติดให้โทษในหนึ่งหน่วย อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of content per unit |
-| 16 | TotalQuantityOfNarcoticSubstances | decimal(18,4) | Y | รวมปริมาณยาเสพติดให้โทษ | Total quantity of narcotic substances |
+| 7 | Seq | int | Y | ลำดับที่ | Seq |
+| 8 | Type | char(1) | Y | ประเภท (S=ตัวอย่าง Sample, STD=สารมาตรฐาน Reference Standard, RM=วัตถุดิบ Raw Material, FP=ผลิตภัณฑ์ Finished Product) | Type |
+| 9 | Quantity | decimal(18,4) | Y | จำนวน | Quantity |
+| 10 | UnitOfQuantity | int | Y | หน่วยของจำนวน อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of quantity |
+| 11 | ContentPerQuantity | decimal(18,4) | Y | ปริมาณต่อจำนวน | Content per quantity |
+| 12 | UnitOfContentPerQuantity | int | Y | หน่วยของปริมาณต่อจำนวน อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of content per quantity |
+| 13 | NameOfSubstanceOrPreparations | nvarchar(500) | Y | ชื่อสิ่งปรุง | Name of substance or preparations (free text) |  
+| 14 | NarcoticSubstancesContainedTherein | int | Y | ชื่อยาเสพติดให้โทษในสิ่งปรุง อ้างอิง `MasterNarcoticEster`.`Id` | Narcotic substances contained therein |
+| 15 | ContentPerUnit | decimal(18,4) | Y | ปริมาณยาเสพติดให้โทษในหนึ่งหน่วย | Content per unit |
+| 16 | UnitOfContentPerUnit | int | Y | หน่วยของปริมาณยาเสพติดให้โทษในหนึ่งหน่วย อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of content per unit |
+| 17 | UnitOfQuantityOfContentPerUnit | int | Y | หน่วยของปริมาณต่อหน่วยของปริมาณยาเสพติดให้โทษในหนึ่งหน่วย อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of quantity of content per unit |
+| 18 | TotalQuantityOfNarcoticSubstances | decimal(18,4) | Y | รวมปริมาณยาเสพติดให้โทษ/วัตถุออกฤทธิ์ | Total quantity of narcotic substances |
+| 19 | UnitOfTotalQuantityOfNarcoticSubstances | int | Y | หน่วยของรวมปริมาณยาเสพติด/วัตถุออกฤทธิ์ อ้างอิง `MasterNarcoticUnit`.`Id` | Unit of total quantity of narcotic substances |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- ### 2️⃣ พิเศษ เฉพาะคราว
 <!--### 3️⃣ ประเภท แต่ละครั้ง (ก็คือ เฉพาะคราว)-->
@@ -401,3 +445,52 @@ li {
 - IMP-P4-1 คือ MasterRequisitionType.Id = 43 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
 - EXP-P4-1 คือ MasterRequisitionType.Id = 44 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance)
 - EXP.SP-1 คือ MasterRequisitionType.Id = 45 แสดงคำว่า รวมปริมาณวัตถุออกฤทธิ์ (Total quantity of psychotropic substance) -->
+
+  ตัวอย่าง - Sample (S)
+  วัตถุดิบ - Raw Material (RM)
+  สารมาตรฐาน - Reference Standard (STD)
+  ผลิตภัณฑ์ - Finished Product (FP)
+
+
+```SQL
+SELECT Anhydrous FROM MasterNarcoticEster
+WHERE Id = RequisitionTemporaryItemDetail.NarcoticSubstanceContainedTherein
+```
+
+### if Type = S (ตัวอย่าง - Sample)
+
+SELECT Anhydrous FROM MasterNarcoticEster
+WHERE 1=1
+AND IsStandard = 0
+AND Id = RequisitionTemporaryItemDetail.NarcoticSubstanceContainedTherein
+
+Example : If Quantity = 100 g of Heroine Hydrochloride (1H2O) (Anhydrous = 87%)
+
+Total = (Quantity × 1) × (Anhydrous / 100)
+
+### if Type = STD (สารมาตรฐาน - Reference Standard)
+
+Total = (Quantity × ContentPerUnit) × (Anhydrous / 100)
+
+SELECT Anhydrous FROM MasterNarcoticEster
+WHERE 1=1
+AND IsStandard = 1
+AND Id = RequisitionTemporaryItemDetail.NarcoticSubstanceContainedTherein
+
+### if Type = RM (วัตถุดิบ - Raw Material)
+
+SELECT Anhydrous FROM MasterNarcoticEster
+WHERE 1=1
+AND IsStandard = 0
+AND Id = RequisitionTemporaryItemDetail.NarcoticSubstanceContainedTherein
+
+Total = (Quantity × ContentPerUnit) × (Anhydrous / 100)
+
+### if Type = FP (ผลิตภัณฑ์ - Finished Product)
+
+SELECT Anhydrous FROM MasterNarcoticEster
+WHERE 1=1
+AND IsStandard = 0
+AND Id = RequisitionTemporaryItemDetail.NarcoticSubstanceContainedTherein
+
+Total = (Quantity × ContentPerUnit) × (Anhydrous / 100) 
