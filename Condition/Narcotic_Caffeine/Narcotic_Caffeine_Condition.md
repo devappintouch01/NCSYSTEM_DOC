@@ -37,6 +37,16 @@ li {
 
 <img src="Narcotic_Caffeine_Condition_1.png" style="border: 1px solid black;" width="100%">
 
+
+##
+
+| # | การดำเนินการ | MasterOperationType.Id | หมายเหตุ |
+|---|---|---|---|
+| 1 | นำเข้า | 3 |  |
+| 2 | แก้ไข (เปลี่ยนผู้สั่งซื้อ) | 11 |  |
+| 3 | ยกเลิก | ไม่มี | ต้องเพิ่ม OperationType หรือใช้คำขอยกเลิก (สอบถามเจ้าหน้าที่) |
+| 4 | ส่งออก | 4 |  |
+
 ## Table ตาราง
 
 ### dbo.MasterCaffeine สารกาเฟอีน
