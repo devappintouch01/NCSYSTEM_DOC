@@ -25,6 +25,11 @@ li {
 - [ส่งไฟล์_SS](https://drive.google.com/drive/u/1/folders/1MBhdkp39h6eJoDIuIvbAnHjFcAN3BJTW)
     - [ส่งไฟล์_SS-เอกสารรายงานทั้งหมด_200169-ตัวอย่างรายงานจากอย.](https://drive.google.com/drive/folders/1M8B9Y9OGr7jEQrMdSfUB_rQjz1NDGrlQ)
 
+#### เอกสารจากเจ้าหน้าที่
+- [รวม Link เอกสารแนบ](https://docs.google.com/spreadsheets/d/1Tnz5E6aaWrrCA9C2pav3H_k-QUgSM0WpExkef0Ws-gI)
+  - [04 หนังสือรับรอง_กาเฟอีน_สารระเหย](https://docs.google.com/spreadsheets/d/1OZoExaXPJh6o3SUm31i7Wy9OyTudK5sLIh5YlV7fiS0)
+- [(สรุปจาก_User)_68-08-05_ระบบหนังสือรับรอง.pdf](brain_NCSYSTEM\Documents\Caffeine_VolatileAlkylNitrite\Caffeine\(สรุปจาก_User)_68-08-05_ระบบหนังสือรับรอง.pdf)
+
 ```
 คำขอกาเฟอีน
 สารของกาเฟอีน
