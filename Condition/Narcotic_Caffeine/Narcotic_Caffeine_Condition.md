@@ -85,6 +85,14 @@ li {
 | 9 | UnitId | int | N | หน่วย อ้างอิง `MasterNarcoticUnit`.`Id` | UnitId |
 | 10 | OriginCountry | nvarchar(50) | N | ประเทศผู้ผลิต | OriginCountry |
 | 11 | Remark | nvarchar(500) | Y | หมายเหตุ | Remark |
+| 12 | ManufacturerEntityId | int | Y | ผู้ผลิตในต่างประเทศ อ้างอิง `MasterForeignEntity`.`Id` | ManufacturerEntityId |
+| 13 | ExporterEntityId | int | Y | ผู้ส่งออกในต่างประเทศ อ้างอิง `MasterForeignEntity`.`Id` | ExporterEntityId |
+| 14 | IsNewSubstance | bit | Y | เป็นสารใหม่หรือไม่ | IsNewSubstance |
+| 15 | StockImportCountYTD | int | Y | จำนวนครั้งที่นำเข้าสะสมในปีปัจจุบัน (YTD) | StockImportCountYTD |
+| 16 | StockTotalQtyYTD | decimal(18,4) | Y | ปริมาณนำเข้าสะสมในปีปัจจุบัน (YTD) | StockTotalQtyYTD |
+| 17 | StockRemainQty | decimal(18,4) | Y | ปริมาณคงเหลือ | StockRemainQty |
+| 18 | StockThisRequestSeq | int | Y | ลำดับของคำขอนี้ | StockThisRequestSeq |
+| 19 | StockDataAsOfDate | date | Y | วันที่อ้างอิงข้อมูลสต็อก | StockDataAsOfDate |
 
 <!-- dbo.LicenseItemDetail รายละเอียดสารที่ขอรับอนุญาตในใบอนุญาต // ใช้กับคำขอสถานที่ -->
 <!-- dbo.LicenseTemporaryItemDetail รายะเอียดของยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก เฉพาะคราว // ใช้กับคำขอเฉพาะคราว -->
