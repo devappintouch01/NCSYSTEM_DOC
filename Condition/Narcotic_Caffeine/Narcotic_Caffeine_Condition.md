@@ -56,7 +56,7 @@ li {
 
 #### ตัวอย่าง Data ในตาราง dbo.MasterCaffeine
 
-| Id | CreateBy | CreateOn | UpdateBy | UpdateOn | NarcoticCaffeineNameEN | NarcoticCaffeineNameTH | NarcoticTypeId | Active |
+| Id | CreateBy | CreateOn | UpdateBy | UpdateOn | CaffeineNameEN | CaffeineNameTH | NarcoticTypeId | Active |
 |---|---|---|---|---|---|---|---|---|
 | 1 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine | กาเฟอีน | 12 | 1 |
 | 2 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Hydrate | กาเฟอีน ไฮเดรท | 12 | 1 |
