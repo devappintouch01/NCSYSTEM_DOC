@@ -253,9 +253,9 @@ FROM MasterCaffeineUserType
   1. **วัตถุประสงค์** (Dropdown: ดึงจาก `MasterObjective.ObjectiveNameTh`)
 
     ```sql
-    SELECT Id, ObjectiveNameTh FROM MasterObjective
-    WHERE RequisitionTypeId = 21 AND Id IN (38, 39, 40, 41, 42, 43)
-    ORDER BY Ordinal
+      SELECT Id, ObjectiveNameTh FROM MasterObjective
+      WHERE RequisitionTypeId = 21 AND Id IN (38, 39, 40, 41, 42, 43)
+      ORDER BY Ordinal
     ```
 
   2. **ประเภทผู้ใช้สาร** (Dropdown: ดึงจาก `MasterCaffeineUserType.CaffeineUserType`)
