@@ -72,21 +72,22 @@ li {
 | แก้ไข (เปลี่ยนผู้สั่งซื้อ) (11) | C.1 วิเคราะห์ | C.1.2 จำหน่ายให้หน่วยงานที่ใช้สารกาเฟอีน |
 | แก้ไข (เปลี่ยนผู้สั่งซื้อ) (11) | C.2 วิจัย | C.2.2 จำหน่ายให้หน่วยงานที่ใช้สารกาเฟอีน |
 | แก้ไข (เปลี่ยนผู้สั่งซื้อ) (11) | - | C.2.1 เพื่อใช้ในกิจการของตนเอง |
-| ส่งออก (4) | A.กรณีส่งคืนสารกาเฟอีนที่นำเข้า ตามหนังสือรับรองเลขที่ | |
-| ส่งออก (4) | B.กรณีส่งออกสารกาเฟอีนที่ผลิตได้ในประเทศ | |
-| ส่งออก (4) | C.กรณีเปลี่ยนผู้สั่งซื้อ โดยผู้สั่งซื้อรายใหม่เป็นผู้สั่งซื้อในต่างประเทศ | |
-| ส่งออก (4) | D.อื่นๆ | |
-| ยกเลิก | ทุกวัตถุประสงค์ |  |
+| ส่งออก (4) | A. กรณีส่งคืนสารกาเฟอีนที่นำเข้า ตามหนังสือรับรองเลขที่ | |
+| ส่งออก (4) | B. กรณีส่งออกสารกาเฟอีนที่ผลิตได้ในประเทศ | |
+| ส่งออก (4) | C. กรณีเปลี่ยนผู้สั่งซื้อ โดยผู้สั่งซื้อรายใหม่เป็นผู้สั่งซื้อในต่างประเทศ | |
+| ส่งออก (4) | D. อื่นๆ | |
+| ยกเลิก | ทุกวัตถุประสงค์ | |
 
 </details>
 
-### Table ตาราง
+### 📊 Tables & Dictionary
 
-#### 📂 dbo.MasterObjective วัตถุประสงค์
+#### 📂 dbo.MasterObjective (วัตถุประสงค์)
 
 ```sql
 SELECT * FROM MasterObjective
 WHERE RequisitionTypeId = 21
+ORDER BY Ordinal
 ```
 
 <details markdown="1">
@@ -111,11 +112,30 @@ WHERE RequisitionTypeId = 21
 </details>
 
 
-#### 📂 dbo.MasterCaffeineUserType
+#### 📂 dbo.MasterCaffeine (รายการสารกาเฟอีน)
 
 ```sql
-SELECT *
-FROM MasterCaffeineUserType
+SELECT * FROM MasterCaffeine
+```
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterCaffeine</summary>
+
+| Id | CreateBy | CreateOn | UpdateBy | UpdateOn | CaffeineNameEN | CaffeineNameTH | NarcoticTypeId | Active |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine | กาเฟอีน | 12 | 1 |
+| 2 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Hydrate | กาเฟอีน ไฮเดรท | 12 | 1 |
+| 3 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Anhydrous | กาเฟอีน แอนไฮดรัส | 12 | 1 |
+| 4 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Citrate | กาเฟอีน ซิเตรต | 12 | 1 |
+| 5 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Theophylline | ทีโอฟิลลีน | 12 | 1 |
+| 6 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Aminophylline | เอมิโนฟิลลีน | 12 | 1 |
+
+</details>
+
+#### 📂 dbo.MasterCaffeineUserType (รายการประเภทผู้ใช้สาร)
+
+```sql
+SELECT * FROM MasterCaffeineUserType
 ```
 
 <details markdown="1">
@@ -392,7 +412,7 @@ ORDER BY Id
 
 ### ✏️ กรณีแก้ไข (Edit) - OperationTypeId = 11
 
-
+*(TBD - อยู่ระหว่างรวบรวมข้อมูลสำหรับการแก้ไขหนังสือรับรอง)*
 
 ---
 
