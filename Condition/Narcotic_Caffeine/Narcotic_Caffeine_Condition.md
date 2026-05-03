@@ -39,6 +39,8 @@ li {
 
 <img src="Narcotic_Caffeine_Condition_1.png" style="border: 1px solid black;" width="100%">
 
+---
+
 ### ⚙️ Business Logic & Operations
 
 #### 🔄 การดำเนินการ (Operation Types)
@@ -106,17 +108,16 @@ WHERE RequisitionTypeId = 21
 </details>
 
 #### 📂 dbo.MasterCaffeine สารกาเฟอีน
-
 <details markdown="1">
-<summary>📂 คลิกเพื่อดูตาราง dbo.MasterCaffeine</summary>
+<summary>📂 คลิกเพื่อดู Schema & Sample Data: [MasterCaffeine]</summary>
 
 | ลำดับ | Column Name | Data Type | Allow Nulls | Field Description |
 |---|---|---|:---:|---|
-| 1 | Id | int | N | รหัสอ้างอิงที่ใช้ในระบบ | Id |
-| 2 | CreateBy | int | N | ผู้สร้าง อ้างอิง `SystemUser`.`Id` | CreateBy |
-| 3 | CreateOn | datetime | N | วันที่สร้าง | CreateOn |
-| 4 | UpdateBy | int | Y | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` | UpdateBy |
-| 5 | UpdateOn | datetime | Y | วันที่แก้ไข | UpdateOn |
+| 1 | Id | int | N | รหัสอ้างอิงที่ใช้ในระบบ |
+| 2 | CreateBy | int | N | ผู้สร้าง อ้างอิง `SystemUser`.`Id` |
+| 3 | CreateOn | datetime | N | วันที่สร้าง |
+| 4 | UpdateBy | int | Y | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` |
+| 5 | UpdateOn | datetime | Y | วันที่แก้ไข |
 | 6 | CaffeineNameEN | nvarchar(500) | Y | ชื่อสารกาเฟอีนภาษาอังกฤษ |
 | 7 | CaffeineNameTH | nvarchar(500) | Y | ชื่อสารกาเฟอีนภาษาไทย |
 | 8 | NarcoticTypeId | int | Y | ประเภทวัตถุเสพติด อ้างอิง `MasterNarcoticType`.`Id` |
@@ -128,8 +129,6 @@ WHERE RequisitionTypeId = 21
 
 <details markdown="1">
 <summary>📂 คลิกเพื่อดูตาราง ตัวอย่าง Data ในตาราง dbo.MasterCaffeine</summary>
-
-#### ตัวอย่าง Data ในตาราง dbo.MasterCaffeine
 
 | Id | CreateBy | CreateOn | UpdateBy | UpdateOn | CaffeineNameEN | CaffeineNameTH | NarcoticTypeId | Active |
 |---|---|---|---|---|---|---|---|---|
@@ -147,10 +146,10 @@ WHERE RequisitionTypeId = 21
 
 </details>
 
+
+#### 📂 dbo.RequisitionCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร
 <details markdown="1">
 <summary>📂 คลิกเพื่อดูตาราง dbo.RequisitionCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร</summary>
-
-#### dbo.RequisitionCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร
 
 | ลำดับ | Column Name | Data Type | Allow Nulls | Field Description | Remark |
 |---|---|---|:---:|---|---|
@@ -208,18 +207,12 @@ WHERE RequisitionTypeId = 21
 ### 🛤️ Workflow (Screen Sequence)
 
 #### 📥 นำเข้า (Import)
-- **Step 1**
-  1. วัตถุประสงค์
-    
-  2. ประเภทผู้ใช้สาร
+- **Step 1**: วัตถุประสงค์, ประเภทผู้ใช้สาร
 - **Step 2**: เลขที่ใบอนุญาต
-  1. ข้อมูลผู้ขอ (ดึงจาก DOPA ด้วยเลขนิติที่มอบอำนาจ)
-  2. ข้อมูลผู้ดำเนินการ (กรอกเอง)
-- **Step 3**:
-  1. สถานที่เก็บ
-  2. วัตถุดิบกาเฟอีนคงคลัง
-- **Step 4**:
-  1. รายละเอียดสารกาเฟอีนที่ขอนำเข้า
+    - ข้อมูลผู้ขอ (ดึงจาก DOPA ด้วยเลขนิติที่มอบอำนาจ)
+    - ข้อมูลผู้ดำเนินการ (กรอกเอง)
+- **Step 3**: สถานที่เก็บ, วัตถุดิบกาเฟอีนคงคลัง
+- **Step 4**: รายละเอียดสารกาเฟอีนที่ขอนำเข้า
 
 #### 📤 ส่งออก (Export)
 *(TBD)*
