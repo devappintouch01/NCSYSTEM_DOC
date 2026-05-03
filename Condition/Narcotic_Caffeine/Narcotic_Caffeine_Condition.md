@@ -279,6 +279,7 @@ FROM MasterCaffeineUserType
 <img src="Narcotic_Caffeine_Sequence_Step_2_2.png" style="border: 1px solid black;" width="80%">
 
 1.1. **ข้อมูลผู้ขอหนังสือรับรองฯ** (ดึงจาก DOPA อัตโนมัติด้วยเลขนิติบุคคลที่ได้รับมอบอำนาจ)
+
 1.2. **ข้อมูลผู้ดำเนินการ** (กรอกข้อมูลเอง)
 
 ##### **Step 3: สถานที่เก็บและยอดคงคลัง**
