@@ -17,7 +17,7 @@ li {
 - [Figma Group Doc](https://www.figma.com/design/0YEqdcSpC2hZKulzEl54LH/-FDA68--Group-Doc)
 - [Data Dic - Master Data real](https://docs.google.com/spreadsheets/d/1WpRC41tmqyOc8zVaxTVuwLxGgmi7inZATo8_LcCTXgE)
 
-- [Figma คค.1-1]()
+- [Figma คค.1-1 (FigJam)]()
 
 ## ❗ เงื่อนไข คค.1-1
 

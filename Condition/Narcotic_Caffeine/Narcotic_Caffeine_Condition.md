@@ -71,9 +71,12 @@ li {
 | ส่งออก (4) | D.อื่นๆ | |
 | ยกเลิก | ทุกวัตถุประสงค์ |  | -->
 
-## Table ตาราง
+### Table ตาราง
 
-### dbo.MasterCaffeine สารกาเฟอีน
+#### 📂 dbo.MasterCaffeine สารกาเฟอีน
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterCaffeine</summary>
 
 | ลำดับ | Column Name | Data Type | Allow Nulls | Field Description |
 |---|---|---|:---:|---|
@@ -86,6 +89,13 @@ li {
 | 7 | CaffeineNameTH | nvarchar(500) | Y | ชื่อสารกาเฟอีนภาษาไทย |
 | 8 | NarcoticTypeId | int | Y | ประเภทวัตถุเสพติด อ้างอิง `MasterNarcoticType`.`Id` |
 | 9 | Active | bit | Y | ใช้งาน (1 = ใช้งาน, 0 = ไม่ใช้งาน) |
+
+</details>
+
+#### ตัวอย่าง Data ในตาราง dbo.MasterCaffeine
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง ตัวอย่าง Data ในตาราง dbo.MasterCaffeine</summary>
 
 #### ตัวอย่าง Data ในตาราง dbo.MasterCaffeine
 
@@ -103,7 +113,12 @@ li {
 <!-- dbo.RequisitionMedicationItem รายการยาที่ขอในคำขอยาติดตัว // ใช้กับยาติดตัว -->
 <!-- dbo.RequisitionMedicationIngredient ส่วนประกอบของยาที่ขอในคำขอยาติดตัว // ใช้กับยาติดตัว -->
 
-### dbo.RequisitionCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร
+</details>
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง dbo.RequisitionCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร</summary>
+
+#### dbo.RequisitionCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร
 
 | ลำดับ | Column Name | Data Type | Allow Nulls | Field Description | Remark |
 |---|---|---|:---:|---|---|
@@ -127,24 +142,10 @@ li {
 | 18 | StockThisRequestSeq | int | Y | ลำดับของคำขอนี้ | StockThisRequestSeq |
 | 19 | StockDataAsOfDate | date | Y | วันที่อ้างอิงข้อมูลสต็อก | StockDataAsOfDate |
 
+</details>
+
 <!-- dbo.LicenseItemDetail รายละเอียดสารที่ขอรับอนุญาตในใบอนุญาต // ใช้กับคำขอสถานที่ -->
 <!-- dbo.LicenseTemporaryItemDetail รายะเอียดของยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก เฉพาะคราว // ใช้กับคำขอเฉพาะคราว -->
-
-### dbo.LicenseCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร
-
-| ลำดับ | Column Name | Data Type | Allow Nulls | Field Description | Remark |
-|---|---|---|:---:|---|---|
-| 1 | Id | int | N | รหัสอ้างอิงที่ใช้ในระบบ | Id |
-| 2 | CreateBy | int | N | ผู้สร้าง อ้างอิง `SystemUser`.`Id` | CreateBy |
-| 3 | CreateOn | datetime | N | วันที่สร้าง | CreateOn |
-| 4 | UpdateBy | int | Y | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` | UpdateBy |
-| 5 | UpdateOn | datetime | Y | วันที่แก้ไข | UpdateOn |
-| 6 | LicenseId | int | N | รหัสใบอนุญาต อ้างอิง `License`.`Id` | LicenseId |
-| 7 | CaffeineId | สารกาเฟอีน อ้างอิง `MasterCaffeine`.`Id` | CaffeineId |
-| 8 | Quantity | decimal(18,4) | N | ปริมาณ | Quantity |
-| 9 | UnitId | int | N | หน่วย อ้างอิง `MasterNarcoticUnit`.`Id` | UnitId |
-| 10 | OriginCountry | nvarchar(50) | N | ประเทศผู้ผลิต | OriginCountry |
-| 11 | Remark | nvarchar(500) | Y | หมายเหตุ | Remark |
 
 ## ❗ เงื่อนไขรร.1    
 ## 🔷 Field Condition
@@ -162,8 +163,32 @@ li {
 - dbo.LicenseCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร ครับ
 ``` -->
 
-```
+<!-- ```
 1. ในหนังสือรับรองนำเข้ากาเฟอีน รร.2
 วัตถุประสงค์ เพื่อขายให้ผู้ประกอบการอุตสาหกรรม 1 ฉบับ
 สารกาเฟอีนที่นำเข้ามา สามารถแบ่งขายให้ผู้ประกอบการมากกว่า 1 ราย ได้หรือไม่
-```
+``` -->
+
+### Screen sequence
+#### นำเข้า
+
+##### Step 1
+  1. วัตถุประสงค์
+  2. ประเภทผู้ใช้สาร
+
+##### Step 2
+  1. เลขที่ใบอนุญาต
+  1.1 ข้อมูลผู้ขอหนังสือรับรองฯ (ผู้ขอ)
+    - เอาเลขนิติที่ได้รับมอบอำนาจ มาดึงข้อมูลจาก DOPA
+  1.2 ข้อมูลผู้ดำเนินการ (กรอกเองทั้งหมด)
+
+##### Step 3
+  1. ข้อมูลสถานที่เก็บ
+  2. ข้อมูลวัตถุดิบกาเฟอีนคงคลัง
+
+##### Step 4
+  1. ข้อมูลสารกาเฟอีนที่ขอนำเข้า
+
+#### ส่งออก
+
+#### แก้ไข
