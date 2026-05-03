@@ -439,11 +439,11 @@ ORDER BY Id
 
 **Case 2: ผู้สั่งซื้อรายใหม่เป็นผู้สั่งซื้อในต่างประเทศ**
 
-<img src="Narcotic_Caffeine_Sequence_Edit_Step_2_3_case2.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic_Caffeine_Sequence_Edit_Step_1_3_case2.png" style="border: 1px solid black;" width="80%">
 
 **Case 3: กรณีอื่นๆ (เช่น เพื่อใช้ในกิจการของตนเอง)**
 
-<img src="Narcotic_Caffeine_Sequence_Edit_Step_3_3_case3.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic_Caffeine_Sequence_Edit_Step_1_3_case3.png" style="border: 1px solid black;" width="80%">
 
 ---
 
