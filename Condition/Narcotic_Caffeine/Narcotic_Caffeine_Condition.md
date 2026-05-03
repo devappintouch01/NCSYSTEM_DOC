@@ -251,7 +251,6 @@ FROM MasterCaffeineUserType
 <img src="Narcotic_Caffeine_Sequence_Step_1_2.png" style="border: 1px solid black;" width="80%">
 
 1. **วัตถุประสงค์** (Dropdown: ดึงจาก `MasterObjective.ObjectiveNameTh`)
-
    ```sql
    SELECT Id, ObjectiveNameTh FROM MasterObjective
    WHERE RequisitionTypeId = 21 AND Id IN (38, 39, 40, 41, 42, 43)
@@ -259,7 +258,6 @@ FROM MasterCaffeineUserType
    ```
 
 2. **ประเภทผู้ใช้สาร** (Dropdown: ดึงจาก `MasterCaffeineUserType.CaffeineUserType`)
-
    ```sql
    SELECT Id, CaffeineUserType FROM MasterCaffeineUserType
    WHERE OperationTypeId = 3 AND ObjectiveId = [Selected_Objective_Id]
@@ -271,10 +269,7 @@ FROM MasterCaffeineUserType
 
 1. **เลขที่ใบอนุญาต**
    - เลขที่ใบอนุญาตนำหรือสั่งยาแผนปัจจุบันเข้ามาในราชอาณาจักร (Dropdown: ดึงจาก API ใบอนุญาตด้านยา)
-
-   ```
-   API URL
-   ```
+   - *API Reference: `[TBD: API URL for Drug License]`*
 
 <img src="Narcotic_Caffeine_Sequence_Step_2_2.png" style="border: 1px solid black;" width="80%">
 
@@ -283,30 +278,29 @@ FROM MasterCaffeineUserType
 1.2. **ข้อมูลผู้ดำเนินการ** (กรอกข้อมูลเอง)
 
 ##### **Step 3: สถานที่เก็บและยอดคงคลัง**
-
 <img src="Narcotic_Caffeine_Sequence_Step_3_1.png" style="border: 1px solid black;" width="80%">
 
 2. **สถานที่เก็บ**
-  (เหมือนกับ ยส. อื่น ๆ - RequisitionParticipantTypId = xx)
+   - ดึงข้อมูลสถานที่เก็บ (เหมือนกับประเภทคำขออื่น ๆ - `RequisitionParticipantTypeId`)
 
 <img src="Narcotic_Caffeine_Sequence_Step_3_2.png" style="border: 1px solid black;" width="80%">
 
-3. **วัตถุดิบกาเฟอีนคงคลัง** (แสดงยอดคงเหลือปัจจุบัน)
+3. **วัตถุดิบกาเฟอีนคงคลัง**
+   - แสดงยอดคงเหลือปัจจุบันในระบบ
 
 ##### **Step 4: รายละเอียดสารกาเฟอีนที่ขอนำเข้า**
-
 <img src="Narcotic_Caffeine_Sequence_Step_4_1.png" style="border: 1px solid black;" width="80%">
 
-4. **ข้อมูลสารกาเฟอีนที่ขอนำเข้า** (ดึงจาก `MasterCaffeine`)
+4. **ข้อมูลสารกาเฟอีนที่ขอนำเข้า** (ดึงข้อมูลจาก `MasterCaffeine`)
 
 <img src="Narcotic_Caffeine_Sequence_Step_4_2.png" style="border: 1px solid black;" width="80%">
 
-5. **ข้อมูลผู้ใช้สารการเฟอีน**
+5. **ข้อมูลผู้ใช้สารกาเฟอีน**
 
 <img src="Narcotic_Caffeine_Sequence_Step_4_3.png" style="border: 1px solid black;" width="80%">
 
 6. **ข้อมูลผลิตภัณฑ์**
-  - กรอกชื่อผลิตภัณฑ์ (เลือกจาก Dropdown)
+   - กรอกชื่อผลิตภัณฑ์ หรือเลือกจากประวัติการนำเข้า (Dropdown)
 
 ---
 
