@@ -353,6 +353,8 @@ ORDER BY Id
 
 ### 7. **ข้อมูลผู้ประสานงาน**
 
+<img src="Narcotic_Caffeine_Sequence_Import_Step_5_1.png" style="border: 1px solid black;" width="80%">
+
 ---
 
 ### 📤 กรณีส่งออก (Export) - OperationTypeId = 4
@@ -395,6 +397,8 @@ ORDER BY Id
 
 ### 4. **ข้อมูลผู้ประสานงาน**
 
+<img src="Narcotic_Caffeine_Sequence_Export_Step_4_1.png" style="border: 1px solid black;" width="80%">
+
 ---
 
 ### 📊 สรุปขั้นตอนเปรียบเทียบ (Import vs Export)
@@ -412,10 +416,17 @@ ORDER BY Id
 
 ### ✏️ กรณีแก้ไข (Edit) - OperationTypeId = 11
 
-*(TBD - อยู่ระหว่างรวบรวมข้อมูลสำหรับการแก้ไขหนังสือรับรอง)*
+<img src="Narcotic_Caffeine_Sequence_Edit_Step_1_1.png" style="border: 1px solid black;" width="80%">
+
+<img src="Narcotic_Caffeine_Sequence_Edit_Step_1_2.png" style="border: 1px solid black;" width="80%">
+
+<img src="Narcotic_Caffeine_Sequence_Edit_Step_3_3_case1.png" style="border: 1px solid black;" width="80%">
+
+<img src="Narcotic_Caffeine_Sequence_Edit_Step_3_3_case2.png" style="border: 1px solid black;" width="80%">
+
+<img src="Narcotic_Caffeine_Sequence_Edit_Step_3_3_case3.png" style="border: 1px solid black;" width="80%">
 
 ---
-
 
 <!-- 
 Q&A / Notes:
