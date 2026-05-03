@@ -242,11 +242,29 @@ FROM MasterCaffeineUserType
 
 ### 🛤️ Workflow (Screen Sequence)
 
-#### 📥 นำเข้า (Import)
-- **Step 1**: วัตถุประสงค์, ประเภทผู้ใช้สาร
-- **Step 2**: เลขที่ใบอนุญาต
-    - ข้อมูลผู้ขอ (ดึงจาก DOPA ด้วยเลขนิติที่มอบอำนาจ)
-    - ข้อมูลผู้ดำเนินการ (กรอกเอง)
+#### 📥 กรณีนำเข้า (Import) (OperationTypeId = 3)
+- **Step 1**:
+    1. วัตถุประสงค์ (Dropdown ให้เลือก จาก `MasterObjective.ObjectiveNameTh`)
+    
+    ```sql
+      SELECT Id, ObjectiveNameTh FROM MasterObjective
+      WHERE RequisitionTypeId = 21 AND Id IN (38, 39, 40, 41, 42, 43)
+      ORDER BY Ordinal
+    ```
+
+    2. ประเภทผู้ใช้สาร (Dropdown ให้เลือก จาก `MasterCaffeineUserType.CaffeineUserType`)
+
+    ```sql
+      SELECT Id, CaffeineUserType FROM MasterCaffeineUserType
+      WHERE OperationTypeId = 3 AND ObjectiveId = [Id จากที่เลือกจาก วัตถุประสงค์]
+      ORDER BY Id
+    ```
+
+- **Step 2**:
+    1. เลขที่ใบอนุญาตนำหรือสั่งยาแผนปัจจุบันเข้ามาในราชอณาจักร (Dropdown ให้เลือก จาก API ใบอนุญาตด้านยา)
+    2. ข้อมูลผู้ขอ (ดึงจาก DOPA ด้วยเลขนิติที่มอบอำนาจ)
+    3. ข้อมูลผู้ดำเนินการ (กรอกเอง)
+
 - **Step 3**: สถานที่เก็บ, วัตถุดิบกาเฟอีนคงคลัง
 - **Step 4**: รายละเอียดสารกาเฟอีนที่ขอนำเข้า
 
