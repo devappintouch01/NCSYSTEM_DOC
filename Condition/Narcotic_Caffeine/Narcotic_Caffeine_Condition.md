@@ -82,6 +82,22 @@ li {
 <details markdown="1">
 <summary>📂 คลิกเพื่อดูตาราง dbo.MasterCaffeine</summary>
 
+</details>
+
+#### 📂 dbo.MasterObjective วัตถุประสงค์
+
+```sql
+SELECT * FROM MasterObjective
+WHERE RequisitionTypeId = 21
+```
+
+| Id | ObjectiveNameTh | Reason | Active | RequisitionTypeId | Ordinal |
+|---|---|---|---|---|---|
+| 38 | เป็นวัตถุดิบในการผลิตยาตัวอย่างสำหรับขอขึ้นทะเบียนตำรับยา/ยาซึ่งได้ขึ้นทะเบียนตำรับยาแล้ว | ยา - A.1  | 1 | 21 | 1 |
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterObjective</summary>
+
 | ลำดับ | Column Name | Data Type | Allow Nulls | Field Description |
 |---|---|---|:---:|---|
 | 1 | Id | int | N | รหัสอ้างอิงที่ใช้ในระบบ | Id |
@@ -182,6 +198,7 @@ li {
 #### 📥 นำเข้า (Import)
 - **Step 1**
   1. วัตถุประสงค์
+    
   2. ประเภทผู้ใช้สาร
 - **Step 2**: เลขที่ใบอนุญาต
   1. ข้อมูลผู้ขอ (ดึงจาก DOPA ด้วยเลขนิติที่มอบอำนาจ)
