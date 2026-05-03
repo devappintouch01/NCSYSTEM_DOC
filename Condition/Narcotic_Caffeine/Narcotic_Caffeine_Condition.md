@@ -245,40 +245,46 @@ FROM MasterCaffeineUserType
 
 ### 🛤️ Workflow (Screen Sequence)
 
-#### 📥 กรณีนำเข้า (Import) (OperationTypeId = 3)
-- **Step 1**:
+#### 📥 กรณีนำเข้า (Import) - OperationTypeId = 3
 
+##### **Step 1: วัตถุประสงค์และประเภทผู้ใช้สาร**
 <img src="Narcotic_Caffeine_Sequence_Step_1_2.png" style="border: 1px solid black;" width="80%">
 
-    1. วัตถุประสงค์ (Dropdown ให้เลือก จาก `MasterObjective.ObjectiveNameTh`)
-    
-    ```sql
-      SELECT Id, ObjectiveNameTh FROM MasterObjective
-      WHERE RequisitionTypeId = 21 AND Id IN (38, 39, 40, 41, 42, 43)
-      ORDER BY Ordinal
-    ```
+1. **วัตถุประสงค์** (Dropdown: ดึงจาก `MasterObjective.ObjectiveNameTh`)
+   ```sql
+   SELECT Id, ObjectiveNameTh FROM MasterObjective
+   WHERE RequisitionTypeId = 21 AND Id IN (38, 39, 40, 41, 42, 43)
+   ORDER BY Ordinal
+   ```
+2. **ประเภทผู้ใช้สาร** (Dropdown: ดึงจาก `MasterCaffeineUserType.CaffeineUserType`)
+   ```sql
+   SELECT Id, CaffeineUserType FROM MasterCaffeineUserType
+   WHERE OperationTypeId = 3 AND ObjectiveId = [Selected_Objective_Id]
+   ORDER BY Id
+   ```
 
-    2. ประเภทผู้ใช้สาร (Dropdown ให้เลือก จาก `MasterCaffeineUserType.CaffeineUserType`)
+##### **Step 2: ข้อมูลใบอนุญาตและผู้ขอ**
+1. **เลขที่ใบอนุญาต** (Dropdown: ดึงจาก API ใบอนุญาตด้านยา)
+   - นำหรือสั่งยาแผนปัจจุบันเข้ามาในราชอาณาจักร
+2. **ข้อมูลผู้ขอ** (ดึงจาก DOPA อัตโนมัติด้วยเลขนิติบุคคลที่ได้รับมอบอำนาจ)
+3. **ข้อมูลผู้ดำเนินการ** (กรอกข้อมูลเอง)
 
-    ```sql
-      SELECT Id, CaffeineUserType FROM MasterCaffeineUserType
-      WHERE OperationTypeId = 3 AND ObjectiveId = [Id จากที่เลือกจาก วัตถุประสงค์]
-      ORDER BY Id
-    ```
+##### **Step 3: สถานที่เก็บและยอดคงคลัง**
+1. **สถานที่เก็บ**
+2. **วัตถุดิบกาเฟอีนคงคลัง** (แสดงยอดคงเหลือปัจจุบัน)
 
-- **Step 2**:
-    1. เลขที่ใบอนุญาตนำหรือสั่งยาแผนปัจจุบันเข้ามาในราชอณาจักร (Dropdown ให้เลือก จาก API ใบอนุญาตด้านยา)
-    2. ข้อมูลผู้ขอ (ดึงจาก DOPA ด้วยเลขนิติที่มอบอำนาจ)
-    3. ข้อมูลผู้ดำเนินการ (กรอกเอง)
+##### **Step 4: รายละเอียดสารกาเฟอีนที่ขอนำเข้า**
+1. **รายการสารกาเฟอีน** (ดึงจาก `MasterCaffeine`)
+2. **ปริมาณที่ขอนำเข้า**
+3. **ประเทศแหล่งกำเนิด (Origin Country)**
 
-- **Step 3**: สถานที่เก็บ, วัตถุดิบกาเฟอีนคงคลัง
-- **Step 4**: รายละเอียดสารกาเฟอีนที่ขอนำเข้า
+---
 
-#### 📤 ส่งออก (Export)
-*(TBD)*
+#### 📤 กรณีส่งออก (Export) - OperationTypeId = 4
+*(TBD - อยู่ระหว่างรวบรวมข้อมูล)*
 
-#### ✏️ แก้ไข (Edit)
-*(TBD)*
+#### ✏️ กรณีแก้ไข (Edit) - OperationTypeId = 11
+*(TBD - อยู่ระหว่างรวบรวมข้อมูล)*
 
 ---
 
