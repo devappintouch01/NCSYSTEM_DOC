@@ -248,9 +248,10 @@ FROM MasterCaffeineUserType
 ### 📥 กรณีนำเข้า (Import) - OperationTypeId = 3
 
 #### **Step 1: วัตถุประสงค์และประเภทผู้ใช้สาร**
+
 <img src="Narcotic_Caffeine_Sequence_Import_Step_1_2.png" style="border: 1px solid black;" width="80%">
 
-**วัตถุประสงค์** (Dropdown: ดึงจาก `MasterObjective.ObjectiveNameTh`)
+### **วัตถุประสงค์** (Dropdown: ดึงจาก `MasterObjective.ObjectiveNameTh`)
 
 ```sql
 SELECT Id, ObjectiveNameTh FROM MasterObjective
@@ -258,7 +259,7 @@ WHERE RequisitionTypeId = 21 AND Id IN (38, 39, 40, 41, 42, 43)
 ORDER BY Ordinal
 ```
 
-**ประเภทผู้ใช้สาร** (Dropdown: ดึงจาก `MasterCaffeineUserType.CaffeineUserType`)
+### **ประเภทผู้ใช้สาร** (Dropdown: ดึงจาก `MasterCaffeineUserType.CaffeineUserType`)
 
 ```sql
 SELECT Id, CaffeineUserType FROM MasterCaffeineUserType
