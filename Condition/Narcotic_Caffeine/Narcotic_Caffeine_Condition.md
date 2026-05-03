@@ -270,25 +270,25 @@ ORDER BY Id
 #### **Step 2: ข้อมูลใบอนุญาตและผู้ขอ**
 <img src="Narcotic_Caffeine_Sequence_Import_Step_2_1.png" style="border: 1px solid black;" width="80%">
 
-  1. **เลขที่ใบอนุญาต**
+### 1. **เลขที่ใบอนุญาต**
     - เลขที่ใบอนุญาตนำหรือสั่งยาแผนปัจจุบันเข้ามาในราชอาณาจักร (Dropdown: ดึงจาก API ใบอนุญาตด้านยา)
     - *API Reference: `[TBD: API URL for Drug License]`*
 
 <img src="Narcotic_Caffeine_Sequence_Import_Step_2_2.png" style="border: 1px solid black;" width="80%">
 
-  1.1. **ข้อมูลผู้ขอหนังสือรับรองฯ** (ดึงจาก DOPA อัตโนมัติด้วยเลขนิติบุคคลที่ได้รับมอบอำนาจ)
+### 1.1. **ข้อมูลผู้ขอหนังสือรับรองฯ** (ดึงจาก DOPA อัตโนมัติด้วยเลขนิติบุคคลที่ได้รับมอบอำนาจ)
 
-  1.2. **ข้อมูลผู้ดำเนินการ** (กรอกข้อมูลเอง)
+### 1.2. **ข้อมูลผู้ดำเนินการ** (กรอกข้อมูลเอง)
 
 #### **Step 3: สถานที่เก็บและยอดคงคลัง**
 <img src="Narcotic_Caffeine_Sequence_Import_Step_3_1.png" style="border: 1px solid black;" width="80%">
 
-  2. **ข้อมูลสถานที่เก็บ**
+### 2. **ข้อมูลสถานที่เก็บ**
     - ดึงข้อมูลสถานที่เก็บ (เหมือนกับประเภทคำขออื่น ๆ - `RequisitionParticipantTypeId`)
 
 <img src="Narcotic_Caffeine_Sequence_Import_Step_3_2.png" style="border: 1px solid black;" width="80%">
 
-3. **ข้อมูลวัตถุดิบกาเฟอีนคงคลัง**
+### 3. **ข้อมูลวัตถุดิบกาเฟอีนคงคลัง**
     - แสดงยอดคงเหลือปัจจุบันในระบบ
 
 #### **Step 4: รายละเอียดสารกาเฟอีนที่ขอนำเข้า**
