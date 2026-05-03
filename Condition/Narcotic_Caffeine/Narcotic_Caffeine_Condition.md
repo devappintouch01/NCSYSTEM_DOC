@@ -77,19 +77,15 @@ li {
 
 ### Table ตาราง
 
-#### 📂 dbo.MasterCaffeine สารกาเฟอีน
-
-<details markdown="1">
-<summary>📂 คลิกเพื่อดูตาราง dbo.MasterCaffeine</summary>
-
-</details>
-
 #### 📂 dbo.MasterObjective วัตถุประสงค์
 
 ```sql
 SELECT * FROM MasterObjective
 WHERE RequisitionTypeId = 21
 ```
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterObjective</summary>
 
 | Id | ObjectiveNameTh | Reason | Active | RequisitionTypeId | Ordinal |
 |---|---|---|---|---|---|
@@ -107,8 +103,12 @@ WHERE RequisitionTypeId = 21
 | 50 | [ส่งออก] อื่นๆ (ทำเมนูไว้ แต่ขอให้ซ่อนยังไม่ให้ผปก.เลือกได้) | NULL | 1 | 21 | 12 |
 | 51 | - (แก้ไขหนังสือรับรอง ผู้สั่งซื้อรายใหม่เป็นผู้สั่งซื้อในต่างประเทศ) | NULL | 1 | 21 | 13 |
 
+</details>
+
+#### 📂 dbo.MasterCaffeine สารกาเฟอีน
+
 <details markdown="1">
-<summary>📂 คลิกเพื่อดูตาราง dbo.MasterObjective</summary>
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterCaffeine</summary>
 
 | ลำดับ | Column Name | Data Type | Allow Nulls | Field Description |
 |---|---|---|:---:|---|
