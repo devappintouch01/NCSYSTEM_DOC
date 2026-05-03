@@ -245,9 +245,9 @@ FROM MasterCaffeineUserType
 
 ### 🛤️ Workflow (Screen Sequence)
 
-#### 📥 กรณีนำเข้า (Import) - OperationTypeId = 3
+### 📥 กรณีนำเข้า (Import) - OperationTypeId = 3
 
-##### **Step 1: วัตถุประสงค์และประเภทผู้ใช้สาร**
+#### **Step 1: วัตถุประสงค์และประเภทผู้ใช้สาร**
 <img src="Narcotic_Caffeine_Sequence_Step_1_2.png" style="border: 1px solid black;" width="80%">
 
 1. **วัตถุประสงค์** (Dropdown: ดึงจาก `MasterObjective.ObjectiveNameTh`)
@@ -264,10 +264,10 @@ FROM MasterCaffeineUserType
    ORDER BY Id
    ```
 
-##### **Step 2: ข้อมูลใบอนุญาตและผู้ขอ**
+#### **Step 2: ข้อมูลใบอนุญาตและผู้ขอ**
 <img src="Narcotic_Caffeine_Sequence_Step_2_1.png" style="border: 1px solid black;" width="80%">
 
-1. **เลขที่ใบอนุญาต**
+**เลขที่ใบอนุญาต**
    - เลขที่ใบอนุญาตนำหรือสั่งยาแผนปัจจุบันเข้ามาในราชอาณาจักร (Dropdown: ดึงจาก API ใบอนุญาตด้านยา)
    - *API Reference: `[TBD: API URL for Drug License]`*
 
@@ -277,18 +277,18 @@ FROM MasterCaffeineUserType
 
 1.2. **ข้อมูลผู้ดำเนินการ** (กรอกข้อมูลเอง)
 
-##### **Step 3: สถานที่เก็บและยอดคงคลัง**
+#### **Step 3: สถานที่เก็บและยอดคงคลัง**
 <img src="Narcotic_Caffeine_Sequence_Step_3_1.png" style="border: 1px solid black;" width="80%">
 
-2. **สถานที่เก็บ**
+2. **ข้อมูลสถานที่เก็บ**
    - ดึงข้อมูลสถานที่เก็บ (เหมือนกับประเภทคำขออื่น ๆ - `RequisitionParticipantTypeId`)
 
 <img src="Narcotic_Caffeine_Sequence_Step_3_2.png" style="border: 1px solid black;" width="80%">
 
-3. **วัตถุดิบกาเฟอีนคงคลัง**
+3. **ข้อมูลวัตถุดิบกาเฟอีนคงคลัง**
    - แสดงยอดคงเหลือปัจจุบันในระบบ
 
-##### **Step 4: รายละเอียดสารกาเฟอีนที่ขอนำเข้า**
+#### **Step 4: รายละเอียดสารกาเฟอีนที่ขอนำเข้า**
 <img src="Narcotic_Caffeine_Sequence_Step_4_1.png" style="border: 1px solid black;" width="80%">
 
 4. **ข้อมูลสารกาเฟอีนที่ขอนำเข้า** (ดึงข้อมูลจาก `MasterCaffeine`)
@@ -304,10 +304,10 @@ FROM MasterCaffeineUserType
 
 ---
 
-#### 📤 กรณีส่งออก (Export) - OperationTypeId = 4
+### 📤 กรณีส่งออก (Export) - OperationTypeId = 4
 *(TBD - อยู่ระหว่างรวบรวมข้อมูล)*
 
-#### ✏️ กรณีแก้ไข (Edit) - OperationTypeId = 11
+### ✏️ กรณีแก้ไข (Edit) - OperationTypeId = 11
 *(TBD - อยู่ระหว่างรวบรวมข้อมูล)*
 
 ---
