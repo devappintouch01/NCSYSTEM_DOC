@@ -268,41 +268,50 @@ ORDER BY Id
 ```
 
 #### **Step 2: ข้อมูลใบอนุญาตและผู้ขอ**
-<img src="Narcotic_Caffeine_Sequence_Import_Step_2_1.png" style="border: 1px solid black;" width="80%">
 
 ### 1. **เลขที่ใบอนุญาต**
+
+<img src="Narcotic_Caffeine_Sequence_Import_Step_2_1.png" style="border: 1px solid black;" width="80%">
+
     - เลขที่ใบอนุญาตนำหรือสั่งยาแผนปัจจุบันเข้ามาในราชอาณาจักร (Dropdown: ดึงจาก API ใบอนุญาตด้านยา)
     - *API Reference: `[TBD: API URL for Drug License]`*
 
-<img src="Narcotic_Caffeine_Sequence_Import_Step_2_2.png" style="border: 1px solid black;" width="80%">
 
 ### 1.1. **ข้อมูลผู้ขอหนังสือรับรองฯ** (ดึงจาก DOPA อัตโนมัติด้วยเลขนิติบุคคลที่ได้รับมอบอำนาจ)
 
 ### 1.2. **ข้อมูลผู้ดำเนินการ** (กรอกข้อมูลเอง)
 
+<img src="Narcotic_Caffeine_Sequence_Import_Step_2_2.png" style="border: 1px solid black;" width="80%">
+
 #### **Step 3: สถานที่เก็บและยอดคงคลัง**
-<img src="Narcotic_Caffeine_Sequence_Import_Step_3_1.png" style="border: 1px solid black;" width="80%">
 
 ### 2. **ข้อมูลสถานที่เก็บ**
+
+<img src="Narcotic_Caffeine_Sequence_Import_Step_3_1.png" style="border: 1px solid black;" width="80%">
+
     - ดึงข้อมูลสถานที่เก็บ (เหมือนกับประเภทคำขออื่น ๆ - `RequisitionParticipantTypeId`)
+
+
+### 3. **ข้อมูลวัตถุดิบกาเฟอีนคงคลัง**
 
 <img src="Narcotic_Caffeine_Sequence_Import_Step_3_2.png" style="border: 1px solid black;" width="80%">
 
-### 3. **ข้อมูลวัตถุดิบกาเฟอีนคงคลัง**
     - แสดงยอดคงเหลือปัจจุบันในระบบ
 
 #### **Step 4: รายละเอียดสารกาเฟอีนที่ขอนำเข้า**
+
+### 4. **ข้อมูลสารกาเฟอีนที่ขอนำเข้า** (ดึงข้อมูลจาก `MasterCaffeine`)
+
 <img src="Narcotic_Caffeine_Sequence_Import_Step_4_1.png" style="border: 1px solid black;" width="80%">
 
-4. **ข้อมูลสารกาเฟอีนที่ขอนำเข้า** (ดึงข้อมูลจาก `MasterCaffeine`)
+### 5. **ข้อมูลผู้ใช้สารกาเฟอีน**
 
 <img src="Narcotic_Caffeine_Sequence_Import_Step_4_2.png" style="border: 1px solid black;" width="80%">
 
-5. **ข้อมูลผู้ใช้สารกาเฟอีน**
+### 6. **ข้อมูลผลิตภัณฑ์**
 
 <img src="Narcotic_Caffeine_Sequence_Import_Step_4_3.png" style="border: 1px solid black;" width="80%">
 
-6. **ข้อมูลผลิตภัณฑ์**
    - กรอกชื่อผลิตภัณฑ์ หรือเลือกจากประวัติการนำเข้า (Dropdown)
 
 ---
