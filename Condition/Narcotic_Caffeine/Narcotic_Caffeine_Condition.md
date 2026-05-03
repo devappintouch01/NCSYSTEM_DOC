@@ -247,6 +247,15 @@ FROM MasterCaffeineUserType
 
 ### 📥 กรณีนำเข้า (Import) - OperationTypeId = 3
 
+| Step | ขั้นตอน |
+|---|---|
+| Step 1 | - วัตถุประสงค์ <br> - ประเภทผู้ใช้สาร |
+| Step 2 | - เลขที่ใบอนุญาต <br> - ข้อมูลผู้ขอหนังสือรับรองฯ <br> - ข้อมูลผู้ดำเนินการ |
+| Step 3 | - ข้อมูลสถานที่เก็บ <br> - ข้อมูลวัตถุดิบกาเฟอีนคงคลัง  |
+| Step 4 | - ข้อมูลสารกาเฟอีนที่ขอนำเข้า <br> - ข้อมูลผู้ใช้สารกาเฟอีน <br> - ข้อมูลผลิตภัณฑ์ |
+| Step 5 | - ข้อมูลผู้ประสานงาน |
+| Step 6 | - เอกสารแนบ |
+
 #### **Step 1: วัตถุประสงค์และประเภทผู้ใช้สาร**
 
 <img src="Narcotic_Caffeine_Sequence_Import_Step_1_2.png" style="border: 1px solid black;" width="80%">
@@ -274,12 +283,18 @@ ORDER BY Id
 <img src="Narcotic_Caffeine_Sequence_Import_Step_2_1.png" style="border: 1px solid black;" width="80%">
 
     - เลขที่ใบอนุญาตนำหรือสั่งยาแผนปัจจุบันเข้ามาในราชอาณาจักร (Dropdown: ดึงจาก API ใบอนุญาตด้านยา)
-    - *API Reference: `[TBD: API URL for Drug License]`*
+    
+```
+*API Reference: `[TBD: API URL for Drug License]`*
+```
 
+### 1.1. **ข้อมูลผู้ขอหนังสือรับรองฯ**
 
-### 1.1. **ข้อมูลผู้ขอหนังสือรับรองฯ** (ดึงจาก DOPA อัตโนมัติด้วยเลขนิติบุคคลที่ได้รับมอบอำนาจ)
+    - (ดึงจาก DOPA อัตโนมัติด้วยเลขนิติบุคคลที่ได้รับมอบอำนาจ)
 
-### 1.2. **ข้อมูลผู้ดำเนินการ** (กรอกข้อมูลเอง)
+### 1.2. **ข้อมูลผู้ดำเนินการ**
+
+    - (กรอกข้อมูลเอง)
 
 <img src="Narcotic_Caffeine_Sequence_Import_Step_2_2.png" style="border: 1px solid black;" width="80%">
 
@@ -314,10 +329,51 @@ ORDER BY Id
 
    - กรอกชื่อผลิตภัณฑ์ หรือเลือกจากประวัติการนำเข้า (Dropdown)
 
+#### **Step 5: ข้อมูลผู้ประสานงาน**
+
+### 7. **ข้อมูลผู้ประสานงาน**
+
 ---
 
 ### 📤 กรณีส่งออก (Export) - OperationTypeId = 4
-*(TBD - อยู่ระหว่างรวบรวมข้อมูล)*
+
+| Step | ขั้นตอน |
+|---|---|
+| Step 1 | - วัตถุประสงค์ |
+| Step 2 | - ข้อมูลผู้ขอหนังสือรับรองฯ <br> - ข้อมูลผู้ดำเนินการ |
+| Step 3 | - ข้อมูลการส่งออก <br> - ข้อมูลผู้รับสินค้า  |
+| Step 4 | - ข้อมูลผู้ประสานงาน |
+| Step 5 | - เอกสารแนบ |
+
+#### **Step 1: วัตถุประสงค์**
+
+### **วัตถุประสงค์**
+
+<img src="Narcotic_Caffeine_Sequence_Export_Step_1_1.png" style="border: 1px solid black;" width="80%">
+
+#### **Step 2: ข้อมูลใบอนุญาตและผู้ขอ**
+
+### 1.1. **ข้อมูลผู้ขอหนังสือรับรองฯ**
+
+    - (ดึงจาก DOPA อัตโนมัติด้วยเลขนิติบุคคลที่ได้รับมอบอำนาจ)
+
+### 1.2. **ข้อมูลผู้ดำเนินการ**
+
+    - (กรอกข้อมูลเอง)
+
+<img src="Narcotic_Caffeine_Sequence_Export_Step_2_1.png" style="border: 1px solid black;" width="80%">
+
+#### **Step 3**
+
+### 2. **ข้อมูลการส่งออก**
+
+### 3. **ข้อมูลผู้รับสินค้า**
+
+<img src="Narcotic_Caffeine_Sequence_Export_Step_3_1.png" style="border: 1px solid black;" width="80%">
+
+#### **Step 4**
+
+### 4. **ข้อมูลผู้ประสานงาน**
 
 ### ✏️ กรณีแก้ไข (Edit) - OperationTypeId = 11
 *(TBD - อยู่ระหว่างรวบรวมข้อมูล)*
