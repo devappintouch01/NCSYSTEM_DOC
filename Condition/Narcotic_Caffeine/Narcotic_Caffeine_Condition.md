@@ -107,6 +107,22 @@ WHERE RequisitionTypeId = 21
 
 </details>
 
+
+#### 📂 dbo.MasterCaffeineUserType
+
+```sql
+SELECT *
+FROM MasterCaffeineUserType
+```
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterCaffeineUserType</summary>
+
+| Id | OperationType | CaffeineObjective | CaffeineUserType | ObjectiveId |
+|---|---|---|---|---|
+
+</details>
+
 #### 📂 dbo.MasterCaffeine สารกาเฟอีน
 <details markdown="1">
 <summary>📂 คลิกเพื่อดู Schema & Sample Data: [MasterCaffeine]</summary>
