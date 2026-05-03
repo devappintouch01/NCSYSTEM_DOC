@@ -220,11 +220,11 @@ FROM MasterCaffeineUserType
 ## ❗ เงื่อนไขรร.1    
 ## 🔷 Field Condition
 
-<img src="Narcotic_Caffeine_Condition_1.png" style="border: 1px solid black;" width="100%">
-<img src="Narcotic_Caffeine_Condition_2.png" style="border: 1px solid black;" width="100%">
-<img src="Narcotic_Caffeine_Condition_3.png" style="border: 1px solid black;" width="100%">
-<img src="Narcotic_Caffeine_Condition_4.png" style="border: 1px solid black;" width="100%">
-<img src="Narcotic_Caffeine_Condition_5.png" style="border: 1px solid black;" width="100%">
+<img src="Narcotic_Caffeine_Condition_1.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic_Caffeine_Condition_2.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic_Caffeine_Condition_3.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic_Caffeine_Condition_4.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic_Caffeine_Condition_5.png" style="border: 1px solid black;" width="80%">
 
 
 <!-- ```
@@ -247,6 +247,9 @@ FROM MasterCaffeineUserType
 
 #### 📥 กรณีนำเข้า (Import) (OperationTypeId = 3)
 - **Step 1**:
+
+<img src="Narcotic_Caffeine_Sequence_Step_1_2.png" style="border: 1px solid black;" width="80%">
+
     1. วัตถุประสงค์ (Dropdown ให้เลือก จาก `MasterObjective.ObjectiveNameTh`)
     
     ```sql
