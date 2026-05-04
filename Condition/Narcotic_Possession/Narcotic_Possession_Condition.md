@@ -61,3 +61,10 @@ li {
 | ผู้ขอรับอนุญาตเป็นหน่วยงานของรัฐ หรือ สภากาชาดไทย | เอามาจากเอกสารแนบ |
 
 ## ยานพาหนะ
+
+<img src="messageImage_1777020642559.jpg" style="border: 1px solid black;" width="80%">
+<img src="messageImage_1777020663363.jpg" style="border: 1px solid black;" width="80%">
+
+## 📄 ส่วนแบบ Print from PDF คำขอ (คค.1-1)
+
+<img src="messageImage_1776925568987.jpg" style="border: 1px solid black;" width="80%">
