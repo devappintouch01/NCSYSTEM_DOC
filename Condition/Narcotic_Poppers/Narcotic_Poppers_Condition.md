@@ -47,6 +47,7 @@ li {
 
 | # | การดำเนินการ | MasterOperationType.Id | หมายเหตุ |
 |---|---|---|---|
+| 1 | นำเข้า | 3 |  |
 
 ### 📊 Tables & Dictionary
 
