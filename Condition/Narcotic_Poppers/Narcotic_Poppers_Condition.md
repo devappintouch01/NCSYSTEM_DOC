@@ -63,25 +63,34 @@ ORDER BY Ordinal
 
 | Id | ObjectiveNameTh | Reason | Active | RequisitionTypeId | Ordinal |
 |---|---|---|---|---|---|
+| 52 | เป็นวัตถุดิบในการผลิตยาตัวอย่างสำหรับขอขึ้นทะเบียนตำรับยา/ยาซึ่งได้ขึ้นทะเบียนตำรับยาแล้ว | ยา | 1 | 22 | 1 |
+| 53 | เป็นวัตถุดิบในการผลิตตัวอย่างผลิตภัณฑ์สุขภาพ คือ | ผลิตภัณฑ์สุขภาพ | 1 | 22 | 2 |
+| 54 | เป็นวัตถุดิบในการผลิตผลิตภัณฑ์สุขภาพ คือ | ผลิตภัณฑ์สุขภาพ | 1 | 22 | 3 |
+| 55 | ใช้ในการศึกษา วิเคราะห์ วิจัย | ทั้งหมด | 1 | 22 | 4 |
 
 </details>
 
-#### 📂 dbo.MasterVolatileAlkylNitriteUserType (รายการประเภทผู้ใช้สาร)
+#### 📂 dbo.MasterVolatileAlkylNitriteUserType (รายการประเภทผู้ใช้สาร VolatileAlkylNitrite)
 
 ```sql
 SELECT * FROM MasterVolatileAlkylNitriteUserType
 ```
-
 <details markdown="1">
 <summary>📂 คลิกเพื่อดูตาราง dbo.MasterVolatileAlkylNitriteUserType</summary>
 
 | Id | OperationType | OperationTypeId | VolatileAlkylNitriteObjective | VolatileAlkylNitriteUserType | ObjectiveId |
 |---|---|---|---|---|---|
+| 1 | นำเข้า | 3 | ยา | เพื่อใช้ประโยชน์ในอุตสาหกรรมของตนเอง | 52 |
+| 2 | นำเข้า | 3 | ผลิตภัณฑ์สุขภาพอื่นๆ | เพื่อใช้ประโยชน์ในอุตสาหกรรมของตนเอง | 53 |
+| 3 | นำเข้า | 3 | ผลิตภัณฑ์สุขภาพอื่นๆ | เพื่อใช้ประโยชน์ในอุตสาหกรรมของตนเอง | 54 |
+| 4 | นำเข้า | 3 | วิเคราะห์ | ใช้ในกิจการของตนเอง | 55 |
+| 5 | นำเข้า | 3 | วิเคราะห์ | จำหน่ายให้หน่วยงานที่ใช้สารระเหย | 55 |
+| 6 | นำเข้า | 3 | วิจัย | ใช้ในกิจการของตนเอง | 55 |
+| 7 | นำเข้า | 3 | วิจัย | จำหน่ายให้หน่วยงานที่ใช้สารระเหย | 55 |
 
 </details>
 
-
-## ❗ เงื่อนไขรรส.1    
+## ❗ เงื่อนไข รรส.1    
 ## 🔷 Field Condition
 
 <img src="Narcotic_Poppers_Condition_99.png" style="border: 1px solid black;" width="80%">
