@@ -34,6 +34,8 @@ Google sheets
     - [คำขอ](https://drive.google.com/drive/u/1/folders/1Iwsb15twehRBXDIS93_5p4LVbflQVAME)
     - [ใบอนุญาต](https://drive.google.com/drive/u/1/folders/17nOZ4i8fbOUb7m1CFnuQXmAUKeZv6x1K)
 
+    - [คำขอ ยส.4-1 PDF](brain_NCSYSTEM\Condition\Narcotic4\คำขอ_ยส.4-1.pdf)
+    
 <!-- ### API
 ```
 ติดตามสถานะคำขอ
