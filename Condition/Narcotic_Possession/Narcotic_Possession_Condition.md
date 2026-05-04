@@ -19,6 +19,29 @@ li {
 
 - [Figma คค.1-1 (FigJam)]()
 
+### 📊 Tables & Dictionary
+
+#### 📂 dbo.RequisitionVehicle (ข้อมูลยานพาหนะในคำขอ (ใช้กับ คค.1-1))
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดู Schema & Sample Data: [RequisitionVehicle]</summary>
+
+| ลำดับ | Column Name | Data Type | Allow Nulls | Field Description |
+|---|---|---|:---:|---|
+| 1 | Id | int | N | รหัสอ้างอิงที่ใช้ในระบบ |
+| 2 | CreateBy | int | N | ผู้สร้าง อ้างอิง SystemUser.Id |
+| 3 | CreateOn | datetime | N | วันที่สร้าง |
+| 4 | UpdateBy | int | Y | ผู้แก้ไข อ้างอิง SystemUser.Id |
+| 5 | UpdateOn | datetime | Y | วันที่แก้ไข |
+| 6 | RequisitionId | int | N | คำขอ อ้างอิง Requisition.Id |
+| 7 | Ordinal | int | Y | ลำดับ |
+| 8 | VehicleType | char(1) | Y | ประเภทของยานพาหนะ (A=เครื่องบิน, S=เรือ) |
+| 9 | Type | nvarchar(1000) | Y | ประเภท |
+| 10 | Registration | nvarchar(2000) | Y | ชื่อยานพาหนะ |
+| 11 | Total | int | Y | จำนวนยานพาหนะ |
+
+</details>
+
 ## ❗ เงื่อนไข คค.1-1
 
 ## Form name
@@ -38,4 +61,3 @@ li {
 | ผู้ขอรับอนุญาตเป็นหน่วยงานของรัฐ หรือ สภากาชาดไทย | เอามาจากเอกสารแนบ |
 
 ## ยานพาหนะ
-
