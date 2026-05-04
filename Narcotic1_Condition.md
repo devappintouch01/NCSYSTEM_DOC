@@ -36,6 +36,7 @@ Google sheets
     - [ใบอนุญาต](https://drive.google.com/drive/u/1/folders/17o6_tUVGI_7PS5zWHgXKnNpo3lVZHT0p)
 
     - [คำขอ ยส.1-1 PDF](คำขอ_ยส.1-1.pdf)
+    - [คำขอ ยส.1-1 DOCX](DOCX_ยส.1-1.docx)
 
 ## ❗ เงื่อนไข ยส.1
 ### ประเภทการขอ (ยส.1-1)
