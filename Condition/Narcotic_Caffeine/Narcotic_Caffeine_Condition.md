@@ -24,6 +24,8 @@ li {
 - [0805_เช้า_คาเฟอีน](https://drive.google.com/drive/u/1/folders/1uXXIs5kYpTz8Hf87K30mYiky2Tyqdxqa)
 - [4.18_กาเฟอีน](https://docs.google.com/spreadsheets/d/1PKGw-iSZ9UJVXOrG8POJR3BIkxjnRDIG/edit?gid=471906968#gid=471906968)
 
+- [0805_เช้า_สารระเหย](https://drive.google.com/drive/u/1/folders/1kSPK-pBrQnOdKx027Sxb6bSsm3k1lIun)
+
 - [ส่งไฟล์_SS](https://drive.google.com/drive/u/1/folders/1MBhdkp39h6eJoDIuIvbAnHjFcAN3BJTW)
     - [ส่งไฟล์_SS-เอกสารรายงานทั้งหมด_200169-ตัวอย่างรายงานจากอย.](https://drive.google.com/drive/folders/1M8B9Y9OGr7jEQrMdSfUB_rQjz1NDGrlQ)
 
@@ -71,7 +73,7 @@ li {
 | แก้ไข (เปลี่ยนผู้สั่งซื้อ) (11) | B. อาหาร | B.2 เพื่อขายให้ผู้ประกอบการอุตสาหกรรม |
 | แก้ไข (เปลี่ยนผู้สั่งซื้อ) (11) | C.1 วิเคราะห์ | C.1.2 จำหน่ายให้หน่วยงานที่ใช้สารกาเฟอีน |
 | แก้ไข (เปลี่ยนผู้สั่งซื้อ) (11) | C.2 วิจัย | C.2.2 จำหน่ายให้หน่วยงานที่ใช้สารกาเฟอีน |
-| แก้ไข (เปลี่ยนผู้สั่งซื้อ) (11) | - | C.2.1 เพื่อใช้ในกิจการของตนเอง |
+| แก้ไข (เปลี่ยนผู้สั่งซื้อ) (11) | - (ผู้สั่งซื้อรายใหม่เป็นผู้สั่งซื้อในต่างประเทศ) | - |
 | ส่งออก (4) | A. กรณีส่งคืนสารกาเฟอีนที่นำเข้า ตามหนังสือรับรองเลขที่ | |
 | ส่งออก (4) | B. กรณีส่งออกสารกาเฟอีนที่ผลิตได้ในประเทศ | |
 | ส่งออก (4) | C. กรณีเปลี่ยนผู้สั่งซื้อ โดยผู้สั่งซื้อรายใหม่เป็นผู้สั่งซื้อในต่างประเทศ | |
@@ -240,11 +242,11 @@ SELECT * FROM MasterCaffeineUserType
 ## ❗ เงื่อนไขรร.1    
 ## 🔷 Field Condition
 
-<img src="Narcotic_Caffeine_Condition_1.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic_Caffeine_Condition_2.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic_Caffeine_Condition_3.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic_Caffeine_Condition_4.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic_Caffeine_Condition_5.png" style="border: 1px solid black;" width="80%">
+<img src="Narcotic_Caffeine_Condition_6.png" style="border: 1px solid black;" width="80%">
 
 
 <!-- ```
@@ -302,6 +304,7 @@ ORDER BY Id
 
 <img src="Narcotic_Caffeine_Sequence_Import_Step_2_1.png" style="border: 1px solid black;" width="80%">
 
+  ถ้าเลือก 
     - เลขที่ใบอนุญาตนำหรือสั่งยาแผนปัจจุบันเข้ามาในราชอาณาจักร (Dropdown: ดึงจาก API ใบอนุญาตด้านยา)
     
 ```
