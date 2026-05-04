@@ -48,6 +48,39 @@ li {
 | # | การดำเนินการ | MasterOperationType.Id | หมายเหตุ |
 |---|---|---|---|
 
+### 📊 Tables & Dictionary
+
+#### 📂 dbo.MasterObjective (วัตถุประสงค์)
+
+```sql
+SELECT * FROM MasterObjective
+WHERE RequisitionTypeId = 22
+ORDER BY Ordinal
+```
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterObjective</summary>
+
+| Id | ObjectiveNameTh | Reason | Active | RequisitionTypeId | Ordinal |
+|---|---|---|---|---|---|
+
+</details>
+
+#### 📂 dbo.MasterVolatileAlkylNitriteUserType (รายการประเภทผู้ใช้สาร)
+
+```sql
+SELECT * FROM MasterVolatileAlkylNitriteUserType
+```
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง dbo.MasterVolatileAlkylNitriteUserType</summary>
+
+| Id | OperationType | OperationTypeId | VolatileAlkylNitriteObjective | VolatileAlkylNitriteUserType | ObjectiveId |
+|---|---|---|---|---|---|
+
+</details>
+
+
 ## ❗ เงื่อนไขรรส.1    
 ## 🔷 Field Condition
 

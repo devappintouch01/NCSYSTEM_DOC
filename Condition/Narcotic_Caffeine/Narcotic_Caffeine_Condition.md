@@ -84,6 +84,40 @@ li {
 
 ### 📊 Tables & Dictionary
 
+#### 📂 dbo.MasterCaffeine สารกาเฟอีน
+<details markdown="1">
+<summary>📂 คลิกเพื่อดู Schema & Sample Data: [MasterCaffeine]</summary>
+
+| ลำดับ | Column Name | Data Type | Allow Nulls | Field Description |
+|---|---|---|:---:|---|
+| 1 | Id | int | N | รหัสอ้างอิงที่ใช้ในระบบ |
+| 2 | CreateBy | int | N | ผู้สร้าง อ้างอิง `SystemUser`.`Id` |
+| 3 | CreateOn | datetime | N | วันที่สร้าง |
+| 4 | UpdateBy | int | Y | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` |
+| 5 | UpdateOn | datetime | Y | วันที่แก้ไข |
+| 6 | CaffeineNameEN | nvarchar(500) | Y | ชื่อสารกาเฟอีนภาษาอังกฤษ |
+| 7 | CaffeineNameTH | nvarchar(500) | Y | ชื่อสารกาเฟอีนภาษาไทย |
+| 8 | NarcoticTypeId | int | Y | ประเภทวัตถุเสพติด อ้างอิง `MasterNarcoticType`.`Id` |
+| 9 | Active | bit | Y | ใช้งาน (1 = ใช้งาน, 0 = ไม่ใช้งาน) |
+
+</details>
+
+#### ตัวอย่าง Data ในตาราง dbo.MasterCaffeine
+
+<details markdown="1">
+<summary>📂 คลิกเพื่อดูตาราง ตัวอย่าง Data ในตาราง dbo.MasterCaffeine</summary>
+
+| Id | CreateBy | CreateOn | UpdateBy | UpdateOn | CaffeineNameEN | CaffeineNameTH | NarcoticTypeId | Active |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine | กาเฟอีน | 12 | 1 |
+| 2 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Hydrate | กาเฟอีน ไฮเดรท | 12 | 1 |
+| 3 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Anhydrous | กาเฟอีน แอนไฮดรัส | 12 | 1 |
+| 4 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Citrate | กาเฟอีน ซิเตรต | 12 | 1 |
+| 5 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Theophylline | ทีโอฟิลลีน | 12 | 1 |
+| 6 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Aminophylline | เอมิโนฟิลลีน | 12 | 1 |
+
+</details>
+
 #### 📂 dbo.MasterObjective (วัตถุประสงค์)
 
 ```sql
@@ -110,27 +144,6 @@ ORDER BY Ordinal
 | 49 | กรณีเปลี่ยนผู้สั่งซื้อ โดยผู้สั่งซื้อรายใหม่เป็นผู้สั่งซื้อในต่างประเทศ (ทำเมนูไว้ แต่ขอให้ซ่อนยังไม่ให้ผปก.เลือกได้) | NULL | 1 | 21 | 11 |
 | 50 | [ส่งออก] อื่นๆ (ทำเมนูไว้ แต่ขอให้ซ่อนยังไม่ให้ผปก.เลือกได้) | NULL | 1 | 21 | 12 |
 | 51 | - (แก้ไขหนังสือรับรอง ผู้สั่งซื้อรายใหม่เป็นผู้สั่งซื้อในต่างประเทศ) | NULL | 1 | 21 | 13 |
-
-</details>
-
-
-#### 📂 dbo.MasterCaffeine (รายการสารกาเฟอีน)
-
-```sql
-SELECT * FROM MasterCaffeine
-```
-
-<details markdown="1">
-<summary>📂 คลิกเพื่อดูตาราง dbo.MasterCaffeine</summary>
-
-| Id | CreateBy | CreateOn | UpdateBy | UpdateOn | CaffeineNameEN | CaffeineNameTH | NarcoticTypeId | Active |
-|---|---|---|---|---|---|---|---|---|
-| 1 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine | กาเฟอีน | 12 | 1 |
-| 2 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Hydrate | กาเฟอีน ไฮเดรท | 12 | 1 |
-| 3 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Anhydrous | กาเฟอีน แอนไฮดรัส | 12 | 1 |
-| 4 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Citrate | กาเฟอีน ซิเตรต | 12 | 1 |
-| 5 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Theophylline | ทีโอฟิลลีน | 12 | 1 |
-| 6 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Aminophylline | เอมิโนฟิลลีน | 12 | 1 |
 
 </details>
 
@@ -168,46 +181,6 @@ SELECT * FROM MasterCaffeineUserType
 
 </details>
 
-#### 📂 dbo.MasterCaffeine สารกาเฟอีน
-<details markdown="1">
-<summary>📂 คลิกเพื่อดู Schema & Sample Data: [MasterCaffeine]</summary>
-
-| ลำดับ | Column Name | Data Type | Allow Nulls | Field Description |
-|---|---|---|:---:|---|
-| 1 | Id | int | N | รหัสอ้างอิงที่ใช้ในระบบ |
-| 2 | CreateBy | int | N | ผู้สร้าง อ้างอิง `SystemUser`.`Id` |
-| 3 | CreateOn | datetime | N | วันที่สร้าง |
-| 4 | UpdateBy | int | Y | ผู้แก้ไข อ้างอิง `SystemUser`.`Id` |
-| 5 | UpdateOn | datetime | Y | วันที่แก้ไข |
-| 6 | CaffeineNameEN | nvarchar(500) | Y | ชื่อสารกาเฟอีนภาษาอังกฤษ |
-| 7 | CaffeineNameTH | nvarchar(500) | Y | ชื่อสารกาเฟอีนภาษาไทย |
-| 8 | NarcoticTypeId | int | Y | ประเภทวัตถุเสพติด อ้างอิง `MasterNarcoticType`.`Id` |
-| 9 | Active | bit | Y | ใช้งาน (1 = ใช้งาน, 0 = ไม่ใช้งาน) |
-
-</details>
-
-#### ตัวอย่าง Data ในตาราง dbo.MasterCaffeine
-
-<details markdown="1">
-<summary>📂 คลิกเพื่อดูตาราง ตัวอย่าง Data ในตาราง dbo.MasterCaffeine</summary>
-
-| Id | CreateBy | CreateOn | UpdateBy | UpdateOn | CaffeineNameEN | CaffeineNameTH | NarcoticTypeId | Active |
-|---|---|---|---|---|---|---|---|---|
-| 1 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine | กาเฟอีน | 12 | 1 |
-| 2 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Hydrate | กาเฟอีน ไฮเดรท | 12 | 1 |
-| 3 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Anhydrous | กาเฟอีน แอนไฮดรัส | 12 | 1 |
-| 4 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Caffeine Citrate | กาเฟอีน ซิเตรต | 12 | 1 |
-| 5 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Theophylline | ทีโอฟิลลีน | 12 | 1 |
-| 6 | 1 | 2026-04-06 15:00:00.000 | NULL | NULL | Aminophylline | เอมิโนฟิลลีน | 12 | 1 |
-
-<!-- dbo.RequisitionItemDetail รายละเอียดสารที่ขอรับอนุญาตในคำขอ // ใช้กับคำขอสถานที่ -->
-<!-- dbo.RequisitionTemporaryItemDetail รายะเอียดของยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก // ใช้กับคำขอเฉพาะคราว -->
-<!-- dbo.RequisitionMedicationItem รายการยาที่ขอในคำขอยาติดตัว // ใช้กับยาติดตัว -->
-<!-- dbo.RequisitionMedicationIngredient ส่วนประกอบของยาที่ขอในคำขอยาติดตัว // ใช้กับยาติดตัว -->
-
-</details>
-
-
 #### 📂 dbo.RequisitionCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร
 <details markdown="1">
 <summary>📂 คลิกเพื่อดูตาราง dbo.RequisitionCaffeineItemDetail รายละเอียดสารกาเฟอีนที่ใช้ใน คำขอหนังสือรับรองในการนำหรือสั่งสารกาเฟอีน (caffeine) เข้ามาในราชอาณาจักร</summary>
@@ -236,6 +209,11 @@ SELECT * FROM MasterCaffeineUserType
 
 </details>
 
+<!-- dbo.RequisitionItemDetail รายละเอียดสารที่ขอรับอนุญาตในคำขอ // ใช้กับคำขอสถานที่ -->
+<!-- dbo.RequisitionTemporaryItemDetail รายะเอียดของยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก // ใช้กับคำขอเฉพาะคราว -->
+<!-- dbo.RequisitionMedicationItem รายการยาที่ขอในคำขอยาติดตัว // ใช้กับยาติดตัว -->
+<!-- dbo.RequisitionMedicationIngredient ส่วนประกอบของยาที่ขอในคำขอยาติดตัว // ใช้กับยาติดตัว -->
+
 <!-- dbo.LicenseItemDetail รายละเอียดสารที่ขอรับอนุญาตในใบอนุญาต // ใช้กับคำขอสถานที่ -->
 <!-- dbo.LicenseTemporaryItemDetail รายะเอียดของยาเสพติด / วัตถุออกฤทธิ์ ที่ขอนำเข้า / ส่งออก เฉพาะคราว // ใช้กับคำขอเฉพาะคราว -->
 
@@ -247,7 +225,6 @@ SELECT * FROM MasterCaffeineUserType
 <img src="Narcotic_Caffeine_Condition_4.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic_Caffeine_Condition_5.png" style="border: 1px solid black;" width="80%">
 <img src="Narcotic_Caffeine_Condition_6.png" style="border: 1px solid black;" width="80%">
-
 
 <!-- ```
 ผมเพิ่มตารางเดี่ยวกับ กาเฟอีน ให้แล้วนะครับ
