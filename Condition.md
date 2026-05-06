@@ -132,6 +132,7 @@ Google Drive Project
 | # | ระบบ/คำขอ | localhost link | UAT link |
 |---|:---:|---|---|
 | 1 | ระบบวัตถุเสพติด | [Link หลัก NCSystem](https://localhost:7078){:target="_blank"} | [Link หลัก NCSystem](https://devx.softsuite.co.th/NCSystem){:target="_blank"} |
+| 2 | ระบบผู้ป่วย | - | [Link หลัก ระบบผู้ป่วย](https://permitfortraveler.vercel.app/){:target="_blank"} |
 
 | # | ระบบ/คำขอ | วันที่นำเสนอ | localhost link | UAT link |
 |---|:---:|:---:|---|---|
